@@ -229,19 +229,59 @@
 
     <h2>Projects</h2>
 
-    <div class="project">
-      <h3>Force of Nature: Last Seed</h3>
-      <p><b>Problem:</b> Projectile system became unstable with multiple modifiers, causing performance issues.</p>
-      <p><b>Solution:</b> Implemented data-driven weapon system using ScriptableObjects and modifier pipeline. Added object pooling to eliminate Instantiate/Destroy overhead.</p>
-      <p><b>Result:</b> Stable performance with high projectile count and scalable architecture.</p>
-    </div>
+<div class="project">
+  <h3>Force of Nature: Last Seed</h3>
 
-    <div class="project">
-      <h3>Emoji Battle (Google Play)</h3>
-      <p><b>Problem:</b> Monolithic GameManager made the project difficult to maintain and extend.</p>
-      <p><b>Solution:</b> Refactored architecture to MVC-style, separating UI, gameplay logic, and data.</p>
-      <p><b>Result:</b> Improved maintainability and successful mobile release.</p>
+  <p class="project-overview">
+    2D auto-shooter prototype focused on modular combat systems, scalable architecture,
+    and stable performance under high projectile count.
+  </p>
+
+  <p><b>Problem:</b> Combat systems become difficult to scale when weapon modifiers, projectile behaviors, and configuration logic are tightly coupled. This also increases performance risk under object-heavy gameplay.</p>
+
+  <p><b>Solution:</b> Designed a data-driven weapon system using ScriptableObjects, modifier pipeline, and object pooling. Structured combat logic to support extension without rewriting core systems.</p>
+
+  <p><b>Result:</b> Cleaner expansion path for new weapons and modifiers, reduced runtime overhead, and more stable behavior under higher projectile load.</p>
+
+  <div class="project-meta">
+    <div class="meta-title">Tech Used</div>
+    <div class="tech-list">
+      Unity 6, C#, ScriptableObjects, Object Pooling, MVC/SRP, Physics2D, Input System
     </div>
+  </div>
+
+  <div class="project-links">
+    <a href="https://github.com/TokarevDev" target="_blank">View GitHub</a>
+    <a href="#" target="_blank">Watch Demo</a>
+  </div>
+</div>
+
+<div class="project">
+  <h3>Emoji Battle (Google Play)</h3>
+
+  <p class="project-overview">
+    Released mobile game built around a full gameplay loop, AI opponent,
+    UI-driven architecture, and maintainable turn-based state flow.
+  </p>
+
+  <p><b>Problem:</b> As the project grows, a monolithic structure makes gameplay flow, UI logic, and feature expansion harder to maintain.</p>
+
+  <p><b>Solution:</b> Refactored the project toward MVC-style separation, structured turn-based gameplay flow, and implemented AI behavior with predictable decision logic.</p>
+
+  <p><b>Result:</b> Better maintainability, cleaner feature development, and a completed mobile release published on Google Play.</p>
+
+  <div class="project-meta">
+    <div class="meta-title">Tech Used</div>
+    <div class="tech-list">
+      Unity 6, C#, MVC, UI, TextMeshPro, AI Behavior, Strategy Pattern, JSON, PlayerPrefs
+    </div>
+  </div>
+
+  <div class="project-links">
+    <a href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank">View on Google Play</a>
+    <a href="#" target="_blank">Watch Demo</a>
+  </div>
+</div>
 
     <h2>Skills</h2>
 
