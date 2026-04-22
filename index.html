@@ -1,102 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oleksandr Tokarev | Unity Gameplay Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oleksandr Tokarev | Unity Gameplay Developer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0f172a;
-    color: #e2e8f0;
-}
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+    h1 {
+      font-size: 40px;
+      margin-bottom: 8px;
+    }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 5px;
-}
+    h2 {
+      margin-top: 40px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 8px;
+    }
 
-h2 {
-    margin-top: 40px;
-    border-bottom: 1px solid #334155;
-    padding-bottom: 5px;
-}
+    h3 {
+      margin-top: 0;
+    }
 
-h3 {
-    margin-top: 25px;
-}
+    p {
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
 
-p {
-    line-height: 1.6;
-}
+    .subtitle {
+      font-size: 20px;
+      color: #38bdf8;
+      margin-bottom: 24px;
+    }
 
-.project {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-}
+    .project {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 20px;
+    }
 
-a {
-    color: #38bdf8;
-    text-decoration: none;
-}
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
 
-a:hover {
-    text-decoration: underline;
-}
-</style>
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 20px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <h1>Oleksandr Tokarev</h1>
+    <div class="subtitle">Unity Gameplay Developer</div>
 
-<div class="container">
+    <p>
+      I build scalable gameplay systems and improve existing codebases
+      with clean architecture, maintainable code, and stable performance.
+    </p>
 
-<h1>Oleksandr Tokarev</h1>
-<p><b>Unity Gameplay Developer</b></p>
-<p>I build scalable gameplay systems and improve existing codebases with clean architecture and stable performance.</p>
+    <h2>Projects</h2>
 
-<h2>Projects</h2>
+    <div class="project">
+      <h3>Force of Nature: Last Seed</h3>
+      <p><b>Problem:</b> Projectile behaviour became unstable as weapon modifiers increased, which created scaling and performance issues.</p>
+      <p><b>Solution:</b> Built a data-driven weapon system with ScriptableObjects, modifier pipeline, and object pooling to avoid Instantiate/Destroy overhead.</p>
+      <p><b>Result:</b> Stable projectile spawning under higher load and a cleaner architecture for expanding weapons and combat logic.</p>
+    </div>
 
-<div class="project">
-<h3>Force of Nature: Last Seed</h3>
+    <div class="project">
+      <h3>Emoji Battle</h3>
+      <p><b>Problem:</b> A monolithic GameManager made the project harder to maintain and extend.</p>
+      <p><b>Solution:</b> Refactored the project toward MVC-style separation, splitting UI, gameplay logic, and data responsibilities.</p>
+      <p><b>Result:</b> Better maintainability, cleaner feature development, and a released mobile game on Google Play.</p>
+    </div>
 
-<p><b>Problem:</b> Projectile system became unstable with multiple modifiers, causing performance issues.</p>
-
-<p><b>Solution:</b> Implemented data-driven weapon system using ScriptableObjects and modifier pipeline. Added object pooling to eliminate Instantiate/Destroy overhead.</p>
-
-<p><b>Result:</b> Stable performance with high projectile count and scalable architecture.</p>
-
-</div>
-
-<div class="project">
-<h3>Emoji Battle (Google Play)</h3>
-
-<p><b>Problem:</b> Monolithic GameManager made the project difficult to maintain and extend.</p>
-
-<p><b>Solution:</b> Refactored architecture to MVC-style, separating UI, gameplay logic, and data.</p>
-
-<p><b>Result:</b> Improved maintainability and successful mobile release.</p>
-
-</div>
-
-<h2>Links</h2>
-
-<p>
-<a href="https://github.com/TokarevDev" target="_blank">GitHub</a><br>
-<a href="https://play.google.com/" target="_blank">Google Play</a><br>
-<a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-</p>
-
-</div>
-
+    <h2>Links</h2>
+    <div class="links">
+      <a href="https://github.com/TokarevDev" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://play.google.com" target="_blank">Google Play</a>
+    </div>
+  </div>
 </body>
 </html>
