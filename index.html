@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oleksandr Tokarev | Unity Gameplay Developer</title>
+  <title>Oleksandr Tokarev | Unity Developer (C#)</title>
   <style>
     body {
       margin: 0;
@@ -98,6 +98,78 @@
       margin-bottom: 0;
     }
 
+    .project-overview {
+      font-size: 17px;
+      color: #e2e8f0;
+      margin-bottom: 18px;
+    }
+
+    .project-meta {
+      margin-top: 18px;
+    }
+
+    .meta-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 8px;
+    }
+
+    .tech-list {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .project-links a {
+      display: inline-block;
+      padding: 10px 14px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .project-links .disabled-link {
+      color: #94a3b8;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 999px;
+      color: #cbd5e1;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .project ul {
+      margin: 0 0 18px;
+      padding-left: 20px;
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -166,58 +238,27 @@
         font-size: 16px;
       }
     }
-    .project-overview {
-  font-size: 17px;
-  color: #e2e8f0;
-  margin-bottom: 18px;
-}
-
-.project-meta {
-  margin-top: 18px;
-}
-
-.meta-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #f8fafc;
-  margin-bottom: 8px;
-}
-
-.tech-list {
-  color: #cbd5e1;
-  line-height: 1.8;
-  font-size: 16px;
-  margin-bottom: 18px;
-}
-
-.project-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.project-links a {
-  display: inline-block;
-  padding: 10px 14px;
-  background: #0f172a;
-  border: 1px solid #334155;
-  border-radius: 10px;
-  font-weight: 600;
-}
   </style>
 </head>
 <body>
   <div class="container">
 
     <h1>Oleksandr Tokarev</h1>
-    <div class="hero-role">Unity Gameplay Developer (C#)</div>
+    <div class="hero-role">Unity Developer (C#)</div>
 
     <p class="hero-text">
-      Unity Gameplay Developer focused on scalable gameplay systems, clean architecture,
-      AI behavior, and mobile performance optimization. Experienced in building modular systems,
-      improving existing codebases without regressions, and maintaining stable performance
-      under real gameplay conditions.
+      I build playable Unity features from prototype to release for Android, PC, and WebGL.
+    </p>
+
+    <p class="hero-text">
+      I work across the Unity production flow: gameplay logic, UI flow, scene setup, prefabs,
+      ScriptableObject configs, save systems, ads integration, mobile builds, debugging,
+      and performance optimization.
+    </p>
+
+    <p class="hero-text">
+      My focus is turning small and medium Unity features from task description into playable,
+      testable, and release-ready implementation.
     </p>
 
     <div class="quick-links">
@@ -227,105 +268,385 @@
       <a href="https://sd7games.itch.io/" target="_blank">Playable in Browser</a>
     </div>
 
-    <h2>Projects</h2>
+    <h2>About</h2>
 
-<div class="project">
-  <h3>Force of Nature: Last Seed</h3>
+    <div class="focus-box">
+      <p>
+        I am a Unity Developer (C#) based in Finland, with 2+ years of hands-on experience
+        building playable Unity features for Android, PC, and WebGL.
+      </p>
 
-  <p class="project-overview">
-    2D auto-shooter prototype focused on modular combat systems, scalable architecture,
-    and stable performance under high projectile count.
-  </p>
+      <p>
+        I shipped a mobile game on Google Play and built several playable prototypes across
+        mobile arcade, FPS, endless runner, space shooter, multiplayer gameplay, and 2D
+        auto-shooter projects.
+      </p>
 
-  <p><b>Problem:</b> Combat systems become difficult to scale when weapon modifiers, projectile behaviors, and configuration logic are tightly coupled. This also increases performance risk under object-heavy gameplay.</p>
+      <p>
+        My work covers both code and Unity implementation: gameplay logic, UI flow, scene setup,
+        prefab setup, ScriptableObject configs, save/load systems, ads integration, mobile builds,
+        debugging, and performance improvements.
+      </p>
 
-  <p><b>Solution:</b> Designed a data-driven weapon system using ScriptableObjects, modifier pipeline, and object pooling. Structured combat logic to support extension without rewriting core systems.</p>
-
-  <p><b>Result:</b> Cleaner expansion path for new weapons and modifiers, reduced runtime overhead, and more stable behavior under higher projectile load.</p>
-
-  <div class="project-meta">
-    <div class="meta-title">Tech Used</div>
-    <div class="tech-list">
-      Unity 6, C#, ScriptableObjects, Object Pooling, MVC/SRP, Physics2D, Input System
+      <p>
+        I focus on practical Unity development: building features that are easy to test, balance,
+        extend, and ship.
+      </p>
     </div>
-  </div>
 
-  <div class="project-links">
-    <a href="https://github.com/TokarevDev" target="_blank">View GitHub</a>
-    <a href="#" target="_blank">Watch Demo</a>
-  </div>
-</div>
+    <h2>Selected Projects</h2>
 
-<div class="project">
-  <h3>Emoji Battle (Google Play)</h3>
+    <div class="project">
+      <h3>Emoji Battle</h3>
 
-  <p class="project-overview">
-    Released mobile game built around a full gameplay loop, AI opponent,
-    UI-driven architecture, and maintainable turn-based state flow.
-  </p>
+      <p class="project-overview">
+        Released Google Play mobile game with turn-based combat, AI logic, progression,
+        save system, ads integration, UI flow, and MVC/SRP-style separation.
+      </p>
 
-  <p><b>Problem:</b> As the project grows, a monolithic structure makes gameplay flow, UI logic, and feature expansion harder to maintain.</p>
+      <div class="tag-list">
+        <span class="tag">Released on Google Play</span>
+        <span class="tag">Unity 6</span>
+        <span class="tag">Android</span>
+        <span class="tag">Full gameplay loop</span>
+      </div>
 
-  <p><b>Solution:</b> Refactored the project toward MVC-style separation, structured turn-based gameplay flow, and implemented AI behavior with predictable decision logic.</p>
+      <p>
+        <b>Project:</b> Emoji Battle is a released mobile game built from prototype to Google Play
+        release. The project includes a full gameplay loop, turn-based combat, AI opponent logic,
+        progression, save/load system, ads integration, settings, UI flow, and mobile release
+        preparation.
+      </p>
 
-  <p><b>Result:</b> Better maintainability, cleaner feature development, and a completed mobile release published on Google Play.</p>
+      <p><b>My work included:</b></p>
+      <ul>
+        <li>Full gameplay loop implementation</li>
+        <li>Turn-based combat logic</li>
+        <li>AI opponent behavior</li>
+        <li>Progression and reward systems</li>
+        <li>Save/load system</li>
+        <li>Unity Ads integration</li>
+        <li>UI flow and popup handling</li>
+        <li>Android build setup</li>
+        <li>Google Play release preparation</li>
+        <li>Refactoring toward MVC/SRP-style separation</li>
+      </ul>
 
-  <div class="project-meta">
-    <div class="meta-title">Tech Used</div>
-    <div class="tech-list">
-      Unity 6, C#, MVC, UI, TextMeshPro, AI Behavior, Strategy Pattern, JSON, PlayerPrefs
+      <p><b>Result:</b> Released a complete mobile game on Google Play and gained practical experience with the full Unity production flow from prototype to release.</p>
+
+      <div class="project-meta">
+        <div class="meta-title">Tech Used</div>
+        <div class="tech-list">
+          Unity 6, C#, MVC/SRP, Strategy Pattern, ScriptableObjects, JSON, PlayerPrefs,
+          Unity Ads, Android Build Pipeline
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank">View on Google Play</a>
+        <a href="https://github.com/TokarevDev" target="_blank">View GitHub</a>
+      </div>
     </div>
-  </div>
 
-  <div class="project-links">
-    <a href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank">View on Google Play</a>
-    <a href="#" target="_blank">Watch Demo</a>
-  </div>
-</div>
+    <div class="project">
+      <h3>Force of Nature: Last Seed</h3>
+
+      <p class="project-overview">
+        2D mobile auto-shooter with modular weapons, reward choices, projectile pooling,
+        segmented enemy logic, UI flow, and Android build setup.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Unity 6</span>
+        <span class="tag">2D Mobile</span>
+        <span class="tag">Auto-shooter</span>
+        <span class="tag">In Development</span>
+      </div>
+
+      <p>
+        <b>Project:</b> Force of Nature: Last Seed is a 2D mobile auto-shooter focused on
+        modular weapons, reward choices, projectile pooling, segmented enemy logic, UI flow,
+        and mobile build preparation.
+      </p>
+
+      <p>
+        The project is built around a data-driven combat structure where weapons, upgrades,
+        rewards, and enemy balancing can be adjusted through ScriptableObject configurations
+        instead of hardcoded logic.
+      </p>
+
+      <p><b>My work includes:</b></p>
+      <ul>
+        <li>Modular weapon and projectile systems</li>
+        <li>Runtime weapon modifiers and upgrade choices</li>
+        <li>Projectile pooling and pool registry structure</li>
+        <li>Segmented enemy logic for worm-style enemies</li>
+        <li>Reward selection flow with upgrade categories</li>
+        <li>UI flow for gameplay and reward popups</li>
+        <li>Mobile-oriented performance improvements</li>
+        <li>Android build preparation and closed testing flow</li>
+      </ul>
+
+      <p><b>Result:</b> The project demonstrates my ability to build a scalable Unity gameplay system from prototype toward mobile release, while keeping systems adjustable, testable, and easier to expand.</p>
+
+      <div class="project-meta">
+        <div class="meta-title">Tech Used</div>
+        <div class="tech-list">
+          Unity 6, C#, ScriptableObjects, Data-driven Design, Object Pooling, Pool Registry,
+          Event-driven Systems, Physics2D, Input System, Mobile Optimization
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/TokarevDev" target="_blank">View GitHub</a>
+        <a href="https://sd7games.itch.io/" target="_blank">Playable Builds</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Sharp Shooter</h3>
+
+      <p class="project-overview">
+        FPS prototype focused on weapon handling, enemy AI, pickups, health, shield,
+        UI feedback, and playable WebGL delivery.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Unity 6</span>
+        <span class="tag">FPS</span>
+        <span class="tag">WebGL</span>
+        <span class="tag">AI Behavior</span>
+      </div>
+
+      <p><b>My work included:</b></p>
+      <ul>
+        <li>Player movement and camera control</li>
+        <li>Weapon shooting logic</li>
+        <li>ScriptableObject weapon configurations</li>
+        <li>ADS and recoil-style behavior</li>
+        <li>Enemy AI using NavMesh</li>
+        <li>Health and shield systems</li>
+        <li>Pickups and simple progression feedback</li>
+        <li>UI and gameplay state feedback</li>
+        <li>WebGL build preparation</li>
+      </ul>
+
+      <p><b>Result:</b> A browser-playable FPS prototype demonstrating my ability to assemble a playable Unity feature set across gameplay, AI, UI, and build delivery.</p>
+
+      <div class="project-meta">
+        <div class="meta-title">Tech Used</div>
+        <div class="tech-list">
+          Unity 6, C#, New Input System, ScriptableObject Weapon Configs, NavMesh,
+          Raycast Shooting, UI Feedback, WebGL Build Workflow
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://sd7games.itch.io/" target="_blank">Playable in Browser</a>
+        <a href="https://github.com/TokarevDev" target="_blank">View GitHub</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Multiplayer Tank Prototype</h3>
+
+      <p class="project-overview">
+        2D multiplayer prototype focused on host/client flow, lobby connection,
+        networked movement, shooting, health, coins, respawn, and leaderboard logic.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Unity Multiplayer</span>
+        <span class="tag">Netcode</span>
+        <span class="tag">UGS Relay</span>
+        <span class="tag">UGS Lobby</span>
+      </div>
+
+      <p><b>My work included:</b></p>
+      <ul>
+        <li>Multiplayer session flow</li>
+        <li>Host/client connection setup</li>
+        <li>Networked player movement</li>
+        <li>Networked shooting</li>
+        <li>Health and respawn logic</li>
+        <li>Coin collection</li>
+        <li>Leaderboard and minimap-style gameplay feedback</li>
+      </ul>
+
+      <p><b>Result:</b> A playable multiplayer prototype demonstrating hands-on experience with Unity multiplayer fundamentals and UGS-based connection flow.</p>
+
+      <div class="project-meta">
+        <div class="meta-title">Tech Used</div>
+        <div class="tech-list">
+          Unity, C#, Netcode for GameObjects, UGS Relay, UGS Lobby, Unity Authentication,
+          NetworkVariable, ServerRpc, ClientRpc
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/TokarevDev" target="_blank">View GitHub</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Royal Run</h3>
+
+      <p class="project-overview">
+        3D endless runner prototype focused on player movement, obstacle flow, pickups,
+        camera setup, prefab-based scene work, and gameplay feedback.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Unity</span>
+        <span class="tag">3D Runner</span>
+        <span class="tag">WebGL</span>
+        <span class="tag">Prefab Workflow</span>
+      </div>
+
+      <p><b>My work included:</b></p>
+      <ul>
+        <li>Runner-style player movement</li>
+        <li>Obstacle and pickup logic</li>
+        <li>Basic procedural-style chunk flow</li>
+        <li>Camera setup</li>
+        <li>UI feedback</li>
+        <li>Particle and audio feedback</li>
+        <li>WebGL build preparation</li>
+      </ul>
+
+      <p><b>Result:</b> A playable runner prototype showing my ability to create a complete gameplay loop with scene setup, prefabs, feedback, and browser delivery.</p>
+
+      <div class="project-meta">
+        <div class="meta-title">Tech Used</div>
+        <div class="tech-list">
+          Unity, C#, Rigidbody Movement, Gameplay Triggers, Scene Setup, Prefab-based Level Pieces,
+          UI Feedback, WebGL Build Workflow
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://sd7games.itch.io/" target="_blank">Playable in Browser</a>
+        <a href="https://github.com/TokarevDev" target="_blank">View GitHub</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Galaxy Strike</h3>
+
+      <p class="project-overview">
+        3D space shooter prototype focused on cinematic gameplay presentation,
+        scripted sequences, camera flow, VFX, UI setup, and PC build preparation.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Unity</span>
+        <span class="tag">3D Space Shooter</span>
+        <span class="tag">Timeline</span>
+        <span class="tag">PC Build</span>
+      </div>
+
+      <p><b>My work included:</b></p>
+      <ul>
+        <li>Player shooting logic</li>
+        <li>Enemy and collision interactions</li>
+        <li>Timeline-based sequences</li>
+        <li>Camera transitions</li>
+        <li>Particle effects</li>
+        <li>UI setup</li>
+        <li>PC build preparation</li>
+      </ul>
+
+      <p><b>Result:</b> A playable 3D prototype demonstrating my ability to combine gameplay logic, scene work, camera presentation, VFX, and build delivery.</p>
+
+      <div class="project-meta">
+        <div class="meta-title">Tech Used</div>
+        <div class="tech-list">
+          Unity, C#, Timeline, Particle System, Scene Setup, Camera Flow, UI Feedback,
+          PC Build Workflow
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/TokarevDev" target="_blank">View GitHub</a>
+      </div>
+    </div>
 
     <h2>Skills</h2>
 
     <div class="skills-grid">
       <div class="skill-card">
-        <h3>Core</h3>
+        <h3>Core Unity Development</h3>
         <div class="skill-list">
-          Unity<br>
+          Unity 6<br>
           C#<br>
-          Gameplay Systems<br>
-          System Design
+          Unity Editor<br>
+          Gameplay Logic<br>
+          UI Flow<br>
+          Scene Setup<br>
+          Prefab Setup<br>
+          Mobile Builds
         </div>
       </div>
 
       <div class="skill-card">
-        <h3>Architecture</h3>
+        <h3>Gameplay Systems</h3>
         <div class="skill-list">
-          OOP<br>
-          SOLID<br>
-          MVC<br>
-          SRP<br>
-          Event-driven Architecture
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Gameplay & AI</h3>
-        <div class="skill-list">
+          Combat Systems<br>
+          Weapon Systems<br>
+          Progression Systems<br>
+          Reward Choices<br>
           AI Behavior<br>
-          Strategy Pattern<br>
-          Turn-based Logic<br>
-          Combat Systems
+          2D / 3D Prototyping
         </div>
       </div>
 
       <div class="skill-card">
-        <h3>Performance & Unity</h3>
+        <h3>Architecture & Code Structure</h3>
+        <div class="skill-list">
+          SOLID<br>
+          SRP<br>
+          MVC-style Separation<br>
+          Event-driven Systems<br>
+          ScriptableObjects<br>
+          Data-driven Design<br>
+          Runtime / Data Separation
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Performance</h3>
         <div class="skill-list">
           Object Pooling<br>
-          Performance Optimization<br>
-          ScriptableObjects<br>
-          UI / TextMeshPro<br>
-          Physics2D<br>
-          Input System
+          Pool Registry<br>
+          Unity Profiler<br>
+          GC Allocation Awareness<br>
+          FPS Optimization<br>
+          Mobile Optimization
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Platforms & Tools</h3>
+        <div class="skill-list">
+          Android<br>
+          PC<br>
+          WebGL<br>
+          Git<br>
+          Google Play<br>
+          Unity Ads<br>
+          Netcode for GameObjects<br>
+          UGS Relay / Lobby
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Workflow</h3>
+        <div class="skill-list">
+          Feature implementation from task description<br>
+          Debugging<br>
+          Refactoring<br>
+          Build preparation<br>
+          AI-assisted development with manual code validation
         </div>
       </div>
     </div>
@@ -334,11 +655,12 @@
 
     <div class="focus-box">
       <ul>
-        <li>Scalable gameplay systems structured for extension instead of quick patching</li>
-        <li>Clean architecture focused on maintainability and separation of responsibilities</li>
-        <li>Ability to improve existing systems without introducing regressions</li>
-        <li>Performance awareness for mobile projects, especially around allocations and object-heavy gameplay</li>
-        <li>Practical focus on gameplay flow, AI behavior, and stable feature implementation</li>
+        <li>I can take small and medium Unity features from task description to playable implementation.</li>
+        <li>I can work across code, UI, prefabs, scenes, configs, debugging, and build preparation.</li>
+        <li>I build systems that are easier to extend, balance, and maintain.</li>
+        <li>I understand mobile performance risks around allocations, object-heavy gameplay, and unstable runtime flow.</li>
+        <li>I can improve existing Unity systems without turning every task into a full rewrite.</li>
+        <li>I use AI-assisted workflows for planning and debugging, but manually validate Unity-specific behavior and code quality.</li>
       </ul>
     </div>
 
