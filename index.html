@@ -384,6 +384,12 @@
       box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36);
     }
 
+    .project-icon.contain {
+      padding: 28px;
+      object-fit: contain;
+      background: rgba(12, 15, 14, 0.42);
+    }
+
     .project-gallery {
       grid-column: 1 / -1;
       display: grid;
@@ -872,16 +878,8 @@
         </article>
 
         <article class="project">
-          <figure class="project-media" aria-label="Emoji Battle media placeholder">
-            <div class="media-slot">
-              <span class="media-label">Released Android game</span>
-              <strong class="media-title">Emoji Battle</strong>
-              <div class="media-lines" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
+          <figure class="project-media visual-media" aria-label="Emoji Battle game icon">
+            <img class="project-icon contain" src="assets/emoji-battle/game-icon.png" alt="Emoji Battle purple emoji game icon">
           </figure>
 
           <div>
@@ -924,8 +922,35 @@
             <p class="tech"><b>Tech:</b> Unity 6, C#, UGUI, Strategy Pattern, event-driven gameplay flow, mobile ads, Android build pipeline, Google Play release workflow.</p>
             <div class="button-row">
               <a class="button primary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener">Google Play</a>
+              <a class="button secondary" href="https://youtube.com/shorts/k98hLS689PY?feature=share" target="_blank" rel="noopener">YouTube Gameplay</a>
               <a class="button" href="https://github.com/TokarevDev/Emoji_Battle" target="_blank" rel="noopener">Source Code</a>
-              <span class="button disabled">Gameplay GIF pending</span>
+            </div>
+          </div>
+
+          <div class="project-gallery" data-gallery aria-label="Emoji Battle screenshot gallery">
+            <div class="gallery-frame">
+              <img class="gallery-image active" data-gallery-slide src="assets/emoji-battle/screenshot-match-board.png" alt="Emoji Battle match board with player versus AI and neon grid">
+              <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-unlock-popup.png" alt="Emoji Battle new emoji unlocked popup after winning a match">
+              <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-green.png" alt="Emoji Battle character selection screen with green emoji options">
+              <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-red.png" alt="Emoji Battle character selection screen with difficulty selector and red emoji options">
+            </div>
+
+            <div class="gallery-panel">
+              <h4>Emoji Battle gameplay captures</h4>
+              <p class="gallery-caption">
+                Screenshots show the shipped Google Play flow: sign selection, difficulty setup, player-versus-AI board state, match result feedback, and unlock progression.
+              </p>
+              <div class="gallery-controls" aria-label="Screenshot controls">
+                <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous screenshot">&lsaquo;</button>
+                <span class="gallery-counter" data-gallery-counter>1 / 4</span>
+                <button class="gallery-button" type="button" data-gallery-next aria-label="Next screenshot">&rsaquo;</button>
+              </div>
+              <div class="gallery-dots" aria-label="Screenshot selection">
+                <button class="gallery-dot active" type="button" data-gallery-dot aria-label="Show screenshot 1"></button>
+                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 2"></button>
+                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 3"></button>
+                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 4"></button>
+              </div>
             </div>
           </div>
         </article>
