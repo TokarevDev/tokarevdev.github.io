@@ -369,6 +369,118 @@
       width: 58%;
     }
 
+    .visual-media {
+      display: grid;
+      place-items: center;
+      min-height: 320px;
+      padding: 18px;
+    }
+
+    .project-icon {
+      width: min(100%, 390px);
+      aspect-ratio: 1;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36);
+    }
+
+    .project-gallery {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(220px, 330px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(12, 15, 14, 0.66);
+    }
+
+    .gallery-frame {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+      border: 1px solid #2d3431;
+      border-radius: 8px;
+      background: #050706;
+    }
+
+    .gallery-image {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .gallery-image.active {
+      display: block;
+    }
+
+    .gallery-panel h4 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.24;
+    }
+
+    .gallery-caption {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.58;
+    }
+
+    .gallery-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .gallery-button {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface-strong);
+      color: var(--text);
+      font-size: 22px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .gallery-button:hover {
+      border-color: rgba(47, 189, 141, 0.62);
+    }
+
+    .gallery-counter {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .gallery-dots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .gallery-dot {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: #59615d;
+      cursor: pointer;
+    }
+
+    .gallery-dot.active {
+      background: var(--green);
+    }
+
     .project h3 {
       margin-bottom: 8px;
       font-size: 25px;
@@ -567,6 +679,15 @@
         padding: 14px;
       }
 
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-frame {
+        max-width: 310px;
+        margin: 0 auto;
+      }
+
       .project-media,
       .media-slot {
         min-height: 240px;
@@ -673,16 +794,8 @@
         </div>
 
         <article class="project">
-          <figure class="project-media" aria-label="Last Seed Survival media placeholder">
-            <div class="media-slot">
-              <span class="media-label">Gameplay media slot</span>
-              <strong class="media-title">Last Seed Survival</strong>
-              <div class="media-lines" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
+          <figure class="project-media visual-media" aria-label="Last Seed Survival game icon">
+            <img class="project-icon" src="assets/last-seed/game-icon-warrior.png" alt="Last Seed Survival warrior game icon">
           </figure>
 
           <div>
@@ -725,8 +838,35 @@
             <p class="tech"><b>Tech:</b> Unity 6, C#, ScriptableObjects, Object Pooling, Physics2D, Input System, DOTween, URP, Unity Editor tooling, performance-conscious runtime optimization.</p>
             <div class="button-row">
               <a class="button primary" href="https://github.com/TokarevDev/Force_of_Nature_Last_Seed" target="_blank" rel="noopener">Source Code</a>
+              <a class="button secondary" href="https://youtube.com/shorts/HiQBlYjienI?feature=share" target="_blank" rel="noopener">YouTube Gameplay</a>
               <a class="button" href="https://sd7games.itch.io/" target="_blank" rel="noopener">Playable Builds</a>
-              <span class="button disabled">Screenshot/GIF pending</span>
+            </div>
+          </div>
+
+          <div class="project-gallery" data-gallery aria-label="Last Seed Survival screenshot gallery">
+            <div class="gallery-frame">
+              <img class="gallery-image active" data-gallery-slide src="assets/last-seed/screenshot-upgrade-common.png" alt="Last Seed Survival reward upgrade screen with Common, Rare, and Legendary choices">
+              <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-early.png" alt="Last Seed Survival gameplay screen with segmented worm enemy and early progress">
+              <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-rare.png" alt="Last Seed Survival reward screen showing Acacia Thorn unlock">
+              <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-worm.png" alt="Last Seed Survival gameplay screen with segmented worm enemy at later progress">
+            </div>
+
+            <div class="gallery-panel">
+              <h4>Last Seed Survival gameplay captures</h4>
+              <p class="gallery-caption">
+                Screenshots show the current reward-choice flow, rarity presentation, segmented worm enemy, projectile combat, progress tracking, and vertical gameplay UI.
+              </p>
+              <div class="gallery-controls" aria-label="Screenshot controls">
+                <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous screenshot">&lsaquo;</button>
+                <span class="gallery-counter" data-gallery-counter>1 / 4</span>
+                <button class="gallery-button" type="button" data-gallery-next aria-label="Next screenshot">&rsaquo;</button>
+              </div>
+              <div class="gallery-dots" aria-label="Screenshot selection">
+                <button class="gallery-dot active" type="button" data-gallery-dot aria-label="Show screenshot 1"></button>
+                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 2"></button>
+                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 3"></button>
+                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 4"></button>
+              </div>
             </div>
           </div>
         </article>
@@ -951,5 +1091,34 @@
       Oleksandr Tokarev - Unity C# Developer. Portfolio focused on gameplay systems, shipped Unity features, and practical production readiness.
     </footer>
   </div>
+  <script>
+    document.querySelectorAll("[data-gallery]").forEach((gallery) => {
+      const slides = Array.from(gallery.querySelectorAll("[data-gallery-slide]"));
+      const dots = Array.from(gallery.querySelectorAll("[data-gallery-dot]"));
+      const counter = gallery.querySelector("[data-gallery-counter]");
+      const previous = gallery.querySelector("[data-gallery-prev]");
+      const next = gallery.querySelector("[data-gallery-next]");
+      let current = 0;
+
+      const showSlide = (index) => {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("active", slideIndex === current);
+        });
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("active", dotIndex === current);
+          dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
+        });
+        counter.textContent = `${current + 1} / ${slides.length}`;
+      };
+
+      previous.addEventListener("click", () => showSlide(current - 1));
+      next.addEventListener("click", () => showSlide(current + 1));
+      dots.forEach((dot, dotIndex) => {
+        dot.addEventListener("click", () => showSlide(dotIndex));
+      });
+      showSlide(0);
+    });
+  </script>
 </body>
 </html>
