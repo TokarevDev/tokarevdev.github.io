@@ -64,21 +64,92 @@
     }
 
     .topbar {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      grid-template-areas: "brand language nav";
       align-items: center;
-      justify-content: space-between;
-      gap: 22px;
+      gap: 18px;
       padding: 10px 0 26px;
     }
 
     .brand {
+      grid-area: brand;
       font-size: 16px;
       font-weight: 800;
       color: var(--text);
       white-space: nowrap;
     }
 
+    .language-switch {
+      position: relative;
+      grid-area: language;
+      justify-self: end;
+      z-index: 4;
+    }
+
+    .language-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface-strong);
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .language-current {
+      color: var(--green);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    .language-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      display: none;
+      min-width: 150px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .language-switch.open .language-menu {
+      display: grid;
+      gap: 4px;
+    }
+
+    .language-option {
+      width: 100%;
+      padding: 9px 10px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .language-option:hover,
+    .language-option.active {
+      background: var(--green-soft);
+      color: var(--text);
+    }
+
     .nav {
+      grid-area: nav;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
@@ -655,16 +726,30 @@
         padding: 16px 16px 48px;
       }
 
-      .topbar,
       .section-head,
       .contact-band {
         align-items: start;
         flex-direction: column;
       }
 
+      .topbar {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+          "brand language"
+          "nav nav";
+        gap: 14px 12px;
+        align-items: center;
+      }
+
       .nav {
         justify-content: flex-start;
         gap: 12px;
+        width: 100%;
+      }
+
+      .language-toggle {
+        min-height: 36px;
+        padding: 8px 10px;
       }
 
       section,
@@ -762,12 +847,23 @@
   <div class="page">
     <header class="topbar">
       <a class="brand" href="#top">Oleksandr Tokarev</a>
+      <div class="language-switch" data-language-switch>
+        <button class="language-toggle" type="button" data-language-toggle aria-haspopup="true" aria-expanded="false">
+          <span data-i18n="language.label">Language</span>
+          <span class="language-current" data-language-current>EN</span>
+        </button>
+        <div class="language-menu" data-language-menu role="menu" aria-label="Language options">
+          <button class="language-option active" type="button" data-lang-option="en" role="menuitem">English</button>
+          <button class="language-option" type="button" data-lang-option="ru" role="menuitem">Русский</button>
+          <button class="language-option" type="button" data-lang-option="uk" role="menuitem">Українська</button>
+        </div>
+      </div>
       <nav class="nav" aria-label="Main navigation">
-        <a href="#value">Value</a>
-        <a href="#projects">Projects</a>
-        <a href="#prototypes">Prototypes</a>
+        <a href="#value" data-i18n="nav.value">Value</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#prototypes" data-i18n="nav.prototypes">Prototypes</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
     </header>
 
@@ -775,79 +871,79 @@
       <section class="hero" aria-labelledby="hero-title">
         <div>
           <p class="eyebrow">Unity C# Developer | Gameplay, UI, Tools, Builds</p>
-          <h1 id="hero-title">Unity C# developer for gameplay, UI, tools, and cross-platform builds.</h1>
-          <p class="lead">
+          <h1 id="hero-title" data-i18n="hero.title">Unity C# developer for gameplay, UI, tools, and cross-platform builds.</h1>
+          <p class="lead" data-i18n="hero.lead">
             Unity developer based in Finland with 2+ years of hands-on C# experience. I have shipped an Android game on Google Play and built playable Unity projects for Android, PC, and WebGL while covering gameplay code, UI flow, data-driven systems, editor tooling, debugging, profiling, and build preparation.
           </p>
           <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="#projects">View Projects</a>
-            <a class="button" href="assets/Oleksandr_Tokarev_Unity_Developer.pdf" target="_blank" rel="noopener">Resume</a>
+            <a class="button primary" href="#projects" data-i18n="button.viewProjects">View Projects</a>
+            <a class="button" href="assets/Oleksandr_Tokarev_Unity_Developer.pdf" target="_blank" rel="noopener" data-i18n="button.resume">Resume</a>
             <a class="button" href="https://github.com/TokarevDev" target="_blank" rel="noopener">GitHub</a>
             <a class="button" href="https://www.linkedin.com/in/oleksandrtokarev/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener">Released Game</a>
+            <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener" data-i18n="button.releasedGame">Released Game</a>
           </div>
         </div>
 
         <aside class="proof-rail" aria-label="Profile highlights">
-          <p class="proof-kicker">Hiring signals</p>
+          <p class="proof-kicker" data-i18n="proof.title">Hiring signals</p>
           <div class="metric-grid">
             <div class="metric">
               <b>1</b>
-              <span>Google Play title shipped from prototype to public release</span>
+              <span data-i18n="proof.metric.release">Google Play title shipped from prototype to public release</span>
             </div>
             <div class="metric">
               <b>3</b>
-              <span>platform targets delivered: Android, PC, and WebGL</span>
+              <span data-i18n="proof.metric.platforms">platform targets delivered: Android, PC, and WebGL</span>
             </div>
             <div class="metric">
               <b>2+</b>
-              <span>years building Unity C# projects and playable prototypes</span>
+              <span data-i18n="proof.metric.years">years building Unity C# projects and playable prototypes</span>
             </div>
             <div class="metric">
               <b>5+</b>
-              <span>Unity areas covered: gameplay, UI, tools, performance, builds</span>
+              <span data-i18n="proof.metric.areas">Unity areas covered: gameplay, UI, tools, performance, builds</span>
             </div>
           </div>
           <ul class="proof-list">
-            <li><b>Feature coverage:</b> gameplay logic, UI flow, save/load, ads, progression, scene setup, editor tools, and platform build preparation.</li>
-            <li><b>Systems thinking:</b> modular weapons, reward rolls, projectile pools, enemy sections, event-driven UI, and ScriptableObject-driven balancing.</li>
-            <li><b>Production mindset:</b> clean C# boundaries, cached references, runtime constraints, debugging discipline, and practical refactoring without unnecessary rewrites.</li>
+            <li data-i18n-html="proof.feature"><b>Feature coverage:</b> gameplay logic, UI flow, save/load, ads, progression, scene setup, editor tools, and platform build preparation.</li>
+            <li data-i18n-html="proof.systems"><b>Systems thinking:</b> modular weapons, reward rolls, projectile pools, enemy sections, event-driven UI, and ScriptableObject-driven balancing.</li>
+            <li data-i18n-html="proof.production"><b>Production mindset:</b> clean C# boundaries, cached references, runtime constraints, debugging discipline, and practical refactoring without unnecessary rewrites.</li>
           </ul>
         </aside>
       </section>
 
       <section id="value" aria-labelledby="value-title">
         <div class="section-head">
-          <h2 id="value-title">What I Can Cover</h2>
-          <p class="section-note">
+          <h2 id="value-title" data-i18n="value.title">What I Can Cover</h2>
+          <p class="section-note" data-i18n="value.note">
             This portfolio shows practical Unity C# work across gameplay, UI, systems, tooling, debugging, builds, and shipped projects, with source code, gameplay media, and playable builds available for review.
           </p>
         </div>
 
         <div class="value-grid">
           <article class="value-item">
-            <h3>Gameplay Features</h3>
-            <p>Combat, weapons, projectiles, enemies, rewards, player flow, progression, and complete playable loops.</p>
+            <h3 data-i18n="value.gameplay.title">Gameplay Features</h3>
+            <p data-i18n="value.gameplay.text">Combat, weapons, projectiles, enemies, rewards, player flow, progression, and complete playable loops.</p>
           </article>
           <article class="value-item">
-            <h3>UI & Player Flow</h3>
-            <p>UGUI screens, popups, menus, feedback, input, navigation flow, state changes, and player-facing feature integration.</p>
+            <h3 data-i18n="value.ui.title">UI & Player Flow</h3>
+            <p data-i18n="value.ui.text">UGUI screens, popups, menus, feedback, input, navigation flow, state changes, and player-facing feature integration.</p>
           </article>
           <article class="value-item">
-            <h3>Systems, Data & Tools</h3>
-            <p>ScriptableObject configs, service-style feature code, editor tooling, balancing utilities, save/load flow, and readable C# boundaries.</p>
+            <h3 data-i18n="value.systems.title">Systems, Data & Tools</h3>
+            <p data-i18n="value.systems.text">ScriptableObject configs, service-style feature code, editor tooling, balancing utilities, save/load flow, and readable C# boundaries.</p>
           </article>
           <article class="value-item">
-            <h3>Runtime & Delivery</h3>
-            <p>Object pooling, GC awareness, cached references, profiling mindset, build setup, release preparation, and cross-platform constraints.</p>
+            <h3 data-i18n="value.runtime.title">Runtime & Delivery</h3>
+            <p data-i18n="value.runtime.text">Object pooling, GC awareness, cached references, profiling mindset, build setup, release preparation, and cross-platform constraints.</p>
           </article>
         </div>
       </section>
 
       <section id="projects" aria-labelledby="projects-title">
         <div class="section-head">
-          <h2 id="projects-title">Featured Projects</h2>
-          <p class="section-note">
+          <h2 id="projects-title" data-i18n="projects.title">Featured Projects</h2>
+          <p class="section-note" data-i18n="projects.note">
             Selected projects show broad Unity C# coverage: gameplay systems, UI, data-driven setup, editor tooling, runtime optimization, multiplayer exposure, and platform delivery.
           </p>
         </div>
@@ -859,7 +955,7 @@
 
           <div>
             <h3>Last Seed Survival</h3>
-            <p class="project-summary">
+            <p class="project-summary" data-i18n="lastSeed.summary">
               2D Unity 6 auto-shooter/survival project with modular weapons, reward choices, pooled projectiles, segmented worm enemy logic, custom balancing tooling, and platform build preparation.
             </p>
             <ul class="tag-list">
@@ -872,24 +968,24 @@
 
             <div class="project-columns">
               <div>
-                <p class="mini-title">What I built</p>
+                <p class="mini-title" data-i18n="project.whatBuilt">What I built</p>
                 <ul class="compact">
-                  <li>Projectile weapon and Acacia Thorn weapon systems</li>
-                  <li>Runtime modifiers for damage, fire rate, criticals, penetration, salvo, speed, and parallel shots</li>
-                  <li>Reward roll/apply services with rarity slots and DPS-aware reward bias</li>
-                  <li>Segmented worm enemy with combat sections, rollback, HP scaling, and visual presenters</li>
-                  <li>Projectile and worm segment pooling to reduce runtime object churn</li>
-                  <li>Unity Editor balance lab for deterministic reward/HP simulations</li>
+                  <li data-i18n="lastSeed.built.weapon">Projectile weapon and Acacia Thorn weapon systems</li>
+                  <li data-i18n="lastSeed.built.modifiers">Runtime modifiers for damage, fire rate, criticals, penetration, salvo, speed, and parallel shots</li>
+                  <li data-i18n="lastSeed.built.rewards">Reward roll/apply services with rarity slots and DPS-aware reward bias</li>
+                  <li data-i18n="lastSeed.built.worm">Segmented worm enemy with combat sections, rollback, HP scaling, and visual presenters</li>
+                  <li data-i18n="lastSeed.built.pooling">Projectile and worm segment pooling to reduce runtime object churn</li>
+                  <li data-i18n="lastSeed.built.balance">Unity Editor balance lab for deterministic reward/HP simulations</li>
                 </ul>
               </div>
               <div>
-                <p class="mini-title">Engineering value</p>
+                <p class="mini-title" data-i18n="project.engineeringValue">Engineering value</p>
                 <ul class="compact">
-                  <li>Feature code split across gameplay, presentation, systems, bootstrap, and editor tooling</li>
-                  <li>ScriptableObject configs for weapons, rewards, rarities, HP scaling, and pressure tuning</li>
-                  <li>Input wrapper and scene bootstrap instead of hidden runtime searches</li>
-                  <li>Target frame-rate bootstrap based on refresh rate and device tier</li>
-                  <li>Clear separation between reward data, runtime context, UI binding, and gameplay effects</li>
+                  <li data-i18n="lastSeed.value.split">Feature code split across gameplay, presentation, systems, bootstrap, and editor tooling</li>
+                  <li data-i18n="lastSeed.value.configs">ScriptableObject configs for weapons, rewards, rarities, HP scaling, and pressure tuning</li>
+                  <li data-i18n="lastSeed.value.bootstrap">Input wrapper and scene bootstrap instead of hidden runtime searches</li>
+                  <li data-i18n="lastSeed.value.framerate">Target frame-rate bootstrap based on refresh rate and device tier</li>
+                  <li data-i18n="lastSeed.value.separation">Clear separation between reward data, runtime context, UI binding, and gameplay effects</li>
                 </ul>
               </div>
             </div>
@@ -910,8 +1006,8 @@
             </div>
 
             <div class="gallery-panel">
-              <h4>Last Seed Survival gameplay captures</h4>
-              <p class="gallery-caption">
+              <h4 data-i18n="lastSeed.gallery.title">Last Seed Survival gameplay captures</h4>
+              <p class="gallery-caption" data-i18n="lastSeed.gallery.caption">
                 Screenshots show the current reward-choice flow, rarity presentation, segmented worm enemy, projectile combat, progress tracking, and vertical gameplay UI.
               </p>
               <div class="gallery-controls" aria-label="Screenshot controls">
@@ -936,7 +1032,7 @@
 
           <div>
             <h3>Emoji Battle</h3>
-            <p class="project-summary">
+            <p class="project-summary" data-i18n="emoji.summary">
               Released Google Play mobile game with turn-based combat, AI strategy selection, progression, persistent player data, popup/UI flow, rewarded/interstitial ads, and Android publishing work.
             </p>
             <ul class="tag-list">
@@ -949,24 +1045,24 @@
 
             <div class="project-columns">
               <div>
-                <p class="mini-title">What I built</p>
+                <p class="mini-title" data-i18n="project.whatBuilt">What I built</p>
                 <ul class="compact">
-                  <li>Turn-based gameplay flow and board state logic</li>
-                  <li>AI strategies for multiple difficulty levels</li>
-                  <li>Progression, rewards, avatar selection, settings, and persistent game data</li>
-                  <li>Popup service, UI screens, result flow, and animated UI feedback</li>
-                  <li>Unity Ads service with rewarded state handling, load timeout, resume handling, and online/offline checks</li>
-                  <li>Google Play release preparation and Android build workflow</li>
+                  <li data-i18n="emoji.built.flow">Turn-based gameplay flow and board state logic</li>
+                  <li data-i18n="emoji.built.ai">AI strategies for multiple difficulty levels</li>
+                  <li data-i18n="emoji.built.progression">Progression, rewards, avatar selection, settings, and persistent game data</li>
+                  <li data-i18n="emoji.built.ui">Popup service, UI screens, result flow, and animated UI feedback</li>
+                  <li data-i18n="emoji.built.ads">Unity Ads service with rewarded state handling, load timeout, resume handling, and online/offline checks</li>
+                  <li data-i18n="emoji.built.release">Google Play release preparation and Android build workflow</li>
                 </ul>
               </div>
               <div>
-                <p class="mini-title">Engineering value</p>
+                <p class="mini-title" data-i18n="project.engineeringValue">Engineering value</p>
                 <ul class="compact">
-                  <li>Domain, Infrastructure, Presentation, and Services layers</li>
-                  <li>Storage abstraction and save payload versioning</li>
-                  <li>Strategy Pattern for reusable AI decision logic</li>
-                  <li>Event-driven gameplay/UI updates for clearer state transitions</li>
-                  <li>Practical refactoring toward SRP/MVC-style separation after prototype stage</li>
+                  <li data-i18n="emoji.value.layers">Domain, Infrastructure, Presentation, and Services layers</li>
+                  <li data-i18n="emoji.value.storage">Storage abstraction and save payload versioning</li>
+                  <li data-i18n="emoji.value.strategy">Strategy Pattern for reusable AI decision logic</li>
+                  <li data-i18n="emoji.value.events">Event-driven gameplay/UI updates for clearer state transitions</li>
+                  <li data-i18n="emoji.value.refactoring">Practical refactoring toward SRP/MVC-style separation after prototype stage</li>
                 </ul>
               </div>
             </div>
@@ -988,8 +1084,8 @@
             </div>
 
             <div class="gallery-panel">
-              <h4>Emoji Battle gameplay captures</h4>
-              <p class="gallery-caption">
+              <h4 data-i18n="emoji.gallery.title">Emoji Battle gameplay captures</h4>
+              <p class="gallery-caption" data-i18n="emoji.gallery.caption">
                 Screenshots show the shipped Google Play flow: sign selection, difficulty setup, player-versus-AI board state, match result feedback, and unlock progression.
               </p>
               <div class="gallery-controls" aria-label="Screenshot controls">
@@ -1010,7 +1106,7 @@
         <article class="project compact">
           <div>
             <h3>Tanks Multiplayer Prototype</h3>
-            <p class="project-summary">
+            <p class="project-summary" data-i18n="tanks.summary">
               Unity multiplayer prototype with host/client flow, anonymous authentication, UGS Relay/Lobby, lobby UI, networked movement, shooting, health, respawn, coins, and leaderboard-style feedback.
             </p>
             <ul class="tag-list">
@@ -1023,28 +1119,28 @@
 
             <div class="project-columns">
               <div>
-                <p class="mini-title">Implemented</p>
+                <p class="mini-title" data-i18n="tanks.implemented">Implemented</p>
                 <ul class="compact">
-                  <li>Client/host managers and connection flow</li>
-                  <li>Relay allocation/join code setup and lobby heartbeat</li>
-                  <li>NetworkVariables for player data, health, names, and coins</li>
-                  <li>ServerRpc/ClientRpc shooting and projectile spawning</li>
-                  <li>Respawn flow, leaderboard UI, lobby list, and menu screens</li>
+                  <li data-i18n="tanks.built.connection">Client/host managers and connection flow</li>
+                  <li data-i18n="tanks.built.relay">Relay allocation/join code setup and lobby heartbeat</li>
+                  <li data-i18n="tanks.built.networkVars">NetworkVariables for player data, health, names, and coins</li>
+                  <li data-i18n="tanks.built.rpc">ServerRpc/ClientRpc shooting and projectile spawning</li>
+                  <li data-i18n="tanks.built.ui">Respawn flow, leaderboard UI, lobby list, and menu screens</li>
                 </ul>
               </div>
               <div>
-                <p class="mini-title">Positioning</p>
+                <p class="mini-title" data-i18n="tanks.positioning">Positioning</p>
                 <ul class="compact">
-                  <li>Useful as proof of multiplayer fundamentals, not positioned as a shipped online product</li>
-                  <li>Shows I can read Unity services docs, connect systems, and reason about authority/ownership</li>
-                  <li>Best next step: add a short video walkthrough once online services are restored or mocked</li>
+                  <li data-i18n="tanks.value.fundamentals">Useful as proof of multiplayer fundamentals, not positioned as a shipped online product</li>
+                  <li data-i18n="tanks.value.services">Shows I can read Unity services docs, connect systems, and reason about authority/ownership</li>
+                  <li data-i18n="tanks.value.next">Best next step: add a short video walkthrough once online services are restored or mocked</li>
                 </ul>
               </div>
             </div>
 
             <div class="button-row">
               <a class="button" href="https://github.com/TokarevDev/Tanks_Multiplayer" target="_blank" rel="noopener">Source Code</a>
-              <a class="button secondary" href="https://github.com/TokarevDev/Tanks_Multiplayer/releases/download/v0.1.0/Build_PC.zip" target="_blank" rel="noopener">Download PC Build</a>
+              <a class="button secondary" href="https://github.com/TokarevDev/Tanks_Multiplayer/releases/download/v0.1.0/Build_PC.zip" target="_blank" rel="noopener" data-i18n="button.downloadPc">Download PC Build</a>
             </div>
           </div>
         </article>
@@ -1052,8 +1148,8 @@
 
       <section id="prototypes" aria-labelledby="prototypes-title">
         <div class="section-head">
-          <h2 id="prototypes-title">Playable Prototypes</h2>
-          <p class="section-note">
+          <h2 id="prototypes-title" data-i18n="prototypes.title">Playable Prototypes</h2>
+          <p class="section-note" data-i18n="prototypes.note">
             Sharp Shooter and Royal Run include WebGL builds you can play directly in a desktop browser via itch.io. The group shows range, Unity workflow, and build delivery without competing with the main projects.
           </p>
         </div>
@@ -1061,28 +1157,28 @@
         <div class="prototype-grid">
           <article class="prototype">
             <h3>Sharp Shooter</h3>
-            <p>FPS prototype with first-person controls, raycast shooting, weapon configs, pickups, health/shield flow, NavMesh enemies, UI feedback, and WebGL delivery.</p>
+            <p data-i18n="prototype.sharp">FPS prototype with first-person controls, raycast shooting, weapon configs, pickups, health/shield flow, NavMesh enemies, UI feedback, and WebGL delivery.</p>
             <div class="button-row">
-              <a class="button secondary" href="https://sd7games.itch.io/" target="_blank" rel="noopener">Play in Browser (WebGL)</a>
+              <a class="button secondary" href="https://sd7games.itch.io/" target="_blank" rel="noopener" data-i18n="button.playWebGL">Play in Browser (WebGL)</a>
               <a class="button" href="https://github.com/TokarevDev/Sharp_Shooter" target="_blank" rel="noopener">Source</a>
             </div>
           </article>
 
           <article class="prototype">
             <h3>Royal Run</h3>
-            <p>3D endless runner with player movement, obstacle/pickup logic, chunk-based level flow, camera setup, UI feedback, particles, audio, and WebGL build work.</p>
+            <p data-i18n="prototype.royal">3D endless runner with player movement, obstacle/pickup logic, chunk-based level flow, camera setup, UI feedback, particles, audio, and WebGL build work.</p>
             <div class="button-row">
-              <a class="button secondary" href="https://sd7games.itch.io/" target="_blank" rel="noopener">Play in Browser (WebGL)</a>
+              <a class="button secondary" href="https://sd7games.itch.io/" target="_blank" rel="noopener" data-i18n="button.playWebGL">Play in Browser (WebGL)</a>
               <a class="button" href="https://github.com/TokarevDev/Royal_Run" target="_blank" rel="noopener">Source</a>
             </div>
           </article>
 
           <article class="prototype">
             <h3>Galaxy Strike</h3>
-            <p>3D space shooter prototype with shooting interactions, collision logic, Timeline sequences, camera transitions, particle effects, UI setup, and PC build preparation.</p>
+            <p data-i18n="prototype.galaxy">3D space shooter prototype with shooting interactions, collision logic, Timeline sequences, camera transitions, particle effects, UI setup, and PC build preparation.</p>
             <div class="button-row">
               <a class="button" href="https://github.com/TokarevDev/Galaxy_Strike" target="_blank" rel="noopener">Source</a>
-              <a class="button secondary" href="https://github.com/TokarevDev/Galaxy_Strike/releases/download/v0.1.0/GalaxyStrike_PC_Build.zip" target="_blank" rel="noopener">Download PC Build</a>
+              <a class="button secondary" href="https://github.com/TokarevDev/Galaxy_Strike/releases/download/v0.1.0/GalaxyStrike_PC_Build.zip" target="_blank" rel="noopener" data-i18n="button.downloadPc">Download PC Build</a>
             </div>
           </article>
         </div>
@@ -1126,23 +1222,23 @@
 
       <section aria-labelledby="fit-title">
         <div class="section-head">
-          <h2 id="fit-title">Work Fit</h2>
-          <p class="section-note">
+          <h2 id="fit-title" data-i18n="fit.title">Work Fit</h2>
+          <p class="section-note" data-i18n="fit.note">
             Best fit for Unity C# tasks where practical implementation, ownership, clear communication, and reliable delivery matter.
           </p>
         </div>
 
         <div class="note-grid">
           <article class="note-panel">
-            <h3>Strongest project areas</h3>
+            <h3 data-i18n="fit.areas.title">Strongest project areas</h3>
             <p>
-              Gameplay features, UI flow, prototypes, Unity C# systems, tools/gameplay support, debugging, refactoring, build preparation, and project cleanup.
+              <span data-i18n="fit.areas.text">Gameplay features, UI flow, prototypes, Unity C# systems, tools/gameplay support, debugging, refactoring, build preparation, and project cleanup.</span>
             </p>
           </article>
           <article class="note-panel">
-            <h3>How I contribute</h3>
+            <h3 data-i18n="fit.contribute.title">How I contribute</h3>
             <p>
-              I can own focused Unity features, improve existing codebases, work with designers or solo clients, and contribute across gameplay, UI, tools, optimization, builds, and multi-platform releases.
+              <span data-i18n="fit.contribute.text">I can own focused Unity features, improve existing codebases, work with designers or solo clients, and contribute across gameplay, UI, tools, optimization, builds, and multi-platform releases.</span>
             </p>
           </article>
         </div>
@@ -1151,12 +1247,12 @@
       <section id="contact" aria-labelledby="contact-title">
         <div class="contact-band">
           <div>
-            <h2 id="contact-title">Contact</h2>
-            <p>Based in Finland. Permanent resident. Open to on-site, hybrid, remote, and relocation within Finland for Unity C# roles.</p>
+            <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
+            <p data-i18n="contact.text">Based in Finland. Permanent resident. Open to on-site, hybrid, remote, and relocation within Finland for Unity C# roles.</p>
           </div>
           <div class="button-row">
             <a class="button primary" href="mailto:oleksandrtokarevdev@gmail.com">Email</a>
-            <a class="button" href="assets/Oleksandr_Tokarev_Unity_Developer.pdf" target="_blank" rel="noopener">Resume</a>
+            <a class="button" href="assets/Oleksandr_Tokarev_Unity_Developer.pdf" target="_blank" rel="noopener" data-i18n="button.resume">Resume</a>
             <a class="button" href="https://www.linkedin.com/in/oleksandrtokarev/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="button" href="https://github.com/TokarevDev" target="_blank" rel="noopener">GitHub</a>
           </div>
@@ -1164,11 +1260,258 @@
       </section>
     </main>
 
-    <footer>
+    <footer data-i18n="footer.text">
       Oleksandr Tokarev - Unity C# Developer. Portfolio focused on gameplay systems, shipped Unity features, and practical production readiness.
     </footer>
   </div>
   <script>
+    const translations = {
+      ru: {
+        "language.label": `Язык`,
+        "nav.value": `Ценность`,
+        "nav.projects": `Проекты`,
+        "nav.prototypes": `Прототипы`,
+        "nav.contact": `Контакты`,
+        "hero.title": `Unity C# Developer: gameplay, UI, tools, cross-platform builds.`,
+        "hero.lead": `Unity developer в Финляндии с 2+ годами практического опыта на C#. Выпустил Android-игру в Google Play и собрал playable Unity projects для Android, PC и WebGL: gameplay code, UI flow, data-driven systems, editor tooling, debugging, profiling и build preparation.`,
+        "button.viewProjects": `Смотреть проекты`,
+        "button.resume": `CV / Resume`,
+        "button.releasedGame": `Игра в Google Play`,
+        "button.playWebGL": `Играть в браузере (WebGL)`,
+        "button.downloadPc": `Скачать PC Build`,
+        "proof.title": `Сигналы для работодателя`,
+        "proof.metric.release": `Google Play title доведен от прототипа до публичного релиза`,
+        "proof.metric.platforms": `platform targets delivered: Android, PC и WebGL`,
+        "proof.metric.years": `года практической работы над Unity C# projects и playable prototypes`,
+        "proof.metric.areas": `Unity coverage: gameplay, UI, tools, performance, builds`,
+        "proof.feature": `<b>Feature coverage:</b> gameplay logic, UI flow, save/load, ads, progression, scene setup, editor tools и подготовка platform builds.`,
+        "proof.systems": `<b>Systems thinking:</b> modular weapons, reward rolls, projectile pools, enemy sections, event-driven UI и ScriptableObject-driven balancing.`,
+        "proof.production": `<b>Production mindset:</b> clean C# boundaries, cached references, runtime constraints, debugging discipline и practical refactoring без лишних переписываний.`,
+        "value.title": `Что я могу закрывать`,
+        "value.note": `Это портфолио показывает практическую Unity C# работу в gameplay, UI, systems, tooling, debugging, builds и shipped projects. Source code, gameplay media и playable builds доступны для просмотра.`,
+        "value.gameplay.title": `Gameplay Features`,
+        "value.gameplay.text": `Combat, weapons, projectiles, enemies, rewards, player flow, progression и полные playable loops.`,
+        "value.ui.title": `UI & Player Flow`,
+        "value.ui.text": `UGUI screens, popups, menus, feedback, input, navigation flow, state changes и player-facing feature integration.`,
+        "value.systems.title": `Systems, Data & Tools`,
+        "value.systems.text": `ScriptableObject configs, service-style feature code, editor tooling, balancing utilities, save/load flow и читаемые C# boundaries.`,
+        "value.runtime.title": `Runtime & Delivery`,
+        "value.runtime.text": `Object pooling, GC awareness, cached references, profiling mindset, build setup, release preparation и cross-platform constraints.`,
+        "projects.title": `Ключевые проекты`,
+        "projects.note": `Выбранные проекты показывают широкий Unity C# coverage: gameplay systems, UI, data-driven setup, editor tooling, runtime optimization, multiplayer exposure и platform delivery.`,
+        "project.whatBuilt": `Что я сделал`,
+        "project.engineeringValue": `Инженерная ценность`,
+        "lastSeed.summary": `2D auto-shooter/survival project на Unity 6 с modular weapons, reward choices, pooled projectiles, segmented worm enemy logic, custom balancing tooling и platform build preparation.`,
+        "lastSeed.built.weapon": `Projectile weapon и Acacia Thorn weapon systems`,
+        "lastSeed.built.modifiers": `Runtime modifiers для damage, fire rate, criticals, penetration, salvo, speed и parallel shots`,
+        "lastSeed.built.rewards": `Reward roll/apply services с rarity slots и DPS-aware reward bias`,
+        "lastSeed.built.worm": `Segmented worm enemy с combat sections, rollback, HP scaling и visual presenters`,
+        "lastSeed.built.pooling": `Projectile и worm segment pooling для снижения runtime object churn`,
+        "lastSeed.built.balance": `Unity Editor balance lab для deterministic reward/HP simulations`,
+        "lastSeed.value.split": `Feature code разделен между gameplay, presentation, systems, bootstrap и editor tooling`,
+        "lastSeed.value.configs": `ScriptableObject configs для weapons, rewards, rarities, HP scaling и pressure tuning`,
+        "lastSeed.value.bootstrap": `Input wrapper и scene bootstrap вместо hidden runtime searches`,
+        "lastSeed.value.framerate": `Target frame-rate bootstrap на основе refresh rate и device tier`,
+        "lastSeed.value.separation": `Четкое разделение reward data, runtime context, UI binding и gameplay effects`,
+        "lastSeed.gallery.title": `Last Seed Survival gameplay screenshots`,
+        "lastSeed.gallery.caption": `Скриншоты показывают reward-choice flow, rarity presentation, segmented worm enemy, projectile combat, progress tracking и vertical gameplay UI.`,
+        "emoji.summary": `Released Google Play mobile game с turn-based combat, AI strategy selection, progression, persistent player data, popup/UI flow, rewarded/interstitial ads и Android publishing work.`,
+        "emoji.built.flow": `Turn-based gameplay flow и board state logic`,
+        "emoji.built.ai": `AI strategies для нескольких difficulty levels`,
+        "emoji.built.progression": `Progression, rewards, avatar selection, settings и persistent game data`,
+        "emoji.built.ui": `Popup service, UI screens, result flow и animated UI feedback`,
+        "emoji.built.ads": `Unity Ads service с rewarded state handling, load timeout, resume handling и online/offline checks`,
+        "emoji.built.release": `Google Play release preparation и Android build workflow`,
+        "emoji.value.layers": `Domain, Infrastructure, Presentation и Services layers`,
+        "emoji.value.storage": `Storage abstraction и save payload versioning`,
+        "emoji.value.strategy": `Strategy Pattern для reusable AI decision logic`,
+        "emoji.value.events": `Event-driven gameplay/UI updates для более понятных state transitions`,
+        "emoji.value.refactoring": `Practical refactoring toward SRP/MVC-style separation after prototype stage`,
+        "emoji.gallery.title": `Emoji Battle gameplay screenshots`,
+        "emoji.gallery.caption": `Скриншоты показывают shipped Google Play flow: sign selection, difficulty setup, player-versus-AI board state, match result feedback и unlock progression.`,
+        "tanks.summary": `Unity multiplayer prototype с host/client flow, anonymous authentication, UGS Relay/Lobby, lobby UI, networked movement, shooting, health, respawn, coins и leaderboard-style feedback.`,
+        "tanks.implemented": `Реализовано`,
+        "tanks.built.connection": `Client/host managers и connection flow`,
+        "tanks.built.relay": `Relay allocation/join code setup и lobby heartbeat`,
+        "tanks.built.networkVars": `NetworkVariables для player data, health, names и coins`,
+        "tanks.built.rpc": `ServerRpc/ClientRpc shooting и projectile spawning`,
+        "tanks.built.ui": `Respawn flow, leaderboard UI, lobby list и menu screens`,
+        "tanks.positioning": `Позиционирование`,
+        "tanks.value.fundamentals": `Полезно как proof of multiplayer fundamentals, не позиционируется как shipped online product`,
+        "tanks.value.services": `Показывает, что я могу читать Unity services docs, связывать systems и понимать authority/ownership`,
+        "tanks.value.next": `Следующий шаг: добавить short video walkthrough после восстановления или mock online services`,
+        "prototypes.title": `Играбельные прототипы`,
+        "prototypes.note": `Sharp Shooter и Royal Run имеют WebGL builds, которые можно открыть прямо в desktop browser через itch.io. Эта группа показывает range, Unity workflow и build delivery, не конкурируя с основными проектами.`,
+        "prototype.sharp": `FPS prototype с first-person controls, raycast shooting, weapon configs, pickups, health/shield flow, NavMesh enemies, UI feedback и WebGL delivery.`,
+        "prototype.royal": `3D endless runner с player movement, obstacle/pickup logic, chunk-based level flow, camera setup, UI feedback, particles, audio и WebGL build work.`,
+        "prototype.galaxy": `3D space shooter prototype с shooting interactions, collision logic, Timeline sequences, camera transitions, particle effects, UI setup и PC build preparation.`,
+        "fit.title": `Где я полезен`,
+        "fit.note": `Лучше всего подхожу для Unity C# задач, где важны practical implementation, ownership, clear communication и reliable delivery.`,
+        "fit.areas.title": `Сильные проектные зоны`,
+        "fit.areas.text": `Gameplay features, UI flow, prototypes, Unity C# systems, tools/gameplay support, debugging, refactoring, build preparation и project cleanup.`,
+        "fit.contribute.title": `Как я могу помогать`,
+        "fit.contribute.text": `Я могу брать focused Unity features, улучшать existing codebases, работать с designers или solo clients и закрывать задачи в gameplay, UI, tools, optimization, builds и multi-platform releases.`,
+        "contact.title": `Контакты`,
+        "contact.text": `Нахожусь в Финляндии. Permanent resident. Открыт к on-site, hybrid, remote и relocation within Finland по Unity C#.`,
+        "footer.text": `Oleksandr Tokarev - Unity C# Developer. Портфолио о gameplay systems, shipped Unity features и practical production readiness.`
+      },
+      uk: {
+        "language.label": `Мова`,
+        "nav.value": `Цінність`,
+        "nav.projects": `Проєкти`,
+        "nav.prototypes": `Прототипи`,
+        "nav.contact": `Контакти`,
+        "hero.title": `Unity C# Developer: gameplay, UI, tools, cross-platform builds.`,
+        "hero.lead": `Unity developer у Фінляндії з 2+ роками практичного досвіду на C#. Випустив Android-гру в Google Play і створив playable Unity projects для Android, PC та WebGL: gameplay code, UI flow, data-driven systems, editor tooling, debugging, profiling і build preparation.`,
+        "button.viewProjects": `Переглянути проєкти`,
+        "button.resume": `CV / Resume`,
+        "button.releasedGame": `Гра в Google Play`,
+        "button.playWebGL": `Грати в браузері (WebGL)`,
+        "button.downloadPc": `Завантажити PC Build`,
+        "proof.title": `Сигнали для роботодавця`,
+        "proof.metric.release": `Google Play title доведено від прототипу до публічного релізу`,
+        "proof.metric.platforms": `platform targets delivered: Android, PC і WebGL`,
+        "proof.metric.years": `роки практичної роботи над Unity C# projects і playable prototypes`,
+        "proof.metric.areas": `Unity coverage: gameplay, UI, tools, performance, builds`,
+        "proof.feature": `<b>Feature coverage:</b> gameplay logic, UI flow, save/load, ads, progression, scene setup, editor tools і підготовка platform builds.`,
+        "proof.systems": `<b>Systems thinking:</b> modular weapons, reward rolls, projectile pools, enemy sections, event-driven UI і ScriptableObject-driven balancing.`,
+        "proof.production": `<b>Production mindset:</b> clean C# boundaries, cached references, runtime constraints, debugging discipline і practical refactoring без зайвих переписувань.`,
+        "value.title": `Що я можу закривати`,
+        "value.note": `Це портфоліо показує практичну Unity C# роботу в gameplay, UI, systems, tooling, debugging, builds і shipped projects. Source code, gameplay media та playable builds доступні для перегляду.`,
+        "value.gameplay.title": `Gameplay Features`,
+        "value.gameplay.text": `Combat, weapons, projectiles, enemies, rewards, player flow, progression і повні playable loops.`,
+        "value.ui.title": `UI & Player Flow`,
+        "value.ui.text": `UGUI screens, popups, menus, feedback, input, navigation flow, state changes і player-facing feature integration.`,
+        "value.systems.title": `Systems, Data & Tools`,
+        "value.systems.text": `ScriptableObject configs, service-style feature code, editor tooling, balancing utilities, save/load flow і читабельні C# boundaries.`,
+        "value.runtime.title": `Runtime & Delivery`,
+        "value.runtime.text": `Object pooling, GC awareness, cached references, profiling mindset, build setup, release preparation і cross-platform constraints.`,
+        "projects.title": `Ключові проєкти`,
+        "projects.note": `Вибрані проєкти показують широкий Unity C# coverage: gameplay systems, UI, data-driven setup, editor tooling, runtime optimization, multiplayer exposure і platform delivery.`,
+        "project.whatBuilt": `Що я зробив`,
+        "project.engineeringValue": `Інженерна цінність`,
+        "lastSeed.summary": `2D auto-shooter/survival project на Unity 6 з modular weapons, reward choices, pooled projectiles, segmented worm enemy logic, custom balancing tooling і platform build preparation.`,
+        "lastSeed.built.weapon": `Projectile weapon і Acacia Thorn weapon systems`,
+        "lastSeed.built.modifiers": `Runtime modifiers для damage, fire rate, criticals, penetration, salvo, speed і parallel shots`,
+        "lastSeed.built.rewards": `Reward roll/apply services з rarity slots і DPS-aware reward bias`,
+        "lastSeed.built.worm": `Segmented worm enemy з combat sections, rollback, HP scaling і visual presenters`,
+        "lastSeed.built.pooling": `Projectile і worm segment pooling для зменшення runtime object churn`,
+        "lastSeed.built.balance": `Unity Editor balance lab для deterministic reward/HP simulations`,
+        "lastSeed.value.split": `Feature code розділений між gameplay, presentation, systems, bootstrap і editor tooling`,
+        "lastSeed.value.configs": `ScriptableObject configs для weapons, rewards, rarities, HP scaling і pressure tuning`,
+        "lastSeed.value.bootstrap": `Input wrapper і scene bootstrap замість hidden runtime searches`,
+        "lastSeed.value.framerate": `Target frame-rate bootstrap на основі refresh rate і device tier`,
+        "lastSeed.value.separation": `Чітке розділення reward data, runtime context, UI binding і gameplay effects`,
+        "lastSeed.gallery.title": `Last Seed Survival gameplay screenshots`,
+        "lastSeed.gallery.caption": `Скриншоти показують reward-choice flow, rarity presentation, segmented worm enemy, projectile combat, progress tracking і vertical gameplay UI.`,
+        "emoji.summary": `Released Google Play mobile game з turn-based combat, AI strategy selection, progression, persistent player data, popup/UI flow, rewarded/interstitial ads і Android publishing work.`,
+        "emoji.built.flow": `Turn-based gameplay flow і board state logic`,
+        "emoji.built.ai": `AI strategies для кількох difficulty levels`,
+        "emoji.built.progression": `Progression, rewards, avatar selection, settings і persistent game data`,
+        "emoji.built.ui": `Popup service, UI screens, result flow і animated UI feedback`,
+        "emoji.built.ads": `Unity Ads service з rewarded state handling, load timeout, resume handling і online/offline checks`,
+        "emoji.built.release": `Google Play release preparation і Android build workflow`,
+        "emoji.value.layers": `Domain, Infrastructure, Presentation і Services layers`,
+        "emoji.value.storage": `Storage abstraction і save payload versioning`,
+        "emoji.value.strategy": `Strategy Pattern для reusable AI decision logic`,
+        "emoji.value.events": `Event-driven gameplay/UI updates для зрозуміліших state transitions`,
+        "emoji.value.refactoring": `Practical refactoring toward SRP/MVC-style separation after prototype stage`,
+        "emoji.gallery.title": `Emoji Battle gameplay screenshots`,
+        "emoji.gallery.caption": `Скриншоти показують shipped Google Play flow: sign selection, difficulty setup, player-versus-AI board state, match result feedback і unlock progression.`,
+        "tanks.summary": `Unity multiplayer prototype з host/client flow, anonymous authentication, UGS Relay/Lobby, lobby UI, networked movement, shooting, health, respawn, coins і leaderboard-style feedback.`,
+        "tanks.implemented": `Реалізовано`,
+        "tanks.built.connection": `Client/host managers і connection flow`,
+        "tanks.built.relay": `Relay allocation/join code setup і lobby heartbeat`,
+        "tanks.built.networkVars": `NetworkVariables для player data, health, names і coins`,
+        "tanks.built.rpc": `ServerRpc/ClientRpc shooting і projectile spawning`,
+        "tanks.built.ui": `Respawn flow, leaderboard UI, lobby list і menu screens`,
+        "tanks.positioning": `Позиціонування`,
+        "tanks.value.fundamentals": `Корисно як proof of multiplayer fundamentals, не позиціонується як shipped online product`,
+        "tanks.value.services": `Показує, що я можу читати Unity services docs, поєднувати systems і розуміти authority/ownership`,
+        "tanks.value.next": `Наступний крок: додати short video walkthrough після відновлення або mock online services`,
+        "prototypes.title": `Ігрові прототипи`,
+        "prototypes.note": `Sharp Shooter і Royal Run мають WebGL builds, які можна відкрити прямо в desktop browser через itch.io. Ця група показує range, Unity workflow і build delivery, не конкуруючи з основними проєктами.`,
+        "prototype.sharp": `FPS prototype з first-person controls, raycast shooting, weapon configs, pickups, health/shield flow, NavMesh enemies, UI feedback і WebGL delivery.`,
+        "prototype.royal": `3D endless runner з player movement, obstacle/pickup logic, chunk-based level flow, camera setup, UI feedback, particles, audio і WebGL build work.`,
+        "prototype.galaxy": `3D space shooter prototype з shooting interactions, collision logic, Timeline sequences, camera transitions, particle effects, UI setup і PC build preparation.`,
+        "fit.title": `Де я корисний`,
+        "fit.note": `Найкраще підходжу для Unity C# задач, де важливі practical implementation, ownership, clear communication і reliable delivery.`,
+        "fit.areas.title": `Сильні проєктні зони`,
+        "fit.areas.text": `Gameplay features, UI flow, prototypes, Unity C# systems, tools/gameplay support, debugging, refactoring, build preparation і project cleanup.`,
+        "fit.contribute.title": `Як я можу допомагати`,
+        "fit.contribute.text": `Я можу брати focused Unity features, покращувати existing codebases, працювати з designers або solo clients і закривати задачі в gameplay, UI, tools, optimization, builds і multi-platform releases.`,
+        "contact.title": `Контакти`,
+        "contact.text": `Знаходжусь у Фінляндії. Permanent resident. Відкритий до on-site, hybrid, remote і relocation within Finland по Unity C#.`,
+        "footer.text": `Oleksandr Tokarev - Unity C# Developer. Портфоліо про gameplay systems, shipped Unity features і practical production readiness.`
+      }
+    };
+
+    const languageSwitch = document.querySelector("[data-language-switch]");
+    const languageToggle = document.querySelector("[data-language-toggle]");
+    const languageCurrent = document.querySelector("[data-language-current]");
+    const languageOptions = Array.from(document.querySelectorAll("[data-lang-option]"));
+    const languageLabels = { en: "EN", ru: "RU", uk: "UA" };
+    const translatableElements = Array.from(document.querySelectorAll("[data-i18n], [data-i18n-html]"));
+
+    translatableElements.forEach((element) => {
+      if (element.dataset.i18nHtml) {
+        element.dataset.defaultHtml = element.innerHTML;
+      } else {
+        element.dataset.defaultText = element.textContent;
+      }
+    });
+
+    const setLanguage = (language) => {
+      const activeLanguage = language === "en" || translations[language] ? language : "en";
+      document.documentElement.lang = activeLanguage;
+      translatableElements.forEach((element) => {
+        const htmlKey = element.dataset.i18nHtml;
+        const textKey = element.dataset.i18n;
+        if (htmlKey) {
+          element.innerHTML = activeLanguage === "en" ? element.dataset.defaultHtml : translations[activeLanguage]?.[htmlKey] || element.dataset.defaultHtml;
+        } else {
+          element.textContent = activeLanguage === "en" ? element.dataset.defaultText : translations[activeLanguage]?.[textKey] || element.dataset.defaultText;
+        }
+      });
+      languageCurrent.textContent = languageLabels[activeLanguage] || "EN";
+      languageOptions.forEach((option) => {
+        const isActive = option.dataset.langOption === activeLanguage;
+        option.classList.toggle("active", isActive);
+        option.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+      localStorage.setItem("portfolio-language", activeLanguage);
+    };
+
+    languageToggle.addEventListener("click", () => {
+      const isOpen = languageSwitch.classList.toggle("open");
+      languageToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    languageOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        setLanguage(option.dataset.langOption);
+        languageSwitch.classList.remove("open");
+        languageToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!languageSwitch.contains(event.target)) {
+        languageSwitch.classList.remove("open");
+        languageToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        languageSwitch.classList.remove("open");
+        languageToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+    setLanguage(requestedLanguage || localStorage.getItem("portfolio-language") || "en");
+
     document.querySelectorAll("[data-gallery]").forEach((gallery) => {
       const slides = Array.from(gallery.querySelectorAll("[data-gallery-slide]"));
       const dots = Array.from(gallery.querySelectorAll("[data-gallery-dot]"));
