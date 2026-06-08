@@ -43,6 +43,10 @@
       overflow-x: hidden;
     }
 
+    body.viewer-open {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -503,17 +507,36 @@
       border-radius: 8px;
       background: #050706;
       touch-action: pan-y;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .gallery-frame.dragging {
+      cursor: grabbing;
+    }
+
+    .gallery-frame.dragging .gallery-track {
+      transition: none;
+    }
+
+    .gallery-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transform: translate3d(0, 0, 0);
+      transition: transform 380ms cubic-bezier(0.22, 0.61, 0.36, 1);
+      will-change: transform;
     }
 
     .gallery-image {
-      display: none;
+      display: block;
+      flex: 0 0 100%;
+      min-width: 100%;
       width: 100%;
       height: 100%;
       object-fit: contain;
-    }
-
-    .gallery-image.active {
-      display: block;
+      pointer-events: none;
+      user-select: none;
     }
 
     .gallery-panel h4 {
@@ -754,6 +777,107 @@
       background: rgba(47, 189, 141, 0.18);
       border-color: rgba(242, 169, 59, 0.64);
       outline: none;
+    }
+
+    .screenshot-viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      grid-template-rows: minmax(0, 1fr) auto;
+      gap: 12px;
+      padding: max(18px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+      background: rgba(5, 7, 6, 0.96);
+      backdrop-filter: blur(8px);
+    }
+
+    .screenshot-viewer.open {
+      display: grid;
+    }
+
+    .viewer-close {
+      position: absolute;
+      top: max(14px, env(safe-area-inset-top));
+      right: 16px;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(242, 239, 230, 0.22);
+      border-radius: 8px;
+      background: rgba(24, 29, 27, 0.92);
+      color: var(--text);
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .viewer-frame {
+      align-self: center;
+      justify-self: center;
+      width: min(100%, 430px);
+      height: calc(100vh - 118px);
+      height: calc(100dvh - 118px);
+      overflow: hidden;
+      border: 1px solid rgba(242, 239, 230, 0.16);
+      border-radius: 8px;
+      background: #050706;
+      touch-action: none;
+      user-select: none;
+    }
+
+    .viewer-frame.dragging .viewer-track {
+      transition: none;
+    }
+
+    .viewer-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transform: translate3d(0, 0, 0);
+      transition: transform 380ms cubic-bezier(0.22, 0.61, 0.36, 1);
+      will-change: transform;
+    }
+
+    .viewer-image {
+      display: block;
+      flex: 0 0 100%;
+      min-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .viewer-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .viewer-button {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface-strong);
+      color: var(--text);
+      font-size: 24px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .viewer-counter {
+      min-width: 58px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
     }
 
     @media (max-width: 980px) {
@@ -1105,11 +1229,13 @@
 
           <div class="project-gallery" data-gallery aria-label="Last Seed Survivor screenshot gallery">
             <div class="gallery-frame">
-              <img class="gallery-image active" data-gallery-slide src="assets/last-seed/screenshot-loading-screen.png" alt="Last Seed Survivor loading screen with logo, forest background, cave entrance, and progress bar">
-              <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-early.png" alt="Last Seed Survivor gameplay screen with segmented worm enemy and early progress">
-              <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-worm.png" alt="Last Seed Survivor gameplay screen with segmented worm enemy at later progress">
-              <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-common.png" alt="Last Seed Survivor reward upgrade screen with Common, Rare, and Legendary choices">
-              <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-rare.png" alt="Last Seed Survivor reward screen showing Acacia Thorn unlock">
+              <div class="gallery-track" data-gallery-track>
+                <img class="gallery-image active" data-gallery-slide src="assets/last-seed/screenshot-loading-screen.png" alt="Last Seed Survivor loading screen with logo, forest background, cave entrance, and progress bar">
+                <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-early.png" alt="Last Seed Survivor gameplay screen with segmented worm enemy and early progress">
+                <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-worm.png" alt="Last Seed Survivor gameplay screen with segmented worm enemy at later progress">
+                <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-common.png" alt="Last Seed Survivor reward upgrade screen with Common, Rare, and Legendary choices">
+                <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-rare.png" alt="Last Seed Survivor reward screen showing Acacia Thorn unlock">
+              </div>
             </div>
 
             <div class="gallery-panel">
@@ -1194,10 +1320,12 @@
 
           <div class="project-gallery" data-gallery aria-label="Emoji Battle screenshot gallery">
             <div class="gallery-frame">
-              <img class="gallery-image active" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-green.png" alt="Emoji Battle character selection screen with green emoji options">
-              <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-red.png" alt="Emoji Battle character selection screen with difficulty selector and red emoji options">
-              <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-match-board.png" alt="Emoji Battle match board with player versus AI and neon grid">
-              <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-unlock-popup.png" alt="Emoji Battle new emoji unlocked popup after winning a match">
+              <div class="gallery-track" data-gallery-track>
+                <img class="gallery-image active" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-green.png" alt="Emoji Battle character selection screen with green emoji options">
+                <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-red.png" alt="Emoji Battle character selection screen with difficulty selector and red emoji options">
+                <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-match-board.png" alt="Emoji Battle match board with player versus AI and neon grid">
+                <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-unlock-popup.png" alt="Emoji Battle new emoji unlocked popup after winning a match">
+              </div>
             </div>
 
             <div class="gallery-panel">
@@ -1378,6 +1506,18 @@
   </div>
 
   <a class="back-to-top" href="#top" aria-label="Back to portfolio headline" data-back-to-top></a>
+
+  <div class="screenshot-viewer" data-screenshot-viewer role="dialog" aria-label="Screenshot viewer" aria-hidden="true">
+    <button class="viewer-close" type="button" aria-label="Close screenshot viewer" data-viewer-close>&times;</button>
+    <div class="viewer-frame" data-viewer-frame>
+      <div class="viewer-track" data-viewer-track></div>
+    </div>
+    <div class="viewer-footer">
+      <button class="viewer-button" type="button" aria-label="Previous screenshot" data-viewer-prev>&lsaquo;</button>
+      <span class="viewer-counter" data-viewer-counter>1 / 1</span>
+      <button class="viewer-button" type="button" aria-label="Next screenshot" data-viewer-next>&rsaquo;</button>
+    </div>
+  </div>
 
   <script>
     const translations = {
@@ -1667,6 +1807,189 @@
     const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
     setLanguage(requestedLanguage || localStorage.getItem("portfolio-language") || "en");
 
+    const isMobileGalleryViewport = () => window.matchMedia("(max-width: 680px)").matches;
+    const screenshotViewer = document.querySelector("[data-screenshot-viewer]");
+    const viewerClose = document.querySelector("[data-viewer-close]");
+    const viewerFrame = document.querySelector("[data-viewer-frame]");
+    const viewerTrack = document.querySelector("[data-viewer-track]");
+    const viewerCounter = document.querySelector("[data-viewer-counter]");
+    const viewerPrevious = document.querySelector("[data-viewer-prev]");
+    const viewerNext = document.querySelector("[data-viewer-next]");
+    let viewerSlideCount = 0;
+    let viewerCurrent = 0;
+    let viewerSwipeStartX = 0;
+    let viewerSwipeStartY = 0;
+    let viewerDragging = false;
+    let viewerHorizontalDrag = false;
+
+    const moveViewerTrack = (offsetX = 0, animate = true) => {
+      if (!viewerTrack) {
+        return;
+      }
+
+      viewerTrack.style.transition = animate ? "" : "none";
+      viewerTrack.style.transform = `translate3d(calc(${-viewerCurrent * 100}% + ${offsetX}px), 0, 0)`;
+
+      if (!animate) {
+        requestAnimationFrame(() => {
+          viewerTrack.style.transition = "";
+        });
+      }
+    };
+
+    const showViewerSlide = (index, animate = true) => {
+      if (!viewerSlideCount) {
+        return;
+      }
+
+      viewerCurrent = (index + viewerSlideCount) % viewerSlideCount;
+      viewerCounter.textContent = `${viewerCurrent + 1} / ${viewerSlideCount}`;
+      moveViewerTrack(0, animate);
+    };
+
+    const closeScreenshotViewer = () => {
+      if (!screenshotViewer) {
+        return;
+      }
+
+      screenshotViewer.classList.remove("open");
+      screenshotViewer.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("viewer-open");
+    };
+
+    const openScreenshotViewer = (slides, index) => {
+      if (!screenshotViewer || !viewerTrack || !isMobileGalleryViewport()) {
+        return;
+      }
+
+      viewerTrack.innerHTML = "";
+      slides.forEach((slide) => {
+        const image = document.createElement("img");
+        image.className = "viewer-image";
+        image.src = slide.currentSrc || slide.src;
+        image.alt = slide.alt || "";
+        viewerTrack.appendChild(image);
+      });
+
+      viewerSlideCount = slides.length;
+      screenshotViewer.classList.add("open");
+      screenshotViewer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("viewer-open");
+      showViewerSlide(index, false);
+    };
+
+    if (screenshotViewer && viewerFrame && viewerTrack && viewerClose && viewerPrevious && viewerNext) {
+      viewerClose.addEventListener("click", closeScreenshotViewer);
+      viewerPrevious.addEventListener("click", () => showViewerSlide(viewerCurrent - 1));
+      viewerNext.addEventListener("click", () => showViewerSlide(viewerCurrent + 1));
+
+      document.addEventListener("keydown", (event) => {
+        if (!screenshotViewer.classList.contains("open")) {
+          return;
+        }
+
+        if (event.key === "Escape") {
+          closeScreenshotViewer();
+        } else if (event.key === "ArrowLeft") {
+          showViewerSlide(viewerCurrent - 1);
+        } else if (event.key === "ArrowRight") {
+          showViewerSlide(viewerCurrent + 1);
+        }
+      });
+
+      const startViewerSwipe = (clientX, clientY) => {
+        viewerSwipeStartX = clientX;
+        viewerSwipeStartY = clientY;
+        viewerDragging = true;
+        viewerHorizontalDrag = false;
+      };
+
+      const dragViewerSwipe = (clientX, clientY, event) => {
+        if (!viewerDragging) {
+          return;
+        }
+
+        const deltaX = clientX - viewerSwipeStartX;
+        const deltaY = clientY - viewerSwipeStartY;
+
+        if (!viewerHorizontalDrag && Math.abs(deltaX) > 8 && Math.abs(deltaX) > Math.abs(deltaY)) {
+          viewerHorizontalDrag = true;
+          viewerFrame.classList.add("dragging");
+        }
+
+        if (viewerHorizontalDrag) {
+          event?.preventDefault?.();
+          moveViewerTrack(deltaX, false);
+        }
+      };
+
+      const finishViewerSwipe = (clientX, clientY) => {
+        if (!viewerDragging) {
+          return;
+        }
+
+        const deltaX = clientX - viewerSwipeStartX;
+        const deltaY = clientY - viewerSwipeStartY;
+        const horizontalThreshold = Math.max(42, viewerFrame.clientWidth * 0.16);
+        const verticalThreshold = Math.max(72, viewerFrame.clientHeight * 0.14);
+        const horizontalSwipe = viewerHorizontalDrag && Math.abs(deltaX) > horizontalThreshold && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+        const verticalCloseSwipe = Math.abs(deltaY) > verticalThreshold && Math.abs(deltaY) > Math.abs(deltaX) * 1.15;
+
+        viewerDragging = false;
+        viewerHorizontalDrag = false;
+        viewerFrame.classList.remove("dragging");
+
+        if (verticalCloseSwipe) {
+          closeScreenshotViewer();
+        } else if (horizontalSwipe) {
+          showViewerSlide(viewerCurrent + (deltaX < 0 ? 1 : -1));
+        } else {
+          moveViewerTrack(0, true);
+        }
+      };
+
+      if (window.PointerEvent) {
+        viewerFrame.addEventListener("pointerdown", (event) => {
+          if (event.pointerType === "mouse" && event.button !== 0) {
+            return;
+          }
+
+          startViewerSwipe(event.clientX, event.clientY);
+          viewerFrame.setPointerCapture?.(event.pointerId);
+        }, { passive: true });
+
+        viewerFrame.addEventListener("pointermove", (event) => {
+          dragViewerSwipe(event.clientX, event.clientY, event);
+        }, { passive: false });
+
+        viewerFrame.addEventListener("pointerup", (event) => {
+          finishViewerSwipe(event.clientX, event.clientY);
+        }, { passive: true });
+
+        viewerFrame.addEventListener("pointercancel", () => {
+          viewerDragging = false;
+          viewerHorizontalDrag = false;
+          viewerFrame.classList.remove("dragging");
+          moveViewerTrack(0, true);
+        }, { passive: true });
+      } else {
+        viewerFrame.addEventListener("touchstart", (event) => {
+          const touch = event.changedTouches[0];
+          startViewerSwipe(touch.clientX, touch.clientY);
+        }, { passive: true });
+
+        viewerFrame.addEventListener("touchmove", (event) => {
+          const touch = event.changedTouches[0];
+          dragViewerSwipe(touch.clientX, touch.clientY, event);
+        }, { passive: false });
+
+        viewerFrame.addEventListener("touchend", (event) => {
+          const touch = event.changedTouches[0];
+          finishViewerSwipe(touch.clientX, touch.clientY);
+        }, { passive: true });
+      }
+    }
+
     document.querySelectorAll("[data-gallery]").forEach((gallery) => {
       const slides = Array.from(gallery.querySelectorAll("[data-gallery-slide]"));
       const dots = Array.from(gallery.querySelectorAll("[data-gallery-dot]"));
@@ -1674,15 +1997,30 @@
       const previous = gallery.querySelector("[data-gallery-prev]");
       const next = gallery.querySelector("[data-gallery-next]");
       const frame = gallery.querySelector(".gallery-frame");
+      const track = gallery.querySelector("[data-gallery-track]");
       let current = 0;
       let swipeStartX = 0;
       let swipeStartY = 0;
+      let isDragging = false;
+      let isHorizontalDrag = false;
+      let suppressFrameClick = false;
 
-      if (!slides.length || !dots.length || !counter || !previous || !next) {
+      if (!slides.length || !dots.length || !counter || !previous || !next || !frame || !track) {
         return;
       }
 
-      const showSlide = (index) => {
+      const moveTrack = (offsetX = 0, animate = true) => {
+        track.style.transition = animate ? "" : "none";
+        track.style.transform = `translate3d(calc(${-current * 100}% + ${offsetX}px), 0, 0)`;
+
+        if (!animate) {
+          requestAnimationFrame(() => {
+            track.style.transition = "";
+          });
+        }
+      };
+
+      const showSlide = (index, animate = true) => {
         current = (index + slides.length) % slides.length;
         slides.forEach((slide, slideIndex) => {
           slide.classList.toggle("active", slideIndex === current);
@@ -1692,6 +2030,7 @@
           dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
         });
         counter.textContent = `${current + 1} / ${slides.length}`;
+        moveTrack(0, animate);
       };
 
       previous.addEventListener("click", () => showSlide(current - 1));
@@ -1700,53 +2039,111 @@
         dot.addEventListener("click", () => showSlide(dotIndex));
       });
 
-      if (frame) {
-        const startSwipe = (clientX, clientY) => {
-          swipeStartX = clientX;
-          swipeStartY = clientY;
-        };
+      const startSwipe = (clientX, clientY) => {
+        swipeStartX = clientX;
+        swipeStartY = clientY;
+        isDragging = true;
+        isHorizontalDrag = false;
+      };
 
-        const finishSwipe = (clientX, clientY) => {
-          const deltaX = clientX - swipeStartX;
-          const deltaY = clientY - swipeStartY;
-          const horizontalSwipe = Math.abs(deltaX) > 36 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
-
-          if (horizontalSwipe) {
-            showSlide(current + (deltaX < 0 ? 1 : -1));
-          }
-        };
-
-        if (window.PointerEvent) {
-          frame.addEventListener("pointerdown", (event) => {
-            if (event.pointerType === "mouse") {
-              return;
-            }
-
-            startSwipe(event.clientX, event.clientY);
-            frame.setPointerCapture?.(event.pointerId);
-          }, { passive: true });
-
-          frame.addEventListener("pointerup", (event) => {
-            if (event.pointerType === "mouse") {
-              return;
-            }
-
-            finishSwipe(event.clientX, event.clientY);
-          }, { passive: true });
-        } else {
-          frame.addEventListener("touchstart", (event) => {
-            const touch = event.changedTouches[0];
-            startSwipe(touch.clientX, touch.clientY);
-          }, { passive: true });
-
-          frame.addEventListener("touchend", (event) => {
-            const touch = event.changedTouches[0];
-            finishSwipe(touch.clientX, touch.clientY);
-          }, { passive: true });
+      const dragSwipe = (clientX, clientY, event) => {
+        if (!isDragging) {
+          return;
         }
+
+        const deltaX = clientX - swipeStartX;
+        const deltaY = clientY - swipeStartY;
+
+        if (!isHorizontalDrag && Math.abs(deltaX) > 8 && Math.abs(deltaX) > Math.abs(deltaY)) {
+          isHorizontalDrag = true;
+          frame.classList.add("dragging");
+        }
+
+        if (isHorizontalDrag) {
+          event?.preventDefault?.();
+          moveTrack(deltaX, false);
+        }
+      };
+
+      const finishSwipe = (clientX, clientY) => {
+        if (!isDragging) {
+          return;
+        }
+
+        const deltaX = clientX - swipeStartX;
+        const deltaY = clientY - swipeStartY;
+        const swipeThreshold = Math.max(36, frame.clientWidth * 0.16);
+        const horizontalSwipe = isHorizontalDrag && Math.abs(deltaX) > swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+        const movedEnoughToSuppressClick = Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8;
+
+        isDragging = false;
+        isHorizontalDrag = false;
+        frame.classList.remove("dragging");
+
+        if (movedEnoughToSuppressClick) {
+          suppressFrameClick = true;
+          window.setTimeout(() => {
+            suppressFrameClick = false;
+          }, 180);
+        }
+
+        if (horizontalSwipe) {
+          showSlide(current + (deltaX < 0 ? 1 : -1));
+        } else {
+          moveTrack(0, true);
+        }
+      };
+
+      if (window.PointerEvent) {
+        frame.addEventListener("pointerdown", (event) => {
+          if (event.pointerType === "mouse" && event.button !== 0) {
+            return;
+          }
+
+          startSwipe(event.clientX, event.clientY);
+          frame.setPointerCapture?.(event.pointerId);
+        }, { passive: true });
+
+        frame.addEventListener("pointermove", (event) => {
+          dragSwipe(event.clientX, event.clientY, event);
+        }, { passive: false });
+
+        frame.addEventListener("pointerup", (event) => {
+          finishSwipe(event.clientX, event.clientY);
+        }, { passive: true });
+
+        frame.addEventListener("pointercancel", () => {
+          isDragging = false;
+          isHorizontalDrag = false;
+          frame.classList.remove("dragging");
+          moveTrack(0, true);
+        }, { passive: true });
+      } else {
+        frame.addEventListener("touchstart", (event) => {
+          const touch = event.changedTouches[0];
+          startSwipe(touch.clientX, touch.clientY);
+        }, { passive: true });
+
+        frame.addEventListener("touchmove", (event) => {
+          const touch = event.changedTouches[0];
+          dragSwipe(touch.clientX, touch.clientY, event);
+        }, { passive: false });
+
+        frame.addEventListener("touchend", (event) => {
+          const touch = event.changedTouches[0];
+          finishSwipe(touch.clientX, touch.clientY);
+        }, { passive: true });
       }
 
-      showSlide(0);
+      frame.addEventListener("click", () => {
+        if (suppressFrameClick || !isMobileGalleryViewport()) {
+          return;
+        }
+
+        openScreenshotViewer(slides, current);
+      });
+
+      showSlide(0, false);
     });
   </script>
 </body>
