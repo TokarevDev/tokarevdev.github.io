@@ -502,6 +502,7 @@
       border: 1px solid #2d3431;
       border-radius: 8px;
       background: #050706;
+      touch-action: pan-y;
     }
 
     .gallery-image {
@@ -628,6 +629,14 @@
       gap: 18px;
     }
 
+    .presentation-note {
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid rgba(47, 189, 141, 0.38);
+      border-radius: 8px;
+      background: rgba(47, 189, 141, 0.08);
+    }
+
     .mini-title {
       margin-bottom: 8px;
       color: var(--text);
@@ -693,6 +702,58 @@
       color: var(--muted-2);
       font-size: 13px;
       line-height: 1.5;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 20;
+      display: inline-grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(47, 189, 141, 0.52);
+      border-radius: 8px;
+      background: rgba(32, 38, 34, 0.94);
+      color: #8de6c4;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity 160ms ease, transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top::before,
+    .back-to-top::after {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-top: 4px solid currentColor;
+      border-left: 4px solid currentColor;
+      transform: rotate(45deg);
+    }
+
+    .back-to-top::before {
+      top: 15px;
+    }
+
+    .back-to-top::after {
+      top: 25px;
+    }
+
+    .back-to-top:hover,
+    .back-to-top:focus-visible {
+      background: rgba(47, 189, 141, 0.18);
+      border-color: rgba(242, 169, 59, 0.64);
+      outline: none;
     }
 
     @media (max-width: 980px) {
@@ -832,6 +893,13 @@
         margin: 0 auto;
       }
 
+      .back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+      }
+
       .project-media,
       .media-slot {
         min-height: 240px;
@@ -870,10 +938,10 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div>
-          <p class="eyebrow">Unity C# Developer | Gameplay, UI, Tools, Builds</p>
-          <h1 id="hero-title" data-i18n="hero.title">Unity C# developer for gameplay, UI, tools, and cross-platform builds.</h1>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Unity C# Developer | Gameplay, UI, Tools, Builds, Mobile Presentation</p>
+          <h1 id="hero-title" data-i18n="hero.title">Unity C# developer for gameplay, UI, tools, mobile presentation, and cross-platform builds.</h1>
           <p class="lead" data-i18n="hero.lead">
-            Unity developer based in Finland with 2+ years of hands-on C# experience. I have shipped an Android game on Google Play and built playable Unity projects for Android, PC, and WebGL while covering gameplay code, UI flow, data-driven systems, editor tooling, debugging, profiling, and build preparation.
+            Unity developer based in Finland with 2+ years of hands-on C# experience. I have shipped an Android game on Google Play and built playable Unity projects for Android, PC, and WebGL while covering gameplay code, UI flow, data-driven systems, player-facing presentation, debugging, profiling, and build preparation.
           </p>
           <div class="hero-actions" aria-label="Primary links">
             <a class="button primary" href="#projects" data-i18n="button.viewProjects">View Projects</a>
@@ -901,11 +969,11 @@
             </div>
             <div class="metric">
               <b>5+</b>
-              <span data-i18n="proof.metric.areas">Unity areas covered: gameplay, UI, tools, performance, builds</span>
+              <span data-i18n="proof.metric.areas">Unity areas covered: gameplay, UI, tools, performance, presentation, builds</span>
             </div>
           </div>
           <ul class="proof-list">
-            <li data-i18n-html="proof.feature"><b>Feature coverage:</b> gameplay logic, UI flow, save/load, ads, progression, scene setup, editor tools, and platform build preparation.</li>
+            <li data-i18n-html="proof.feature"><b>Feature coverage:</b> gameplay logic, UI flow, save/load, ads, progression, scene setup, gameplay captures, editor tools, and platform build preparation.</li>
             <li data-i18n-html="proof.systems"><b>Systems thinking:</b> modular weapons, reward rolls, projectile pools, enemy sections, event-driven UI, and ScriptableObject-driven balancing.</li>
             <li data-i18n-html="proof.production"><b>Production mindset:</b> clean C# boundaries, cached references, runtime constraints, debugging discipline, and practical refactoring without unnecessary rewrites.</li>
           </ul>
@@ -936,6 +1004,34 @@
           <article class="value-item">
             <h3 data-i18n="value.runtime.title">Runtime & Delivery</h3>
             <p data-i18n="value.runtime.text">Object pooling, GC awareness, cached references, profiling mindset, build setup, release preparation, and cross-platform constraints.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="presentation" aria-labelledby="presentation-title">
+        <div class="section-head">
+          <h2 id="presentation-title" data-i18n="presentation.title">Creative & Presentation-Oriented Unity Work</h2>
+          <p class="section-note" data-i18n="presentation.note">
+            My core focus is still Unity engineering, but I can also support the player-facing side of mobile and casual projects: gameplay variations, scene setup, readable UI states, capture-ready builds, and fast iteration for teams or clients.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-item">
+            <h3 data-i18n="presentation.iteration.title">Gameplay Iteration</h3>
+            <p data-i18n="presentation.iteration.text">Modify pacing, rules, rewards, prefabs, UI flow, and ScriptableObject configs to test focused gameplay variations without rewriting the project.</p>
+          </article>
+          <article class="value-item">
+            <h3 data-i18n="presentation.scene.title">Scene & Visual Setup</h3>
+            <p data-i18n="presentation.scene.text">Prepare camera framing, effects, feedback, mobile layout, and readable gameplay states so the player understands the action quickly.</p>
+          </article>
+          <article class="value-item">
+            <h3 data-i18n="presentation.captures.title">Capture-Ready Builds</h3>
+            <p data-i18n="presentation.captures.text">Create stable scenes and builds for straightforward gameplay captures, store pages, client review, portfolio updates, or marketing tests.</p>
+          </article>
+          <article class="value-item">
+            <h3 data-i18n="presentation.growth.title">Growth Direction</h3>
+            <p data-i18n="presentation.growth.text">I want to grow further where Unity implementation meets product presentation: first seconds, clarity, pacing, hooks, and practical creative iteration.</p>
           </article>
         </div>
       </section>
@@ -989,6 +1085,15 @@
                   <li data-i18n="lastSeed.value.separation">Clear separation between reward data, runtime context, UI binding, and gameplay effects</li>
                 </ul>
               </div>
+            </div>
+
+            <div class="presentation-note">
+              <p class="mini-title" data-i18n="lastSeed.presentation.title">Player-facing presentation</p>
+              <ul class="compact">
+                <li data-i18n="lastSeed.presentation.layout">Vertical mobile layout and capture-ready flow for reviewing combat pressure, upgrades, and readability.</li>
+                <li data-i18n="lastSeed.presentation.feedback">Reward screens and enemy states built around immediate feedback, clear progression, and visible player decisions.</li>
+                <li data-i18n="lastSeed.presentation.iteration">Good base for testing first-seconds clarity, pacing changes, short gameplay captures, and visual hooks.</li>
+              </ul>
             </div>
 
             <p class="tech"><b>Tech:</b> Unity 6, C#, ScriptableObjects, Object Pooling, Physics2D, Input System, DOTween, URP, Unity Editor tooling, performance-conscious runtime optimization.</p>
@@ -1066,6 +1171,15 @@
                   <li data-i18n="emoji.value.refactoring">Practical refactoring toward SRP/MVC-style separation after prototype stage</li>
                 </ul>
               </div>
+            </div>
+
+            <div class="presentation-note">
+              <p class="mini-title" data-i18n="emoji.presentation.title">Mobile presentation value</p>
+              <ul class="compact">
+                <li data-i18n="emoji.presentation.loop">Complete released mobile loop from menu and character selection to match result, rewards, and unlock feedback.</li>
+                <li data-i18n="emoji.presentation.states">Clear UI states for difficulty, player-versus-AI board state, result flow, ads/rewards, settings, and progression.</li>
+                <li data-i18n="emoji.presentation.captures">Straightforward captures show the real player flow and mobile release polish rather than polished advertising edits.</li>
+              </ul>
             </div>
 
             <p class="tech"><b>Tech:</b> Unity 6, C#, UGUI, Strategy Pattern, event-driven gameplay flow, mobile ads, Android build pipeline, Google Play release workflow.</p>
@@ -1260,6 +1374,9 @@
       Oleksandr Tokarev - Unity C# Developer. Portfolio focused on gameplay systems, shipped Unity features, and practical production readiness.
     </footer>
   </div>
+
+  <a class="back-to-top" href="#top" aria-label="Back to portfolio headline" data-back-to-top></a>
+
   <script>
     const translations = {
       ru: {
@@ -1268,8 +1385,9 @@
         "nav.projects": `Проекты`,
         "nav.prototypes": `Прототипы`,
         "nav.contact": `Контакты`,
-        "hero.title": `Unity C# Developer: геймплей, UI, инструменты и билды под разные платформы.`,
-        "hero.lead": `Unity-разработчик в Финляндии с 2+ годами практического опыта на C#. Выпустил Android-игру в Google Play и собрал играбельные Unity-проекты для Android, PC и WebGL: gameplay-код, UI-логика, data-driven системы, инструменты редактора, отладка, профилирование и подготовка билдов.`,
+        "hero.eyebrow": `Unity C# Developer | Геймплей, UI, инструменты, билды, мобильная подача`,
+        "hero.title": `Unity C# Developer: геймплей, UI, инструменты, мобильная подача и билды под разные платформы.`,
+        "hero.lead": `Unity-разработчик в Финляндии с 2+ годами практического опыта на C#. Выпустил Android-игру в Google Play и собрал играбельные Unity-проекты для Android, PC и WebGL: gameplay-код, UI-логика, data-driven системы, player-facing presentation, отладка, профилирование и подготовка билдов.`,
         "button.viewProjects": `Смотреть проекты`,
         "button.resume": `CV / Resume`,
         "button.releasedGame": `Игра в Google Play`,
@@ -1279,8 +1397,8 @@
         "proof.metric.release": `игра для Google Play доведена от прототипа до публичного релиза`,
         "proof.metric.platforms": `целевые платформы: Android, PC и WebGL`,
         "proof.metric.years": `года практической работы над Unity C# проектами и играбельными прототипами`,
-        "proof.metric.areas": `Unity-направления: gameplay, UI, инструменты, производительность, билды`,
-        "proof.feature": `<b>Фичи, которые закрываю:</b> gameplay-логика, UI-логика, save/load, реклама, прогрессия, настройка сцен, инструменты редактора и подготовка билдов к релизу.`,
+        "proof.metric.areas": `Unity-направления: gameplay, UI, инструменты, производительность, подача, билды`,
+        "proof.feature": `<b>Фичи, которые закрываю:</b> gameplay-логика, UI-логика, save/load, реклама, прогрессия, настройка сцен, gameplay captures, инструменты редактора и подготовка билдов к релизу.`,
         "proof.systems": `<b>Системное мышление:</b> OOP, SOLID/KISS, модульные системы оружия, выбор наград, пулы снарядов, секции врагов, событийный UI и баланс через ScriptableObject.`,
         "proof.production": `<b>Продакшен-подход:</b> чистые границы C#, кешированные ссылки, runtime-ограничения, дисциплина отладки и практичный рефакторинг без лишних переписываний.`,
         "value.title": `Что я могу закрывать`,
@@ -1293,6 +1411,16 @@
         "value.systems.text": `ScriptableObject-конфиги, сервисный код фич, инструменты редактора, утилиты баланса, save/load-поток и читаемые границы C# кода.`,
         "value.runtime.title": `Runtime и релизная подготовка`,
         "value.runtime.text": `Object pooling, контроль GC, кешированные ссылки, profiling mindset, настройка билдов, подготовка релиза и особенности сборки под разные платформы.`,
+        "presentation.title": `Unity-работа с фокусом на креатив и подачу`,
+        "presentation.note": `Мой основной фокус остается на Unity engineering, но я также могу закрывать player-facing часть mobile/casual проектов: gameplay-вариации, настройку сцен, читаемые UI-состояния, capture-ready билды и быструю итерацию для команд или клиентов.`,
+        "presentation.iteration.title": `Gameplay-итерации`,
+        "presentation.iteration.text": `Менять pacing, правила, награды, prefabs, UI flow и ScriptableObject-конфиги для точечных gameplay-вариаций без переписывания проекта.`,
+        "presentation.scene.title": `Сцены и визуальная настройка`,
+        "presentation.scene.text": `Готовить camera framing, эффекты, feedback, mobile layout и читаемые gameplay-состояния, чтобы игрок быстро понимал действие.`,
+        "presentation.captures.title": `Capture-ready билды`,
+        "presentation.captures.text": `Готовить стабильные сцены и билды для простых gameplay captures, store pages, client review, обновлений портфолио или marketing tests.`,
+        "presentation.growth.title": `Направление роста`,
+        "presentation.growth.text": `Хочу дальше расти на стыке Unity implementation и product presentation: первые секунды, ясность, pacing, hooks и практичная creative iteration.`,
         "projects.title": `Ключевые проекты`,
         "projects.note": `Выбранные проекты показывают широкий набор Unity C# задач: gameplay-системы, UI, data-driven настройка, инструменты редактора, runtime-оптимизация, базовая multiplayer-практика и доведение билдов до запуска.`,
         "project.whatBuilt": `Что я сделал`,
@@ -1313,6 +1441,10 @@
         "lastSeed.value.separation": `Четкое разделение данных наград, runtime-контекста, UI binding и gameplay-эффектов`,
         "lastSeed.gallery.title": `Скриншоты геймплея Last Seed Survivor`,
         "lastSeed.gallery.caption": `Скриншоты показывают выбор наград, отображение редкости, сегментированного врага, бой снарядами, отслеживание прогресса и вертикальный gameplay UI.`,
+        "lastSeed.presentation.title": `Player-facing подача`,
+        "lastSeed.presentation.layout": `Вертикальный mobile layout и capture-ready flow для оценки боевого давления, апгрейдов и читаемости.`,
+        "lastSeed.presentation.feedback": `Экраны наград и состояния врагов построены вокруг быстрого feedback, понятной прогрессии и видимых решений игрока.`,
+        "lastSeed.presentation.iteration": `Хорошая база для проверки first-seconds clarity, изменений pacing, коротких gameplay captures и visual hooks.`,
         "emoji.summary": `Выпущенная мобильная игра в Google Play с пошаговым боем, выбором AI-стратегий, прогрессией, сохранением данных игрока, popup/UI-логикой, rewarded/interstitial рекламой и подготовкой Android-публикации.`,
         "emoji.built.flow": `Пошаговый gameplay-поток и логика состояния доски`,
         "emoji.built.ai": `AI-стратегии для нескольких уровней сложности`,
@@ -1327,6 +1459,10 @@
         "emoji.value.refactoring": `Практичный рефакторинг к SRP/MVC-style разделению после стадии прототипа`,
         "emoji.gallery.title": `Скриншоты геймплея Emoji Battle`,
         "emoji.gallery.caption": `Скриншоты показывают путь выпущенной Google Play игры: выбор знака, настройку сложности, состояние доски player-versus-AI, feedback результата матча и unlock-прогрессию.`,
+        "emoji.presentation.title": `Ценность мобильной подачи`,
+        "emoji.presentation.loop": `Полный выпущенный mobile loop: от меню и выбора персонажа до результата матча, наград и unlock feedback.`,
+        "emoji.presentation.states": `Понятные UI-состояния для сложности, player-versus-AI доски, результата, рекламы/наград, настроек и прогрессии.`,
+        "emoji.presentation.captures": `Прямые gameplay captures показывают реальный player flow и mobile release polish, а не отредактированную рекламу.`,
         "tanks.summary": `Unity multiplayer-прототип с host/client-потоком, анонимной авторизацией, UGS Relay/Lobby, lobby UI, сетевым движением, стрельбой, здоровьем, respawn, монетами и обратной связью в стиле leaderboard.`,
         "tanks.implemented": `Реализовано`,
         "tanks.built.connection": `Client/host managers и поток подключения`,
@@ -1358,8 +1494,9 @@
         "nav.projects": `Проєкти`,
         "nav.prototypes": `Прототипи`,
         "nav.contact": `Контакти`,
-        "hero.title": `Unity C# Developer: геймплей, UI, інструменти та білди під різні платформи.`,
-        "hero.lead": `Unity-розробник у Фінляндії з 2+ роками практичного досвіду на C#. Випустив Android-гру в Google Play і створив іграбельні Unity-проєкти для Android, PC та WebGL: gameplay-код, UI-логіка, data-driven системи, інструменти редактора, відлагодження, профілювання і підготовка білдів.`,
+        "hero.eyebrow": `Unity C# Developer | Геймплей, UI, інструменти, білди, мобільна подача`,
+        "hero.title": `Unity C# Developer: геймплей, UI, інструменти, мобільна подача та білди під різні платформи.`,
+        "hero.lead": `Unity-розробник у Фінляндії з 2+ роками практичного досвіду на C#. Випустив Android-гру в Google Play і створив іграбельні Unity-проєкти для Android, PC та WebGL: gameplay-код, UI-логіка, data-driven системи, player-facing presentation, відлагодження, профілювання і підготовка білдів.`,
         "button.viewProjects": `Переглянути проєкти`,
         "button.resume": `CV / Resume`,
         "button.releasedGame": `Гра в Google Play`,
@@ -1369,8 +1506,8 @@
         "proof.metric.release": `гру для Google Play доведено від прототипу до публічного релізу`,
         "proof.metric.platforms": `цільові платформи: Android, PC і WebGL`,
         "proof.metric.years": `роки практичної роботи над Unity C# проєктами та іграбельними прототипами`,
-        "proof.metric.areas": `Unity-напрями: gameplay, UI, інструменти, продуктивність, білди`,
-        "proof.feature": `<b>Фічі, які закриваю:</b> gameplay-логіка, UI-логіка, save/load, реклама, прогресія, налаштування сцен, інструменти редактора і підготовка білдів до релізу.`,
+        "proof.metric.areas": `Unity-напрями: gameplay, UI, інструменти, продуктивність, подача, білди`,
+        "proof.feature": `<b>Фічі, які закриваю:</b> gameplay-логіка, UI-логіка, save/load, реклама, прогресія, налаштування сцен, gameplay captures, інструменти редактора і підготовка білдів до релізу.`,
         "proof.systems": `<b>Системне мислення:</b> OOP, SOLID/KISS, модульні системи зброї, вибір нагород, пули снарядів, секції ворогів, подієвий UI і баланс через ScriptableObject.`,
         "proof.production": `<b>Продакшен-підхід:</b> чисті межі C#, кешовані посилання, runtime-обмеження, дисципліна відлагодження і практичний рефакторинг без зайвих переписувань.`,
         "value.title": `Що я можу закривати`,
@@ -1383,6 +1520,16 @@
         "value.systems.text": `ScriptableObject-конфіги, сервісний код фіч, інструменти редактора, утиліти балансу, save/load-потік і читабельні межі C# коду.`,
         "value.runtime.title": `Runtime і релізна підготовка`,
         "value.runtime.text": `Object pooling, контроль GC, кешовані посилання, profiling mindset, налаштування білдів, підготовка релізу й особливості збірки під різні платформи.`,
+        "presentation.title": `Unity-робота з фокусом на креатив і подачу`,
+        "presentation.note": `Мій основний фокус залишається на Unity engineering, але я також можу закривати player-facing частину mobile/casual проєктів: gameplay-варіації, налаштування сцен, читабельні UI-стани, capture-ready білди і швидку ітерацію для команд або клієнтів.`,
+        "presentation.iteration.title": `Gameplay-ітерації`,
+        "presentation.iteration.text": `Змінювати pacing, правила, нагороди, prefabs, UI flow і ScriptableObject-конфіги для точкових gameplay-варіацій без переписування проєкту.`,
+        "presentation.scene.title": `Сцени і візуальне налаштування`,
+        "presentation.scene.text": `Готувати camera framing, ефекти, feedback, mobile layout і читабельні gameplay-стани, щоб гравець швидко розумів дію.`,
+        "presentation.captures.title": `Capture-ready білди`,
+        "presentation.captures.text": `Готувати стабільні сцени і білди для простих gameplay captures, store pages, client review, оновлень портфоліо або marketing tests.`,
+        "presentation.growth.title": `Напрям росту`,
+        "presentation.growth.text": `Хочу далі рости на стику Unity implementation і product presentation: перші секунди, ясність, pacing, hooks і практична creative iteration.`,
         "projects.title": `Ключові проєкти`,
         "projects.note": `Вибрані проєкти показують широкий набір Unity C# задач: gameplay-системи, UI, data-driven налаштування, інструменти редактора, runtime-оптимізацію, базову multiplayer-практику і доведення білдів до запуску.`,
         "project.whatBuilt": `Що я зробив`,
@@ -1403,6 +1550,10 @@
         "lastSeed.value.separation": `Чітке розділення даних нагород, runtime-контексту, UI binding і gameplay-ефектів`,
         "lastSeed.gallery.title": `Скриншоти геймплею Last Seed Survivor`,
         "lastSeed.gallery.caption": `Скриншоти показують вибір нагород, відображення рідкості, сегментованого ворога, бій снарядами, відстеження прогресу і вертикальний gameplay UI.`,
+        "lastSeed.presentation.title": `Player-facing подача`,
+        "lastSeed.presentation.layout": `Вертикальний mobile layout і capture-ready flow для оцінки бойового тиску, апгрейдів і читабельності.`,
+        "lastSeed.presentation.feedback": `Екрани нагород і стани ворогів побудовані навколо швидкого feedback, зрозумілої прогресії і видимих рішень гравця.`,
+        "lastSeed.presentation.iteration": `Хороша база для перевірки first-seconds clarity, змін pacing, коротких gameplay captures і visual hooks.`,
         "emoji.summary": `Випущена мобільна гра в Google Play з покроковим боєм, вибором AI-стратегій, прогресією, збереженням даних гравця, popup/UI-логікою, rewarded/interstitial рекламою і підготовкою Android-публікації.`,
         "emoji.built.flow": `Покроковий gameplay-потік і логіка стану дошки`,
         "emoji.built.ai": `AI-стратегії для кількох рівнів складності`,
@@ -1417,6 +1568,10 @@
         "emoji.value.refactoring": `Практичний рефакторинг до SRP/MVC-style розділення після стадії прототипу`,
         "emoji.gallery.title": `Скриншоти геймплею Emoji Battle`,
         "emoji.gallery.caption": `Скриншоти показують шлях випущеної Google Play гри: вибір знака, налаштування складності, стан дошки player-versus-AI, feedback результату матчу і unlock-прогресію.`,
+        "emoji.presentation.title": `Цінність мобільної подачі`,
+        "emoji.presentation.loop": `Повний випущений mobile loop: від меню і вибору персонажа до результату матчу, нагород і unlock feedback.`,
+        "emoji.presentation.states": `Зрозумілі UI-стани для складності, player-versus-AI дошки, результату, реклами/нагород, налаштувань і прогресії.`,
+        "emoji.presentation.captures": `Прямі gameplay captures показують реальний player flow і mobile release polish, а не відредаговану рекламу.`,
         "tanks.summary": `Unity multiplayer-прототип з host/client-потоком, анонімною авторизацією, UGS Relay/Lobby, lobby UI, мережевим рухом, стрільбою, здоров'ям, respawn, монетами і зворотним зв'язком у стилі leaderboard.`,
         "tanks.implemented": `Реалізовано`,
         "tanks.built.connection": `Client/host managers і потік підключення`,
@@ -1516,7 +1671,14 @@
       const counter = gallery.querySelector("[data-gallery-counter]");
       const previous = gallery.querySelector("[data-gallery-prev]");
       const next = gallery.querySelector("[data-gallery-next]");
+      const frame = gallery.querySelector(".gallery-frame");
       let current = 0;
+      let swipeStartX = 0;
+      let swipeStartY = 0;
+
+      if (!slides.length || !dots.length || !counter || !previous || !next) {
+        return;
+      }
 
       const showSlide = (index) => {
         current = (index + slides.length) % slides.length;
@@ -1535,6 +1697,53 @@
       dots.forEach((dot, dotIndex) => {
         dot.addEventListener("click", () => showSlide(dotIndex));
       });
+
+      if (frame) {
+        const startSwipe = (clientX, clientY) => {
+          swipeStartX = clientX;
+          swipeStartY = clientY;
+        };
+
+        const finishSwipe = (clientX, clientY) => {
+          const deltaX = clientX - swipeStartX;
+          const deltaY = clientY - swipeStartY;
+          const horizontalSwipe = Math.abs(deltaX) > 36 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+
+          if (horizontalSwipe) {
+            showSlide(current + (deltaX < 0 ? 1 : -1));
+          }
+        };
+
+        if (window.PointerEvent) {
+          frame.addEventListener("pointerdown", (event) => {
+            if (event.pointerType === "mouse") {
+              return;
+            }
+
+            startSwipe(event.clientX, event.clientY);
+            frame.setPointerCapture?.(event.pointerId);
+          }, { passive: true });
+
+          frame.addEventListener("pointerup", (event) => {
+            if (event.pointerType === "mouse") {
+              return;
+            }
+
+            finishSwipe(event.clientX, event.clientY);
+          }, { passive: true });
+        } else {
+          frame.addEventListener("touchstart", (event) => {
+            const touch = event.changedTouches[0];
+            startSwipe(touch.clientX, touch.clientY);
+          }, { passive: true });
+
+          frame.addEventListener("touchend", (event) => {
+            const touch = event.changedTouches[0];
+            finishSwipe(touch.clientX, touch.clientY);
+          }, { passive: true });
+        }
+      }
+
       showSlide(0);
     });
   </script>
