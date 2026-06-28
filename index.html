@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Oleksandr Tokarev - Unity C# Developer in Finland building gameplay features, UI flow, game systems, scene and prefab setup, and Android/WebGL builds with maintainable C# and shipped Google Play experience.">
+  <meta name="description" content="Oleksandr Tokarev - Unity C# Developer in Finland building maintainable gameplay features, UI flow, mobile-ready C# systems, debugging support, project cleanup, and Android/WebGL builds with shipped Google Play experience.">
   <title>Oleksandr Tokarev | Unity C# Developer</title>
   <style>
     :root {
@@ -321,6 +321,27 @@
 
     section {
       padding: 40px 0;
+    }
+
+    #projects {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #projects .section-head {
+      order: 0;
+    }
+
+    #projects .released-case {
+      order: 1;
+    }
+
+    #projects .systems-case {
+      order: 2;
+    }
+
+    #projects .support-case {
+      order: 3;
     }
 
     .section-head {
@@ -1073,7 +1094,7 @@
         </div>
       </div>
       <nav class="nav" aria-label="Main navigation">
-        <a href="#value" data-i18n="nav.value">Value</a>
+        <a href="#value" data-i18n="nav.value">What I Do</a>
         <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#prototypes" data-i18n="nav.prototypes">Prototypes</a>
         <a href="#skills" data-i18n="nav.skills">Skills</a>
@@ -1084,22 +1105,23 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div>
-          <p class="eyebrow" data-i18n="hero.eyebrow">Unity C# Developer | Gameplay Features, UI Flow, Systems & Builds</p>
-          <h1 id="hero-title" data-i18n="hero.title">Unity C# Developer building gameplay features, UI flow, game systems, and Android/WebGL builds.</h1>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Unity C# Developer | Gameplay Features, UI Flow & Mobile Builds</p>
+          <h1 id="hero-title" data-i18n="hero.title">I build maintainable Unity gameplay features and mobile-ready C# systems.</h1>
           <p class="lead" data-i18n="hero.lead">
-            Based in Finland with 2+ years of hands-on C# experience. I build playable features, UI screens, scene and prefab setups, data-driven systems, and playable builds. I have shipped one Android game on Google Play and created playable projects for Android, PC, and WebGL.
+            Based in Finland with 2+ years of hands-on Unity/C# experience. I help teams turn prototypes, feature briefs, and existing Unity projects into playable, testable builds. I have shipped one Android game on Google Play and built projects for Android, PC, and WebGL.
           </p>
           <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="#projects" data-i18n="button.viewProjects">View Projects</a>
+            <a class="button primary" href="mailto:OleksandrTokarevDev@gmail.com" data-i18n="button.email">Email</a>
+            <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener" data-i18n="button.releasedGame">Released Game</a>
+            <a class="button" href="#projects" data-i18n="button.viewProjects">View Projects</a>
             <a class="button" href="assets/Oleksandr_Tokarev_Unity_Developer.pdf" target="_blank" rel="noopener" data-i18n="button.resume">CV / Resume</a>
             <a class="button" href="https://github.com/TokarevDev" target="_blank" rel="noopener">GitHub</a>
             <a class="button" href="https://www.linkedin.com/in/oleksandrtokarev/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener" data-i18n="button.releasedGame">Released Game</a>
           </div>
         </div>
 
         <aside class="proof-rail" aria-label="Profile highlights">
-          <p class="proof-kicker" data-i18n="proof.title">Proof Points</p>
+          <p class="proof-kicker" data-i18n="proof.title">What I Can Prove</p>
           <div class="metric-grid">
             <div class="metric">
               <b>1</b>
@@ -1115,22 +1137,22 @@
             </div>
             <div class="metric">
               <b>5+</b>
-              <span data-i18n="proof.metric.areas">task areas covered: gameplay, UI, systems, performance, builds</span>
+              <span data-i18n="proof.metric.areas">core delivery areas: gameplay, UI, debugging, builds, cleanup</span>
             </div>
           </div>
           <ul class="proof-list">
             <li data-i18n-html="proof.feature"><b>Feature ownership:</b> gameplay logic, UI flow, save/load, ads, progression, scene and prefab setup, gameplay captures, and build preparation.</li>
-            <li data-i18n-html="proof.systems"><b>Maintainable systems:</b> modular weapons, reward rolls, projectile pools, enemy sections, event-driven UI, and ScriptableObject-driven balancing.</li>
-            <li data-i18n-html="proof.production"><b>Work habits:</b> clean C# boundaries, cached references, runtime constraints, debugging discipline, and practical refactoring without unnecessary rewrites.</li>
+            <li data-i18n-html="proof.systems"><b>Maintainable systems:</b> released mobile loop, AI strategies, save data, ads flow, ScriptableObject configs, reward logic, and scene bootstrap.</li>
+            <li data-i18n-html="proof.production"><b>Production mindset:</b> clean C# boundaries, cached references, runtime constraints, debugging discipline, and practical refactoring without unnecessary rewrites.</li>
           </ul>
         </aside>
       </section>
 
       <section id="value" aria-labelledby="value-title">
         <div class="section-head">
-          <h2 id="value-title" data-i18n="value.title">What I Can Help With</h2>
+          <h2 id="value-title" data-i18n="value.title">What I Do</h2>
           <p class="section-note" data-i18n="value.note">
-            I focus on practical Unity work: building features, making UI flows clear, wiring scenes and prefabs, improving existing systems, and preparing playable builds. Source code, gameplay media, and playable builds are available for review.
+            I focus on practical Unity work that teams actually need: building gameplay features, wiring UI flow, debugging existing projects, cleaning up feature code, and preparing playable Android/WebGL/PC builds. Source code, gameplay media, and builds are available for review.
           </p>
         </div>
 
@@ -1148,17 +1170,17 @@
             <p data-i18n="value.systems.text">ScriptableObject configs, service-style feature code, prefab/scene setup, balancing data, save/load flow, and readable C# boundaries.</p>
           </article>
           <article class="value-item">
-            <h3 data-i18n="value.runtime.title">Runtime & Builds</h3>
-            <p data-i18n="value.runtime.text">Object pooling, GC awareness, cached references, profiling, build setup, release preparation, and platform-specific runtime constraints.</p>
+            <h3 data-i18n="value.runtime.title">Debugging & Builds</h3>
+            <p data-i18n="value.runtime.text">Bug investigation, Unity Profiler checks, GC/allocation awareness, cached references, build setup, release preparation, and platform-specific runtime constraints.</p>
           </article>
         </div>
       </section>
 
       <section id="presentation" aria-labelledby="presentation-title">
         <div class="section-head">
-          <h2 id="presentation-title" data-i18n="presentation.title">Gameplay Work & Iteration</h2>
+          <h2 id="presentation-title" data-i18n="presentation.title">How I Deliver Unity Work</h2>
           <p class="section-note" data-i18n="presentation.note">
-            I can help with player-facing Unity work: implementing features, tuning the first seconds, preparing scene flow, UI states, gameplay captures, and fast iteration while keeping the code readable.
+            I work best on focused tasks with a clear playable result: implement the feature, connect it to UI and data, test the flow, prepare a reviewable build, and keep the code readable enough for the next iteration.
           </p>
         </div>
 
@@ -1186,11 +1208,11 @@
         <div class="section-head">
           <h2 id="projects-title" data-i18n="projects.title">Featured Projects</h2>
           <p class="section-note" data-i18n="projects.note">
-            These projects show practical Unity work across shipped mobile gameplay, data-driven systems, UI flow, prefab/scene setup, runtime optimization, multiplayer basics, and playable builds.
+            These projects show practical Unity work across a shipped mobile game, data-driven gameplay systems, UI flow, scene/prefab setup, debugging-minded implementation, multiplayer basics, and playable builds.
           </p>
         </div>
 
-        <article class="project">
+        <article class="project systems-case">
           <figure class="project-media visual-media" aria-label="Last Seed Survivor game icon">
             <img class="project-icon" src="assets/last-seed/game-icon-warrior.png" alt="Last Seed Survivor warrior game icon">
           </figure>
@@ -1198,7 +1220,7 @@
           <div>
             <h3>Last Seed Survivor</h3>
             <p class="project-summary" data-i18n="lastSeed.summary">
-              2D Unity 6 auto-shooter/survival project built around modular combat systems, reward choices, pooled projectiles, segmented enemy behavior, balance simulation support, and Android release preparation. Closed testing is completed; the Android build is in Google Play post-test review.
+              2D Unity 6 auto-shooter/survival project built around modular combat systems, reward choices, runtime projectile handling, segmented enemy behavior, balance simulation support, and Android release preparation. Closed testing is completed; the Android build is in Google Play post-test review.
             </p>
             <ul class="tag-list">
               <li class="green" data-i18n="lastSeed.badge.closedTest">Closed test passed</li>
@@ -1242,7 +1264,7 @@
               </ul>
             </div>
 
-            <p class="tech"><b>Tech:</b> Unity 6, C#, ScriptableObjects, Object Pooling, Physics2D, Input System, DOTween, URP, custom balance simulation, performance-conscious runtime optimization.</p>
+            <p class="tech"><b>Tech:</b> Unity 6, C#, ScriptableObjects, targeted pooling for projectiles/enemy segments, Physics2D, Input System, DOTween, URP, custom balance simulation, performance-conscious runtime optimization.</p>
             <div class="button-row">
               <a class="button primary" href="https://github.com/TokarevDev/Force_of_Nature_Last_Seed" target="_blank" rel="noopener">Source Code</a>
               <a class="button secondary" href="https://youtube.com/shorts/HiQBlYjienI?feature=share" target="_blank" rel="noopener">YouTube Gameplay</a>
@@ -1281,7 +1303,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="project released-case">
           <figure class="project-media visual-media" aria-label="Emoji Battle game icon">
             <img class="project-icon contain" src="assets/emoji-battle/game-icon.png" alt="Emoji Battle purple emoji game icon">
           </figure>
@@ -1370,7 +1392,7 @@
           </div>
         </article>
 
-        <article class="project compact">
+        <article class="project compact support-case">
           <div>
             <h3>Tanks Multiplayer Prototype</h3>
             <p class="project-summary" data-i18n="tanks.summary">
@@ -1468,8 +1490,8 @@
             <p data-i18n="skills.architecture.text">SOLID/SRP, event-driven communication, Strategy Pattern, service abstractions, ScriptableObject configs, runtime/data separation, feature integration, and maintainable boundaries.</p>
           </article>
           <article class="skill-group">
-            <h3 data-i18n="skills.performance.title">Performance</h3>
-            <p data-i18n="skills.performance.text">Object pooling, GC allocation awareness, cached references, avoiding hot-path scene searches, profiler-driven checks, and platform runtime constraints.</p>
+            <h3 data-i18n="skills.performance.title">Debugging & Runtime Awareness</h3>
+            <p data-i18n="skills.performance.text">Unity Profiler checks, GC allocation awareness, cached references, avoiding hot-path scene searches, build/runtime investigation, and platform constraints.</p>
           </article>
           <article class="skill-group">
             <h3 data-i18n="skills.platforms.title">Platforms & Builds</h3>
@@ -1486,7 +1508,7 @@
         <div class="section-head">
           <h2 id="fit-title" data-i18n="fit.title">Where I Fit Best</h2>
           <p class="section-note" data-i18n="fit.note">
-            Best fit for Unity teams or clients who need hands-on feature implementation, UI/gameplay integration, debugging, project cleanup, build preparation, and clear communication around focused Unity tasks.
+            Best fit for Unity teams or clients who need a Unity C# developer for focused feature implementation, UI/gameplay integration, debugging, project cleanup, build preparation, and clear communication around practical delivery.
           </p>
         </div>
 
@@ -1494,13 +1516,13 @@
           <article class="note-panel">
             <h3 data-i18n="fit.areas.title">Strongest project areas</h3>
             <p>
-              <span data-i18n="fit.areas.text">Gameplay features, UI flow, prototypes, Unity C# systems, scene/prefab setup, debugging, refactoring, build preparation, project cleanup, and mobile/WebGL builds.</span>
+              <span data-i18n="fit.areas.text">Gameplay features, UI flow, prototype-to-build work, Unity C# systems, scene/prefab setup, debugging, refactoring, build preparation, project cleanup, and mobile/WebGL builds.</span>
             </p>
           </article>
           <article class="note-panel">
             <h3 data-i18n="fit.contribute.title">How I Work</h3>
             <p>
-              <span data-i18n="fit.contribute.text">I can take focused Unity tasks from brief to playable result, work with existing code without unnecessary rewrites, ask questions early, and contribute across gameplay, UI, systems, optimization, builds, and multi-platform releases.</span>
+              <span data-i18n="fit.contribute.text">I can take focused Unity tasks from brief to playable result, work with existing code without unnecessary rewrites, ask questions early, and contribute across gameplay, UI, systems, debugging, builds, and multi-platform releases.</span>
             </p>
           </article>
         </div>
@@ -1510,7 +1532,7 @@
         <div class="contact-band">
           <div>
             <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
-            <p data-i18n="contact.text">Based in Finland. Permanent resident. Open to Unity C# Developer roles where I can contribute to real game features, plus freelance/client work and contract tasks: worldwide remote work, on-site/office, hybrid, and relocation within Finland.</p>
+            <p data-i18n="contact.text">Based in Finland. Permanent resident. Open to Unity C# Developer roles focused on gameplay features, UI flow, mobile builds, debugging, and project cleanup, plus freelance/client work and contract tasks: worldwide remote work, on-site/office, hybrid, and relocation within Finland.</p>
             <div class="contact-email" aria-label="Email address">
               <a class="email-address" href="mailto:OleksandrTokarevDev@gmail.com">OleksandrTokarevDev@gmail.com</a>
               <span class="copy-status" data-copy-status data-i18n="contact.copyHint">Copy the address if your mail app does not open.</span>
@@ -1561,14 +1583,14 @@
     const translations = {
       ru: {
         "language.label": `Язык`,
-        "nav.value": `Ценность`,
+        "nav.value": `Что делаю`,
         "nav.projects": `Проекты`,
         "nav.prototypes": `Прототипы`,
         "nav.skills": `Навыки`,
         "nav.contact": `Контакты`,
-        "hero.eyebrow": `Unity C# Developer | Игровые механики, интерфейс, системы и билды`,
-        "hero.title": `Unity C# Developer, который делает игровые механики, интерфейс, игровые системы и Android/WebGL билды.`,
-        "hero.lead": `Нахожусь в Финляндии, 2+ года практического опыта на C#. Делаю играбельные механики, экраны интерфейса, настройку сцен и префабов, системы на основе данных и играбельные билды, которые можно показывать и тестировать. Выпустил одну Android-игру в Google Play и собрал играбельные проекты для Android, PC и WebGL.`,
+        "hero.eyebrow": `Unity C# Developer | Игровые механики, интерфейс и мобильные билды`,
+        "hero.title": `Я создаю поддерживаемые игровые функции в Unity и C#-системы, готовые к мобильным билдам.`,
+        "hero.lead": `Нахожусь в Финляндии, 2+ года практического опыта с Unity/C#. Помогаю командам превращать прототипы, технические задачи и существующие Unity-проекты в играбельные билды, которые можно тестировать. Выпустил одну Android-игру в Google Play и собрал проекты для Android, PC и WebGL.`,
         "button.email": `Написать`,
         "button.copyEmail": `Скопировать почту`,
         "button.viewProjects": `Смотреть проекты`,
@@ -1576,26 +1598,26 @@
         "button.releasedGame": `Игра в Google Play`,
         "button.playWebGL": `Играть в браузере (WebGL)`,
         "button.downloadPc": `Скачать PC-билд`,
-        "proof.title": `Ключевые факты`,
+        "proof.title": `Что я могу подтвердить`,
         "proof.metric.release": `игра в Google Play доведена от прототипа до релиза`,
         "proof.metric.platforms": `проекты собраны для Android, PC и WebGL`,
         "proof.metric.years": `года практической Unity C# реализации`,
-        "proof.metric.areas": `зон задач: геймплей, интерфейс, системы, производительность, билды`,
+        "proof.metric.areas": `ключевых зон: геймплей, интерфейс, отладка, билды, чистка проекта`,
         "proof.feature": `<b>Зона ответственности:</b> игровая логика, поток интерфейса, сохранение и загрузка, реклама, прогрессия, настройка сцен и префабов, запись геймплея и подготовка билдов.`,
-        "proof.systems": `<b>Поддерживаемые системы:</b> модульное оружие, выбор наград, пулы снарядов, секции врагов, событийный интерфейс и баланс через ScriptableObject.`,
-        "proof.production": `<b>Как работаю:</b> чистые границы C#, кешированные ссылки, ограничения рантайма, дисциплина отладки и практичный рефакторинг без лишних переписываний.`,
-        "value.title": `С чем я могу помочь`,
-        "value.note": `Я фокусируюсь на практичной Unity-работе: делать игровые механики, собирать понятный поток интерфейса, настраивать сцены и префабы, улучшать существующие системы и готовить играбельные билды. Исходный код, материалы с геймплеем и играбельные билды доступны для просмотра.`,
+        "proof.systems": `<b>Поддерживаемые системы:</b> выпущенный мобильный цикл, стратегии ИИ, данные сохранений, поток рекламы, ScriptableObject-конфиги, логика наград и загрузка сцены.`,
+        "proof.production": `<b>Production-подход:</b> чистые границы C#, кешированные ссылки, ограничения рантайма, дисциплина отладки и практичный рефакторинг без лишних переписываний.`,
+        "value.title": `Что я делаю`,
+        "value.note": `Я фокусируюсь на практичной Unity-работе, которая реально нужна командам: делать игровые функции, связывать поток интерфейса, отлаживать существующие проекты, чистить код функций и готовить играбельные Android/WebGL/PC билды. Исходный код, материалы с геймплеем и билды доступны для просмотра.`,
         "value.gameplay.title": `Игровые механики`,
         "value.gameplay.text": `Бой, оружие, снаряды, враги, награды, прогрессия и играбельные циклы от прототипа до настроенной реализации.`,
         "value.ui.title": `Интерфейс и взаимодействие игрока`,
         "value.ui.text": `UGUI-экраны, всплывающие окна, меню, обратная связь, ввод, навигация, путь к результату и интеграция функций в игровой опыт.`,
         "value.systems.title": `Системы, данные и префабы`,
         "value.systems.text": `ScriptableObject-конфиги, сервисный код функций, настройка префабов/сцен, данные баланса, сохранение и загрузка, читаемые границы C# кода.`,
-        "value.runtime.title": `Рантайм и билды`,
-        "value.runtime.text": `Пулы объектов, контроль аллокаций GC, кешированные ссылки, профилирование, настройка билдов, подготовка релиза и ограничения конкретных платформ в рантайме.`,
-        "presentation.title": `Геймплей-задачи и итерации`,
-        "presentation.note": `Могу помогать с видимыми игроку Unity-задачами: реализация функций, первые секунды, последовательность сцен, состояния интерфейса, записи геймплея и быстрые итерации с читаемым кодом.`,
+        "value.runtime.title": `Отладка и билды`,
+        "value.runtime.text": `Разбор багов, проверки через Unity Profiler, контроль GC-аллокаций, кешированные ссылки, настройка билдов, подготовка релиза и ограничения конкретных платформ в рантайме.`,
+        "presentation.title": `Как я довожу Unity-задачи`,
+        "presentation.note": `Лучше всего работаю с фокусными задачами, где нужен понятный играбельный результат: реализовать фичу, связать ее с интерфейсом и данными, проверить поток, подготовить билд для ревью и оставить код читаемым для следующей итерации.`,
         "presentation.iteration.title": `Геймплей-итерации`,
         "presentation.iteration.text": `Менять темп, правила, награды, префабы, поток интерфейса и ScriptableObject-конфиги для точечных вариаций геймплея без переписывания проекта.`,
         "presentation.scene.title": `Сцены и визуальная настройка`,
@@ -1605,10 +1627,10 @@
         "presentation.growth.title": `Работа с обратной связью`,
         "presentation.growth.text": `Превращать обратную связь от дизайнера, клиента или QA в конкретные Unity-изменения по темпу, ясности, экранам и ощущению геймплея без потери чистых границ реализации.`,
         "projects.title": `Ключевые проекты`,
-        "projects.note": `Эти проекты показывают практичную Unity-работу: выпущенный мобильный геймплей, системы на основе данных, поток интерфейса, настройку префабов/сцен, оптимизацию рантайма, основы мультиплеера и играбельные билды.`,
+        "projects.note": `Эти проекты показывают практичную Unity-работу: выпущенную мобильную игру, геймплейные системы на основе данных, поток интерфейса, настройку префабов/сцен, реализацию с вниманием к отладке, основы мультиплеера и играбельные билды.`,
         "project.whatBuilt": `Что я сделал`,
         "project.engineeringValue": `Инженерная ценность`,
-        "lastSeed.summary": `2D проект в жанре auto-shooter/survival на Unity 6 с модульными боевыми системами, выбором наград, пулами снарядов, поведением сегментированного врага, поддержкой симуляций баланса и подготовкой Android-релиза. Закрытое тестирование завершено; Android-билд проходит послетестовую проверку Google Play.`,
+        "lastSeed.summary": `2D проект в жанре auto-shooter/survival на Unity 6 с модульными боевыми системами, выбором наград, обработкой снарядов в рантайме, поведением сегментированного врага, поддержкой симуляций баланса и подготовкой Android-релиза. Закрытое тестирование завершено; Android-билд проходит послетестовую проверку Google Play.`,
         "lastSeed.badge.closedTest": `Закрытый тест пройден`,
         "lastSeed.badge.review": `Проверка Google Play`,
         "lastSeed.built.weapon": `Оружие Acacia Thorn на базе снарядов`,
@@ -1669,33 +1691,33 @@
         "skills.gameplay.text": `Бой, оружие, снаряды, выбор наград, прогрессия, поведение врагов, логика решений ИИ, поток состояний, сохранение/загрузка и интеграция функций.`,
         "skills.architecture.title": `Архитектура и поток данных`,
         "skills.architecture.text": `SOLID/SRP, событийная коммуникация, Strategy Pattern, сервисные абстракции, ScriptableObject-конфиги, разделение рантайма и данных, интеграция функций и поддерживаемые границы реализации.`,
-        "skills.performance.title": `Производительность`,
-        "skills.performance.text": `Пулы объектов, контроль аллокаций GC, кешированные ссылки, отсутствие поисков объектов в сцене в горячих участках, проверки через Profiler и ограничения рантайма платформ.`,
+        "skills.performance.title": `Отладка и понимание рантайма`,
+        "skills.performance.text": `Проверки через Unity Profiler, контроль GC-аллокаций, кешированные ссылки, отсутствие поисков объектов в сцене в горячих участках, разбор проблем билдов/рантайма и ограничения платформ.`,
         "skills.platforms.title": `Платформы и билды`,
         "skills.platforms.text": `Android, PC, WebGL, Google Play, itch.io, играбельные WebGL-прототипы в браузере, настройка билдов и практическая подготовка релиза.`,
         "skills.multiplayer.title": `Опыт с мультиплеером`,
         "skills.multiplayer.text": `Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, ServerRpc/ClientRpc, интерфейс лобби и поток прототипа с хостом/клиентом.`,
         "fit.title": `Где я лучше всего подхожу`,
-        "fit.note": `Лучше всего подхожу Unity-командам или клиентам, которым нужны практическая реализация функций, интеграция интерфейса и геймплея, отладка, чистка проекта, подготовка билдов и понятная коммуникация по сфокусированным Unity-задачам.`,
+        "fit.note": `Лучше всего подхожу Unity-командам или клиентам, которым нужен Unity C# разработчик для сфокусированной реализации функций, интеграции интерфейса и геймплея, отладки, чистки проекта, подготовки билдов и понятной коммуникации по практичным задачам.`,
         "fit.areas.title": `Сильные проектные зоны`,
-        "fit.areas.text": `Геймплей-функции, поток интерфейса, прототипы, Unity C# системы, настройка сцен/префабов, отладка, рефакторинг, подготовка билдов, чистка проекта и мобильные/WebGL билды.`,
+        "fit.areas.text": `Игровые функции, поток интерфейса, работа от прототипа до билда, Unity C#-системы, настройка сцен/префабов, отладка, рефакторинг, подготовка билдов, чистка проекта и мобильные/WebGL билды.`,
         "fit.contribute.title": `Как я работаю`,
-        "fit.contribute.text": `Я могу брать сфокусированные Unity-задачи от брифа до играбельного результата, работать с существующим кодом без лишних переписываний, задавать вопросы заранее и закрывать задачи в геймплее, интерфейсе, системах, оптимизации, билдах и мультиплатформенных релизах.`,
+        "fit.contribute.text": `Я могу брать сфокусированные Unity-задачи от брифа до играбельного результата, работать с существующим кодом без лишних переписываний, задавать вопросы заранее и закрывать задачи в геймплее, интерфейсе, системах, отладке, билдах и мультиплатформенных релизах.`,
         "contact.title": `Контакты`,
-        "contact.text": `Нахожусь в Финляндии. Постоянное место жительства. Открыт к Unity C# Developer ролям, где можно работать над реальными игровыми функциями, а также к фрилансу, клиентским и контрактным задачам: удаленно по всему миру, в офисе, гибридно и с релокацией внутри Финляндии.`,
+        "contact.text": `Нахожусь в Финляндии. Постоянное место жительства. Открыт к Unity C# Developer ролям с фокусом на игровые функции, поток интерфейса, мобильные билды, отладку и чистку проекта, а также к фрилансу, клиентским и контрактным задачам: удаленно по всему миру, в офисе, гибридно и с релокацией внутри Финляндии.`,
         "contact.copyHint": `Если почтовое приложение не открылось, можно просто скопировать адрес.`,
         "footer.text": `Oleksandr Tokarev - Unity C# Developer. Портфолио о выпущенных Unity-функциях, геймплейных системах и практичной Unity-работе.`
       },
       uk: {
         "language.label": `Мова`,
-        "nav.value": `Цінність`,
+        "nav.value": `Що роблю`,
         "nav.projects": `Проєкти`,
         "nav.prototypes": `Прототипи`,
         "nav.skills": `Навички`,
         "nav.contact": `Контакти`,
-        "hero.eyebrow": `Unity C# Developer | Ігрові механіки, інтерфейс, системи і білди`,
-        "hero.title": `Unity C# Developer, який робить ігрові механіки, інтерфейс, ігрові системи та Android/WebGL білди.`,
-        "hero.lead": `Знаходжусь у Фінляндії, маю 2+ роки практичного досвіду на C#. Роблю іграбельні механіки, екрани інтерфейсу, налаштування сцен і префабів, системи на основі даних та іграбельні білди, які можна показувати і тестувати. Випустив одну Android-гру в Google Play і створив іграбельні проєкти для Android, PC та WebGL.`,
+        "hero.eyebrow": `Unity C# Developer | Ігрові механіки, інтерфейс і мобільні білди`,
+        "hero.title": `Я створюю підтримувані ігрові функції в Unity та C#-системи, готові до мобільних білдів.`,
+        "hero.lead": `Знаходжусь у Фінляндії, маю 2+ роки практичного досвіду з Unity/C#. Допомагаю командам перетворювати прототипи, технічні задачі та наявні Unity-проєкти на іграбельні білди, які можна тестувати. Випустив одну Android-гру в Google Play і створив проєкти для Android, PC та WebGL.`,
         "button.email": `Написати`,
         "button.copyEmail": `Скопіювати пошту`,
         "button.viewProjects": `Переглянути проєкти`,
@@ -1703,26 +1725,26 @@
         "button.releasedGame": `Гра в Google Play`,
         "button.playWebGL": `Грати в браузері (WebGL)`,
         "button.downloadPc": `Завантажити PC-білд`,
-        "proof.title": `Ключові факти`,
+        "proof.title": `Що я можу підтвердити`,
         "proof.metric.release": `гру в Google Play доведено від прототипу до релізу`,
         "proof.metric.platforms": `проєкти зібрано для Android, PC і WebGL`,
         "proof.metric.years": `роки практичної Unity C# реалізації`,
-        "proof.metric.areas": `зон задач: геймплей, інтерфейс, системи, продуктивність, білди`,
+        "proof.metric.areas": `ключових зон: геймплей, інтерфейс, відлагодження, білди, чистка проєкту`,
         "proof.feature": `<b>Зона відповідальності:</b> ігрова логіка, потік інтерфейсу, збереження і завантаження, реклама, прогресія, налаштування сцен і префабів, запис геймплею та підготовка білдів.`,
-        "proof.systems": `<b>Підтримувані системи:</b> модульна зброя, вибір нагород, пули снарядів, секції ворогів, подієвий інтерфейс і баланс через ScriptableObject.`,
-        "proof.production": `<b>Як працюю:</b> чисті межі C#, кешовані посилання, обмеження рантайму, дисципліна відлагодження і практичний рефакторинг без зайвих переписувань.`,
-        "value.title": `З чим я можу допомогти`,
-        "value.note": `Я фокусуюсь на практичній Unity-роботі: робити ігрові механіки, збирати зрозумілий потік інтерфейсу, налаштовувати сцени і префаби, покращувати наявні системи та готувати іграбельні білди. Вихідний код, матеріали з геймплеєм та іграбельні білди доступні для перегляду.`,
+        "proof.systems": `<b>Підтримувані системи:</b> випущений мобільний цикл, стратегії ШІ, дані збережень, потік реклами, ScriptableObject-конфіги, логіка нагород і завантаження сцени.`,
+        "proof.production": `<b>Production-підхід:</b> чисті межі C#, кешовані посилання, обмеження рантайму, дисципліна відлагодження і практичний рефакторинг без зайвих переписувань.`,
+        "value.title": `Що я роблю`,
+        "value.note": `Я фокусуюсь на практичній Unity-роботі, яка реально потрібна командам: робити ігрові функції, поєднувати потік інтерфейсу, відлагоджувати наявні проєкти, чистити код функцій і готувати іграбельні Android/WebGL/PC білди. Вихідний код, матеріали з геймплеєм і білди доступні для перегляду.`,
         "value.gameplay.title": `Ігрові механіки`,
         "value.gameplay.text": `Бій, зброя, снаряди, вороги, нагороди, прогресія та іграбельні цикли від прототипу до налаштованої реалізації.`,
         "value.ui.title": `Інтерфейс і взаємодія гравця`,
         "value.ui.text": `UGUI-екрани, спливні вікна, меню, зворотний зв'язок, ввід, навігація, шлях до результату та інтеграція функцій в ігровий досвід.`,
         "value.systems.title": `Системи, дані та префаби`,
         "value.systems.text": `ScriptableObject-конфіги, сервісний код функцій, налаштування префабів/сцен, дані балансу, збереження і завантаження, читабельні межі C# коду.`,
-        "value.runtime.title": `Рантайм і білди`,
-        "value.runtime.text": `Пули об'єктів, контроль алокацій GC, кешовані посилання, профілювання, налаштування білдів, підготовка релізу і обмеження конкретних платформ у рантаймі.`,
-        "presentation.title": `Геймплей-задачі та ітерації`,
-        "presentation.note": `Можу допомагати з видимими гравцю Unity-задачами: реалізація функцій, перші секунди, послідовність сцен, стани інтерфейсу, записи геймплею і швидкі ітерації з читабельним кодом.`,
+        "value.runtime.title": `Відлагодження і білди`,
+        "value.runtime.text": `Розбір багів, перевірки через Unity Profiler, контроль GC-алокацій, кешовані посилання, налаштування білдів, підготовка релізу і обмеження конкретних платформ у рантаймі.`,
+        "presentation.title": `Як я доводжу Unity-задачі`,
+        "presentation.note": `Найкраще працюю з фокусними задачами, де потрібен зрозумілий іграбельний результат: реалізувати фічу, поєднати її з інтерфейсом і даними, перевірити потік, підготувати білд для рев'ю і залишити код читабельним для наступної ітерації.`,
         "presentation.iteration.title": `Геймплей-ітерації`,
         "presentation.iteration.text": `Змінювати темп, правила, нагороди, префаби, потік інтерфейсу і ScriptableObject-конфіги для точкових геймплейних варіацій без переписування проєкту.`,
         "presentation.scene.title": `Сцени і візуальне налаштування`,
@@ -1732,10 +1754,10 @@
         "presentation.growth.title": `Робота зі зворотним зв'язком`,
         "presentation.growth.text": `Перетворювати зворотний зв'язок від дизайнера, клієнта або QA на конкретні Unity-зміни по темпу, ясності, екранах і відчуттю геймплею без втрати чистих меж реалізації.`,
         "projects.title": `Ключові проєкти`,
-        "projects.note": `Ці проєкти показують практичну Unity-роботу: випущений мобільний геймплей, системи на основі даних, потік інтерфейсу, налаштування префабів/сцен, оптимізацію рантайму, основи мультиплеєра та іграбельні білди.`,
+        "projects.note": `Ці проєкти показують практичну Unity-роботу: випущену мобільну гру, геймплейні системи на основі даних, потік інтерфейсу, налаштування префабів/сцен, реалізацію з увагою до відлагодження, основи мультиплеєра та іграбельні білди.`,
         "project.whatBuilt": `Що я зробив`,
         "project.engineeringValue": `Інженерна цінність`,
-        "lastSeed.summary": `2D проєкт у жанрі auto-shooter/survival на Unity 6 з модульними бойовими системами, вибором нагород, пулами снарядів, поведінкою сегментованого ворога, підтримкою симуляцій балансу і підготовкою Android-релізу. Закрите тестування завершено; Android-білд проходить післятестову перевірку Google Play.`,
+        "lastSeed.summary": `2D проєкт у жанрі auto-shooter/survival на Unity 6 з модульними бойовими системами, вибором нагород, обробкою снарядів у рантаймі, поведінкою сегментованого ворога, підтримкою симуляцій балансу і підготовкою Android-релізу. Закрите тестування завершено; Android-білд проходить післятестову перевірку Google Play.`,
         "lastSeed.badge.closedTest": `Закрите тестування пройдено`,
         "lastSeed.badge.review": `Перевірка Google Play`,
         "lastSeed.built.weapon": `Зброя Acacia Thorn на базі снарядів`,
@@ -1796,20 +1818,20 @@
         "skills.gameplay.text": `Бій, зброя, снаряди, вибір нагород, прогресія, поведінка ворогів, логіка рішень ШІ, потік станів, збереження/завантаження та інтеграція функцій.`,
         "skills.architecture.title": `Архітектура і потік даних`,
         "skills.architecture.text": `SOLID/SRP, подієва комунікація, Strategy Pattern, сервісні абстракції, ScriptableObject-конфіги, розділення рантайму і даних, інтеграція функцій і підтримувані межі реалізації.`,
-        "skills.performance.title": `Продуктивність`,
-        "skills.performance.text": `Пули об'єктів, контроль алокацій GC, кешовані посилання, відсутність пошуків об'єктів у сцені в гарячих ділянках, перевірки через Profiler і обмеження рантайму платформ.`,
+        "skills.performance.title": `Відлагодження і розуміння рантайму`,
+        "skills.performance.text": `Перевірки через Unity Profiler, контроль GC-алокацій, кешовані посилання, відсутність пошуків об'єктів у сцені в гарячих ділянках, розбір проблем білдів/рантайму і обмеження платформ.`,
         "skills.platforms.title": `Платформи і білди`,
         "skills.platforms.text": `Android, PC, WebGL, Google Play, itch.io, іграбельні WebGL-прототипи у браузері, налаштування білдів і практична підготовка релізу.`,
         "skills.multiplayer.title": `Досвід з мультиплеєром`,
         "skills.multiplayer.text": `Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, ServerRpc/ClientRpc, інтерфейс лобі і потік прототипу з хостом/клієнтом.`,
         "fit.title": `Де я найкраще підходжу`,
-        "fit.note": `Найкраще підходжу Unity-командам або клієнтам, яким потрібні практична реалізація функцій, інтеграція інтерфейсу і геймплею, відлагодження, чистка проєкту, підготовка білдів і зрозуміла комунікація по сфокусованих Unity-задачах.`,
+        "fit.note": `Найкраще підходжу Unity-командам або клієнтам, яким потрібен Unity C# розробник для сфокусованої реалізації функцій, інтеграції інтерфейсу і геймплею, відлагодження, чистки проєкту, підготовки білдів і зрозумілої комунікації по практичних задачах.`,
         "fit.areas.title": `Сильні проєктні зони`,
-        "fit.areas.text": `Геймплей-функції, потік інтерфейсу, прототипи, Unity C# системи, налаштування сцен/префабів, відлагодження, рефакторинг, підготовка білдів, чистка проєкту і мобільні/WebGL білди.`,
+        "fit.areas.text": `Ігрові функції, потік інтерфейсу, робота від прототипу до білда, Unity C#-системи, налаштування сцен/префабів, відлагодження, рефакторинг, підготовка білдів, чистка проєкту і мобільні/WebGL білди.`,
         "fit.contribute.title": `Як я працюю`,
-        "fit.contribute.text": `Я можу брати сфокусовані Unity-задачі від брифу до іграбельного результату, працювати з наявним кодом без зайвих переписувань, ставити питання заздалегідь і закривати задачі в геймплеї, інтерфейсі, системах, оптимізації, білдах і мультиплатформних релізах.`,
+        "fit.contribute.text": `Я можу брати сфокусовані Unity-задачі від брифу до іграбельного результату, працювати з наявним кодом без зайвих переписувань, ставити питання заздалегідь і закривати задачі в геймплеї, інтерфейсі, системах, відлагодженні, білдах і мультиплатформних релізах.`,
         "contact.title": `Контакти`,
-        "contact.text": `Знаходжусь у Фінляндії. Постійне місце проживання. Відкритий до Unity C# Developer ролей, де можна працювати над реальними ігровими функціями, а також до фрилансу, клієнтських і контрактних задач: віддалено по всьому світу, в офісі, гібридно і з релокацією всередині Фінляндії.`,
+        "contact.text": `Знаходжусь у Фінляндії. Постійне місце проживання. Відкритий до Unity C# Developer ролей з фокусом на ігрові функції, потік інтерфейсу, мобільні білди, відлагодження і чистку проєкту, а також до фрилансу, клієнтських і контрактних задач: віддалено по всьому світу, в офісі, гібридно і з релокацією всередині Фінляндії.`,
         "contact.copyHint": `Якщо поштовий застосунок не відкрився, можна просто скопіювати адресу.`,
         "footer.text": `Oleksandr Tokarev - Unity C# Developer. Портфоліо про випущені Unity-функції, геймплейні системи і практичну Unity-роботу.`
       }
