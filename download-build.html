@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Build Download | Oleksandr Tokarev</title>
+  <style>
+    :root {
+      --bg: #101211;
+      --surface: #181d1b;
+      --surface-strong: #202622;
+      --text: #f2efe6;
+      --muted: #bbb7ac;
+      --line: #343b38;
+      --green: #2fbd8d;
+      --amber: #f2a93b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      min-height: 100vh;
+      margin: 0;
+      place-items: center;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      width: min(100% - 32px, 620px);
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.58;
+    }
+
+    .status {
+      margin-top: 18px;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    progress {
+      width: 100%;
+      height: 14px;
+      margin-top: 18px;
+      accent-color: var(--green);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    a,
+    button {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface-strong);
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button {
+      border-color: transparent;
+      background: var(--green);
+      color: #06120e;
+    }
+
+    .warning {
+      margin-top: 16px;
+      color: var(--amber);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 data-title>Preparing build download</h1>
+    <p data-description>The build archive is being prepared in your browser.</p>
+    <progress data-progress value="0" max="100"></progress>
+    <p class="status" data-status>Starting...</p>
+    <p class="warning" data-warning hidden></p>
+    <div class="actions">
+      <button type="button" data-retry hidden>Retry Download</button>
+      <a href="index.html">Back to Portfolio</a>
+    </div>
+  </main>
+
+  <script>
+    const builds = {
+      tanks: {
+        title: "Tanks Multiplayer Prototype",
+        fileName: "Tanks_Multiplayer_PC_Build.zip",
+        parts: [
+          "assets/builds/tanks-multiplayer/Tanks_Multiplayer_PC_Build.zip.001",
+          "assets/builds/tanks-multiplayer/Tanks_Multiplayer_PC_Build.zip.002",
+        ],
+      },
+      galaxy: {
+        title: "Galaxy Strike",
+        fileName: "GalaxyStrike_PC_Build.zip",
+        parts: [
+          "assets/builds/galaxy-strike/GalaxyStrike_PC_Build.zip.001",
+          "assets/builds/galaxy-strike/GalaxyStrike_PC_Build.zip.002",
+          "assets/builds/galaxy-strike/GalaxyStrike_PC_Build.zip.003",
+        ],
+      },
+    };
+
+    const title = document.querySelector("[data-title]");
+    const description = document.querySelector("[data-description]");
+    const progress = document.querySelector("[data-progress]");
+    const status = document.querySelector("[data-status]");
+    const warning = document.querySelector("[data-warning]");
+    const retry = document.querySelector("[data-retry]");
+    const requestedBuild = new URLSearchParams(window.location.search).get("build");
+    const build = builds[requestedBuild] || builds.tanks;
+
+    const setProgress = (loadedParts) => {
+      progress.value = Math.round((loadedParts / build.parts.length) * 100);
+      status.textContent = `Downloaded ${loadedParts} / ${build.parts.length} parts`;
+    };
+
+    const startDownload = async () => {
+      retry.hidden = true;
+      warning.hidden = true;
+      progress.value = 0;
+      title.textContent = `Preparing ${build.title}`;
+      description.textContent = "Downloading build archive parts...";
+      status.textContent = "Starting...";
+
+      try {
+        const chunks = [];
+        for (let i = 0; i < build.parts.length; i += 1) {
+          const response = await fetch(build.parts[i], { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error(`Missing build part: ${build.parts[i]}`);
+          }
+          chunks.push(await response.arrayBuffer());
+          setProgress(i + 1);
+        }
+
+        const archive = new Blob(chunks, { type: "application/zip" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(archive);
+        link.download = build.fileName;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(link.href), 60000);
+
+        title.textContent = `${build.title} download ready`;
+        description.textContent = `${build.fileName} should now be downloading.`;
+        status.textContent = "Done.";
+      } catch (error) {
+        title.textContent = "Download could not start";
+        description.textContent = "The build archive parts were not available.";
+        status.textContent = "Failed.";
+        warning.textContent = error.message;
+        warning.hidden = false;
+        retry.hidden = false;
+      }
+    };
+
+    retry.addEventListener("click", startDownload);
+    startDownload();
+  </script>
+</body>
+</html>
