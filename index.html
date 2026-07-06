@@ -184,6 +184,7 @@
 
     .hero > *,
     .project > *,
+    .focus-band > *,
     .contact-band > * {
       min-width: 0;
     }
@@ -821,6 +822,52 @@
       gap: 14px;
     }
 
+    .focus-band {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+      gap: 24px;
+      align-items: start;
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .focus-band h2 {
+      margin-bottom: 12px;
+      font-size: 26px;
+      line-height: 1.18;
+    }
+
+    .focus-band .section-note {
+      max-width: 560px;
+    }
+
+    .focus-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .focus-list li {
+      min-width: 0;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-left: 3px solid rgba(47, 189, 141, 0.74);
+      border-radius: 8px;
+      background: rgba(24, 29, 27, 0.72);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .focus-list b {
+      color: var(--text);
+    }
+
     .contact-band {
       display: flex;
       align-items: center;
@@ -1023,6 +1070,7 @@
     @media (max-width: 980px) {
       .hero,
       .project,
+      .focus-band,
       .note-grid {
         grid-template-columns: 1fr;
       }
@@ -1052,6 +1100,7 @@
       }
 
       .section-head,
+      .focus-band,
       .contact-band {
         align-items: start;
         flex-direction: column;
@@ -1083,6 +1132,7 @@
       .section-head,
       .project,
       .project-gallery,
+      .focus-band,
       .contact-band,
       h1,
       .lead,
@@ -1140,6 +1190,7 @@
       .value-grid,
       .skill-grid,
       .prototype-grid,
+      .focus-list,
       .project-columns {
         grid-template-columns: 1fr;
       }
@@ -1572,6 +1623,26 @@
         </div>
       </section>
 
+      <section id="next-focus" aria-labelledby="next-focus-title">
+        <div class="focus-band">
+          <div>
+            <p class="eyebrow" data-i18n="nextFocus.eyebrow">Next Technical Focus</p>
+            <h2 id="next-focus-title" data-i18n="nextFocus.title">Production Unity stack I am building toward</h2>
+            <p class="section-note" data-i18n="nextFocus.text">
+              I am deepening the production Unity skills that help gameplay projects scale into maintainable shipped products: cleaner architecture, measurable performance, repeatable builds, and safer content/runtime workflows.
+            </p>
+          </div>
+          <ul class="focus-list" aria-label="Next technical focus areas">
+            <li data-i18n-html="nextFocus.addressables"><b>Addressables:</b> async content loading, dependency management, memory release, and remote updates.</li>
+            <li data-i18n-html="nextFocus.di"><b>DI / composition root:</b> VContainer or Zenject-style setup for testable services and fewer hidden scene dependencies.</li>
+            <li data-i18n-html="nextFocus.profiling"><b>Profiling discipline:</b> Unity Profiler, Memory Profiler, allocation tracking, and mobile frame-time budgets.</li>
+            <li data-i18n-html="nextFocus.tests"><b>Automated quality:</b> Unity Test Framework for EditMode/PlayMode tests around pure gameplay logic and services.</li>
+            <li data-i18n-html="nextFocus.ci"><b>Build automation:</b> GitHub Actions or Unity Build Automation for repeatable Android/WebGL builds.</li>
+            <li data-i18n-html="nextFocus.liveops"><b>Live mobile stack:</b> ads/IAP readiness, analytics events, remote config, crash reporting, and update workflow.</li>
+          </ul>
+        </div>
+      </section>
+
       <section id="contact" aria-labelledby="contact-title">
         <div class="contact-band">
           <div>
@@ -1752,6 +1823,15 @@
         "skills.version.text": `Git, GitHub, читаемые commits, публичное code review, чистка репозиториев и README/code review maps.`,
         "skills.multiplayer.title": `Опыт с мультиплеером`,
         "skills.multiplayer.text": `Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs и интерфейс лобби.`,
+        "nextFocus.eyebrow": `Next Technical Focus`,
+        "nextFocus.title": `Production Unity stack, к которому я иду`,
+        "nextFocus.text": `Я углубляю production-навыки Unity, которые помогают gameplay-проектам вырастать в поддерживаемые shipped products: чистая архитектура, измеримая производительность, повторяемые билды и безопасный content/runtime workflow.`,
+        "nextFocus.addressables": `<b>Addressables:</b> async content loading, dependency management, memory release и remote updates.`,
+        "nextFocus.di": `<b>DI / composition root:</b> VContainer или Zenject-style setup для тестируемых сервисов и меньшего количества скрытых scene dependencies.`,
+        "nextFocus.profiling": `<b>Profiling discipline:</b> Unity Profiler, Memory Profiler, allocation tracking и mobile frame-time budgets.`,
+        "nextFocus.tests": `<b>Automated quality:</b> Unity Test Framework для EditMode/PlayMode тестов вокруг чистой gameplay-логики и сервисов.`,
+        "nextFocus.ci": `<b>Build automation:</b> GitHub Actions или Unity Build Automation для повторяемых Android/WebGL билдов.`,
+        "nextFocus.liveops": `<b>Live mobile stack:</b> ads/IAP readiness, analytics events, remote config, crash reporting и update workflow.`,
         "contact.title": `Контакты`,
         "contact.text": `Нахожусь в Финляндии. Постоянное место жительства. Открыт к Unity C# Developer и C# Gameplay Programmer вакансиям, фриланс-задачам и контрактам для mobile, PC и WebGL проектов: gameplay features, UI/UGUI flow, билды, отладка, рефакторинг и чистка проекта.`,
         "contact.copyHint": `Если почтовое приложение не открылось, можно просто скопировать адрес.`,
@@ -1884,6 +1964,15 @@
         "skills.version.text": `Git, GitHub, читабельні commits, публічне code review, чистка репозиторіїв і README/code review maps.`,
         "skills.multiplayer.title": `Досвід з мультиплеєром`,
         "skills.multiplayer.text": `Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs та інтерфейс лобі.`,
+        "nextFocus.eyebrow": `Next Technical Focus`,
+        "nextFocus.title": `Production Unity stack, до якого я рухаюсь`,
+        "nextFocus.text": `Я поглиблюю production-навички Unity, які допомагають gameplay-проєктам виростати у підтримувані shipped products: чиста архітектура, вимірювана продуктивність, повторювані білди і безпечний content/runtime workflow.`,
+        "nextFocus.addressables": `<b>Addressables:</b> async content loading, dependency management, memory release і remote updates.`,
+        "nextFocus.di": `<b>DI / composition root:</b> VContainer або Zenject-style setup для тестованих сервісів і меншої кількості прихованих scene dependencies.`,
+        "nextFocus.profiling": `<b>Profiling discipline:</b> Unity Profiler, Memory Profiler, allocation tracking і mobile frame-time budgets.`,
+        "nextFocus.tests": `<b>Automated quality:</b> Unity Test Framework для EditMode/PlayMode тестів навколо чистої gameplay-логіки і сервісів.`,
+        "nextFocus.ci": `<b>Build automation:</b> GitHub Actions або Unity Build Automation для повторюваних Android/WebGL білдів.`,
+        "nextFocus.liveops": `<b>Live mobile stack:</b> ads/IAP readiness, analytics events, remote config, crash reporting і update workflow.`,
         "contact.title": `Контакти`,
         "contact.text": `Знаходжусь у Фінляндії. Постійне місце проживання. Відкритий до Unity C# Developer і C# Gameplay Programmer вакансій, фриланс-задач і контрактів для mobile, PC і WebGL проєктів: gameplay features, UI/UGUI flow, білди, відлагодження, рефакторинг і чистка проєкту.`,
         "contact.copyHint": `Якщо поштовий застосунок не відкрився, можна просто скопіювати адресу.`,
