@@ -13,7 +13,7 @@ The site presents my Unity C# developer portfolio, CV, gameplay media, public Gi
 - Gameplay systems, UI/UGUI flow, save/load, progression, rewards, ads, and build preparation
 - Android, PC, and WebGL projects with source, gameplay media, and playable/downloadable builds
 - Performance-aware Unity implementation: object pooling, cached references, Profiler-minded iteration, and clear runtime boundaries
-- STAR/CARE-style value proof for the main portfolio projects
+- Concise impact notes for the main portfolio projects
 
 ## Featured Projects
 
