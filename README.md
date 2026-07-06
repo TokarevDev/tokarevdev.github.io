@@ -4,22 +4,18 @@ Source for my Unity C# developer portfolio:
 
 https://tokarevdev.github.io/
 
-The site presents my main Unity projects, CV, gameplay media, public GitHub repositories, Google Play release, WebGL prototypes, and downloadable PC builds.
+The site presents my Unity C# developer portfolio, CV, gameplay media, public GitHub repositories, Google Play release, WebGL prototypes, and downloadable PC builds.
 
 ## Focus
 
-- Unity C# gameplay programming
-- Gameplay systems, UI/UGUI flow, save/load, progression, rewards, and build preparation
-- Android, PC, and WebGL projects
-- Performance-aware Unity implementation: object pooling, cached references, Profiler-minded iteration, and clean runtime boundaries
+- Unity C# Developer / C# Gameplay Programmer positioning
+- Shipped Android game on Google Play as the first portfolio proof
+- Gameplay systems, UI/UGUI flow, save/load, progression, rewards, ads, and build preparation
+- Android, PC, and WebGL projects with source, gameplay media, and playable/downloadable builds
+- Performance-aware Unity implementation: object pooling, cached references, Profiler-minded iteration, and clear runtime boundaries
+- STAR/CARE-style value proof for the main portfolio projects
 
 ## Featured Projects
-
-### Last Seed Survivor
-
-Current Unity 6 2D mobile auto-shooter/survival project focused on modular combat, ScriptableObject-driven rewards, pooled projectiles, segmented enemy behavior, balance tooling, and Android release preparation.
-
-Source code: https://github.com/TokarevDev/Force_of_Nature_Last_Seed
 
 ### Emoji Battle
 
@@ -27,6 +23,12 @@ Released Android game on Google Play. Built in Unity 6 and C#, taken from protot
 
 Google Play: https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle  
 Source code: https://github.com/TokarevDev/Emoji_Battle
+
+### Last Seed Survivor
+
+Current Unity 6 2D mobile auto-shooter/survival project focused on modular combat, ScriptableObject-driven rewards, pooled projectiles, segmented enemy behavior, balance tooling, and Android release preparation.
+
+Source code: https://github.com/TokarevDev/Force_of_Nature_Last_Seed
 
 ## Build Downloads
 

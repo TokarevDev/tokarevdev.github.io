@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Oleksandr Tokarev - Unity C# Developer in Finland building gameplay features, UI flow, maintainable C# systems, and cross-platform Unity builds with shipped Android experience.">
+  <meta name="description" content="Oleksandr Tokarev - Unity C# Developer and C# Gameplay Programmer in Finland. Shipped Android game on Google Play, Unity gameplay systems, UI/UGUI flow, ScriptableObjects, performance-aware Android/PC/WebGL builds.">
   <link rel="canonical" href="https://tokarevdev.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tokarevdev.github.io/">
   <meta property="og:title" content="Oleksandr Tokarev | Unity C# Developer">
-  <meta property="og:description" content="Unity C# Developer in Finland building gameplay systems, UI flow, and cross-platform Unity builds for Android, PC, and WebGL.">
-  <meta property="og:image" content="https://tokarevdev.github.io/assets/last-seed/game-icon-warrior.png">
+  <meta property="og:description" content="Unity C# Developer in Finland with a shipped Android game, gameplay systems, UI flow, ScriptableObject-driven code, and Android/PC/WebGL build experience.">
+  <meta property="og:image" content="https://tokarevdev.github.io/assets/emoji-battle/game-icon.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Oleksandr Tokarev | Unity C# Developer">
-  <meta name="twitter:description" content="Gameplay systems, UI flow, Android release work, PC/WebGL builds, and Unity C# portfolio projects.">
-  <meta name="twitter:image" content="https://tokarevdev.github.io/assets/last-seed/game-icon-warrior.png">
+  <meta name="twitter:description" content="Unity C# gameplay programming, shipped Android release, UGUI, ScriptableObjects, performance-aware builds, and reviewable source code.">
+  <meta name="twitter:image" content="https://tokarevdev.github.io/assets/emoji-battle/game-icon.png">
   <title>Oleksandr Tokarev | Unity C# Developer</title>
   <style>
     :root {
@@ -342,11 +342,11 @@
       order: 0;
     }
 
-    #projects .systems-case {
+    #projects .released-case {
       order: 1;
     }
 
-    #projects .released-case {
+    #projects .systems-case {
       order: 2;
     }
 
@@ -422,8 +422,9 @@
 
     .project {
       display: grid;
-      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
       gap: 28px;
+      align-items: start;
       width: 100%;
       margin-top: 20px;
       padding: 20px;
@@ -440,8 +441,12 @@
 
     .project-media {
       position: relative;
+      display: grid;
+      align-content: start;
+      gap: 14px;
       overflow: hidden;
-      min-height: 320px;
+      min-height: 0;
+      padding: 14px;
       border: 1px solid #2d3431;
       border-radius: 8px;
       background:
@@ -518,6 +523,37 @@
       background: rgba(12, 15, 14, 0.42);
     }
 
+    .project-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .project-logo {
+      flex: 0 0 auto;
+      width: 50px;
+      height: 50px;
+      border: 1px solid #2d3431;
+      border-radius: 8px;
+      background: rgba(12, 15, 14, 0.5);
+      object-fit: cover;
+    }
+
+    .project-logo.contain {
+      padding: 5px;
+      object-fit: contain;
+    }
+
+    .project-kicker {
+      margin: 0 0 3px;
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
     .project-gallery {
       grid-column: 1 / -1;
       display: grid;
@@ -529,6 +565,34 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background: rgba(12, 15, 14, 0.66);
+    }
+
+    .project-media .project-gallery {
+      grid-column: auto;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .project-media .gallery-frame {
+      width: min(100%, 315px);
+      margin: 0 auto;
+    }
+
+    .project-media .gallery-panel {
+      padding: 0 2px;
+    }
+
+    .project-media .gallery-panel h4 {
+      font-size: 16px;
+    }
+
+    .project-media .gallery-caption {
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.48;
     }
 
     .gallery-frame {
@@ -690,6 +754,29 @@
       border: 1px solid rgba(47, 189, 141, 0.38);
       border-radius: 8px;
       background: rgba(47, 189, 141, 0.08);
+    }
+
+    .star-proof {
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid rgba(142, 183, 255, 0.34);
+      border-radius: 8px;
+      background: rgba(142, 183, 255, 0.08);
+    }
+
+    .star-proof-list {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+      list-style: none;
+    }
+
+    .star-proof-list b {
+      color: var(--text);
     }
 
     .mini-title {
@@ -1029,6 +1116,7 @@
       .gallery-caption,
       .tech,
       ul.compact,
+      .star-proof-list,
       .value-item p,
       .skill-group p,
       .prototype p,
@@ -1082,6 +1170,19 @@
         min-height: 240px;
       }
 
+      .project-media {
+        padding: 12px;
+      }
+
+      .project-title-row {
+        align-items: flex-start;
+      }
+
+      .project-logo {
+        width: 44px;
+        height: 44px;
+      }
+
       .media-title {
         font-size: 23px;
       }
@@ -1104,7 +1205,7 @@
         </div>
       </div>
       <nav class="nav" aria-label="Main navigation">
-        <a href="#value" data-i18n="nav.value">What I Do</a>
+        <a href="#proof" data-i18n="nav.proof">Proof</a>
         <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#prototypes" data-i18n="nav.prototypes">Prototypes</a>
         <a href="#skills" data-i18n="nav.skills">Skills</a>
@@ -1115,10 +1216,10 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div>
-          <p class="eyebrow" data-i18n="hero.eyebrow">Unity C# Developer | Gameplay Features, UI Flow & Cross-Platform Builds</p>
-          <h1 id="hero-title" data-i18n="hero.title">I build maintainable Unity gameplay features and cross-platform C# systems.</h1>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Unity C# Developer / C# Gameplay Programmer</p>
+          <h1 id="hero-title" data-i18n="hero.title">I build and ship Unity gameplay features, UI flow, and maintainable C# systems.</h1>
           <p class="lead" data-i18n="hero.lead">
-            Based in Finland with 2+ years of Unity/C# practice. I build gameplay features, UI flow, and reviewable Unity builds across Android, PC, and WebGL, with one Android game shipped on Google Play. Open to PC, WebGL, mobile, and console-oriented projects.
+            Based in Finland. 2+ years of hands-on Unity/C# practice. Shipped one Android game on Google Play. Focused on gameplay programming, UGUI player flow, ScriptableObject-driven systems, debugging, and performance-aware Android, PC, and WebGL builds.
           </p>
           <div class="hero-actions" aria-label="Primary links">
             <a class="button primary" href="mailto:OleksandrTokarevDev@gmail.com" data-i18n="button.email">Email</a>
@@ -1130,16 +1231,16 @@
           </div>
         </div>
 
-        <aside class="proof-rail" aria-label="Profile highlights">
+        <aside class="proof-rail" id="proof" aria-label="Profile highlights">
           <p class="proof-kicker" data-i18n="proof.title">What I Can Prove</p>
           <div class="metric-grid">
             <div class="metric">
               <b>1</b>
-              <span data-i18n="proof.metric.release">Google Play game shipped from prototype to release</span>
+              <span data-i18n="proof.metric.release">released Android game on Google Play</span>
             </div>
             <div class="metric">
               <b>3</b>
-              <span data-i18n="proof.metric.platforms">Android, PC, and WebGL projects</span>
+              <span data-i18n="proof.metric.platforms">platforms: Android, PC, and WebGL</span>
             </div>
             <div class="metric">
               <b>2+</b>
@@ -1151,223 +1252,200 @@
             </div>
           </div>
           <ul class="proof-list">
-            <li data-i18n-html="proof.feature"><b>Feature ownership:</b> gameplay logic, UI flow, save/load, ads, progression, scene/prefab setup, and build preparation.</li>
+            <li data-i18n-html="proof.feature"><b>Feature ownership:</b> gameplay logic, UI/UGUI flow, save/load, ads, progression, scene/prefab setup, and build preparation.</li>
             <li data-i18n-html="proof.systems"><b>Maintainable systems:</b> ScriptableObject configs, AI strategies, reward logic, save data, services, and scene bootstrap.</li>
-            <li data-i18n-html="proof.production"><b>Production mindset:</b> clean C# boundaries, cached references, runtime constraints, debugging, and practical refactoring.</li>
+            <li data-i18n-html="proof.production"><b>Production mindset:</b> clean C# boundaries, cached references, no hot-path scene searches, profiling/debugging, and practical refactoring.</li>
           </ul>
         </aside>
-      </section>
-
-      <section id="value" aria-labelledby="value-title">
-        <div class="section-head">
-          <h2 id="value-title" data-i18n="value.title">What I Do</h2>
-          <p class="section-note" data-i18n="value.note">
-            I focus on Unity work that becomes playable fast and stays reviewable: gameplay, UI flow, data-driven systems, debugging, and cross-platform builds.
-          </p>
-        </div>
-
-        <div class="value-grid">
-          <article class="value-item">
-            <h3 data-i18n="value.gameplay.title">Gameplay Features</h3>
-            <p data-i18n="value.gameplay.text">Combat, weapons, enemies, rewards, progression, and playable loops.</p>
-          </article>
-          <article class="value-item">
-            <h3 data-i18n="value.ui.title">UI & Player Flow</h3>
-            <p data-i18n="value.ui.text">UGUI screens, popups, menus, input, feedback, navigation, and result flow.</p>
-          </article>
-          <article class="value-item">
-            <h3 data-i18n="value.systems.title">Systems, Data & Prefabs</h3>
-            <p data-i18n="value.systems.text">ScriptableObject configs, save/load, balancing data, prefab/scene setup, and readable feature boundaries.</p>
-          </article>
-          <article class="value-item">
-            <h3 data-i18n="value.runtime.title">Debugging & Builds</h3>
-            <p data-i18n="value.runtime.text">Bug investigation, Profiler checks, GC awareness, cached references, build setup, and release preparation.</p>
-          </article>
-        </div>
       </section>
 
       <section id="projects" aria-labelledby="projects-title">
         <div class="section-head">
           <h2 id="projects-title" data-i18n="projects.title">Featured Projects</h2>
           <p class="section-note" data-i18n="projects.note">
-            Cross-platform Unity proof: a shipped Android release, an in-progress systems project, PC/WebGL builds, and a multiplayer prototype with source and gameplay media for review.
+            First scan: shipped Android game, then deeper Unity systems work, then multiplayer and playable prototypes. Each main case includes source, gameplay media, and STAR/CARE-style value proof.
           </p>
         </div>
 
-        <article class="project systems-case">
-          <figure class="project-media visual-media" aria-label="Last Seed Survivor game icon">
-            <img class="project-icon" src="assets/last-seed/game-icon-warrior.png" alt="Last Seed Survivor warrior game icon">
-          </figure>
-
-          <div>
-            <h3>Last Seed Survivor</h3>
-            <p class="project-summary" data-i18n="lastSeed.summary">
-              Unity 6 2D auto-shooter/survival project with modular combat, reward choices, segmented enemy behavior, balance simulations, and Android release preparation. Closed testing is complete; Google Play post-test review is in progress.
-            </p>
-            <ul class="tag-list">
-              <li class="green" data-i18n="lastSeed.badge.closedTest">Closed test passed</li>
-              <li data-i18n="lastSeed.badge.review">Google Play review</li>
-              <li>Unity 6</li>
-              <li>C#</li>
-              <li>Cross-platform-ready</li>
-              <li>Gameplay systems</li>
-            </ul>
-
-            <div class="project-columns">
-              <div>
-                <p class="mini-title" data-i18n="project.whatBuilt">What I built</p>
-                <ul class="compact">
-                  <li data-i18n="lastSeed.built.weapon">Projectile weapon and Acacia Thorn weapon systems</li>
-                  <li data-i18n="lastSeed.built.modifiers">Runtime modifiers for damage, fire rate, criticals, penetration, salvo, speed, and parallel shots</li>
-                  <li data-i18n="lastSeed.built.rewards">Reward roll/apply services with rarity slots and DPS-aware reward bias</li>
-                  <li data-i18n="lastSeed.built.worm">Segmented worm enemy with combat sections, rollback, HP scaling, and visual presenters</li>
-                  <li data-i18n="lastSeed.built.pooling">Projectile and worm segment pooling to reduce runtime object churn</li>
-                  <li data-i18n="lastSeed.built.balance">Deterministic reward and HP balance simulations for faster tuning</li>
-                </ul>
-              </div>
-              <div>
-                <p class="mini-title" data-i18n="project.engineeringValue">Engineering value</p>
-                <ul class="compact">
-                  <li data-i18n="lastSeed.value.split">Feature code split across gameplay, presentation, systems, bootstrap, and balance simulation support</li>
-                  <li data-i18n="lastSeed.value.configs">ScriptableObject configs for weapons, rewards, rarities, HP scaling, and pressure tuning</li>
-                  <li data-i18n="lastSeed.value.bootstrap">Input wrapper and scene bootstrap instead of hidden runtime searches</li>
-                  <li data-i18n="lastSeed.value.framerate">Target frame-rate bootstrap based on refresh rate and device tier</li>
-                  <li data-i18n="lastSeed.value.separation">Clear separation between reward data, runtime context, UI binding, and gameplay effects</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="presentation-note">
-              <p class="mini-title" data-i18n="lastSeed.presentation.title">Player-facing presentation</p>
-              <ul class="compact">
-                <li data-i18n="lastSeed.presentation.layout">Vertical touch-friendly layout and reward flow for reviewing combat pressure, upgrades, and readability.</li>
-                <li data-i18n="lastSeed.presentation.feedback">Enemy states and upgrade screens support short gameplay captures, pacing checks, and first-seconds clarity.</li>
-              </ul>
-            </div>
-
-            <p class="tech"><b>Tech:</b> Unity 6, C#, ScriptableObjects, targeted pooling for projectiles/enemy segments, Physics2D, Input System, DOTween, URP, custom balance simulation, performance-conscious runtime optimization.</p>
-            <div class="button-row">
-              <a class="button primary" href="https://github.com/TokarevDev/Force_of_Nature_Last_Seed" target="_blank" rel="noopener">Source Code</a>
-              <a class="button secondary" href="https://youtube.com/shorts/HiQBlYjienI?feature=share" target="_blank" rel="noopener">YouTube Gameplay</a>
-            </div>
-          </div>
-
-          <div class="project-gallery" data-gallery aria-label="Last Seed Survivor screenshot gallery">
-            <div class="gallery-frame">
-              <div class="gallery-track" data-gallery-track>
-                <img class="gallery-image active" data-gallery-slide src="assets/last-seed/screenshot-loading-screen.png" alt="Last Seed Survivor loading screen with logo, forest background, cave entrance, and progress bar">
-                <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-early.png" alt="Last Seed Survivor gameplay screen with segmented worm enemy and early progress">
-                <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-worm.png" alt="Last Seed Survivor gameplay screen with segmented worm enemy at later progress">
-                <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-common.png" alt="Last Seed Survivor reward upgrade screen with Common, Rare, and Legendary choices">
-                <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-rare.png" alt="Last Seed Survivor reward screen showing Acacia Thorn unlock">
-              </div>
-            </div>
-
-            <div class="gallery-panel">
-              <h4 data-i18n="lastSeed.gallery.title">Last Seed Survivor gameplay captures</h4>
-              <p class="gallery-caption" data-i18n="lastSeed.gallery.caption">
-                Screenshots show the loading screen, current reward-choice flow, rarity presentation, segmented worm enemy, projectile combat, progress tracking, and vertical gameplay UI.
-              </p>
-              <div class="gallery-controls" aria-label="Screenshot controls">
-                <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous screenshot">&lsaquo;</button>
-                <span class="gallery-counter" data-gallery-counter>1 / 5</span>
-                <button class="gallery-button" type="button" data-gallery-next aria-label="Next screenshot">&rsaquo;</button>
-              </div>
-              <div class="gallery-dots" aria-label="Screenshot selection">
-                <button class="gallery-dot active" type="button" data-gallery-dot aria-label="Show screenshot 1"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 2"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 3"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 4"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 5"></button>
-              </div>
-            </div>
-          </div>
-        </article>
-
         <article class="project released-case">
-          <figure class="project-media visual-media" aria-label="Emoji Battle game icon">
-            <img class="project-icon contain" src="assets/emoji-battle/game-icon.png" alt="Emoji Battle purple emoji game icon">
+          <figure class="project-media" aria-label="Emoji Battle screenshot gallery">
+            <div class="project-gallery" data-gallery>
+              <div class="gallery-frame">
+                <div class="gallery-track" data-gallery-track>
+                  <img class="gallery-image active" data-gallery-slide src="assets/emoji-battle/screenshot-match-board.png" alt="Emoji Battle match board with player versus AI and neon grid">
+                  <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-green.png" alt="Emoji Battle character selection screen with green emoji options">
+                  <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-red.png" alt="Emoji Battle character selection screen with difficulty selector and red emoji options">
+                  <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-unlock-popup.png" alt="Emoji Battle new emoji unlocked popup after winning a match">
+                </div>
+              </div>
+
+              <div class="gallery-panel">
+                <h4 data-i18n="emoji.gallery.title">Shipped gameplay preview</h4>
+                <p class="gallery-caption" data-i18n="emoji.gallery.caption">
+                  Screenshots show the released Google Play flow: player-versus-AI board state, character selection, difficulty setup, and unlock progression.
+                </p>
+                <div class="gallery-controls" aria-label="Screenshot controls">
+                  <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous screenshot">&lsaquo;</button>
+                  <span class="gallery-counter" data-gallery-counter>1 / 4</span>
+                  <button class="gallery-button" type="button" data-gallery-next aria-label="Next screenshot">&rsaquo;</button>
+                </div>
+                <div class="gallery-dots" aria-label="Screenshot selection">
+                  <button class="gallery-dot active" type="button" data-gallery-dot aria-label="Show screenshot 1"></button>
+                  <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 2"></button>
+                  <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 3"></button>
+                  <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 4"></button>
+                </div>
+              </div>
+            </div>
           </figure>
 
           <div>
-            <h3>Emoji Battle</h3>
+            <div class="project-title-row">
+              <img class="project-logo contain" src="assets/emoji-battle/game-icon.png" alt="Emoji Battle purple emoji game icon">
+              <div>
+                <p class="project-kicker" data-i18n="emoji.kicker">Released Android game</p>
+                <h3>Emoji Battle</h3>
+              </div>
+            </div>
             <p class="project-summary" data-i18n="emoji.summary">
-              Released Google Play mobile game taken from prototype to public Android release: turn-based combat, AI strategy selection, progression, saved player data, popup/UI flow, ads, and publishing workflow.
+              Public Google Play mobile game built from prototype to release: turn-based combat, AI difficulty strategies, progression, save data, UI flow, ads, and Android publishing.
             </p>
             <ul class="tag-list">
               <li class="green">Released on Google Play</li>
               <li>Unity 6</li>
               <li>C#</li>
               <li>Android</li>
-              <li>Mobile release</li>
+              <li>UGUI</li>
+              <li>Unity Ads</li>
+              <li>Save Data</li>
+              <li>AI Strategy</li>
             </ul>
 
             <div class="project-columns">
               <div>
                 <p class="mini-title" data-i18n="project.whatBuilt">What I built</p>
                 <ul class="compact">
-                  <li data-i18n="emoji.built.flow">Turn-based gameplay flow and board state logic</li>
-                  <li data-i18n="emoji.built.ai">AI strategies for multiple difficulty levels</li>
-                  <li data-i18n="emoji.built.progression">Progression, rewards, avatar selection, settings, and persistent game data</li>
-                  <li data-i18n="emoji.built.ui">Popup service, UI screens, result flow, and animated UI feedback</li>
-                  <li data-i18n="emoji.built.ads">Unity Ads service with rewarded state handling, load timeout, resume handling, and online/offline checks</li>
-                  <li data-i18n="emoji.built.release">Google Play release preparation and Android build workflow</li>
+                  <li data-i18n="emoji.built.loop">Turn-based combat loop with AI difficulty strategies and board state logic.</li>
+                  <li data-i18n="emoji.built.progressionFlow">Progression, avatar unlocks, settings, save data, result screens, and reward feedback.</li>
+                  <li data-i18n="emoji.built.releaseFlow">Unity Ads integration plus Android build and Google Play publishing workflow.</li>
                 </ul>
               </div>
               <div>
                 <p class="mini-title" data-i18n="project.engineeringValue">Engineering value</p>
                 <ul class="compact">
-                  <li data-i18n="emoji.value.layers">Domain, Infrastructure, Presentation, and Services layers</li>
-                  <li data-i18n="emoji.value.storage">Storage abstraction and save payload versioning</li>
-                  <li data-i18n="emoji.value.strategy">Strategy Pattern for reusable AI decision logic</li>
-                  <li data-i18n="emoji.value.events">Event-driven gameplay/UI updates for clearer state transitions</li>
-                  <li data-i18n="emoji.value.refactoring">Practical refactoring toward SRP/MVC-style separation after prototype stage</li>
+                  <li data-i18n="emoji.value.architecture">Domain, Infrastructure, Presentation, and Services split around gameplay, storage, popups, and ads.</li>
+                  <li data-i18n="emoji.value.strategyEvents">Strategy Pattern for AI plus event-driven gameplay/UI state updates.</li>
+                  <li data-i18n="emoji.value.refactoring">Prototype refactored toward SRP/MVC-style boundaries before release.</li>
                 </ul>
               </div>
             </div>
 
-            <div class="presentation-note">
-              <p class="mini-title" data-i18n="emoji.presentation.title">Released player flow</p>
-              <ul class="compact">
-                <li data-i18n="emoji.presentation.loop">Complete released player loop from menu and character selection to result, rewards, ads, and unlock feedback.</li>
-                <li data-i18n="emoji.presentation.states">Gameplay captures show shipped UI states: difficulty, board, result flow, settings, and progression.</li>
+            <div class="star-proof">
+              <p class="mini-title" data-i18n="project.starProof">STAR / CARE value proof</p>
+              <ul class="star-proof-list">
+                <li data-i18n-html="emoji.proof.context"><b>Context:</b> turn a small prototype into a complete mobile game that could pass store review.</li>
+                <li data-i18n-html="emoji.proof.action"><b>Action:</b> owned combat flow, AI, persistence, UI states, ads, Android build preparation, and publishing steps.</li>
+                <li data-i18n-html="emoji.proof.result"><b>Result:</b> public Google Play release with reviewable source code, gameplay media, and a complete player loop.</li>
               </ul>
             </div>
 
-            <p class="tech"><b>Tech:</b> Unity 6, C#, UGUI, Strategy Pattern, event-driven gameplay flow, Unity Ads, Android build pipeline, Google Play release workflow.</p>
+            <p class="tech"><b>Tech:</b> Unity 6, C#, UGUI, Strategy Pattern, event-driven gameplay flow, Unity Ads, save data, Android build pipeline, Google Play release workflow.</p>
             <div class="button-row">
               <a class="button primary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener">Google Play</a>
               <a class="button secondary" href="https://youtube.com/shorts/k98hLS689PY?feature=share" target="_blank" rel="noopener">YouTube Gameplay</a>
               <a class="button" href="https://github.com/TokarevDev/Emoji_Battle" target="_blank" rel="noopener">Source Code</a>
             </div>
           </div>
+        </article>
 
-          <div class="project-gallery" data-gallery aria-label="Emoji Battle screenshot gallery">
-            <div class="gallery-frame">
-              <div class="gallery-track" data-gallery-track>
-                <img class="gallery-image active" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-green.png" alt="Emoji Battle character selection screen with green emoji options">
-                <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-character-select-red.png" alt="Emoji Battle character selection screen with difficulty selector and red emoji options">
-                <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-match-board.png" alt="Emoji Battle match board with player versus AI and neon grid">
-                <img class="gallery-image" data-gallery-slide src="assets/emoji-battle/screenshot-unlock-popup.png" alt="Emoji Battle new emoji unlocked popup after winning a match">
+        <article class="project systems-case">
+          <figure class="project-media" aria-label="Last Seed Survivor screenshot gallery">
+            <div class="project-gallery" data-gallery>
+              <div class="gallery-frame">
+                <div class="gallery-track" data-gallery-track>
+                  <img class="gallery-image active" data-gallery-slide src="assets/last-seed/screenshot-gameplay-worm.png" alt="Last Seed Survivor gameplay screen with segmented worm enemy at later progress">
+                  <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-gameplay-early.png" alt="Last Seed Survivor gameplay screen with segmented worm enemy and early progress">
+                  <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-common.png" alt="Last Seed Survivor reward upgrade screen with Common, Rare, and Legendary choices">
+                  <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-upgrade-rare.png" alt="Last Seed Survivor reward screen showing Acacia Thorn unlock">
+                  <img class="gallery-image" data-gallery-slide src="assets/last-seed/screenshot-loading-screen.png" alt="Last Seed Survivor loading screen with logo, forest background, cave entrance, and progress bar">
+                </div>
+              </div>
+
+              <div class="gallery-panel">
+                <h4 data-i18n="lastSeed.gallery.title">Gameplay and systems preview</h4>
+                <p class="gallery-caption" data-i18n="lastSeed.gallery.caption">
+                  Screenshots show segmented enemy pressure, projectile combat, reward-choice UI, rarity presentation, and vertical mobile gameplay.
+                </p>
+                <div class="gallery-controls" aria-label="Screenshot controls">
+                  <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous screenshot">&lsaquo;</button>
+                  <span class="gallery-counter" data-gallery-counter>1 / 5</span>
+                  <button class="gallery-button" type="button" data-gallery-next aria-label="Next screenshot">&rsaquo;</button>
+                </div>
+                <div class="gallery-dots" aria-label="Screenshot selection">
+                  <button class="gallery-dot active" type="button" data-gallery-dot aria-label="Show screenshot 1"></button>
+                  <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 2"></button>
+                  <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 3"></button>
+                  <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 4"></button>
+                  <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 5"></button>
+                </div>
+              </div>
+            </div>
+          </figure>
+
+          <div>
+            <div class="project-title-row">
+              <img class="project-logo" src="assets/last-seed/game-icon-warrior.png" alt="Last Seed Survivor warrior game icon">
+              <div>
+                <p class="project-kicker" data-i18n="lastSeed.kicker">Advanced Unity systems project</p>
+                <h3>Last Seed Survivor</h3>
+              </div>
+            </div>
+            <p class="project-summary" data-i18n="lastSeed.summary">
+              Unity 6 mobile 2D auto-shooter/survival project focused on modular combat, ScriptableObject rewards, segmented enemy behavior, balance simulations, pooling, and Android release preparation.
+            </p>
+            <ul class="tag-list">
+              <li class="green" data-i18n="lastSeed.badge.closedTest">Closed test passed</li>
+              <li data-i18n="lastSeed.badge.review">Google Play review</li>
+              <li>Unity 6</li>
+              <li>C#</li>
+              <li>ScriptableObjects</li>
+              <li>Physics2D</li>
+              <li>Object Pooling</li>
+              <li>Balance Tools</li>
+            </ul>
+
+            <div class="project-columns">
+              <div>
+                <p class="mini-title" data-i18n="project.whatBuilt">What I built</p>
+                <ul class="compact">
+                  <li data-i18n="lastSeed.built.combat">Projectile combat, Acacia Thorn weapon, runtime stat modifiers, and upgrade flow.</li>
+                  <li data-i18n="lastSeed.built.rewardSystem">ScriptableObject-driven reward roll/apply services with rarity and DPS-aware tuning.</li>
+                  <li data-i18n="lastSeed.built.wormBalance">Segmented worm enemy, pooling, HP scaling, and deterministic balance simulations.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="mini-title" data-i18n="project.engineeringValue">Engineering value</p>
+                <ul class="compact">
+                  <li data-i18n="lastSeed.value.separation">Gameplay, presentation, runtime data, UI binding, bootstrap, and balance tooling split by responsibility.</li>
+                  <li data-i18n="lastSeed.value.performance">Targeted projectile/enemy segment pooling and cached references to reduce runtime object churn.</li>
+                  <li data-i18n="lastSeed.value.bootstrap">Input wrapper and scene bootstrap instead of hidden runtime object searches.</li>
+                </ul>
               </div>
             </div>
 
-            <div class="gallery-panel">
-              <h4 data-i18n="emoji.gallery.title">Emoji Battle gameplay captures</h4>
-              <p class="gallery-caption" data-i18n="emoji.gallery.caption">
-                Screenshots show the shipped Google Play flow: sign selection, difficulty setup, player-versus-AI board state, match result feedback, and unlock progression.
-              </p>
-              <div class="gallery-controls" aria-label="Screenshot controls">
-                <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous screenshot">&lsaquo;</button>
-                <span class="gallery-counter" data-gallery-counter>1 / 4</span>
-                <button class="gallery-button" type="button" data-gallery-next aria-label="Next screenshot">&rsaquo;</button>
-              </div>
-              <div class="gallery-dots" aria-label="Screenshot selection">
-                <button class="gallery-dot active" type="button" data-gallery-dot aria-label="Show screenshot 1"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 2"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 3"></button>
-                <button class="gallery-dot" type="button" data-gallery-dot aria-label="Show screenshot 4"></button>
-              </div>
+            <div class="star-proof">
+              <p class="mini-title" data-i18n="project.starProof">STAR / CARE value proof</p>
+              <ul class="star-proof-list">
+                <li data-i18n-html="lastSeed.proof.context"><b>Context:</b> mobile survival gameplay needed scalable combat, rewards, and tuning instead of one-off prototype logic.</li>
+                <li data-i18n-html="lastSeed.proof.action"><b>Action:</b> separated data, runtime systems, UI binding, bootstrap, pooling, and balance simulation tools.</li>
+                <li data-i18n-html="lastSeed.proof.result"><b>Result:</b> closed test passed; release review is in progress; systems are easier to tune, profile, and review in code.</li>
+              </ul>
+            </div>
+
+            <p class="tech"><b>Tech:</b> Unity 6, C#, ScriptableObjects, Physics2D, Input System, DOTween, URP, object pooling, custom balance simulation, performance-conscious runtime architecture.</p>
+            <div class="button-row">
+              <a class="button primary" href="https://github.com/TokarevDev/Force_of_Nature_Last_Seed" target="_blank" rel="noopener">Source Code</a>
+              <a class="button secondary" href="https://youtube.com/shorts/HiQBlYjienI?feature=share" target="_blank" rel="noopener">YouTube Gameplay</a>
             </div>
           </div>
         </article>
@@ -1376,7 +1454,7 @@
           <div>
             <h3>Tanks Multiplayer Prototype</h3>
             <p class="project-summary" data-i18n="tanks.summary">
-              Unity multiplayer prototype with host/client flow, anonymous auth, UGS Relay/Lobby, lobby UI, networked movement, RPC shooting, health, respawn, coins, and leaderboard feedback.
+              Unity multiplayer prototype proving practical Netcode for GameObjects basics: host/client flow, UGS Relay/Lobby, synchronized player state, RPC shooting, respawn, and lobby UI.
             </p>
             <ul class="tag-list">
               <li class="amber">Technical prototype</li>
@@ -1390,20 +1468,25 @@
               <div>
                 <p class="mini-title" data-i18n="tanks.implemented">Implemented</p>
                 <ul class="compact">
-                  <li data-i18n="tanks.built.connection">Client/host managers and connection flow</li>
-                  <li data-i18n="tanks.built.relay">Relay allocation/join code setup and lobby heartbeat</li>
-                  <li data-i18n="tanks.built.networkVars">NetworkVariables for player data, health, names, and coins</li>
-                  <li data-i18n="tanks.built.rpc">ServerRpc/ClientRpc shooting and projectile spawning</li>
-                  <li data-i18n="tanks.built.ui">Respawn flow, leaderboard UI, lobby list, and menu screens</li>
+                  <li data-i18n="tanks.built.connection">Client/host managers, anonymous auth, Relay allocation/join, and lobby heartbeat.</li>
+                  <li data-i18n="tanks.built.networking">NetworkVariables for player data plus ServerRpc/ClientRpc shooting and projectile spawning.</li>
+                  <li data-i18n="tanks.built.ui">Respawn flow, leaderboard UI, lobby list, and menu screens.</li>
                 </ul>
               </div>
               <div>
                 <p class="mini-title" data-i18n="tanks.positioning">Engineering value</p>
                 <ul class="compact">
-                  <li data-i18n="tanks.value.fundamentals">Demonstrates Unity Netcode fundamentals through real host/client flow, Relay/Lobby setup, synchronized player state, RPC shooting, and respawn flow</li>
-                  <li data-i18n="tanks.value.services">Connects Unity services, multiplayer UI, and basic authority/ownership decisions</li>
+                  <li data-i18n="tanks.value.fundamentals">Demonstrates multiplayer fundamentals through a real connection flow and synchronized gameplay state.</li>
+                  <li data-i18n="tanks.value.services">Connects Unity services, multiplayer UI, and basic authority/ownership decisions.</li>
                 </ul>
               </div>
+            </div>
+
+            <div class="star-proof">
+              <p class="mini-title" data-i18n="project.starProof">STAR / CARE value proof</p>
+              <ul class="star-proof-list">
+                <li data-i18n-html="tanks.proof.result"><b>Result:</b> shows I can read multiplayer constraints, wire Unity services, and produce a playable PC prototype without presenting it as shipped production experience.</li>
+              </ul>
             </div>
 
             <div class="button-row">
@@ -1450,32 +1533,32 @@
 
       <section id="skills" aria-labelledby="skills-title">
         <div class="section-head">
-          <h2 id="skills-title" data-i18n="skills.title">Technical Focus</h2>
+          <h2 id="skills-title" data-i18n="skills.title">Core Stack & Keywords</h2>
           <p class="section-note" data-i18n="skills.note">
-            Skill map for quick scanning; project sections contain the proof.
+            ATS-friendly Unity keywords for quick screening; the projects above show the proof.
           </p>
         </div>
 
         <div class="skill-grid">
           <article class="skill-group">
             <h3 data-i18n="skills.unity.title">Unity / C#</h3>
-            <p data-i18n="skills.unity.text">Gameplay programming, UGUI, MonoBehaviour lifecycle, scenes/prefabs, Input System, DOTween, URP basics.</p>
+            <p data-i18n="skills.unity.text">Unity, Unity 6, C#, C# Gameplay Programmer, MonoBehaviour lifecycle, scenes, prefabs, Input System, DOTween, URP basics.</p>
           </article>
           <article class="skill-group">
-            <h3 data-i18n="skills.gameplay.title">Gameplay & Systems</h3>
-            <p data-i18n="skills.gameplay.text">Combat, weapons, rewards, progression, AI decisions, state flow, save/load.</p>
+            <h3 data-i18n="skills.gameplay.title">Gameplay Programming</h3>
+            <p data-i18n="skills.gameplay.text">Combat, weapons, projectiles, enemies, rewards, progression, AI decisions, state flow, save/load, player feedback.</p>
           </article>
           <article class="skill-group">
             <h3 data-i18n="skills.architecture.title">Architecture & Data Flow</h3>
-            <p data-i18n="skills.architecture.text">SOLID/SRP, events, Strategy Pattern, service abstractions, ScriptableObject configs, runtime/data separation.</p>
+            <p data-i18n="skills.architecture.text">SOLID/SRP, Strategy Pattern, event-driven systems, service abstractions, ScriptableObject configs, runtime/data/UI separation.</p>
           </article>
           <article class="skill-group">
-            <h3 data-i18n="skills.performance.title">Debugging & Runtime Awareness</h3>
-            <p data-i18n="skills.performance.text">Profiler checks, GC awareness, cached references, no hot-path scene searches, build/runtime investigation.</p>
+            <h3 data-i18n="skills.performance.title">Performance & Debugging</h3>
+            <p data-i18n="skills.performance.text">Unity Profiler, GC allocation awareness, object pooling, cached references, no hot-path scene searches, build/runtime investigation.</p>
           </article>
           <article class="skill-group">
-            <h3 data-i18n="skills.platforms.title">Platforms & Builds</h3>
-            <p data-i18n="skills.platforms.text">Android, PC, WebGL, Google Play, itch.io, browser-playable prototypes, console-oriented constraints, release preparation.</p>
+            <h3 data-i18n="skills.platforms.title">Platforms & Release</h3>
+            <p data-i18n="skills.platforms.text">Android, Google Play, PC builds, WebGL, itch.io, browser-playable prototypes, mobile constraints, release preparation.</p>
           </article>
           <article class="skill-group">
             <h3 data-i18n="skills.multiplayer.title">Multiplayer Exposure</h3>
@@ -1488,7 +1571,7 @@
         <div class="contact-band">
           <div>
             <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
-            <p data-i18n="contact.text">Based in Finland. Permanent resident. Open to Unity C# roles and freelance/contract tasks across PC, WebGL, mobile, and console-oriented projects: gameplay features, UI flow, builds, debugging, project cleanup, remote/hybrid/on-site work, and relocation within Finland.</p>
+            <p data-i18n="contact.text">Based in Finland. Permanent resident. Open to Unity C# Developer and C# Gameplay Programmer roles, freelance tasks, and contracts across mobile, PC, and WebGL projects: gameplay features, UI/UGUI flow, builds, debugging, refactoring, and project cleanup.</p>
             <div class="contact-email" aria-label="Email address">
               <a class="email-address" href="mailto:OleksandrTokarevDev@gmail.com">OleksandrTokarevDev@gmail.com</a>
               <span class="copy-status" data-copy-status data-i18n="contact.copyHint">Copy the address if your mail app does not open.</span>
@@ -1506,7 +1589,7 @@
     </main>
 
     <footer data-i18n="footer.text">
-      Oleksandr Tokarev - Unity C# Developer. Portfolio about shipped Unity features, gameplay systems, and practical hands-on Unity work.
+      Oleksandr Tokarev - Unity C# Developer / C# Gameplay Programmer. Portfolio about shipped Unity features, gameplay systems, UI flow, and practical hands-on Unity work.
     </footer>
   </div>
 
@@ -1539,14 +1622,14 @@
     const translations = {
       ru: {
         "language.label": `Язык`,
-        "nav.value": `Что делаю`,
+        "nav.proof": `Доказательства`,
         "nav.projects": `Проекты`,
         "nav.prototypes": `Прототипы`,
         "nav.skills": `Навыки`,
         "nav.contact": `Контакты`,
-        "hero.eyebrow": `Unity C# Developer | Игровые механики, интерфейс и кроссплатформенные билды`,
-        "hero.title": `Я создаю поддерживаемые игровые функции в Unity и кроссплатформенные C#-системы.`,
-        "hero.lead": `Нахожусь в Финляндии, 2+ года практики с Unity/C#. Создаю игровые функции, поток интерфейса и Unity-билды для Android, PC и WebGL; выпустил одну Android-игру в Google Play. Открыт к PC, WebGL, мобильным и консольным проектам.`,
+        "hero.eyebrow": `Unity C# Developer / C# Gameplay Programmer`,
+        "hero.title": `Я создаю и довожу до результата Unity-геймплей, UI flow и поддерживаемые C#-системы.`,
+        "hero.lead": `Нахожусь в Финляндии. 2+ года практической работы с Unity/C#. Выпустил Android-игру в Google Play. Фокус: gameplay programming, UGUI player flow, ScriptableObject-системы, отладка и performance-aware билды для Android, PC и WebGL.`,
         "button.email": `Написать`,
         "button.copyEmail": `Скопировать почту`,
         "button.viewProjects": `Смотреть проекты`,
@@ -1555,13 +1638,13 @@
         "button.playWebGL": `Играть в браузере (WebGL)`,
         "button.downloadPc": `Скачать PC-билд`,
         "proof.title": `Что я могу подтвердить`,
-        "proof.metric.release": `игра в Google Play доведена от прототипа до релиза`,
-        "proof.metric.platforms": `проекты для Android, PC и WebGL`,
+        "proof.metric.release": `выпущенная Android-игра в Google Play`,
+        "proof.metric.platforms": `платформы: Android, PC и WebGL`,
         "proof.metric.years": `года практической Unity C# реализации`,
         "proof.metric.areas": `ключевых зон: геймплей, интерфейс, системы, отладка, билды`,
-        "proof.feature": `<b>Зона ответственности:</b> игровая логика, поток интерфейса, сохранение и загрузка, реклама, прогрессия, настройка сцен/префабов и подготовка билдов.`,
+        "proof.feature": `<b>Зона ответственности:</b> игровая логика, UI/UGUI flow, сохранение и загрузка, реклама, прогрессия, настройка сцен/префабов и подготовка билдов.`,
         "proof.systems": `<b>Поддерживаемые системы:</b> ScriptableObject-конфиги, стратегии ИИ, логика наград, данные сохранений, сервисы и загрузка сцены.`,
-        "proof.production": `<b>Production-подход:</b> чистые границы C#, кешированные ссылки, ограничения рантайма, отладка и практичный рефакторинг.`,
+        "proof.production": `<b>Production-подход:</b> чистые границы C#, кешированные ссылки, без поиска объектов в hot path, profiling/debugging и практичный рефакторинг.`,
         "value.title": `Что я делаю`,
         "value.note": `Фокусируюсь на Unity-работе, которая быстро становится играбельной и остается удобной для проверки: геймплей, интерфейс, системы на данных, отладка и кроссплатформенные билды.`,
         "value.gameplay.title": `Игровые механики`,
@@ -1573,12 +1656,17 @@
         "value.runtime.title": `Отладка и билды`,
         "value.runtime.text": `Разбор багов, проверки через Profiler, контроль GC, кешированные ссылки, настройка билдов и подготовка релиза.`,
         "projects.title": `Ключевые проекты`,
-        "projects.note": `Кроссплатформенное Unity-доказательство: выпущенный Android-релиз, системный проект в разработке, PC/WebGL билды и мультиплеерный прототип с кодом и материалами геймплея.`,
+        "projects.note": `Сначала выпущенная Android-игра, затем более глубокая Unity systems-работа, после этого мультиплеер и играбельные прототипы. В главных кейсах есть код, gameplay media и STAR/CARE-доказательство ценности.`,
         "project.whatBuilt": `Что я сделал`,
         "project.engineeringValue": `Инженерная ценность`,
-        "lastSeed.summary": `2D auto-shooter/survival проект на Unity 6 с модульным боем, выбором наград, сегментированным врагом, симуляциями баланса и подготовкой Android-релиза. Закрытое тестирование завершено; идет послетестовая проверка Google Play.`,
+        "project.starProof": `STAR / CARE доказательство ценности`,
+        "lastSeed.kicker": `Продвинутый Unity systems-проект`,
+        "lastSeed.summary": `Мобильный 2D auto-shooter/survival проект на Unity 6: модульный бой, ScriptableObject-награды, сегментированный враг, симуляции баланса, pooling и подготовка Android-релиза.`,
         "lastSeed.badge.closedTest": `Закрытый тест пройден`,
         "lastSeed.badge.review": `Проверка Google Play`,
+        "lastSeed.built.combat": `Бой на снарядах, оружие Acacia Thorn, runtime-модификаторы характеристик и поток улучшений.`,
+        "lastSeed.built.rewardSystem": `ScriptableObject-driven сервисы выбора и применения наград с редкостью и DPS-aware настройкой.`,
+        "lastSeed.built.wormBalance": `Сегментированный враг, pooling, масштабирование HP и детерминированные симуляции баланса.`,
         "lastSeed.built.weapon": `Оружие Acacia Thorn на базе снарядов`,
         "lastSeed.built.modifiers": `Модификаторы урона, скорострельности, критов, пробития, залпа, скорости и параллельных выстрелов во время игры`,
         "lastSeed.built.rewards": `Сервисы выбора и применения наград со слотами редкости и логикой с учетом DPS`,
@@ -1587,15 +1675,23 @@
         "lastSeed.built.balance": `Детерминированные симуляции наград и HP для быстрой настройки баланса`,
         "lastSeed.value.split": `Код функций разделен между геймплеем, представлением, системами, загрузкой сцены и поддержкой симуляций баланса`,
         "lastSeed.value.configs": `ScriptableObject-конфиги для оружия, наград, редкости, здоровья и настройки давления на игрока`,
-        "lastSeed.value.bootstrap": `Обертка над Input System и загрузчик сцены вместо скрытых поисков объектов в рантайме`,
+        "lastSeed.value.bootstrap": `Обертка над Input System и загрузчик сцены вместо скрытого поиска объектов в рантайме.`,
+        "lastSeed.value.performance": `Точечный pooling снарядов/сегментов врага и кешированные ссылки для снижения runtime object churn.`,
         "lastSeed.value.framerate": `Настройка целевой частоты кадров на основе частоты обновления и уровня устройства`,
-        "lastSeed.value.separation": `Четкое разделение данных наград, контекста выполнения, привязки интерфейса и геймплейных эффектов`,
-        "lastSeed.gallery.title": `Скриншоты геймплея Last Seed Survivor`,
-        "lastSeed.gallery.caption": `Скриншоты показывают экран загрузки, выбор наград, отображение редкости, сегментированного врага, бой снарядами, отслеживание прогресса и вертикальный геймплейный интерфейс.`,
+        "lastSeed.value.separation": `Геймплей, представление, runtime-данные, UI binding, bootstrap и balance tooling разделены по ответственности.`,
+        "lastSeed.gallery.title": `Геймплей и systems preview`,
+        "lastSeed.gallery.caption": `Скриншоты показывают давление сегментированного врага, бой снарядами, UI выбора наград, редкость и вертикальный мобильный геймплей.`,
+        "lastSeed.proof.context": `<b>Контекст:</b> мобильному survival-геймплею нужны были масштабируемый бой, награды и настройка вместо одноразовой prototype-логики.`,
+        "lastSeed.proof.action": `<b>Действие:</b> разделил данные, runtime-системы, UI binding, bootstrap, pooling и инструменты симуляции баланса.`,
+        "lastSeed.proof.result": `<b>Результат:</b> закрытый тест пройден; release review в процессе; системы проще настраивать, профилировать и ревьюить в коде.`,
         "lastSeed.presentation.title": `Подача для игрока`,
         "lastSeed.presentation.layout": `Вертикальная touch-friendly компоновка и поток наград для оценки боевого давления, улучшений и читаемости.`,
         "lastSeed.presentation.feedback": `Состояния врагов и экраны улучшений подходят для коротких записей геймплея, проверки темпа и понятности первых секунд.`,
-        "emoji.summary": `Выпущенная мобильная игра в Google Play, доведенная от прототипа до публичного Android-релиза: пошаговый бой, стратегии ИИ, прогрессия, сохранение данных, поток интерфейса, реклама и публикация.`,
+        "emoji.kicker": `Выпущенная Android-игра`,
+        "emoji.summary": `Публичная мобильная игра в Google Play, доведенная от прототипа до релиза: пошаговый бой, стратегии сложности ИИ, прогрессия, сохранения, UI flow, реклама и Android publishing.`,
+        "emoji.built.loop": `Пошаговый боевой цикл со стратегиями сложности ИИ и логикой состояния доски.`,
+        "emoji.built.progressionFlow": `Прогрессия, разблокировка аватаров, настройки, сохранения, экраны результата и reward feedback.`,
+        "emoji.built.releaseFlow": `Интеграция Unity Ads, Android build workflow и публикация в Google Play.`,
         "emoji.built.flow": `Пошаговый геймплейный поток и логика состояния доски`,
         "emoji.built.ai": `Стратегии ИИ для нескольких уровней сложности`,
         "emoji.built.progression": `Прогрессия, награды, выбор аватара, настройки и сохранение данных игрока`,
@@ -1606,56 +1702,63 @@
         "emoji.value.storage": `Абстракция хранения и версионирование данных сохранения`,
         "emoji.value.strategy": `Strategy Pattern для переиспользуемой логики принятия решений ИИ`,
         "emoji.value.events": `Событийные обновления геймплея и интерфейса для более понятных переходов состояний`,
-        "emoji.value.refactoring": `Практичный рефакторинг к разделению в стиле SRP/MVC после стадии прототипа`,
-        "emoji.gallery.title": `Скриншоты геймплея Emoji Battle`,
-        "emoji.gallery.caption": `Скриншоты показывают путь выпущенной Google Play игры: выбор знака, настройку сложности, состояние доски игрок против ИИ, обратную связь результата матча и прогрессию разблокировок.`,
+        "emoji.value.architecture": `Разделение Domain, Infrastructure, Presentation и Services вокруг геймплея, хранения, popup flow и рекламы.`,
+        "emoji.value.strategyEvents": `Strategy Pattern для ИИ и event-driven обновления состояний геймплея/UI.`,
+        "emoji.value.refactoring": `Prototype был рефакторен к SRP/MVC-style границам перед релизом.`,
+        "emoji.gallery.title": `Preview выпущенного геймплея`,
+        "emoji.gallery.caption": `Скриншоты показывают released Google Play flow: состояние доски игрок против ИИ, выбор персонажа, настройку сложности и прогрессию разблокировок.`,
+        "emoji.proof.context": `<b>Контекст:</b> нужно было превратить небольшой прототип в завершенную мобильную игру, способную пройти store review.`,
+        "emoji.proof.action": `<b>Действие:</b> взял на себя combat flow, ИИ, persistence, UI-состояния, рекламу, Android build preparation и шаги публикации.`,
+        "emoji.proof.result": `<b>Результат:</b> публичный релиз в Google Play с reviewable source code, gameplay media и полным player loop.`,
         "emoji.presentation.title": `Выпущенный путь игрока`,
         "emoji.presentation.loop": `Полный выпущенный игровой цикл: от меню и выбора персонажа до результата, наград, рекламы и разблокировок.`,
         "emoji.presentation.states": `Записи геймплея показывают выпущенные UI-состояния: сложность, доску, результат, настройки и прогрессию.`,
-        "tanks.summary": `Unity мультиплеерный прототип с потоком хоста/клиента, анонимной авторизацией, UGS Relay/Lobby, интерфейсом лобби, сетевым движением, RPC-стрельбой, здоровьем, возрождением, монетами и таблицей лидеров.`,
+        "tanks.summary": `Unity мультиплеерный прототип, показывающий практические основы Netcode for GameObjects: host/client flow, UGS Relay/Lobby, синхронизированное состояние игрока, RPC-стрельба, respawn и lobby UI.`,
         "tanks.implemented": `Реализовано`,
-        "tanks.built.connection": `Менеджеры клиента/хоста и поток подключения`,
+        "tanks.built.connection": `Менеджеры клиента/хоста, anonymous auth, Relay allocation/join и lobby heartbeat.`,
         "tanks.built.relay": `Настройка Relay, кода подключения и регулярного обновления лобби`,
         "tanks.built.networkVars": `NetworkVariables для данных игрока, здоровья, имен и монет`,
+        "tanks.built.networking": `NetworkVariables для данных игрока плюс ServerRpc/ClientRpc стрельба и создание снарядов.`,
         "tanks.built.rpc": `Стрельба через ServerRpc/ClientRpc и создание снарядов`,
-        "tanks.built.ui": `Поток возрождения, интерфейс таблицы лидеров, список лобби и экраны меню`,
+        "tanks.built.ui": `Respawn flow, leaderboard UI, список лобби и экраны меню.`,
         "tanks.positioning": `Инженерная ценность`,
-        "tanks.value.fundamentals": `Демонстрирует основы Unity Netcode через реальный поток хоста/клиента, настройку Relay/Lobby, синхронизированное состояние игрока, RPC-стрельбу и поток возрождения`,
-        "tanks.value.services": `Связывает сервисы Unity, мультиплеерный интерфейс и базовые решения по авторитету/владению`,
+        "tanks.value.fundamentals": `Демонстрирует основы мультиплеера через реальный connection flow и синхронизированное gameplay state.`,
+        "tanks.value.services": `Связывает Unity services, multiplayer UI и базовые решения по authority/ownership.`,
+        "tanks.proof.result": `<b>Результат:</b> показывает, что я понимаю multiplayer constraints, могу связать Unity services и сделать играбельный PC-прототип, не выдавая его за production-релиз.`,
         "prototypes.title": `Играбельные прототипы`,
         "prototypes.note": `Небольшие WebGL/PC билды, которые показывают диапазон и не конкурируют с основными кейсами.`,
         "prototype.sharp": `FPS WebGL-прототип: управление от первого лица, raycast-оружие, предметы, здоровье/щит, NavMesh-враги и обратная связь интерфейса.`,
         "prototype.royal": `3D WebGL-раннер: движение, препятствия, предметы, уровни из чанков, камера, интерфейс, частицы и аудио.`,
         "prototype.galaxy": `3D PC-прототип космического шутера: стрельба, столкновения, Timeline-сцены, переходы камеры, эффекты и настройка интерфейса.`,
-        "skills.title": `Технический фокус`,
-        "skills.note": `Карта навыков для быстрого просмотра; доказательства находятся в проектах.`,
+        "skills.title": `Core Stack & Keywords`,
+        "skills.note": `ATS-friendly Unity keywords для быстрого скрининга; доказательства находятся в проектах выше.`,
         "skills.unity.title": `Unity / C#`,
-        "skills.unity.text": `Геймплей-программирование, UGUI, жизненный цикл MonoBehaviour, сцены/префабы, Input System, DOTween, основы URP.`,
-        "skills.gameplay.title": `Геймплей и системы`,
-        "skills.gameplay.text": `Бой, оружие, награды, прогрессия, решения ИИ, поток состояний, сохранение/загрузка.`,
+        "skills.unity.text": `Unity, Unity 6, C#, C# Gameplay Programmer, жизненный цикл MonoBehaviour, сцены, префабы, Input System, DOTween, основы URP.`,
+        "skills.gameplay.title": `Gameplay Programming`,
+        "skills.gameplay.text": `Бой, оружие, снаряды, враги, награды, прогрессия, решения ИИ, поток состояний, save/load, player feedback.`,
         "skills.architecture.title": `Архитектура и поток данных`,
-        "skills.architecture.text": `SOLID/SRP, события, Strategy Pattern, сервисные абстракции, ScriptableObject-конфиги, разделение рантайма и данных.`,
-        "skills.performance.title": `Отладка и понимание рантайма`,
-        "skills.performance.text": `Проверки через Profiler, контроль GC, кешированные ссылки, без поиска объектов в горячих участках, разбор билдов/рантайма.`,
-        "skills.platforms.title": `Платформы и билды`,
-        "skills.platforms.text": `Android, PC, WebGL, Google Play, itch.io, WebGL-прототипы в браузере, ограничения консольных проектов, подготовка релиза.`,
+        "skills.architecture.text": `SOLID/SRP, Strategy Pattern, event-driven systems, сервисные абстракции, ScriptableObject-конфиги, разделение runtime/data/UI.`,
+        "skills.performance.title": `Performance & Debugging`,
+        "skills.performance.text": `Unity Profiler, контроль GC allocations, object pooling, кешированные ссылки, без hot-path scene searches, разбор билдов/рантайма.`,
+        "skills.platforms.title": `Platforms & Release`,
+        "skills.platforms.text": `Android, Google Play, PC builds, WebGL, itch.io, WebGL-прототипы в браузере, mobile constraints, подготовка релиза.`,
         "skills.multiplayer.title": `Опыт с мультиплеером`,
         "skills.multiplayer.text": `Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs и интерфейс лобби.`,
         "contact.title": `Контакты`,
-        "contact.text": `Нахожусь в Финляндии. Постоянное место жительства. Открыт к Unity C# вакансиям, фриланс-задачам и контрактам для PC, WebGL, мобильных и консольных проектов: игровые функции, поток интерфейса, билды, отладка, чистка проекта, удаленная/гибридная/офисная работа и релокация внутри Финляндии.`,
+        "contact.text": `Нахожусь в Финляндии. Постоянное место жительства. Открыт к Unity C# Developer и C# Gameplay Programmer вакансиям, фриланс-задачам и контрактам для mobile, PC и WebGL проектов: gameplay features, UI/UGUI flow, билды, отладка, рефакторинг и чистка проекта.`,
         "contact.copyHint": `Если почтовое приложение не открылось, можно просто скопировать адрес.`,
-        "footer.text": `Oleksandr Tokarev - Unity C# Developer. Портфолио о выпущенных Unity-функциях, геймплейных системах и практичной Unity-работе.`
+        "footer.text": `Oleksandr Tokarev - Unity C# Developer / C# Gameplay Programmer. Портфолио о выпущенных Unity-функциях, геймплейных системах, UI flow и практичной Unity-работе.`
       },
       uk: {
         "language.label": `Мова`,
-        "nav.value": `Що роблю`,
+        "nav.proof": `Докази`,
         "nav.projects": `Проєкти`,
         "nav.prototypes": `Прототипи`,
         "nav.skills": `Навички`,
         "nav.contact": `Контакти`,
-        "hero.eyebrow": `Unity C# Developer | Ігрові механіки, інтерфейс і кросплатформні білди`,
-        "hero.title": `Я створюю підтримувані ігрові функції в Unity та кросплатформні C#-системи.`,
-        "hero.lead": `Знаходжусь у Фінляндії, маю 2+ роки практики з Unity/C#. Створюю ігрові функції, потік інтерфейсу і Unity-білди для Android, PC та WebGL; випустив одну Android-гру в Google Play. Відкритий до PC, WebGL, мобільних і консольних проєктів.`,
+        "hero.eyebrow": `Unity C# Developer / C# Gameplay Programmer`,
+        "hero.title": `Я створюю і доводжу до результату Unity-геймплей, UI flow та підтримувані C#-системи.`,
+        "hero.lead": `Знаходжусь у Фінляндії. Маю 2+ роки практичної роботи з Unity/C#. Випустив Android-гру в Google Play. Фокус: gameplay programming, UGUI player flow, ScriptableObject-системи, відлагодження і performance-aware білди для Android, PC та WebGL.`,
         "button.email": `Написати`,
         "button.copyEmail": `Скопіювати пошту`,
         "button.viewProjects": `Переглянути проєкти`,
@@ -1664,13 +1767,13 @@
         "button.playWebGL": `Грати в браузері (WebGL)`,
         "button.downloadPc": `Завантажити PC-білд`,
         "proof.title": `Що я можу підтвердити`,
-        "proof.metric.release": `гру в Google Play доведено від прототипу до релізу`,
-        "proof.metric.platforms": `проєкти для Android, PC і WebGL`,
+        "proof.metric.release": `випущена Android-гра в Google Play`,
+        "proof.metric.platforms": `платформи: Android, PC і WebGL`,
         "proof.metric.years": `роки практичної Unity C# реалізації`,
         "proof.metric.areas": `ключових зон: геймплей, інтерфейс, системи, відлагодження, білди`,
-        "proof.feature": `<b>Зона відповідальності:</b> ігрова логіка, потік інтерфейсу, збереження і завантаження, реклама, прогресія, налаштування сцен/префабів і підготовка білдів.`,
+        "proof.feature": `<b>Зона відповідальності:</b> ігрова логіка, UI/UGUI flow, збереження і завантаження, реклама, прогресія, налаштування сцен/префабів і підготовка білдів.`,
         "proof.systems": `<b>Підтримувані системи:</b> ScriptableObject-конфіги, стратегії ШІ, логіка нагород, дані збережень, сервіси і завантаження сцени.`,
-        "proof.production": `<b>Production-підхід:</b> чисті межі C#, кешовані посилання, обмеження рантайму, відлагодження і практичний рефакторинг.`,
+        "proof.production": `<b>Production-підхід:</b> чисті межі C#, кешовані посилання, без пошуку об'єктів у hot path, profiling/debugging і практичний рефакторинг.`,
         "value.title": `Що я роблю`,
         "value.note": `Фокусуюсь на Unity-роботі, яка швидко стає іграбельною і залишається зручною для перевірки: геймплей, інтерфейс, системи на даних, відлагодження та кросплатформні білди.`,
         "value.gameplay.title": `Ігрові механіки`,
@@ -1682,12 +1785,17 @@
         "value.runtime.title": `Відлагодження і білди`,
         "value.runtime.text": `Розбір багів, перевірки через Profiler, контроль GC, кешовані посилання, налаштування білдів і підготовка релізу.`,
         "projects.title": `Ключові проєкти`,
-        "projects.note": `Кросплатформний Unity-доказ: випущений Android-реліз, системний проєкт у розробці, PC/WebGL білди і мультиплеєрний прототип з кодом та матеріалами геймплею.`,
+        "projects.note": `Спочатку випущена Android-гра, потім глибша Unity systems-робота, після цього мультиплеєр і іграбельні прототипи. У головних кейсах є код, gameplay media і STAR/CARE-доказ цінності.`,
         "project.whatBuilt": `Що я зробив`,
         "project.engineeringValue": `Інженерна цінність`,
-        "lastSeed.summary": `2D auto-shooter/survival проєкт на Unity 6 з модульним боєм, вибором нагород, сегментованим ворогом, симуляціями балансу і підготовкою Android-релізу. Закрите тестування завершено; триває післятестова перевірка Google Play.`,
+        "project.starProof": `STAR / CARE доказ цінності`,
+        "lastSeed.kicker": `Просунутий Unity systems-проєкт`,
+        "lastSeed.summary": `Мобільний 2D auto-shooter/survival проєкт на Unity 6: модульний бій, ScriptableObject-нагороди, сегментований ворог, симуляції балансу, pooling і підготовка Android-релізу.`,
         "lastSeed.badge.closedTest": `Закрите тестування пройдено`,
         "lastSeed.badge.review": `Перевірка Google Play`,
+        "lastSeed.built.combat": `Бій на снарядах, зброя Acacia Thorn, runtime-модифікатори характеристик і потік покращень.`,
+        "lastSeed.built.rewardSystem": `ScriptableObject-driven сервіси вибору і застосування нагород з рідкістю та DPS-aware налаштуванням.`,
+        "lastSeed.built.wormBalance": `Сегментований ворог, pooling, масштабування HP і детерміновані симуляції балансу.`,
         "lastSeed.built.weapon": `Зброя Acacia Thorn на базі снарядів`,
         "lastSeed.built.modifiers": `Модифікатори шкоди, скорострільності, критів, пробиття, залпу, швидкості та паралельних пострілів під час гри`,
         "lastSeed.built.rewards": `Сервіси вибору і застосування нагород зі слотами рідкості та логікою з урахуванням DPS`,
@@ -1696,15 +1804,23 @@
         "lastSeed.built.balance": `Детерміновані симуляції нагород і HP для швидкого налаштування балансу`,
         "lastSeed.value.split": `Код функцій розділений між геймплеєм, представленням, системами, завантаженням сцени та підтримкою симуляцій балансу`,
         "lastSeed.value.configs": `ScriptableObject-конфіги для зброї, нагород, рідкості, здоров'я і налаштування тиску на гравця`,
-        "lastSeed.value.bootstrap": `Обгортка над Input System і завантажувач сцени замість прихованих пошуків об'єктів у рантаймі`,
+        "lastSeed.value.bootstrap": `Обгортка над Input System і завантажувач сцени замість прихованого пошуку об'єктів у рантаймі.`,
+        "lastSeed.value.performance": `Точковий pooling снарядів/сегментів ворога і кешовані посилання для зменшення runtime object churn.`,
         "lastSeed.value.framerate": `Налаштування цільової частоти кадрів на основі частоти оновлення і рівня пристрою`,
-        "lastSeed.value.separation": `Чітке розділення даних нагород, контексту виконання, прив'язки інтерфейсу і геймплейних ефектів`,
-        "lastSeed.gallery.title": `Скриншоти геймплею Last Seed Survivor`,
-        "lastSeed.gallery.caption": `Скриншоти показують екран завантаження, вибір нагород, відображення рідкості, сегментованого ворога, бій снарядами, відстеження прогресу і вертикальний геймплейний інтерфейс.`,
+        "lastSeed.value.separation": `Геймплей, представлення, runtime-дані, UI binding, bootstrap і balance tooling розділені за відповідальністю.`,
+        "lastSeed.gallery.title": `Геймплей і systems preview`,
+        "lastSeed.gallery.caption": `Скриншоти показують тиск сегментованого ворога, бій снарядами, UI вибору нагород, рідкість і вертикальний мобільний геймплей.`,
+        "lastSeed.proof.context": `<b>Контекст:</b> мобільному survival-геймплею потрібні були масштабований бій, нагороди і налаштування замість одноразової prototype-логіки.`,
+        "lastSeed.proof.action": `<b>Дія:</b> розділив дані, runtime-системи, UI binding, bootstrap, pooling і інструменти симуляції балансу.`,
+        "lastSeed.proof.result": `<b>Результат:</b> закрите тестування пройдено; release review триває; системи простіше налаштовувати, профілювати і рев'юїти в коді.`,
         "lastSeed.presentation.title": `Подача для гравця`,
         "lastSeed.presentation.layout": `Вертикальна touch-friendly компоновка і потік нагород для оцінки бойового тиску, покращень і читабельності.`,
         "lastSeed.presentation.feedback": `Стани ворогів і екрани покращень підходять для коротких записів геймплею, перевірки темпу і зрозумілості перших секунд.`,
-        "emoji.summary": `Випущена мобільна гра в Google Play, доведена від прототипу до публічного Android-релізу: покроковий бій, стратегії ШІ, прогресія, збереження даних, потік інтерфейсу, реклама і публікація.`,
+        "emoji.kicker": `Випущена Android-гра`,
+        "emoji.summary": `Публічна мобільна гра в Google Play, доведена від прототипу до релізу: покроковий бій, стратегії складності ШІ, прогресія, збереження, UI flow, реклама і Android publishing.`,
+        "emoji.built.loop": `Покроковий бойовий цикл зі стратегіями складності ШІ та логікою стану дошки.`,
+        "emoji.built.progressionFlow": `Прогресія, розблокування аватарів, налаштування, збереження, екрани результату і reward feedback.`,
+        "emoji.built.releaseFlow": `Інтеграція Unity Ads, Android build workflow і публікація в Google Play.`,
         "emoji.built.flow": `Покроковий геймплейний потік і логіка стану дошки`,
         "emoji.built.ai": `Стратегії ШІ для кількох рівнів складності`,
         "emoji.built.progression": `Прогресія, нагороди, вибір аватара, налаштування і збереження даних гравця`,
@@ -1715,45 +1831,52 @@
         "emoji.value.storage": `Абстракція зберігання і версіонування даних збереження`,
         "emoji.value.strategy": `Strategy Pattern для перевикористовуваної логіки прийняття рішень ШІ`,
         "emoji.value.events": `Подієві оновлення геймплею та інтерфейсу для зрозуміліших переходів станів`,
-        "emoji.value.refactoring": `Практичний рефакторинг до розділення в стилі SRP/MVC після стадії прототипу`,
-        "emoji.gallery.title": `Скриншоти геймплею Emoji Battle`,
-        "emoji.gallery.caption": `Скриншоти показують шлях випущеної Google Play гри: вибір знака, налаштування складності, стан дошки гравець проти ШІ, зворотний зв'язок результату матчу і прогресію розблокувань.`,
+        "emoji.value.architecture": `Розділення Domain, Infrastructure, Presentation і Services навколо геймплею, збереження, popup flow і реклами.`,
+        "emoji.value.strategyEvents": `Strategy Pattern для ШІ та event-driven оновлення станів геймплею/UI.`,
+        "emoji.value.refactoring": `Prototype було рефакторено до SRP/MVC-style меж перед релізом.`,
+        "emoji.gallery.title": `Preview випущеного геймплею`,
+        "emoji.gallery.caption": `Скриншоти показують released Google Play flow: стан дошки гравець проти ШІ, вибір персонажа, налаштування складності і прогресію розблокувань.`,
+        "emoji.proof.context": `<b>Контекст:</b> потрібно було перетворити невеликий прототип на завершену мобільну гру, здатну пройти store review.`,
+        "emoji.proof.action": `<b>Дія:</b> взяв на себе combat flow, ШІ, persistence, UI-стани, рекламу, Android build preparation і кроки публікації.`,
+        "emoji.proof.result": `<b>Результат:</b> публічний реліз у Google Play з reviewable source code, gameplay media і повним player loop.`,
         "emoji.presentation.title": `Випущений шлях гравця`,
         "emoji.presentation.loop": `Повний випущений ігровий цикл: від меню і вибору персонажа до результату, нагород, реклами і розблокувань.`,
         "emoji.presentation.states": `Записи геймплею показують випущені UI-стани: складність, дошку, результат, налаштування і прогресію.`,
-        "tanks.summary": `Unity мультиплеєрний прототип з потоком хоста/клієнта, анонімною авторизацією, UGS Relay/Lobby, інтерфейсом лобі, мережевим рухом, RPC-стрільбою, здоров'ям, відродженням, монетами і таблицею лідерів.`,
+        "tanks.summary": `Unity мультиплеєрний прототип, що показує практичні основи Netcode for GameObjects: host/client flow, UGS Relay/Lobby, синхронізований стан гравця, RPC-стрільба, respawn і lobby UI.`,
         "tanks.implemented": `Реалізовано`,
-        "tanks.built.connection": `Менеджери клієнта/хоста і потік підключення`,
+        "tanks.built.connection": `Менеджери клієнта/хоста, anonymous auth, Relay allocation/join і lobby heartbeat.`,
         "tanks.built.relay": `Налаштування Relay, коду підключення і регулярного оновлення лобі`,
         "tanks.built.networkVars": `NetworkVariables для даних гравця, здоров'я, імен і монет`,
+        "tanks.built.networking": `NetworkVariables для даних гравця плюс ServerRpc/ClientRpc стрільба і створення снарядів.`,
         "tanks.built.rpc": `Стрільба через ServerRpc/ClientRpc і створення снарядів`,
-        "tanks.built.ui": `Потік відродження, інтерфейс таблиці лідерів, список лобі і екрани меню`,
+        "tanks.built.ui": `Respawn flow, leaderboard UI, список лобі і екрани меню.`,
         "tanks.positioning": `Інженерна цінність`,
-        "tanks.value.fundamentals": `Демонструє основи Unity Netcode через реальний потік хоста/клієнта, налаштування Relay/Lobby, синхронізований стан гравця, RPC-стрільбу і потік відродження`,
-        "tanks.value.services": `Поєднує сервіси Unity, мультиплеєрний інтерфейс і базові рішення щодо авторитету/володіння`,
+        "tanks.value.fundamentals": `Демонструє основи мультиплеєра через реальний connection flow і синхронізований gameplay state.`,
+        "tanks.value.services": `Поєднує Unity services, multiplayer UI і базові рішення щодо authority/ownership.`,
+        "tanks.proof.result": `<b>Результат:</b> показує, що я розумію multiplayer constraints, можу зв'язати Unity services і зробити іграбельний PC-прототип, не видаючи його за production-реліз.`,
         "prototypes.title": `Іграбельні прототипи`,
         "prototypes.note": `Невеликі WebGL/PC білди, які показують діапазон і не конкурують з основними кейсами.`,
         "prototype.sharp": `FPS WebGL-прототип: керування від першої особи, raycast-зброя, предмети, здоров'я/щит, NavMesh-вороги і зворотний зв'язок інтерфейсу.`,
         "prototype.royal": `3D WebGL-раннер: рух, перешкоди, предмети, рівні з чанків, камера, інтерфейс, частинки й аудіо.`,
         "prototype.galaxy": `3D PC-прототип космічного шутера: стрільба, зіткнення, Timeline-сцени, переходи камери, ефекти і налаштування інтерфейсу.`,
-        "skills.title": `Технічний фокус`,
-        "skills.note": `Карта навичок для швидкого перегляду; докази знаходяться в проєктах.`,
+        "skills.title": `Core Stack & Keywords`,
+        "skills.note": `ATS-friendly Unity keywords для швидкого скринінгу; докази знаходяться у проєктах вище.`,
         "skills.unity.title": `Unity / C#`,
-        "skills.unity.text": `Геймплей-програмування, UGUI, життєвий цикл MonoBehaviour, сцени/префаби, Input System, DOTween, основи URP.`,
-        "skills.gameplay.title": `Геймплей і системи`,
-        "skills.gameplay.text": `Бій, зброя, нагороди, прогресія, рішення ШІ, потік станів, збереження/завантаження.`,
+        "skills.unity.text": `Unity, Unity 6, C#, C# Gameplay Programmer, життєвий цикл MonoBehaviour, сцени, префаби, Input System, DOTween, основи URP.`,
+        "skills.gameplay.title": `Gameplay Programming`,
+        "skills.gameplay.text": `Бій, зброя, снаряди, вороги, нагороди, прогресія, рішення ШІ, потік станів, save/load, player feedback.`,
         "skills.architecture.title": `Архітектура і потік даних`,
-        "skills.architecture.text": `SOLID/SRP, події, Strategy Pattern, сервісні абстракції, ScriptableObject-конфіги, розділення рантайму і даних.`,
-        "skills.performance.title": `Відлагодження і розуміння рантайму`,
-        "skills.performance.text": `Перевірки через Profiler, контроль GC, кешовані посилання, без пошуку об'єктів у гарячих ділянках, розбір білдів/рантайму.`,
-        "skills.platforms.title": `Платформи і білди`,
-        "skills.platforms.text": `Android, PC, WebGL, Google Play, itch.io, WebGL-прототипи у браузері, обмеження консольних проєктів, підготовка релізу.`,
+        "skills.architecture.text": `SOLID/SRP, Strategy Pattern, event-driven systems, сервісні абстракції, ScriptableObject-конфіги, розділення runtime/data/UI.`,
+        "skills.performance.title": `Performance & Debugging`,
+        "skills.performance.text": `Unity Profiler, контроль GC allocations, object pooling, кешовані посилання, без hot-path scene searches, розбір білдів/рантайму.`,
+        "skills.platforms.title": `Platforms & Release`,
+        "skills.platforms.text": `Android, Google Play, PC builds, WebGL, itch.io, WebGL-прототипи у браузері, mobile constraints, підготовка релізу.`,
         "skills.multiplayer.title": `Досвід з мультиплеєром`,
         "skills.multiplayer.text": `Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs та інтерфейс лобі.`,
         "contact.title": `Контакти`,
-        "contact.text": `Знаходжусь у Фінляндії. Постійне місце проживання. Відкритий до Unity C# вакансій, фриланс-задач і контрактів для PC, WebGL, мобільних і консольних проєктів: ігрові функції, потік інтерфейсу, білди, відлагодження, чистка проєкту, віддалена/гібридна/офісна робота та релокація всередині Фінляндії.`,
+        "contact.text": `Знаходжусь у Фінляндії. Постійне місце проживання. Відкритий до Unity C# Developer і C# Gameplay Programmer вакансій, фриланс-задач і контрактів для mobile, PC і WebGL проєктів: gameplay features, UI/UGUI flow, білди, відлагодження, рефакторинг і чистка проєкту.`,
         "contact.copyHint": `Якщо поштовий застосунок не відкрився, можна просто скопіювати адресу.`,
-        "footer.text": `Oleksandr Tokarev - Unity C# Developer. Портфоліо про випущені Unity-функції, геймплейні системи і практичну Unity-роботу.`
+        "footer.text": `Oleksandr Tokarev - Unity C# Developer / C# Gameplay Programmer. Портфоліо про випущені Unity-функції, геймплейні системи, UI flow і практичну Unity-роботу.`
       }
     };
 
