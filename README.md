@@ -13,13 +13,14 @@ The site presents my Unity C# developer portfolio, CV, gameplay media, public Gi
 - Gameplay systems, UI/UGUI flow, save/load, progression, rewards, ads, and build preparation
 - Android, PC, and WebGL projects with source, gameplay media, and playable/downloadable builds
 - Performance-aware Unity implementation: object pooling, cached references, Profiler-minded iteration, and clear runtime boundaries
+- Git/GitHub and version-control visibility for reviewable public source code
 - Concise impact notes for the main portfolio projects
 
 ## Featured Projects
 
 ### Emoji Battle
 
-Released Android game on Google Play. Built in Unity 6 and C#, taken from prototype to public mobile release with turn-based gameplay, AI strategies, progression, persistence, popups, ads, and Android publishing workflow.
+Released Android game on Google Play. Built in Unity 6 and C#, taken from prototype to public mobile release with turn-based gameplay, AI strategies, progression, persistence, popups, ads, Android publishing workflow, and a post-release frame-rate update for supported 90/120 Hz devices.
 
 Google Play: https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle  
 Source code: https://github.com/TokarevDev/Emoji_Battle
