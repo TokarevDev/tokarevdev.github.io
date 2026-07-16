@@ -351,10 +351,6 @@
       order: 2;
     }
 
-    #projects .support-case {
-      order: 3;
-    }
-
     .section-head {
       display: flex;
       align-items: end;
@@ -816,6 +812,67 @@
       margin-top: 16px;
     }
 
+    .prototype-pocket {
+      margin-top: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(24, 29, 27, 0.74);
+    }
+
+    .prototype-pocket > summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 72px;
+      padding: 18px 20px;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .prototype-pocket > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .prototype-pocket > summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      color: var(--green);
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .prototype-pocket[open] > summary::after {
+      content: "−";
+    }
+
+    .prototype-pocket-toggle {
+      display: block;
+      font-size: 19px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .prototype-pocket-note {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .prototype-pocket-content {
+      padding: 0 20px 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .prototype-pocket .prototype-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding-top: 20px;
+    }
+
     .note-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -1195,6 +1252,19 @@
         grid-template-columns: 1fr;
       }
 
+      .prototype-pocket .prototype-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .prototype-pocket > summary {
+        align-items: flex-start;
+        padding: 16px;
+      }
+
+      .prototype-pocket-content {
+        padding: 0 14px 14px;
+      }
+
       .project {
         padding: 14px;
         overflow: hidden;
@@ -1257,9 +1327,8 @@
       </div>
       <nav class="nav" aria-label="Main navigation">
         <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
-        <a href="#projects" data-i18n="nav.projects">Projects</a>
-        <a href="#prototypes" data-i18n="nav.prototypes">Prototypes</a>
         <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
     </header>
@@ -1310,11 +1379,75 @@
         </aside>
       </section>
 
+      <section id="skills" aria-labelledby="skills-title">
+        <div class="section-head">
+          <h2 id="skills-title" data-i18n="skills.title">Core Stack</h2>
+          <p class="section-note" data-i18n="skills.note">
+            Production-oriented Unity skills demonstrated in the featured work below.
+          </p>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill-group">
+            <h3 data-i18n="skills.unity.title">Unity / C#</h3>
+            <p data-i18n="skills.unity.text">Unity 2022 LTS / Unity 6, C#, MonoBehaviour lifecycle, scenes, prefabs, Input System, DOTween, and URP.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.gameplay.title">Gameplay Programming</h3>
+            <p data-i18n="skills.gameplay.text">Combat, weapons, projectiles, enemies, rewards, progression, AI decisions, state flow, save/load, player feedback.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.architecture.title">Architecture & Data Flow</h3>
+            <p data-i18n="skills.architecture.text">SOLID/SRP, Assembly Definitions, Zenject and DI containers, composition root, service abstractions, event-driven systems, and runtime/data/UI separation.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.async.title">Async & Lifecycle</h3>
+            <p data-i18n="skills.async.text">UniTask, async/await, CancellationToken, lifecycle-bound cancellation, safe scene transitions, and explicit cleanup of subscriptions and async operations.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.performance.title">Performance & Debugging</h3>
+            <p data-i18n="skills.performance.text">Unity Profiler, GC allocation awareness, object pooling, cached references, no hot-path scene searches, build/runtime investigation.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.platforms.title">Platforms & Release</h3>
+            <p data-i18n="skills.platforms.text">Android, Google Play, PC builds, WebGL, itch.io, browser-playable prototypes, mobile constraints, release preparation.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.version.title">Version Control</h3>
+            <p data-i18n="skills.version.text">Git, GitHub, readable commits, public source review, repository cleanup, README/code review maps.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.multiplayer.title">Multiplayer Exposure</h3>
+            <p data-i18n="skills.multiplayer.text">Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs, lobby UI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="next-focus" aria-labelledby="next-focus-title">
+        <div class="focus-band">
+          <div>
+            <p class="eyebrow" data-i18n="nextFocus.eyebrow">Engineering Practices</p>
+            <h2 id="next-focus-title" data-i18n="nextFocus.title">Production-ready Unity toolkit</h2>
+            <p class="section-note" data-i18n="nextFocus.text">
+              Tools and practices I use or can introduce when they solve a concrete project problem: explicit architecture boundaries, controlled async lifetime, measurable performance, automated checks, and repeatable delivery.
+            </p>
+          </div>
+          <ul class="focus-list" aria-label="Production engineering practices">
+            <li data-i18n-html="nextFocus.addressables"><b>Async content:</b> Addressables, UniTask/async-await, cancellation, memory release, and safe scene transitions.</li>
+            <li data-i18n-html="nextFocus.di"><b>DI and module boundaries:</b> Zenject/DI containers, composition root, and Assembly Definitions for explicit, testable dependencies.</li>
+            <li data-i18n-html="nextFocus.profiling"><b>Profiling discipline:</b> Unity Profiler, Memory Profiler, allocation tracking, and mobile frame-time budgets.</li>
+            <li data-i18n-html="nextFocus.tests"><b>Automated quality:</b> Unity Test Framework for EditMode/PlayMode tests around pure gameplay logic and services.</li>
+            <li data-i18n-html="nextFocus.ci"><b>Build automation:</b> GitHub Actions or Unity Build Automation for repeatable Android/WebGL builds.</li>
+            <li data-i18n-html="nextFocus.liveops"><b>Live mobile stack:</b> ads/IAP readiness, analytics events, remote config, crash reporting, and update workflow.</li>
+          </ul>
+        </div>
+      </section>
+
       <section id="projects" aria-labelledby="projects-title">
         <div class="section-head">
           <h2 id="projects-title" data-i18n="projects.title">Featured Projects</h2>
           <p class="section-note" data-i18n="projects.note">
-            Selected Unity work with a shipped Android game first, deeper systems work second, and smaller multiplayer/WebGL/PC prototypes kept compact.
+            Two focused case studies: a shipped Google Play release and a deeper modular systems project.
           </p>
         </div>
 
@@ -1502,149 +1635,6 @@
           </div>
         </article>
 
-        <article class="project compact support-case">
-          <div>
-            <h3>Tanks Multiplayer Prototype</h3>
-            <p class="project-summary" data-i18n="tanks.summary">
-              Unity multiplayer prototype proving practical Netcode for GameObjects basics: host/client flow, UGS Relay/Lobby, synchronized player state, RPC shooting, respawn, and lobby UI.
-            </p>
-            <ul class="tag-list">
-              <li class="amber">Technical prototype</li>
-              <li>Netcode for GameObjects</li>
-              <li>UGS Relay</li>
-              <li>UGS Lobby</li>
-              <li>RPCs</li>
-            </ul>
-
-            <div class="project-columns">
-              <div>
-                <p class="mini-title" data-i18n="tanks.implemented">Implemented</p>
-                <ul class="compact">
-                  <li data-i18n="tanks.built.connection">Client/host managers, anonymous auth, Relay allocation/join, and lobby heartbeat.</li>
-                  <li data-i18n="tanks.built.networking">NetworkVariables for player data plus ServerRpc/ClientRpc shooting and projectile spawning.</li>
-                  <li data-i18n="tanks.built.ui">Respawn flow, leaderboard UI, lobby list, and menu screens.</li>
-                </ul>
-              </div>
-              <div>
-                <p class="mini-title" data-i18n="tanks.positioning">Engineering value</p>
-                <ul class="compact">
-                  <li data-i18n="tanks.value.fundamentals">Demonstrates multiplayer fundamentals through a real connection flow and synchronized gameplay state.</li>
-                  <li data-i18n="tanks.value.services">Connects Unity services, multiplayer UI, and basic authority/ownership decisions.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="impact-note">
-              <p class="mini-title" data-i18n="project.impact">Impact</p>
-              <ul class="impact-note-list">
-                <li data-i18n-html="tanks.impact.result"><b>Result:</b> shows I can read multiplayer constraints, wire Unity services, and produce a playable PC prototype without presenting it as shipped production experience.</li>
-              </ul>
-            </div>
-
-            <div class="button-row">
-              <a class="button secondary" href="download-build.html?build=tanks" target="_blank" rel="noopener" data-i18n="button.downloadPc">Download PC Build</a>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section id="prototypes" aria-labelledby="prototypes-title">
-        <div class="section-head">
-          <h2 id="prototypes-title" data-i18n="prototypes.title">Playable Prototypes</h2>
-          <p class="section-note" data-i18n="prototypes.note">
-            Smaller WebGL/PC builds showing range without competing with the main case studies.
-          </p>
-        </div>
-
-        <div class="prototype-grid">
-          <article class="prototype">
-            <h3>Sharp Shooter</h3>
-            <p data-i18n="prototype.sharp">FPS WebGL prototype: first-person controls, raycast weapons, pickups, health/shield, NavMesh enemies, and UI feedback.</p>
-            <div class="button-row">
-              <a class="button secondary" href="https://sd7games.itch.io/sharp-shooter" target="_blank" rel="noopener" data-i18n="button.playWebGL">Play in Browser (WebGL)</a>
-            </div>
-          </article>
-
-          <article class="prototype">
-            <h3>Royal Run</h3>
-            <p data-i18n="prototype.royal">3D WebGL runner: movement, obstacles, pickups, chunked level flow, camera, UI, particles, and audio.</p>
-            <div class="button-row">
-              <a class="button secondary" href="https://sd7games.itch.io/royalrun" target="_blank" rel="noopener" data-i18n="button.playWebGL">Play in Browser (WebGL)</a>
-            </div>
-          </article>
-
-          <article class="prototype">
-            <h3>Galaxy Strike</h3>
-            <p data-i18n="prototype.galaxy">3D PC space shooter: shooting, collisions, Timeline sequences, camera transitions, VFX, and UI setup.</p>
-            <div class="button-row">
-              <a class="button secondary" href="download-build.html?build=galaxy" target="_blank" rel="noopener" data-i18n="button.downloadPc">Download PC Build</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills" aria-labelledby="skills-title">
-        <div class="section-head">
-          <h2 id="skills-title" data-i18n="skills.title">Core Stack</h2>
-          <p class="section-note" data-i18n="skills.note">
-            Main tools, runtime areas, and Unity workflows used across the projects above.
-          </p>
-        </div>
-
-        <div class="skill-grid">
-          <article class="skill-group">
-            <h3 data-i18n="skills.unity.title">Unity / C#</h3>
-            <p data-i18n="skills.unity.text">Unity 2022 LTS / Unity 6, C#, MonoBehaviour lifecycle, scenes, prefabs, Input System, DOTween, and URP.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.gameplay.title">Gameplay Programming</h3>
-            <p data-i18n="skills.gameplay.text">Combat, weapons, projectiles, enemies, rewards, progression, AI decisions, state flow, save/load, player feedback.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.architecture.title">Architecture & Data Flow</h3>
-            <p data-i18n="skills.architecture.text">SOLID/SRP, Assembly Definitions, Zenject and DI containers, composition root, service abstractions, event-driven systems, and runtime/data/UI separation.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.async.title">Async & Lifecycle</h3>
-            <p data-i18n="skills.async.text">UniTask, async/await, CancellationToken, lifecycle-bound cancellation, safe scene transitions, and explicit cleanup of subscriptions and async operations.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.performance.title">Performance & Debugging</h3>
-            <p data-i18n="skills.performance.text">Unity Profiler, GC allocation awareness, object pooling, cached references, no hot-path scene searches, build/runtime investigation.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.platforms.title">Platforms & Release</h3>
-            <p data-i18n="skills.platforms.text">Android, Google Play, PC builds, WebGL, itch.io, browser-playable prototypes, mobile constraints, release preparation.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.version.title">Version Control</h3>
-            <p data-i18n="skills.version.text">Git, GitHub, readable commits, public source review, repository cleanup, README/code review maps.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.multiplayer.title">Multiplayer Exposure</h3>
-            <p data-i18n="skills.multiplayer.text">Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs, lobby UI.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="next-focus" aria-labelledby="next-focus-title">
-        <div class="focus-band">
-          <div>
-            <p class="eyebrow" data-i18n="nextFocus.eyebrow">Engineering Practices</p>
-            <h2 id="next-focus-title" data-i18n="nextFocus.title">Production-ready Unity toolkit</h2>
-            <p class="section-note" data-i18n="nextFocus.text">
-              Tools and practices I use or can introduce when they solve a concrete project problem: explicit architecture boundaries, controlled async lifetime, measurable performance, automated checks, and repeatable delivery.
-            </p>
-          </div>
-          <ul class="focus-list" aria-label="Next technical focus areas">
-            <li data-i18n-html="nextFocus.addressables"><b>Async content:</b> Addressables, UniTask/async-await, cancellation, memory release, and safe scene transitions.</li>
-            <li data-i18n-html="nextFocus.di"><b>DI and module boundaries:</b> Zenject/DI containers, composition root, and Assembly Definitions for explicit, testable dependencies.</li>
-            <li data-i18n-html="nextFocus.profiling"><b>Profiling discipline:</b> Unity Profiler, Memory Profiler, allocation tracking, and mobile frame-time budgets.</li>
-            <li data-i18n-html="nextFocus.tests"><b>Automated quality:</b> Unity Test Framework for EditMode/PlayMode tests around pure gameplay logic and services.</li>
-            <li data-i18n-html="nextFocus.ci"><b>Build automation:</b> GitHub Actions or Unity Build Automation for repeatable Android/WebGL builds.</li>
-            <li data-i18n-html="nextFocus.liveops"><b>Live mobile stack:</b> ads/IAP readiness, analytics events, remote config, crash reporting, and update workflow.</li>
-          </ul>
-        </div>
       </section>
 
       <section id="contact" aria-labelledby="contact-title">
@@ -1666,6 +1656,52 @@
           </div>
         </div>
       </section>
+
+      <details class="prototype-pocket">
+        <summary>
+          <span>
+            <span class="prototype-pocket-toggle" data-i18n="prototypes.toggle">Additional prototypes</span>
+            <span class="prototype-pocket-note" data-i18n="prototypes.note">Optional supporting work: multiplayer, WebGL, and PC experiments.</span>
+          </span>
+        </summary>
+
+        <section id="prototypes" class="prototype-pocket-content" aria-labelledby="prototypes-title">
+          <h2 id="prototypes-title" data-i18n="prototypes.title">Prototype archive</h2>
+          <div class="prototype-grid">
+            <article class="prototype">
+              <h3>Tanks Multiplayer</h3>
+              <p data-i18n="tanks.summary">Unity multiplayer prototype proving practical Netcode for GameObjects basics: host/client flow, UGS Relay/Lobby, synchronized player state, RPC shooting, respawn, and lobby UI.</p>
+              <div class="button-row">
+                <a class="button secondary" href="download-build.html?build=tanks" target="_blank" rel="noopener" data-i18n="button.downloadPc">Download PC Build</a>
+              </div>
+            </article>
+
+            <article class="prototype">
+              <h3>Sharp Shooter</h3>
+              <p data-i18n="prototype.sharp">FPS WebGL prototype: first-person controls, raycast weapons, pickups, health/shield, NavMesh enemies, and UI feedback.</p>
+              <div class="button-row">
+                <a class="button secondary" href="https://sd7games.itch.io/sharp-shooter" target="_blank" rel="noopener" data-i18n="button.playWebGL">Play in Browser (WebGL)</a>
+              </div>
+            </article>
+
+            <article class="prototype">
+              <h3>Royal Run</h3>
+              <p data-i18n="prototype.royal">3D WebGL runner: movement, obstacles, pickups, chunked level flow, camera, UI, particles, and audio.</p>
+              <div class="button-row">
+                <a class="button secondary" href="https://sd7games.itch.io/royalrun" target="_blank" rel="noopener" data-i18n="button.playWebGL">Play in Browser (WebGL)</a>
+              </div>
+            </article>
+
+            <article class="prototype">
+              <h3>Galaxy Strike</h3>
+              <p data-i18n="prototype.galaxy">3D PC space shooter: shooting, collisions, Timeline sequences, camera transitions, VFX, and UI setup.</p>
+              <div class="button-row">
+                <a class="button secondary" href="download-build.html?build=galaxy" target="_blank" rel="noopener" data-i18n="button.downloadPc">Download PC Build</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </details>
     </main>
 
     <footer data-i18n="footer.text">
@@ -1736,7 +1772,7 @@
         "value.runtime.title": `Отладка и билды`,
         "value.runtime.text": `Разбор багов, проверки через Profiler, контроль GC, кешированные ссылки, настройка билдов и подготовка релиза.`,
         "projects.title": `Ключевые проекты`,
-        "projects.note": `Выбранные Unity-проекты: сначала выпущенная Android-игра, затем более глубокая systems-работа, после этого компактные multiplayer/WebGL/PC прототипы.`,
+        "projects.note": `Два сфокусированных кейса: выпущенная игра в Google Play и более глубокий проект с модульными системами.`,
         "project.whatBuilt": `Что я сделал`,
         "project.engineeringValue": `Инженерная ценность`,
         "project.impact": `Влияние`,
@@ -1806,13 +1842,14 @@
         "tanks.value.fundamentals": `Демонстрирует основы мультиплеера через реальный connection flow и синхронизированное gameplay state.`,
         "tanks.value.services": `Связывает Unity services, multiplayer UI и базовые решения по authority/ownership.`,
         "tanks.impact.result": `<b>Результат:</b> показывает, что я понимаю multiplayer constraints, могу связать Unity services и сделать играбельный PC-прототип, не выдавая его за production-релиз.`,
-        "prototypes.title": `Играбельные прототипы`,
-        "prototypes.note": `Небольшие WebGL/PC билды, которые показывают диапазон и не конкурируют с основными кейсами.`,
+        "prototypes.toggle": `Дополнительные прототипы`,
+        "prototypes.title": `Архив прототипов`,
+        "prototypes.note": `Необязательные дополнительные работы: multiplayer, WebGL и PC эксперименты.`,
         "prototype.sharp": `FPS WebGL-прототип: управление от первого лица, raycast-оружие, предметы, здоровье/щит, NavMesh-враги и обратная связь интерфейса.`,
         "prototype.royal": `3D WebGL-раннер: движение, препятствия, предметы, уровни из чанков, камера, интерфейс, частицы и аудио.`,
         "prototype.galaxy": `3D PC-прототип космического шутера: стрельба, столкновения, Timeline-сцены, переходы камеры, эффекты и настройка интерфейса.`,
         "skills.title": `Core Stack`,
-        "skills.note": `Основные инструменты, runtime-зоны и Unity-процессы, использованные в проектах выше.`,
+        "skills.note": `Production-oriented Unity навыки, показанные в ключевых проектах ниже.`,
         "skills.unity.title": `Unity / C#`,
         "skills.unity.text": `Unity 2022 LTS / Unity 6, C#, жизненный цикл MonoBehaviour, сцены, префабы, Input System, DOTween и URP.`,
         "skills.gameplay.title": `Gameplay Programming`,
@@ -1879,7 +1916,7 @@
         "value.runtime.title": `Відлагодження і білди`,
         "value.runtime.text": `Розбір багів, перевірки через Profiler, контроль GC, кешовані посилання, налаштування білдів і підготовка релізу.`,
         "projects.title": `Ключові проєкти`,
-        "projects.note": `Вибрані Unity-проєкти: спочатку випущена Android-гра, потім глибша systems-робота, після цього компактні multiplayer/WebGL/PC прототипи.`,
+        "projects.note": `Два сфокусовані кейси: випущена гра в Google Play і глибший проєкт із модульними системами.`,
         "project.whatBuilt": `Що я зробив`,
         "project.engineeringValue": `Інженерна цінність`,
         "project.impact": `Вплив`,
@@ -1949,13 +1986,14 @@
         "tanks.value.fundamentals": `Демонструє основи мультиплеєра через реальний connection flow і синхронізований gameplay state.`,
         "tanks.value.services": `Поєднує Unity services, multiplayer UI і базові рішення щодо authority/ownership.`,
         "tanks.impact.result": `<b>Результат:</b> показує, що я розумію multiplayer constraints, можу зв'язати Unity services і зробити іграбельний PC-прототип, не видаючи його за production-реліз.`,
-        "prototypes.title": `Іграбельні прототипи`,
-        "prototypes.note": `Невеликі WebGL/PC білди, які показують діапазон і не конкурують з основними кейсами.`,
+        "prototypes.toggle": `Додаткові прототипи`,
+        "prototypes.title": `Архів прототипів`,
+        "prototypes.note": `Необов'язкові додаткові роботи: multiplayer, WebGL і PC експерименти.`,
         "prototype.sharp": `FPS WebGL-прототип: керування від першої особи, raycast-зброя, предмети, здоров'я/щит, NavMesh-вороги і зворотний зв'язок інтерфейсу.`,
         "prototype.royal": `3D WebGL-раннер: рух, перешкоди, предмети, рівні з чанків, камера, інтерфейс, частинки й аудіо.`,
         "prototype.galaxy": `3D PC-прототип космічного шутера: стрільба, зіткнення, Timeline-сцени, переходи камери, ефекти і налаштування інтерфейсу.`,
         "skills.title": `Core Stack`,
-        "skills.note": `Основні інструменти, runtime-зони і Unity-процеси, використані в проєктах вище.`,
+        "skills.note": `Production-oriented Unity навички, показані в ключових проєктах нижче.`,
         "skills.unity.title": `Unity / C#`,
         "skills.unity.text": `Unity 2022 LTS / Unity 6, C#, життєвий цикл MonoBehaviour, сцени, префаби, Input System, DOTween і URP.`,
         "skills.gameplay.title": `Gameplay Programming`,

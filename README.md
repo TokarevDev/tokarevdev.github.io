@@ -17,6 +17,8 @@ The site presents my Unity C# developer portfolio, CV, gameplay media, public Gi
 - Git/GitHub and version-control visibility for reviewable public source code
 - Concise impact notes for the main portfolio projects
 - Remote-only availability, with onsite and hybrid roles explicitly excluded
+- Recruiter-first information hierarchy: strengths and production practices before the two strongest case studies
+- Secondary multiplayer/WebGL/PC prototypes moved into a collapsed archive after the contact section
 
 ## Featured Projects
 
