@@ -8,13 +8,15 @@ The site presents my Unity C# developer portfolio, CV, gameplay media, public Gi
 
 ## Focus
 
-- Unity C# Developer / C# Gameplay Programmer positioning
+- Unity C# Developer / C# Gameplay Programmer positioning based on shipped work and engineering ownership rather than years of experience
 - Shipped Android game on Google Play as the first portfolio proof
 - Gameplay systems, UI/UGUI flow, save/load, progression, rewards, ads, and build preparation
 - Android, PC, and WebGL projects with source, gameplay media, and playable/downloadable builds
 - Performance-aware Unity implementation: object pooling, cached references, Profiler-minded iteration, and clear runtime boundaries
+- Production architecture toolkit: Assembly Definitions, composition roots, Zenject/DI containers, UniTask, async/await, cancellation, and lifecycle-safe cleanup
 - Git/GitHub and version-control visibility for reviewable public source code
 - Concise impact notes for the main portfolio projects
+- Remote-only availability, with onsite and hybrid roles explicitly excluded
 
 ## Featured Projects
 
