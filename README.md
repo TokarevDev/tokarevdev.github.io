@@ -27,7 +27,7 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 
 Released Android game on Google Play. Built in Unity 6 and C# during a 6-month independent development cycle, with full player-loop ownership, three Strategy Pattern AI modes, progression, persistence, UGUI, Unity Ads, Android publishing, and optimization from about 30 FPS to stable 60 FPS on older devices.
 
-Google Play: https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle  
+Google Play: https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle
 Source code: https://github.com/TokarevDev/Emoji_Battle
 
 ### Last Seed Survivor
@@ -35,6 +35,18 @@ Source code: https://github.com/TokarevDev/Emoji_Battle
 Current Unity 6 2D mobile auto-shooter/survival project focused on modular combat, ScriptableObject-driven rewards, pooled projectiles and enemy segments, runtime stat modifiers, and a deterministic one-click test that runs 4,000 battles per cycle.
 
 Source code: https://github.com/TokarevDev/Force_of_Nature_Last_Seed
+
+### 2D Asteroids Survival
+
+Compact Unity 2022 LTS architecture sample demonstrating Assembly Definition boundaries, Zenject dependency injection and SignalBus, UniTask scene flow, MVVM-style UI separation, Input System abstraction, ScriptableObject configuration, and prewarmed projectile/asteroid pools.
+
+Source code: https://github.com/TokarevDev/2D_Asteroids_Survival
+
+## Public Code Samples
+
+- Emoji Battle - shipped Google Play game and complete mobile player loop
+- Last Seed Survivor - modular combat, pooling, reward systems, segmented enemies, and deterministic balance validation
+- 2D Asteroids Survival - compact architecture and lifecycle code-review sample
 
 ## Build Downloads
 
