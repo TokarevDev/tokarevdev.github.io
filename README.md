@@ -1,22 +1,23 @@
 # Oleksandr Tokarev Portfolio
 
-Source for my Unity C# developer portfolio:
+Source for my Unity Developer / C# Gameplay Programmer portfolio:
 
 https://tokarevdev.github.io/
 
-The site presents my Unity C# developer portfolio, CV, gameplay media, public GitHub repositories, Google Play release, WebGL prototypes, and downloadable PC builds.
+The site presents my Unity Developer / C# Gameplay Programmer portfolio, current CV, gameplay media, public GitHub repositories, Google Play release, WebGL prototypes, and downloadable PC builds.
 
 ## Focus
 
-- Unity C# Developer / C# Gameplay Programmer positioning based on shipped work and engineering ownership rather than years of experience
+- Unity Developer / C# Gameplay Programmer positioning backed by nearly 3 years of hands-on project work since September 2023
 - Shipped Android game on Google Play as the first portfolio proof
+- End-to-end solo ownership across architecture, implementation, profiling, debugging, build preparation, release, and post-release support
 - Gameplay systems, UI/UGUI flow, save/load, progression, rewards, ads, and build preparation
 - Android, PC, and WebGL projects with source, gameplay media, and playable/downloadable builds
-- Performance-aware Unity implementation: object pooling, cached references, Profiler-minded iteration, and clear runtime boundaries
-- Production architecture toolkit: Assembly Definitions, composition roots, Zenject/DI containers, UniTask, async/await, cancellation, and lifecycle-safe cleanup
-- Git/GitHub and version-control visibility for reviewable public source code
-- Concise impact notes for the main portfolio projects
-- Remote-only availability, with onsite and hybrid roles explicitly excluded
+- Measured mobile optimization: approximately 30 FPS to stable 60 FPS on older hardware, with adaptive 90/120 FPS validated on supported devices
+- Deterministic balance validation: 4,000 battles per cycle across four behavior scenarios, with zero detected combat-logic failures in repeated runs
+- Production architecture toolkit: SOLID/SRP, MVVM, Assembly Definitions, composition roots, Zenject/DI, ScriptableObjects, UniTask, async/await, cancellation, and lifecycle-safe cleanup
+- Git/GitHub, ClickUp, task tracking, collaborative planning, and reviewable public source code
+- Fully remote employment or B2B availability from Finland
 - Recruiter-first information hierarchy: strengths and production practices before the two strongest case studies
 - Secondary multiplayer/WebGL/PC prototypes moved into a collapsed archive after the contact section
 
@@ -24,14 +25,14 @@ The site presents my Unity C# developer portfolio, CV, gameplay media, public Gi
 
 ### Emoji Battle
 
-Released Android game on Google Play. Built in Unity 6 and C#, taken from prototype to public mobile release with turn-based gameplay, AI strategies, progression, persistence, popups, ads, Android publishing workflow, and a post-release frame-rate update for supported 90/120 Hz devices.
+Released Android game on Google Play. Built in Unity 6 and C# during a 6-month independent development cycle, with full player-loop ownership, three Strategy Pattern AI modes, progression, persistence, UGUI, Unity Ads, Android publishing, and optimization from about 30 FPS to stable 60 FPS on older devices.
 
 Google Play: https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle  
 Source code: https://github.com/TokarevDev/Emoji_Battle
 
 ### Last Seed Survivor
 
-Current Unity 6 2D mobile auto-shooter/survival project focused on modular combat, ScriptableObject-driven rewards, pooled projectiles, segmented enemy behavior, balance tooling, and Android release preparation.
+Current Unity 6 2D mobile auto-shooter/survival project focused on modular combat, ScriptableObject-driven rewards, pooled projectiles and enemy segments, runtime stat modifiers, and a deterministic one-click test that runs 4,000 battles per cycle.
 
 Source code: https://github.com/TokarevDev/Force_of_Nature_Last_Seed
 
