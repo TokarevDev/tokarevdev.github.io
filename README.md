@@ -25,7 +25,7 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 
 ### Emoji Battle
 
-Released Android game on Google Play. Built in Unity 6 and C# during a 6-month independent development cycle, with full player-loop ownership, three Strategy Pattern AI modes, progression, persistence, UGUI, Unity Ads, Android publishing, and optimization from about 30 FPS to stable 60 FPS on older devices.
+Released Android game on Google Play. Built in Unity 6 and C# during a 3-month independent development cycle, with full player-loop ownership, three Strategy Pattern AI modes, progression, persistence, UGUI, Unity Ads, Android publishing, and optimization from about 30 FPS to stable 60 FPS on older devices.
 
 Google Play: https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle
 Source code: https://github.com/TokarevDev/Emoji_Battle
