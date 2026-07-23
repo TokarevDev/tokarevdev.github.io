@@ -9,11 +9,15 @@
   <meta property="og:url" content="https://tokarevdev.github.io/">
   <meta property="og:title" content="Oleksandr Tokarev | Unity Developer | C# Gameplay Programmer">
   <meta property="og:description" content="Unity Developer in Finland with nearly 3 years of hands-on C# gameplay programming, a shipped Google Play game, and Android, PC, and WebGL delivery experience.">
-  <meta property="og:image" content="https://tokarevdev.github.io/assets/emoji-battle/game-icon.png">
+  <meta property="og:image" content="https://tokarevdev.github.io/assets/portfolio-preview-concept-v3-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Oleksandr Tokarev - Unity Developer and C# Gameplay Programmer portfolio">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Oleksandr Tokarev | Unity Developer | C# Gameplay Programmer">
   <meta name="twitter:description" content="Nearly 3 years of Unity C# gameplay programming, a shipped Android release, measurable mobile optimization, and maintainable gameplay architecture.">
-  <meta name="twitter:image" content="https://tokarevdev.github.io/assets/emoji-battle/game-icon.png">
+  <meta name="twitter:image" content="https://tokarevdev.github.io/assets/portfolio-preview-concept-v3-1200x630.png">
+  <meta name="twitter:image:alt" content="Oleksandr Tokarev - Unity Developer and C# Gameplay Programmer portfolio">
   <title>Oleksandr Tokarev | Unity Developer | C# Gameplay Programmer</title>
   <style>
     :root {
@@ -174,12 +178,12 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
-      gap: 44px;
-      align-items: center;
-      min-height: 470px;
-      padding: 22px 0 34px;
+      min-height: 370px;
+      padding: 54px 0 46px;
+    }
+
+    .hero-copy {
+      max-width: 960px;
     }
 
     .hero > *,
@@ -218,10 +222,10 @@
     }
 
     h1 {
-      max-width: 720px;
+      max-width: 900px;
       margin-bottom: 18px;
-      font-size: 32px;
-      line-height: 1.16;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.08;
       font-weight: 850;
       overflow-wrap: break-word;
     }
@@ -280,8 +284,15 @@
     }
 
     .proof-rail {
-      padding: 26px 0 0 28px;
-      border-left: 1px solid var(--line);
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(24, 29, 27, 0.96), rgba(17, 21, 19, 0.96));
+      box-shadow: var(--shadow);
+    }
+
+    .proof-rail .section-head {
+      margin-bottom: 24px;
     }
 
     .proof-kicker {
@@ -327,6 +338,49 @@
     }
 
     .proof-list b {
+      color: var(--text);
+    }
+
+    .about-band {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 28px;
+      align-items: start;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .about-band h2 {
+      margin-bottom: 12px;
+      font-size: 28px;
+      line-height: 1.18;
+    }
+
+    .about-band .section-note {
+      max-width: 620px;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .about-points li {
+      padding: 13px 15px;
+      border-left: 3px solid rgba(47, 189, 141, 0.74);
+      border-radius: 0 8px 8px 0;
+      background: rgba(32, 38, 34, 0.68);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .about-points b {
       color: var(--text);
     }
 
@@ -1125,9 +1179,9 @@
     }
 
     @media (max-width: 980px) {
-      .hero,
       .project,
       .focus-band,
+      .about-band,
       .note-grid {
         grid-template-columns: 1fr;
       }
@@ -1137,9 +1191,7 @@
       }
 
       .proof-rail {
-        padding-left: 0;
-        border-left: 0;
-        border-top: 1px solid var(--line);
+        padding: 24px;
       }
 
       .value-grid,
@@ -1158,6 +1210,7 @@
 
       .section-head,
       .focus-band,
+      .about-band,
       .contact-band {
         align-items: start;
         flex-direction: column;
@@ -1186,6 +1239,7 @@
       section,
       .hero > div,
       .proof-rail,
+      .about-band,
       .section-head,
       .project,
       .project-gallery,
@@ -1212,7 +1266,16 @@
       }
 
       h1 {
-        font-size: 25px;
+        font-size: 31px;
+      }
+
+      .hero {
+        padding: 36px 0 30px;
+      }
+
+      .proof-rail,
+      .about-band {
+        padding: 18px;
       }
 
       .eyebrow,
@@ -1248,6 +1311,7 @@
       .skill-grid,
       .prototype-grid,
       .focus-list,
+      .about-points,
       .project-columns {
         grid-template-columns: 1fr;
       }
@@ -1326,120 +1390,30 @@
         </div>
       </div>
       <nav class="nav" aria-label="Main navigation">
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
         <a href="#skills" data-i18n="nav.skills">Skills</a>
-        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#about" data-i18n="nav.about">About</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero.eyebrow">Unity Developer | C# Gameplay Programmer</p>
-          <h1 id="hero-title" data-i18n="hero.title">I build, optimize, and ship maintainable Unity gameplay systems.</h1>
+          <h1 id="hero-title" data-i18n="hero.title">I build, optimize, and ship complete Unity games.</h1>
           <p class="lead" data-i18n="hero.lead">
-            Unity Developer with nearly 3 years of hands-on C# gameplay programming across Android, PC, and WebGL. Solo-developed and shipped an Android game on Google Play, owning architecture, implementation, profiling, debugging, build preparation, and release.
+            Unity Developer with nearly 3 years of hands-on C# gameplay programming across Android, PC, and WebGL. Full-cycle ownership across gameplay systems, UGUI flows, architecture, persistence, profiling, build preparation, publishing, and post-release support.
           </p>
           <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="mailto:otokarevdev@gmail.com" data-i18n="button.email">Email</a>
+            <a class="button primary" href="#projects" data-i18n="button.viewProjects">View Projects</a>
             <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener" data-i18n="button.releasedGame">Released Game</a>
-            <a class="button" href="#projects" data-i18n="button.viewProjects">View Projects</a>
+            <a class="button" href="mailto:otokarevdev@gmail.com" data-i18n="button.email">Email</a>
             <a class="button" href="assets/Oleksandr_Tokarev_Unity_Developer_CV.pdf" target="_blank" rel="noopener" data-i18n="button.resume">Open CV / Resume</a>
             <a class="button" href="https://github.com/TokarevDev" target="_blank" rel="noopener">GitHub</a>
             <a class="button" href="https://www.linkedin.com/in/oleksandr-tokarev/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
-        </div>
-
-        <aside class="proof-rail" id="highlights" aria-label="Profile highlights">
-          <p class="proof-kicker" data-i18n="proof.title">Highlights</p>
-          <div class="metric-grid">
-            <div class="metric">
-              <b>3</b>
-              <span data-i18n="proof.metric.release">hands-on Unity C# gameplay development</span>
-            </div>
-            <div class="metric">
-              <b>3</b>
-              <span data-i18n="proof.metric.platforms">platforms: Android, PC, and WebGL</span>
-            </div>
-            <div class="metric">
-              <b>1</b>
-              <span data-i18n="proof.metric.architecture">complete Android game shipped to Google Play</span>
-            </div>
-            <div class="metric">
-              <b>4K</b>
-              <span data-i18n="proof.metric.areas">deterministic battles per balance-test cycle</span>
-            </div>
-          </div>
-          <ul class="proof-list">
-            <li data-i18n-html="proof.feature"><b>End-to-end ownership:</b> architecture, gameplay, UGUI, persistence, ads, profiling, debugging, store preparation, and post-release support.</li>
-            <li data-i18n-html="proof.systems"><b>Maintainable architecture:</b> SOLID/SRP, dependency injection, Assembly Definitions, ScriptableObjects, services, events, and clear runtime/presentation boundaries.</li>
-            <li data-i18n-html="proof.production"><b>Measured performance:</b> stable 60 FPS on older Android devices, adaptive 90/120 FPS targets, pooling, cached references, and GC-aware profiling.</li>
-          </ul>
-        </aside>
-      </section>
-
-      <section id="skills" aria-labelledby="skills-title">
-        <div class="section-head">
-          <h2 id="skills-title" data-i18n="skills.title">Core Stack</h2>
-          <p class="section-note" data-i18n="skills.note">
-            Production-oriented Unity skills demonstrated in the featured work below.
-          </p>
-        </div>
-
-        <div class="skill-grid">
-          <article class="skill-group">
-            <h3 data-i18n="skills.unity.title">Unity / C#</h3>
-            <p data-i18n="skills.unity.text">Unity 2022 LTS / Unity 6, C#, MonoBehaviour lifecycle, scenes, prefabs, Input System, DOTween, and URP.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.gameplay.title">Gameplay Programming</h3>
-            <p data-i18n="skills.gameplay.text">Combat, weapons, projectiles, enemies, rewards, progression, AI decisions, state flow, save/load, player feedback.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.architecture.title">Architecture & Data Flow</h3>
-            <p data-i18n="skills.architecture.text">SOLID/SRP, MVVM, Zenject, dependency injection, composition root, Assembly Definitions, services, events, ScriptableObjects.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.async.title">Async & Lifecycle</h3>
-            <p data-i18n="skills.async.text">UniTask, async/await, CancellationToken, lifecycle-bound cancellation, safe scene transitions, and explicit cleanup of subscriptions and async operations.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.performance.title">Performance & Debugging</h3>
-            <p data-i18n="skills.performance.text">Unity Profiler, GC allocation profiling, object pooling, cached references, mobile frame-time optimization, debugging.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.platforms.title">Platforms & Release</h3>
-            <p data-i18n="skills.platforms.text">Android, Google Play, PC, WebGL, cross-platform build integration, store and release preparation.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.version.title">Workflow & Delivery</h3>
-            <p data-i18n="skills.version.text">Git/GitHub, ClickUp, task tracking, collaborative planning, problem solving, project delivery.</p>
-          </article>
-          <article class="skill-group">
-            <h3 data-i18n="skills.multiplayer.title">Multiplayer</h3>
-            <p data-i18n="skills.multiplayer.text">Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs, lobby UI.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="next-focus" aria-labelledby="next-focus-title">
-        <div class="focus-band">
-          <div>
-            <p class="eyebrow" data-i18n="nextFocus.eyebrow">Professional Background</p>
-            <h2 id="next-focus-title" data-i18n="nextFocus.title">Independent Unity Developer</h2>
-            <p class="section-note" data-i18n="nextFocus.text">
-              Personal and published projects, Sep 2023 - present. Based in Finland, working as a solo developer across gameplay, architecture, optimization, and multi-platform delivery.
-            </p>
-          </div>
-          <ul class="focus-list" aria-label="Production engineering practices">
-            <li data-i18n-html="nextFocus.addressables"><b>Cross-platform delivery:</b> playable Android, PC, and WebGL builds, including multiplayer with UGS Relay, Lobby, and Netcode for GameObjects.</li>
-            <li data-i18n-html="nextFocus.di"><b>Release ownership:</b> Emoji Battle shipped to Google Play in a 3-month independent development cycle.</li>
-            <li data-i18n-html="nextFocus.profiling"><b>Performance:</b> improved older-device performance from about 30 FPS to a stable 60 FPS and validated adaptive 90/120 FPS.</li>
-            <li data-i18n-html="nextFocus.tests"><b>Deterministic validation:</b> 4,000 battles per cycle across four player-behavior scenarios, with zero combat-logic failures detected in repeated runs.</li>
-            <li data-i18n-html="nextFocus.ci"><b>Education:</b> Xamk, Introduction to Video Games Creation, Flexible Modular Open UAS Studies, 1-35 ECTS, Jul-Dec 2026.</li>
-            <li data-i18n-html="nextFocus.liveops"><b>Languages:</b> English B1 (improving), Russian native, Ukrainian native.</li>
-          </ul>
         </div>
       </section>
 
@@ -1447,7 +1421,7 @@
         <div class="section-head">
           <h2 id="projects-title" data-i18n="projects.title">Featured Projects</h2>
           <p class="section-note" data-i18n="projects.note">
-            Two focused case studies: a shipped Google Play release and a deeper modular systems project.
+            Two full-cycle case studies: a shipped Google Play release and a deeper modular systems project.
           </p>
         </div>
 
@@ -1496,6 +1470,7 @@
             </p>
             <ul class="tag-list">
               <li class="green">Released on Google Play</li>
+              <li class="green" data-i18n="project.fullCycle">Full-cycle development</li>
               <li>Unity 6</li>
               <li>C#</li>
               <li>Android</li>
@@ -1510,7 +1485,7 @@
               <ul class="impact-note-list">
                 <li data-i18n-html="emoji.impact.challenge"><b>Challenge:</b> turn a small prototype into a complete mobile game that could pass store review and be maintained after release.</li>
                 <li data-i18n-html="emoji.impact.action"><b>Action:</b> owned combat flow, AI, persistence, UI states, popups, ads, Android build preparation, publishing steps, and post-release runtime tuning.</li>
-                <li data-i18n-html="emoji.impact.result"><b>Result:</b> shipped one complete Android game to Google Play within a 3-month independent development cycle.</li>
+                <li data-i18n-html="emoji.impact.result"><b>Result:</b> shipped one complete Android game to Google Play within a 6-month independent development cycle.</li>
                 <li data-i18n-html="emoji.impact.performance"><b>Optimization:</b> improved older-device performance from about 30 FPS to a stable 60 FPS and validated adaptive 90/120 FPS targets by reducing UI draw calls and separating gameplay from presentation.</li>
               </ul>
             </div>
@@ -1590,6 +1565,7 @@
             </p>
             <ul class="tag-list">
               <li class="green" data-i18n="lastSeed.badge.closedTest">Closed test passed</li>
+              <li class="green" data-i18n="project.fullCycle">Full-cycle development</li>
               <li data-i18n="lastSeed.badge.review">Android release prep</li>
               <li>Unity 6</li>
               <li>C#</li>
@@ -1635,6 +1611,117 @@
           </div>
         </article>
 
+      </section>
+
+      <section id="highlights" class="proof-rail" aria-labelledby="highlights-title">
+        <div class="section-head">
+          <h2 id="highlights-title" data-i18n="proof.title">Production Highlights</h2>
+          <p class="section-note" data-i18n="proof.note">Measured delivery evidence from the featured projects above.</p>
+        </div>
+        <div class="metric-grid">
+          <div class="metric">
+            <b>~3</b>
+            <span data-i18n="proof.metric.release">years of hands-on Unity C# gameplay development</span>
+          </div>
+          <div class="metric">
+            <b>3</b>
+            <span data-i18n="proof.metric.platforms">platforms: Android, PC, and WebGL</span>
+          </div>
+          <div class="metric">
+            <b>1</b>
+            <span data-i18n="proof.metric.architecture">complete Android game shipped to Google Play</span>
+          </div>
+          <div class="metric">
+            <b>4K</b>
+            <span data-i18n="proof.metric.areas">deterministic battles per balance-test cycle</span>
+          </div>
+        </div>
+        <ul class="proof-list">
+          <li data-i18n-html="proof.feature"><b>Full-cycle ownership:</b> gameplay architecture, UGUI flows, persistence, ads, profiling, debugging, store preparation, publishing, and post-release support.</li>
+          <li data-i18n-html="proof.systems"><b>Maintainable architecture:</b> SOLID/SRP, dependency injection, Assembly Definitions, ScriptableObjects, services, events, and clear runtime/presentation boundaries.</li>
+          <li data-i18n-html="proof.production"><b>Measured performance:</b> stable 60 FPS on older Android devices, adaptive 90/120 FPS targets, pooling, cached references, and GC-aware profiling.</li>
+        </ul>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-title">
+        <div class="section-head">
+          <h2 id="skills-title" data-i18n="skills.title">Core Stack</h2>
+          <p class="section-note" data-i18n="skills.note">
+            Production-oriented Unity skills demonstrated in the featured projects above.
+          </p>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill-group">
+            <h3 data-i18n="skills.unity.title">Unity / C#</h3>
+            <p data-i18n="skills.unity.text">Unity 2022 LTS / Unity 6, C#, MonoBehaviour lifecycle, scenes, prefabs, Input System, DOTween, and URP.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.gameplay.title">Gameplay Programming</h3>
+            <p data-i18n="skills.gameplay.text">Combat, weapons, projectiles, enemies, rewards, progression, AI decisions, state flow, save/load, player feedback.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.architecture.title">Architecture & Data Flow</h3>
+            <p data-i18n="skills.architecture.text">SOLID/SRP, MVVM, Zenject, dependency injection, composition root, Assembly Definitions, services, events, ScriptableObjects.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.async.title">Async & Lifecycle</h3>
+            <p data-i18n="skills.async.text">UniTask, async/await, CancellationToken, lifecycle-bound cancellation, safe scene transitions, and explicit cleanup of subscriptions and async operations.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.performance.title">Performance & Debugging</h3>
+            <p data-i18n="skills.performance.text">Unity Profiler, GC allocation profiling, object pooling, cached references, mobile frame-time optimization, debugging.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.platforms.title">Platforms & Release</h3>
+            <p data-i18n="skills.platforms.text">Android, Google Play, PC, WebGL, cross-platform build integration, store and release preparation.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.version.title">Workflow & Delivery</h3>
+            <p data-i18n="skills.version.text">Git/GitHub, ClickUp, task tracking, collaborative planning, problem solving, project delivery.</p>
+          </article>
+          <article class="skill-group">
+            <h3 data-i18n="skills.multiplayer.title">Multiplayer</h3>
+            <p data-i18n="skills.multiplayer.text">Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs, lobby UI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="next-focus" aria-labelledby="next-focus-title">
+        <div class="focus-band">
+          <div>
+            <p class="eyebrow" data-i18n="nextFocus.eyebrow">Professional Background</p>
+            <h2 id="next-focus-title" data-i18n="nextFocus.title">Independent Unity Developer</h2>
+            <p class="section-note" data-i18n="nextFocus.text">
+              Personal and published projects, Sep 2023 - present. Based in Finland with full-cycle responsibility across gameplay, architecture, optimization, and multi-platform delivery, using reviewable workflows built around Git/GitHub, task tracking, and clear system boundaries.
+            </p>
+          </div>
+          <ul class="focus-list" aria-label="Production engineering practices">
+            <li data-i18n-html="nextFocus.addressables"><b>Cross-platform delivery:</b> playable Android, PC, and WebGL builds, including multiplayer with UGS Relay, Lobby, and Netcode for GameObjects.</li>
+            <li data-i18n-html="nextFocus.di"><b>Full-cycle release ownership:</b> Emoji Battle shipped to Google Play in a 6-month independent development cycle.</li>
+            <li data-i18n-html="nextFocus.profiling"><b>Performance:</b> improved older-device performance from about 30 FPS to a stable 60 FPS and validated adaptive 90/120 FPS.</li>
+            <li data-i18n-html="nextFocus.tests"><b>Deterministic validation:</b> 4,000 battles per cycle across four player-behavior scenarios, with zero combat-logic failures detected in repeated runs.</li>
+            <li data-i18n-html="nextFocus.ci"><b>Education:</b> Xamk, Introduction to Video Games Creation, Flexible Modular Open UAS Studies, 1-35 ECTS, Jul-Dec 2026.</li>
+            <li data-i18n-html="nextFocus.liveops"><b>Languages:</b> English B1 (improving), Russian native, Ukrainian native.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="about" aria-labelledby="about-title">
+        <div class="about-band">
+          <div>
+            <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+            <h2 id="about-title" data-i18n="about.title">Gameplay programmer with end-to-end production ownership.</h2>
+            <p class="section-note" data-i18n="about.text">
+              Based in Finland, I turn Unity concepts into tested, optimized, releasable games. My strongest areas are gameplay systems, UGUI flows, progression and persistence, mobile performance, and maintainable architecture.
+            </p>
+          </div>
+          <ul class="about-points">
+            <li data-i18n-html="about.fullCycle"><b>Full-cycle development:</b> from architecture and implementation to profiling, build preparation, publishing, and post-release support.</li>
+            <li data-i18n-html="about.teamwork"><b>Team-ready workflow:</b> Git/GitHub, task tracking, collaborative planning, reviewable changes, explicit dependencies, and clear ownership boundaries.</li>
+            <li data-i18n-html="about.focus"><b>Current focus:</b> gameplay programming and UI/UGUI flows for Android, PC, and WebGL projects.</li>
+          </ul>
+        </div>
       </section>
 
       <section id="contact" aria-labelledby="contact-title">
@@ -1742,10 +1829,11 @@
         "nav.projects": `Проекты`,
         "nav.prototypes": `Прототипы`,
         "nav.skills": `Навыки`,
+        "nav.about": `Обо мне`,
         "nav.contact": `Контакты`,
         "hero.eyebrow": `Unity Developer | C# Gameplay Programmer`,
-        "hero.title": `Я создаю, оптимизирую и выпускаю поддерживаемые Unity gameplay-системы.`,
-        "hero.lead": `Unity Developer с почти 3 годами практического опыта C# gameplay-разработки для Android, PC и WebGL. Самостоятельно создал и выпустил Android-игру в Google Play, отвечая за архитектуру, реализацию, profiling, debugging, подготовку билда и релиз.`,
+        "hero.title": `Я создаю, оптимизирую и выпускаю законченные игры на Unity.`,
+        "hero.lead": `Unity Developer с почти 3 годами практического опыта C# gameplay-разработки для Android, PC и WebGL. Отвечаю за полный цикл: gameplay-системы, UGUI/UI flow, архитектуру, сохранения, profiling, подготовку билдов, публикацию и post-release поддержку.`,
         "button.email": `Написать`,
         "button.copyEmail": `Скопировать почту`,
         "button.viewProjects": `Смотреть проекты`,
@@ -1753,12 +1841,13 @@
         "button.releasedGame": `Игра в Google Play`,
         "button.playWebGL": `Играть в браузере (WebGL)`,
         "button.downloadPc": `Скачать PC-билд`,
-        "proof.title": `Главное`,
-        "proof.metric.release": `практической Unity C# gameplay-разработки`,
+        "proof.title": `Результаты разработки`,
+        "proof.note": `Измеримые результаты разработки и выпуска из ключевых проектов выше.`,
+        "proof.metric.release": `года практической Unity C# gameplay-разработки`,
         "proof.metric.platforms": `платформы: Android, PC и WebGL`,
         "proof.metric.architecture": `полная Android-игра, выпущенная в Google Play`,
         "proof.metric.areas": `детерминированных боёв за цикл balance-теста`,
-        "proof.feature": `<b>Полная ответственность:</b> архитектура, gameplay, UGUI, сохранения, реклама, profiling, debugging, подготовка магазина и post-release поддержка.`,
+        "proof.feature": `<b>Полный цикл разработки:</b> gameplay-архитектура, UGUI/UI flow, сохранения, реклама, profiling, debugging, подготовка магазина, публикация и post-release поддержка.`,
         "proof.systems": `<b>Поддерживаемая архитектура:</b> SOLID/SRP, dependency injection, Assembly Definitions, ScriptableObjects, сервисы, события и чёткие runtime/presentation границы.`,
         "proof.production": `<b>Измеримая производительность:</b> стабильные 60 FPS на старых Android-устройствах, адаптивные цели 90/120 FPS, pooling, кешированные ссылки и GC-aware profiling.`,
         "value.title": `Что я делаю`,
@@ -1772,7 +1861,8 @@
         "value.runtime.title": `Отладка и билды`,
         "value.runtime.text": `Разбор багов, проверки через Profiler, контроль GC, кешированные ссылки, настройка билдов и подготовка релиза.`,
         "projects.title": `Ключевые проекты`,
-        "projects.note": `Два сфокусированных кейса: выпущенная игра в Google Play и более глубокий проект с модульными системами.`,
+        "projects.note": `Два кейса с ответственностью за полный цикл: выпущенная игра в Google Play и более глубокий проект с модульными системами.`,
+        "project.fullCycle": `Полный цикл разработки`,
         "project.whatBuilt": `Что я сделал`,
         "project.engineeringValue": `Инженерная ценность`,
         "project.impact": `Влияние`,
@@ -1848,8 +1938,8 @@
         "prototype.sharp": `FPS WebGL-прототип: управление от первого лица, raycast-оружие, предметы, здоровье/щит, NavMesh-враги и обратная связь интерфейса.`,
         "prototype.royal": `3D WebGL-раннер: движение, препятствия, предметы, уровни из чанков, камера, интерфейс, частицы и аудио.`,
         "prototype.galaxy": `3D PC-прототип космического шутера: стрельба, столкновения, Timeline-сцены, переходы камеры, эффекты и настройка интерфейса.`,
-        "skills.title": `Core Stack`,
-        "skills.note": `Production-oriented Unity навыки, показанные в ключевых проектах ниже.`,
+        "skills.title": `Основной стек`,
+        "skills.note": `Production-oriented Unity навыки, подтверждённые ключевыми проектами выше.`,
         "skills.unity.title": `Unity / C#`,
         "skills.unity.text": `Unity 2022 LTS / Unity 6, C#, жизненный цикл MonoBehaviour, сцены, префабы, Input System, DOTween и URP.`,
         "skills.gameplay.title": `Gameplay Programming`,
@@ -1868,13 +1958,19 @@
         "skills.multiplayer.text": `Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs и интерфейс лобби.`,
         "nextFocus.eyebrow": `Профессиональный опыт`,
         "nextFocus.title": `Independent Unity Developer`,
-        "nextFocus.text": `Личные и опубликованные проекты, сентябрь 2023 - настоящее время. Работаю из Финляндии как solo developer: gameplay, архитектура, оптимизация и мультиплатформенная доставка.`,
+        "nextFocus.text": `Личные и опубликованные проекты, сентябрь 2023 - настоящее время. Работаю из Финляндии с ответственностью за полный цикл gameplay, архитектуры, оптимизации и мультиплатформенной доставки. Использую проверяемый workflow на основе Git/GitHub, task tracking и ясных границ систем.`,
         "nextFocus.addressables": `<b>Кроссплатформенная доставка:</b> играбельные Android, PC и WebGL-билды, включая мультиплеер с UGS Relay, Lobby и Netcode for GameObjects.`,
-        "nextFocus.di": `<b>Ответственность за релиз:</b> Emoji Battle выпущена в Google Play за 6-месячный цикл самостоятельной разработки.`,
+        "nextFocus.di": `<b>Полный цикл релиза:</b> Emoji Battle выпущена в Google Play за 6-месячный цикл самостоятельной разработки.`,
         "nextFocus.profiling": `<b>Производительность:</b> улучшил работу на старых устройствах примерно с 30 до стабильных 60 FPS и проверил адаптивные 90/120 FPS.`,
         "nextFocus.tests": `<b>Детерминированная проверка:</b> 4 000 боёв за цикл в четырёх сценариях поведения; в повторных прогонах не обнаружено ошибок боевой логики.`,
         "nextFocus.ci": `<b>Образование:</b> Xamk, Introduction to Video Games Creation, Flexible Modular Open UAS Studies, 1-35 ECTS, июль-декабрь 2026.`,
         "nextFocus.liveops": `<b>Языки:</b> английский B1 (улучшаю), русский родной, украинский родной.`,
+        "about.eyebrow": `Обо мне`,
+        "about.title": `Gameplay programmer с ответственностью за полный production-цикл.`,
+        "about.text": `Живу в Финляндии и превращаю Unity-концепты в протестированные, оптимизированные и готовые к выпуску игры. Мои сильные стороны: gameplay-системы, UGUI/UI flow, прогрессия и сохранения, мобильная производительность и поддерживаемая архитектура.`,
+        "about.fullCycle": `<b>Полный цикл разработки:</b> от архитектуры и реализации до profiling, подготовки билдов, публикации и post-release поддержки.`,
+        "about.teamwork": `<b>Готовность к командной работе:</b> Git/GitHub, task tracking, совместное планирование, проверяемые изменения, явные зависимости и понятные границы ответственности.`,
+        "about.focus": `<b>Текущий фокус:</b> gameplay programming и UI/UGUI flow для проектов под Android, PC и WebGL.`,
         "contact.title": `Контакты`,
         "contact.text": `Нахожусь в Финляндии. Открыт к полностью удалённым позициям Unity Developer / C# Gameplay Programmer по найму или B2B для Android, PC и WebGL.`,
         "contact.copyHint": `Если почтовое приложение не открылось, можно просто скопировать адрес.`,
@@ -1886,10 +1982,11 @@
         "nav.projects": `Проєкти`,
         "nav.prototypes": `Прототипи`,
         "nav.skills": `Навички`,
+        "nav.about": `Про мене`,
         "nav.contact": `Контакти`,
         "hero.eyebrow": `Unity Developer | C# Gameplay Programmer`,
-        "hero.title": `Я створюю, оптимізую та випускаю підтримувані Unity gameplay-системи.`,
-        "hero.lead": `Unity Developer із майже 3 роками практичного досвіду C# gameplay-розробки для Android, PC і WebGL. Самостійно створив і випустив Android-гру в Google Play, відповідаючи за архітектуру, реалізацію, profiling, debugging, підготовку білда та реліз.`,
+        "hero.title": `Я створюю, оптимізую та випускаю завершені ігри на Unity.`,
+        "hero.lead": `Unity Developer із майже 3 роками практичного досвіду C# gameplay-розробки для Android, PC і WebGL. Відповідаю за повний цикл: gameplay-системи, UGUI/UI flow, архітектуру, збереження, profiling, підготовку білдів, публікацію та post-release підтримку.`,
         "button.email": `Написати`,
         "button.copyEmail": `Скопіювати пошту`,
         "button.viewProjects": `Переглянути проєкти`,
@@ -1897,12 +1994,13 @@
         "button.releasedGame": `Гра в Google Play`,
         "button.playWebGL": `Грати в браузері (WebGL)`,
         "button.downloadPc": `Завантажити PC-білд`,
-        "proof.title": `Головне`,
-        "proof.metric.release": `практичної Unity C# gameplay-розробки`,
+        "proof.title": `Результати розробки`,
+        "proof.note": `Вимірювані результати розробки й випуску з ключових проєктів вище.`,
+        "proof.metric.release": `роки практичної Unity C# gameplay-розробки`,
         "proof.metric.platforms": `платформи: Android, PC і WebGL`,
         "proof.metric.architecture": `повна Android-гра, випущена в Google Play`,
         "proof.metric.areas": `детермінованих боїв за цикл balance-тесту`,
-        "proof.feature": `<b>Повна відповідальність:</b> архітектура, gameplay, UGUI, збереження, реклама, profiling, debugging, підготовка магазину та post-release підтримка.`,
+        "proof.feature": `<b>Повний цикл розробки:</b> gameplay-архітектура, UGUI/UI flow, збереження, реклама, profiling, debugging, підготовка магазину, публікація та post-release підтримка.`,
         "proof.systems": `<b>Підтримувана архітектура:</b> SOLID/SRP, dependency injection, Assembly Definitions, ScriptableObjects, сервіси, події та чіткі runtime/presentation межі.`,
         "proof.production": `<b>Вимірювана продуктивність:</b> стабільні 60 FPS на старих Android-пристроях, адаптивні цілі 90/120 FPS, pooling, кешовані посилання та GC-aware profiling.`,
         "value.title": `Що я роблю`,
@@ -1916,7 +2014,8 @@
         "value.runtime.title": `Відлагодження і білди`,
         "value.runtime.text": `Розбір багів, перевірки через Profiler, контроль GC, кешовані посилання, налаштування білдів і підготовка релізу.`,
         "projects.title": `Ключові проєкти`,
-        "projects.note": `Два сфокусовані кейси: випущена гра в Google Play і глибший проєкт із модульними системами.`,
+        "projects.note": `Два кейси з відповідальністю за повний цикл: випущена гра в Google Play і глибший проєкт із модульними системами.`,
+        "project.fullCycle": `Повний цикл розробки`,
         "project.whatBuilt": `Що я зробив`,
         "project.engineeringValue": `Інженерна цінність`,
         "project.impact": `Вплив`,
@@ -1992,8 +2091,8 @@
         "prototype.sharp": `FPS WebGL-прототип: керування від першої особи, raycast-зброя, предмети, здоров'я/щит, NavMesh-вороги і зворотний зв'язок інтерфейсу.`,
         "prototype.royal": `3D WebGL-раннер: рух, перешкоди, предмети, рівні з чанків, камера, інтерфейс, частинки й аудіо.`,
         "prototype.galaxy": `3D PC-прототип космічного шутера: стрільба, зіткнення, Timeline-сцени, переходи камери, ефекти і налаштування інтерфейсу.`,
-        "skills.title": `Core Stack`,
-        "skills.note": `Production-oriented Unity навички, показані в ключових проєктах нижче.`,
+        "skills.title": `Основний стек`,
+        "skills.note": `Production-oriented Unity навички, підтверджені ключовими проєктами вище.`,
         "skills.unity.title": `Unity / C#`,
         "skills.unity.text": `Unity 2022 LTS / Unity 6, C#, життєвий цикл MonoBehaviour, сцени, префаби, Input System, DOTween і URP.`,
         "skills.gameplay.title": `Gameplay Programming`,
@@ -2012,13 +2111,19 @@
         "skills.multiplayer.text": `Netcode for GameObjects, UGS Relay/Lobby/Auth, NetworkVariables, RPCs та інтерфейс лобі.`,
         "nextFocus.eyebrow": `Професійний досвід`,
         "nextFocus.title": `Independent Unity Developer`,
-        "nextFocus.text": `Особисті й опубліковані проєкти, вересень 2023 - дотепер. Працюю з Фінляндії як solo developer: gameplay, архітектура, оптимізація та мультиплатформна доставка.`,
+        "nextFocus.text": `Особисті й опубліковані проєкти, вересень 2023 - дотепер. Працюю з Фінляндії з відповідальністю за повний цикл gameplay, архітектури, оптимізації та мультиплатформної доставки. Використовую перевірюваний workflow на основі Git/GitHub, task tracking і чітких меж систем.`,
         "nextFocus.addressables": `<b>Кросплатформна доставка:</b> іграбельні Android, PC і WebGL-білди, включно з мультиплеєром на UGS Relay, Lobby та Netcode for GameObjects.`,
-        "nextFocus.di": `<b>Відповідальність за реліз:</b> Emoji Battle випущена в Google Play за 6-місячний цикл самостійної розробки.`,
+        "nextFocus.di": `<b>Повний цикл релізу:</b> Emoji Battle випущена в Google Play за 6-місячний цикл самостійної розробки.`,
         "nextFocus.profiling": `<b>Продуктивність:</b> покращив роботу на старих пристроях приблизно з 30 до стабільних 60 FPS і перевірив адаптивні 90/120 FPS.`,
         "nextFocus.tests": `<b>Детермінована перевірка:</b> 4 000 боїв за цикл у чотирьох сценаріях поведінки; у повторних прогонах не виявлено помилок бойової логіки.`,
         "nextFocus.ci": `<b>Освіта:</b> Xamk, Introduction to Video Games Creation, Flexible Modular Open UAS Studies, 1-35 ECTS, липень-грудень 2026.`,
         "nextFocus.liveops": `<b>Мови:</b> англійська B1 (покращую), російська рідна, українська рідна.`,
+        "about.eyebrow": `Про мене`,
+        "about.title": `Gameplay programmer із відповідальністю за повний production-цикл.`,
+        "about.text": `Живу у Фінляндії та перетворюю Unity-концепти на протестовані, оптимізовані й готові до випуску ігри. Мої сильні сторони: gameplay-системи, UGUI/UI flow, прогресія та збереження, мобільна продуктивність і підтримувана архітектура.`,
+        "about.fullCycle": `<b>Повний цикл розробки:</b> від архітектури й реалізації до profiling, підготовки білдів, публікації та post-release підтримки.`,
+        "about.teamwork": `<b>Готовність до командної роботи:</b> Git/GitHub, task tracking, спільне планування, перевірювані зміни, явні залежності та зрозумілі межі відповідальності.`,
+        "about.focus": `<b>Поточний фокус:</b> gameplay programming і UI/UGUI flow для проєктів під Android, PC та WebGL.`,
         "contact.title": `Контакти`,
         "contact.text": `Знаходжусь у Фінляндії. Відкритий до повністю віддалених позицій Unity Developer / C# Gameplay Programmer за наймом або B2B для Android, PC та WebGL.`,
         "contact.copyHint": `Якщо поштовий застосунок не відкрився, можна просто скопіювати адресу.`,
