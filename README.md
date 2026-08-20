@@ -9,7 +9,8 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 ## Focus
 
 - Unity Developer / C# Gameplay Programmer positioning backed by nearly 3 years of hands-on project work since September 2023
-- Shipped Android game on Google Play as the first portfolio proof
+- 2D Asteroids Survival as the first architecture-focused portfolio proof, with public source, gameplay video, and downloadable PC/Android builds
+- Shipped Android game on Google Play as delivery and release proof
 - End-to-end solo ownership across architecture, implementation, profiling, debugging, build preparation, release, and post-release support
 - Gameplay systems, UI/UGUI flow, save/load, progression, rewards, ads, and build preparation
 - Android, PC, and WebGL projects with source, gameplay media, and playable/downloadable builds
@@ -18,10 +19,17 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 - Production architecture toolkit: SOLID/SRP, MVVM, Assembly Definitions, composition roots, Zenject/DI, ScriptableObjects, UniTask, async/await, cancellation, and lifecycle-safe cleanup
 - Git/GitHub, ClickUp, task tracking, collaborative planning, and reviewable public source code
 - Fully remote employment or B2B availability from Finland
-- Recruiter-first information hierarchy: strengths and production practices before the two strongest case studies
+- Recruiter-first information hierarchy: strengths and production practices before the three featured case studies
 - Secondary multiplayer/WebGL/PC prototypes moved into a collapsed archive after the contact section
 
 ## Featured Projects
+
+### 2D Asteroids Survival
+
+Feature-complete Unity 2022 LTS survival project designed and developed from scratch. Across 144 custom C# files it demonstrates a fixed-step custom 2D physics stack, Assembly Definition boundaries, Zenject and SignalBus, JSON-driven validated configuration, pooled enemies/projectiles/VFX, separate desktop/mobile input strategies, UniTask navigation, MVVM-style UI, Firebase Analytics, and isolated Google Mobile Ads integration. Playable Windows and Android builds are available directly from the portfolio.
+
+Gameplay: https://youtu.be/MV7N_iHXxiU
+Source code: https://github.com/TokarevDev/2D_Asteroids_Survival
 
 ### Emoji Battle
 
@@ -36,17 +44,11 @@ Current Unity 6 2D mobile auto-shooter/survival project focused on modular comba
 
 Source code: https://github.com/TokarevDev/Force_of_Nature_Last_Seed
 
-### 2D Asteroids Survival
-
-Compact Unity 2022 LTS architecture sample demonstrating Assembly Definition boundaries, Zenject dependency injection and SignalBus, UniTask scene flow, MVVM-style UI separation, Input System abstraction, ScriptableObject configuration, and prewarmed projectile/asteroid pools.
-
-Source code: https://github.com/TokarevDev/2D_Asteroids_Survival
-
 ## Public Code Samples
 
+- 2D Asteroids Survival - feature-complete architecture sample with custom physics, validated JSON configuration, pooling, platform input strategies, analytics, and lifecycle-owned services
 - Emoji Battle - shipped Google Play game and complete mobile player loop
 - Last Seed Survivor - modular combat, pooling, reward systems, segmented enemies, and deterministic balance validation
-- 2D Asteroids Survival - compact architecture and lifecycle code-review sample
 
 ## Build Downloads
 

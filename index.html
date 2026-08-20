@@ -658,6 +658,20 @@
       user-select: none;
     }
 
+    .gallery-frame.landscape {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      cursor: default;
+    }
+
+    .project-media .gallery-frame.landscape {
+      width: 100%;
+    }
+
+    .gallery-frame.landscape .gallery-image {
+      object-fit: cover;
+    }
+
     .gallery-frame.dragging {
       cursor: grabbing;
     }
@@ -1421,9 +1435,89 @@
         <div class="section-head">
           <h2 id="projects-title" data-i18n="projects.title">Featured Projects</h2>
           <p class="section-note" data-i18n="projects.note">
-            Two full-cycle case studies: a shipped Google Play release and a deeper modular systems project.
+            Three complementary case studies: a clean architecture project with playable PC and Android builds, a shipped Google Play release, and a deeper modular systems project.
           </p>
         </div>
+
+        <article class="project systems-case">
+          <figure class="project-media" aria-label="2D Asteroids Survival gameplay preview">
+            <div class="project-gallery">
+              <div class="gallery-frame landscape">
+                <div class="gallery-track">
+                  <img class="gallery-image active" src="assets/asteroids/gameplay.png" alt="2D Asteroids Survival arena with spaceship, projectile fire, asteroids, score and three lives">
+                </div>
+              </div>
+
+              <div class="gallery-panel">
+                <h4 data-i18n="asteroids.gallery.title">Complete survival-loop preview</h4>
+                <p class="gallery-caption" data-i18n="asteroids.gallery.caption">
+                  The arena view shows active projectile fire, randomized asteroid pressure, score, recharge state, and the three-life survival loop.
+                </p>
+              </div>
+            </div>
+          </figure>
+
+          <div>
+            <div class="project-title-row">
+              <div>
+                <p class="project-kicker" data-i18n="asteroids.kicker">Independent Unity architecture project</p>
+                <h3>2D Asteroids Survival</h3>
+              </div>
+            </div>
+            <p class="project-summary" data-i18n="asteroids.summary">
+              A feature-complete 2D survival game independently designed and developed from scratch, inspired by classic Asteroids and built around custom physics, explicit assembly boundaries, JSON-driven balance, pooled runtime entities, and separate desktop/mobile input strategies.
+            </p>
+            <ul class="tag-list">
+              <li class="green" data-i18n="asteroids.badge.built">Built from scratch</li>
+              <li class="green" data-i18n="asteroids.badge.builds">Playable PC &amp; Android builds</li>
+              <li>Unity 2022 LTS</li>
+              <li>C#</li>
+              <li>Zenject</li>
+              <li>UniTask</li>
+              <li>Custom Physics</li>
+              <li>JSON Configuration</li>
+              <li>Object Pooling</li>
+              <li>Firebase Analytics</li>
+            </ul>
+
+            <div class="impact-note">
+              <p class="mini-title" data-i18n="project.impact">Impact</p>
+              <ul class="impact-note-list">
+                <li data-i18n-html="asteroids.impact.challenge"><b>Challenge:</b> build a responsive toroidal survival game while keeping simulation, Unity views, UI, configuration, and platform services independently maintainable.</li>
+                <li data-i18n-html="asteroids.impact.action"><b>Action:</b> implemented a custom fixed-step 2D physics stack, centralized entity registries and factories, validated JSON configuration, four project assemblies, DI composition roots, and Strategy-based desktop/mobile input.</li>
+                <li data-i18n-html="asteroids.impact.result"><b>Result:</b> delivered a feature-complete project with 144 custom C# files, public source, gameplay video, and packaged Windows/Android builds.</li>
+                <li data-i18n-html="asteroids.impact.performance"><b>Optimization:</b> pooled asteroids, fragments, UFOs, projectiles, logical entities, and collision VFX; centralized hot-loop queries avoid temporary collections, LINQ, and repeated component lookup.</li>
+              </ul>
+            </div>
+
+            <div class="project-columns">
+              <div>
+                <p class="mini-title" data-i18n="project.engineeringValue">Engineering value</p>
+                <ul class="compact">
+                  <li data-i18n="asteroids.value.boundaries">Core keeps custom bodies, integration, collision tests, toroidal coordinates, factories, configuration contracts, and input models outside MonoBehaviour logic.</li>
+                  <li data-i18n="asteroids.value.decoupling">Four Assembly Definitions, Zenject composition roots, interfaces, SignalBus, and MVVM UI make dependency direction explicit.</li>
+                  <li data-i18n="asteroids.value.lifecycle">Symmetric subscriptions, owner cancellation, guarded async navigation, SDK cleanup, and explicit pool reset behavior keep lifecycles predictable.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="mini-title" data-i18n="project.whatBuilt">What I built</p>
+                <ul class="compact">
+                  <li data-i18n="asteroids.built.loop">Acceleration, braking, inertia, rotation, world wrap, bullets, rechargeable multi-target laser, asteroid fragmentation, pursuing UFOs, scoring, and three-life survival.</li>
+                  <li data-i18n="asteroids.built.combat">Custom fixed-step integration, circle and segment intersection, elastic collision response, invulnerability, logical/view synchronization, and pooled impact feedback.</li>
+                  <li data-i18n="asteroids.built.flow">Validated JSON balance, responsive HUD, mobile joystick/buttons, guarded UniTask navigation, Firebase game events, and lifecycle-owned AdMob banner integration.</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="tech"><b>Tech:</b> Unity 2022.3.9f1, C#, custom 2D physics, Zenject, SignalBus, UniTask, Newtonsoft.Json, UGUI, TextMeshPro, Firebase Analytics, Google Mobile Ads, Assembly Definitions, object pooling, MVVM-style presentation.</p>
+            <div class="button-row">
+              <a class="button primary" href="https://youtu.be/MV7N_iHXxiU" target="_blank" rel="noopener" data-i18n="button.watchGameplay">Watch Gameplay</a>
+              <a class="button" href="https://github.com/TokarevDev/2D_Asteroids_Survival" target="_blank" rel="noopener" data-i18n="button.sourceCode">Source Code</a>
+              <a class="button secondary" href="assets/builds/asteroids/2D_Asteroids_Survival_PC_Build.zip" download data-i18n="button.downloadPc">Download PC Build</a>
+              <a class="button secondary" href="assets/builds/asteroids/2D_Asteroids_Survival.apk" download data-i18n="button.downloadAndroid">Download Android APK</a>
+            </div>
+          </div>
+        </article>
 
         <article class="project released-case">
           <figure class="project-media" aria-label="Emoji Battle screenshot gallery">
@@ -1840,7 +1934,10 @@
         "button.resume": `Открыть CV / Resume`,
         "button.releasedGame": `Игра в Google Play`,
         "button.playWebGL": `Играть в браузере (WebGL)`,
+        "button.watchGameplay": `Смотреть геймплей`,
+        "button.sourceCode": `Исходный код`,
         "button.downloadPc": `Скачать PC-билд`,
+        "button.downloadAndroid": `Скачать APK для Android`,
         "proof.title": `Результаты разработки`,
         "proof.note": `Измеримые результаты разработки и выпуска из ключевых проектов выше.`,
         "proof.metric.release": `года практической Unity C# gameplay-разработки`,
@@ -1861,11 +1958,27 @@
         "value.runtime.title": `Отладка и билды`,
         "value.runtime.text": `Разбор багов, проверки через Profiler, контроль GC, кешированные ссылки, настройка билдов и подготовка релиза.`,
         "projects.title": `Ключевые проекты`,
-        "projects.note": `Два кейса с ответственностью за полный цикл: выпущенная игра в Google Play и более глубокий проект с модульными системами.`,
+        "projects.note": `Три дополняющих друг друга кейса: проект с чистой архитектурой и рабочими PC/Android-билдами, выпущенная игра в Google Play и более глубокий проект с модульными системами.`,
         "project.fullCycle": `Полный цикл разработки`,
         "project.whatBuilt": `Что я сделал`,
         "project.engineeringValue": `Инженерная ценность`,
         "project.impact": `Влияние`,
+        "asteroids.kicker": `Независимый архитектурный Unity-проект`,
+        "asteroids.summary": `Завершённая 2D survival-игра, самостоятельно спроектированная и разработанная с нуля по мотивам классической Asteroids. Проект построен на собственной физике, явных границах сборок, JSON-настройке баланса, пулах runtime-сущностей и отдельных стратегиях ввода для desktop/mobile.`,
+        "asteroids.badge.built": `Разработано с нуля`,
+        "asteroids.badge.builds": `Рабочие PC и Android-билды`,
+        "asteroids.gallery.title": `Полный survival-цикл`,
+        "asteroids.gallery.caption": `На арене видны стрельба снарядами, случайное давление астероидов, счёт, состояние перезарядки и survival-цикл с тремя жизнями.`,
+        "asteroids.impact.challenge": `<b>Задача:</b> создать отзывчивую survival-игру в тороидальном мире, сохранив независимо поддерживаемыми симуляцию, Unity views, UI, конфигурацию и платформенные сервисы.`,
+        "asteroids.impact.action": `<b>Действие:</b> реализовал собственную fixed-step 2D-физику, централизованные реестры и фабрики сущностей, проверяемую JSON-конфигурацию, четыре проектные сборки, DI composition roots и Strategy-ввод для desktop/mobile.`,
+        "asteroids.impact.result": `<b>Результат:</b> завершённый проект со 144 собственными C#-файлами, публичным исходным кодом, gameplay-видео и подготовленными сборками для Windows/Android.`,
+        "asteroids.impact.performance": `<b>Оптимизация:</b> пулы астероидов, фрагментов, UFO, снарядов, логических сущностей и collision VFX; централизованные запросы в горячих циклах обходятся без временных коллекций, LINQ и повторного поиска компонентов.`,
+        "asteroids.value.boundaries": `Core хранит собственные физические тела, интеграцию, collision-тесты, тороидальные координаты, фабрики, контракты конфигурации и модели ввода вне MonoBehaviour-логики.`,
+        "asteroids.value.decoupling": `Четыре Assembly Definition, Zenject composition roots, интерфейсы, SignalBus и MVVM UI делают направление зависимостей явным.`,
+        "asteroids.value.lifecycle": `Симметричные подписки, owner cancellation, защищённая async-навигация, очистка SDK и явный сброс объектов пула делают lifecycle предсказуемым.`,
+        "asteroids.built.loop": `Ускорение, торможение, инерция, вращение, world wrap, пули, перезаряжаемый multi-target лазер, фрагментация астероидов, преследующие UFO, счёт и survival с тремя жизнями.`,
+        "asteroids.built.combat": `Собственная fixed-step интеграция, circle/segment intersection, упругий collision response, неуязвимость, синхронизация логики и views, а также pooled impact feedback.`,
+        "asteroids.built.flow": `Проверяемый JSON-баланс, адаптивный HUD, мобильный джойстик/кнопки, защищённая UniTask-навигация, Firebase game events и AdMob banner integration с управляемым lifecycle.`,
         "lastSeed.kicker": `Продвинутый Unity systems-проект`,
         "lastSeed.summary": `Мобильный 2D auto-shooter/survival проект на Unity 6: модульный бой, ScriptableObject-награды, сегментированный враг, симуляции баланса, pooling и подготовка Android-релиза.`,
         "lastSeed.badge.closedTest": `Закрытый тест пройден`,
@@ -1993,7 +2106,10 @@
         "button.resume": `Відкрити CV / Resume`,
         "button.releasedGame": `Гра в Google Play`,
         "button.playWebGL": `Грати в браузері (WebGL)`,
+        "button.watchGameplay": `Дивитися геймплей`,
+        "button.sourceCode": `Вихідний код`,
         "button.downloadPc": `Завантажити PC-білд`,
+        "button.downloadAndroid": `Завантажити APK для Android`,
         "proof.title": `Результати розробки`,
         "proof.note": `Вимірювані результати розробки й випуску з ключових проєктів вище.`,
         "proof.metric.release": `роки практичної Unity C# gameplay-розробки`,
@@ -2014,11 +2130,27 @@
         "value.runtime.title": `Відлагодження і білди`,
         "value.runtime.text": `Розбір багів, перевірки через Profiler, контроль GC, кешовані посилання, налаштування білдів і підготовка релізу.`,
         "projects.title": `Ключові проєкти`,
-        "projects.note": `Два кейси з відповідальністю за повний цикл: випущена гра в Google Play і глибший проєкт із модульними системами.`,
+        "projects.note": `Три взаємодоповнювальні кейси: проєкт із чистою архітектурою та робочими PC/Android-білдами, випущена гра в Google Play і глибший проєкт із модульними системами.`,
         "project.fullCycle": `Повний цикл розробки`,
         "project.whatBuilt": `Що я зробив`,
         "project.engineeringValue": `Інженерна цінність`,
         "project.impact": `Вплив`,
+        "asteroids.kicker": `Незалежний архітектурний Unity-проєкт`,
+        "asteroids.summary": `Завершена 2D survival-гра, самостійно спроєктована й розроблена з нуля за мотивами класичної Asteroids. Проєкт побудований на власній фізиці, явних межах збірок, JSON-налаштуванні балансу, пулах runtime-сутностей і окремих стратегіях введення для desktop/mobile.`,
+        "asteroids.badge.built": `Розроблено з нуля`,
+        "asteroids.badge.builds": `Робочі PC та Android-білди`,
+        "asteroids.gallery.title": `Повний survival-цикл`,
+        "asteroids.gallery.caption": `На арені видно стрільбу снарядами, випадковий тиск астероїдів, рахунок, стан перезарядки та survival-цикл із трьома життями.`,
+        "asteroids.impact.challenge": `<b>Завдання:</b> створити чуйну survival-гру в тороїдальному світі, зберігши незалежно підтримуваними симуляцію, Unity views, UI, конфігурацію та платформні сервіси.`,
+        "asteroids.impact.action": `<b>Дія:</b> реалізував власну fixed-step 2D-фізику, централізовані реєстри й фабрики сутностей, перевірювану JSON-конфігурацію, чотири проєктні збірки, DI composition roots і Strategy-введення для desktop/mobile.`,
+        "asteroids.impact.result": `<b>Результат:</b> завершений проєкт зі 144 власними C#-файлами, публічним вихідним кодом, gameplay-відео та підготовленими збірками для Windows/Android.`,
+        "asteroids.impact.performance": `<b>Оптимізація:</b> пули астероїдів, фрагментів, UFO, снарядів, логічних сутностей і collision VFX; централізовані запити в гарячих циклах обходяться без тимчасових колекцій, LINQ і повторного пошуку компонентів.`,
+        "asteroids.value.boundaries": `Core зберігає власні фізичні тіла, інтеграцію, collision-тести, тороїдальні координати, фабрики, контракти конфігурації та моделі введення поза MonoBehaviour-логікою.`,
+        "asteroids.value.decoupling": `Чотири Assembly Definition, Zenject composition roots, інтерфейси, SignalBus і MVVM UI роблять напрямок залежностей явним.`,
+        "asteroids.value.lifecycle": `Симетричні підписки, owner cancellation, захищена async-навігація, очищення SDK та явне скидання об'єктів пулу роблять lifecycle передбачуваним.`,
+        "asteroids.built.loop": `Прискорення, гальмування, інерція, обертання, world wrap, кулі, перезаряджуваний multi-target лазер, фрагментація астероїдів, UFO-переслідувачі, рахунок і survival із трьома життями.`,
+        "asteroids.built.combat": `Власна fixed-step інтеграція, circle/segment intersection, пружний collision response, невразливість, синхронізація логіки та views, а також pooled impact feedback.`,
+        "asteroids.built.flow": `Перевірюваний JSON-баланс, адаптивний HUD, мобільний джойстик/кнопки, захищена UniTask-навігація, Firebase game events і AdMob banner integration з керованим lifecycle.`,
         "lastSeed.kicker": `Просунутий Unity systems-проєкт`,
         "lastSeed.summary": `Мобільний 2D auto-shooter/survival проєкт на Unity 6: модульний бій, ScriptableObject-нагороди, сегментований ворог, симуляції балансу, pooling і підготовка Android-релізу.`,
         "lastSeed.badge.closedTest": `Закрите тестування пройдено`,
