@@ -8,7 +8,7 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 
 ## Focus
 
-- Unity Developer / C# Gameplay Programmer positioning backed by nearly 3 years of hands-on project work since September 2023
+- Unity Developer / C# Gameplay Programmer positioning backed by more than 5 years of hands-on project work
 - 2D Asteroids Survival as the first architecture-focused portfolio proof, with public source, gameplay video, and downloadable PC/Android builds
 - Shipped Android game on Google Play as delivery and release proof
 - End-to-end solo ownership across architecture, implementation, profiling, debugging, build preparation, release, and post-release support
