@@ -19,6 +19,23 @@
   <meta name="twitter:image" content="https://tokarevdev.github.io/assets/portfolio-preview-concept-v3-1200x630.png">
   <meta name="twitter:image:alt" content="Oleksandr Tokarev - Unity Developer and C# Gameplay Programmer portfolio">
   <title>Oleksandr Tokarev | Unity Developer | C# Gameplay Programmer</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://tokarevdev.github.io/",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Oleksandr Tokarev",
+      "jobTitle": "Unity Developer | C# Gameplay Programmer",
+      "description": "Unity Developer in Finland with more than 5 years of commercial experience across gameplay systems, architecture, optimization, and Android, PC, and WebGL delivery.",
+      "email": "mailto:otokarevdev@gmail.com",
+      "address": {"@type": "PostalAddress", "addressCountry": "FI"},
+      "knowsAbout": ["Unity", "C#", "Gameplay Programming", "Mobile Game Development", "Android", "WebGL", "UGUI", "SOLID", "Object Pooling", "Unity Profiler", "Netcode for GameObjects"],
+      "sameAs": ["https://github.com/TokarevDev", "https://www.linkedin.com/in/oleksandr-tokarev/"]
+    }
+  }
+  </script>
   <style>
     :root {
       --bg: #101211;
@@ -236,6 +253,14 @@
       color: var(--muted);
       font-size: 18px;
       line-height: 1.65;
+    }
+
+    .availability {
+      margin: 16px 0 0;
+      color: #cbd4cf;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
     }
 
     .hero-actions,
@@ -1205,6 +1230,91 @@
       text-align: center;
     }
 
+    .viewer-button[hidden] {
+      display: none;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero { order: 1; }
+    #highlights { order: 2; }
+    #projects { order: 3; }
+    #skills { order: 4; }
+    #next-focus { order: 5; }
+    #contact { order: 6; }
+    .prototype-pocket { order: 7; }
+
+    #about {
+      display: none;
+    }
+
+    #projects .project .impact-note,
+    #projects .project .project-columns,
+    #projects .project .tech {
+      display: none;
+    }
+
+    #projects .project .tag-list li:nth-child(n + 7) {
+      display: none;
+    }
+
+    .preview-proof {
+      display: grid;
+      gap: 8px;
+      margin: 16px 0 18px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .preview-proof li {
+      padding: 10px 12px;
+      border-left: 3px solid var(--green);
+      border-radius: 6px;
+      color: var(--muted);
+      background: rgba(12, 15, 14, 0.38);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .preview-proof b {
+      color: var(--text);
+    }
+
+    .featured-case .preview-proof {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #highlights .proof-list {
+      display: none;
+    }
+
+    #highlights,
+    #skills,
+    #next-focus,
+    #contact {
+      margin-top: 18px;
+    }
+
+    #next-focus .focus-list li:nth-child(-n + 4) {
+      display: none;
+    }
+
+    #skills .skill-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    #skills .skill-group {
+      padding: 15px;
+    }
+
+    #skills .skill-group p {
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
     @media (max-width: 980px) {
       .project,
       .focus-band,
@@ -1215,6 +1325,11 @@
 
       .project.featured-case .project-media .project-gallery {
         grid-template-columns: 1fr;
+      }
+
+      .featured-case .preview-proof,
+      #skills .skill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .hero {
@@ -1296,6 +1411,10 @@
         white-space: normal;
       }
 
+      .gallery-frame {
+        cursor: zoom-in;
+      }
+
       h1 {
         font-size: 31px;
       }
@@ -1344,6 +1463,11 @@
       .focus-list,
       .about-points,
       .project-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-case .preview-proof,
+      #skills .skill-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1424,7 +1548,7 @@
         <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
         <a href="#skills" data-i18n="nav.skills">Skills</a>
-        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#next-focus" data-i18n="nav.about">Background</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
     </header>
@@ -1437,12 +1561,11 @@
           <p class="lead" data-i18n="hero.lead">
             Unity Developer with more than 5 years of commercial C# gameplay programming experience across Android, PC, and WebGL. Full-cycle ownership across gameplay systems, UGUI flows, architecture, persistence, profiling, build preparation, publishing, and post-release support.
           </p>
+          <p class="availability" data-i18n="hero.availability">Based in Finland · Open to fully remote employment or B2B opportunities</p>
           <div class="hero-actions" aria-label="Primary links">
             <a class="button primary" href="#projects" data-i18n="button.viewProjects">View Projects</a>
-            <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener" data-i18n="button.releasedGame">Released Game</a>
             <a class="button" href="mailto:otokarevdev@gmail.com" data-i18n="button.email">Email</a>
             <a class="button" href="assets/Oleksandr_Tokarev_Unity_Developer_CV.pdf" target="_blank" rel="noopener" data-i18n="button.resume">Open CV / Resume</a>
-            <a class="button" href="https://github.com/TokarevDev" target="_blank" rel="noopener">GitHub</a>
             <a class="button" href="https://www.linkedin.com/in/oleksandr-tokarev/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
@@ -1458,10 +1581,10 @@
 
         <article class="project featured-case">
           <figure class="project-media" aria-label="2D Asteroids Survival gameplay preview">
-            <div class="project-gallery">
+            <div class="project-gallery" data-gallery>
               <div class="gallery-frame landscape">
-                <div class="gallery-track">
-                  <img class="gallery-image active" src="assets/asteroids/gameplay.png" alt="2D Asteroids Survival arena with spaceship, projectile fire, asteroids, score and three lives">
+                <div class="gallery-track" data-gallery-track>
+                  <img class="gallery-image active" data-gallery-slide src="assets/asteroids/gameplay.png" alt="2D Asteroids Survival arena with spaceship, projectile fire, asteroids, score and three lives">
                 </div>
               </div>
 
@@ -1484,6 +1607,11 @@
             <p class="project-summary" data-i18n="asteroids.summary">
               A feature-complete 2D survival game independently designed and developed from scratch, inspired by classic Asteroids and built around custom physics, explicit assembly boundaries, JSON-driven balance, pooled runtime entities, and separate desktop/mobile input strategies.
             </p>
+            <ul class="preview-proof">
+              <li data-i18n="asteroids.value.boundaries">Core keeps custom bodies, integration, collision tests, toroidal coordinates, factories, configuration contracts, and input models outside MonoBehaviour logic.</li>
+              <li data-i18n="asteroids.value.decoupling">Four Assembly Definitions, Zenject composition roots, interfaces, SignalBus, and MVVM UI make dependency direction explicit.</li>
+              <li data-i18n-html="asteroids.impact.performance"><b>Optimization:</b> pooled asteroids, fragments, UFOs, projectiles, logical entities, and collision VFX; centralized hot-loop queries avoid temporary collections, LINQ, and repeated component lookup.</li>
+            </ul>
             <ul class="tag-list">
               <li class="green" data-i18n="asteroids.badge.featured">Lead portfolio project</li>
               <li class="green" data-i18n="asteroids.badge.built">Built from scratch</li>
@@ -1503,7 +1631,7 @@
               <ul class="impact-note-list">
                 <li data-i18n-html="asteroids.impact.challenge"><b>Challenge:</b> build a responsive toroidal survival game while keeping simulation, Unity views, UI, configuration, and platform services independently maintainable.</li>
                 <li data-i18n-html="asteroids.impact.action"><b>Action:</b> implemented a custom fixed-step 2D physics stack, centralized entity registries and factories, validated JSON configuration, four project assemblies, DI composition roots, and Strategy-based desktop/mobile input.</li>
-                <li data-i18n-html="asteroids.impact.result"><b>Result:</b> delivered a feature-complete project with 144 custom C# files, public source, gameplay video, and packaged Windows/Android builds.</li>
+                <li data-i18n-html="asteroids.impact.result"><b>Result:</b> delivered a complete, playable Windows/Android game with public source and a gameplay demo; core simulation remains independent from Unity presentation and platform services.</li>
                 <li data-i18n-html="asteroids.impact.performance"><b>Optimization:</b> pooled asteroids, fragments, UFOs, projectiles, logical entities, and collision VFX; centralized hot-loop queries avoid temporary collections, LINQ, and repeated component lookup.</li>
               </ul>
             </div>
@@ -1529,10 +1657,9 @@
 
             <p class="tech"><b>Tech:</b> Unity 2022.3.9f1, C#, custom 2D physics, Zenject, SignalBus, UniTask, Newtonsoft.Json, UGUI, TextMeshPro, Firebase Analytics, Google Mobile Ads, Assembly Definitions, object pooling, MVVM-style presentation.</p>
             <div class="button-row">
-              <a class="button primary" href="https://youtu.be/MV7N_iHXxiU" target="_blank" rel="noopener" data-i18n="button.watchGameplay">Watch Gameplay</a>
+              <a class="button primary" href="projects/asteroids.html" data-i18n="button.caseStudy">View Case Study</a>
+              <a class="button secondary" href="https://youtu.be/MV7N_iHXxiU" target="_blank" rel="noopener" data-i18n="button.watchGameplay">Watch Gameplay</a>
               <a class="button" href="https://github.com/TokarevDev/2D_Asteroids_Survival" target="_blank" rel="noopener" data-i18n="button.sourceCode">Source Code</a>
-              <a class="button secondary" href="assets/builds/asteroids/2D_Asteroids_Survival_PC_Build.zip" download data-i18n="button.downloadPc">Download PC Build</a>
-              <a class="button secondary" href="assets/builds/asteroids/2D_Asteroids_Survival.apk" download data-i18n="button.downloadAndroid">Download Android APK</a>
             </div>
           </div>
         </article>
@@ -1580,6 +1707,11 @@
             <p class="project-summary" data-i18n="emoji.summary">
               Public Google Play mobile game built from prototype to release: turn-based combat, AI difficulty strategies, progression, save data, UI flow, ads, and Android publishing.
             </p>
+            <ul class="preview-proof">
+              <li data-i18n="emoji.value.architecture">Domain, Infrastructure, Presentation, and Services split around gameplay, storage, popups, and ads.</li>
+              <li data-i18n-html="emoji.impact.result"><b>Result:</b> shipped one complete Android game to Google Play within a 3-month independent development cycle.</li>
+              <li data-i18n-html="emoji.impact.performance"><b>Optimization:</b> improved older-device performance from about 30 FPS to a stable 60 FPS and validated adaptive 90/120 FPS targets by reducing UI draw calls and separating gameplay from presentation.</li>
+            </ul>
             <ul class="tag-list">
               <li class="green">Released on Google Play</li>
               <li class="green" data-i18n="project.fullCycle">Full-cycle development</li>
@@ -1623,9 +1755,9 @@
 
             <p class="tech"><b>Tech:</b> Unity 6, C#, UGUI, Strategy Pattern, event-driven gameplay flow, Unity Ads, save data, Android build pipeline, Google Play release workflow.</p>
             <div class="button-row">
-              <a class="button primary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener">Google Play</a>
+              <a class="button primary" href="projects/emoji-battle.html" data-i18n="button.caseStudy">View Case Study</a>
+              <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener">Google Play</a>
               <a class="button secondary" href="https://youtube.com/shorts/k98hLS689PY?feature=share" target="_blank" rel="noopener">YouTube Gameplay</a>
-              <a class="button" href="https://github.com/TokarevDev/Emoji_Battle" target="_blank" rel="noopener">Source Code</a>
             </div>
           </div>
         </article>
@@ -1675,6 +1807,11 @@
             <p class="project-summary" data-i18n="lastSeed.summary">
               Unity 6 mobile 2D auto-shooter/survival project focused on modular combat, ScriptableObject rewards, segmented enemy behavior, balance simulations, pooling, and Android release preparation.
             </p>
+            <ul class="preview-proof">
+              <li data-i18n="lastSeed.value.separation">Gameplay, presentation, runtime data, UI binding, bootstrap, and balance tooling split by responsibility.</li>
+              <li data-i18n-html="lastSeed.impact.result"><b>Result:</b> a one-click deterministic test runs 4,000 battles per cycle across four 1,000-battle behavior scenarios, with zero combat-logic failures detected in repeated runs.</li>
+              <li data-i18n="lastSeed.value.performance">Targeted projectile/enemy segment pooling and cached references to reduce runtime object churn.</li>
+            </ul>
             <ul class="tag-list">
               <li class="green" data-i18n="lastSeed.badge.closedTest">Closed test passed</li>
               <li class="green" data-i18n="project.fullCycle">Full-cycle development</li>
@@ -1717,7 +1854,8 @@
 
             <p class="tech"><b>Tech:</b> Unity 6, C#, ScriptableObjects, Physics2D, Input System, DOTween, URP, object pooling, custom balance simulation, performance-conscious runtime architecture.</p>
             <div class="button-row">
-              <a class="button primary" href="https://github.com/TokarevDev/Force_of_Nature_Last_Seed" target="_blank" rel="noopener">Source Code</a>
+              <a class="button primary" href="projects/last-seed.html" data-i18n="button.caseStudy">View Case Study</a>
+              <a class="button" href="https://github.com/TokarevDev/Force_of_Nature_Last_Seed" target="_blank" rel="noopener">Source Code</a>
               <a class="button secondary" href="https://youtube.com/shorts/HiQBlYjienI?feature=share" target="_blank" rel="noopener">YouTube Gameplay</a>
             </div>
           </div>
@@ -1941,14 +2079,16 @@
         "nav.projects": `Проекты`,
         "nav.prototypes": `Прототипы`,
         "nav.skills": `Навыки`,
-        "nav.about": `Обо мне`,
+        "nav.about": `Опыт`,
         "nav.contact": `Контакты`,
         "hero.eyebrow": `Unity Developer | C# Gameplay Programmer`,
         "hero.title": `Я создаю, оптимизирую и выпускаю законченные игры на Unity.`,
         "hero.lead": `Unity Developer с более чем 5 годами коммерческого опыта C# gameplay-разработки для Android, PC и WebGL. Отвечаю за полный цикл: gameplay-системы, UGUI/UI flow, архитектуру, сохранения, profiling, подготовку билдов, публикацию и post-release поддержку.`,
+        "hero.availability": `Финляндия · Открыт к полностью удалённой работе по найму или B2B`,
         "button.email": `Написать`,
         "button.copyEmail": `Скопировать почту`,
         "button.viewProjects": `Смотреть проекты`,
+        "button.caseStudy": `Открыть кейс`,
         "button.resume": `Открыть CV / Resume`,
         "button.releasedGame": `Игра в Google Play`,
         "button.playWebGL": `Играть в браузере (WebGL)`,
@@ -1990,7 +2130,7 @@
         "asteroids.gallery.caption": `На арене видны стрельба снарядами, случайное давление астероидов, счёт, состояние перезарядки и survival-цикл с тремя жизнями.`,
         "asteroids.impact.challenge": `<b>Задача:</b> создать отзывчивую survival-игру в тороидальном мире, сохранив независимо поддерживаемыми симуляцию, Unity views, UI, конфигурацию и платформенные сервисы.`,
         "asteroids.impact.action": `<b>Действие:</b> реализовал собственную fixed-step 2D-физику, централизованные реестры и фабрики сущностей, проверяемую JSON-конфигурацию, четыре проектные сборки, DI composition roots и Strategy-ввод для desktop/mobile.`,
-        "asteroids.impact.result": `<b>Результат:</b> завершённый проект со 144 собственными C#-файлами, публичным исходным кодом, gameplay-видео и подготовленными сборками для Windows/Android.`,
+        "asteroids.impact.result": `<b>Результат:</b> завершённая играбельная версия для Windows/Android с публичным исходным кодом и gameplay-демо; core simulation остаётся независимой от Unity presentation и платформенных сервисов.`,
         "asteroids.impact.performance": `<b>Оптимизация:</b> пулы астероидов, фрагментов, UFO, снарядов, логических сущностей и collision VFX; централизованные запросы в горячих циклах обходятся без временных коллекций, LINQ и повторного поиска компонентов.`,
         "asteroids.value.boundaries": `Core хранит собственные физические тела, интеграцию, collision-тесты, тороидальные координаты, фабрики, контракты конфигурации и модели ввода вне MonoBehaviour-логики.`,
         "asteroids.value.decoupling": `Четыре Assembly Definition, Zenject composition roots, интерфейсы, SignalBus и MVVM UI делают направление зависимостей явным.`,
@@ -2114,14 +2254,16 @@
         "nav.projects": `Проєкти`,
         "nav.prototypes": `Прототипи`,
         "nav.skills": `Навички`,
-        "nav.about": `Про мене`,
+        "nav.about": `Досвід`,
         "nav.contact": `Контакти`,
         "hero.eyebrow": `Unity Developer | C# Gameplay Programmer`,
         "hero.title": `Я створюю, оптимізую та випускаю завершені ігри на Unity.`,
         "hero.lead": `Unity Developer із понад 5 роками комерційного досвіду C# gameplay-розробки для Android, PC і WebGL. Відповідаю за повний цикл: gameplay-системи, UGUI/UI flow, архітектуру, збереження, profiling, підготовку білдів, публікацію та post-release підтримку.`,
+        "hero.availability": `Фінляндія · Відкритий до повністю віддаленої роботи за наймом або B2B`,
         "button.email": `Написати`,
         "button.copyEmail": `Скопіювати пошту`,
         "button.viewProjects": `Переглянути проєкти`,
+        "button.caseStudy": `Відкрити кейс`,
         "button.resume": `Відкрити CV / Resume`,
         "button.releasedGame": `Гра в Google Play`,
         "button.playWebGL": `Грати в браузері (WebGL)`,
@@ -2163,7 +2305,7 @@
         "asteroids.gallery.caption": `На арені видно стрільбу снарядами, випадковий тиск астероїдів, рахунок, стан перезарядки та survival-цикл із трьома життями.`,
         "asteroids.impact.challenge": `<b>Завдання:</b> створити чуйну survival-гру в тороїдальному світі, зберігши незалежно підтримуваними симуляцію, Unity views, UI, конфігурацію та платформні сервіси.`,
         "asteroids.impact.action": `<b>Дія:</b> реалізував власну fixed-step 2D-фізику, централізовані реєстри й фабрики сутностей, перевірювану JSON-конфігурацію, чотири проєктні збірки, DI composition roots і Strategy-введення для desktop/mobile.`,
-        "asteroids.impact.result": `<b>Результат:</b> завершений проєкт зі 144 власними C#-файлами, публічним вихідним кодом, gameplay-відео та підготовленими збірками для Windows/Android.`,
+        "asteroids.impact.result": `<b>Результат:</b> завершена іграбельна версія для Windows/Android із публічним вихідним кодом і gameplay-демо; core simulation залишається незалежною від Unity presentation та платформних сервісів.`,
         "asteroids.impact.performance": `<b>Оптимізація:</b> пули астероїдів, фрагментів, UFO, снарядів, логічних сутностей і collision VFX; централізовані запити в гарячих циклах обходяться без тимчасових колекцій, LINQ і повторного пошуку компонентів.`,
         "asteroids.value.boundaries": `Core зберігає власні фізичні тіла, інтеграцію, collision-тести, тороїдальні координати, фабрики, контракти конфігурації та моделі введення поза MonoBehaviour-логікою.`,
         "asteroids.value.decoupling": `Чотири Assembly Definition, Zenject composition roots, інтерфейси, SignalBus і MVVM UI роблять напрямок залежностей явним.`,
@@ -2469,6 +2611,9 @@
       });
 
       viewerSlideCount = slides.length;
+      const hasMultipleSlides = viewerSlideCount > 1;
+      viewerPrevious.hidden = !hasMultipleSlides;
+      viewerNext.hidden = !hasMultipleSlides;
       screenshotViewer.classList.add("open");
       screenshotViewer.setAttribute("aria-hidden", "false");
       document.body.classList.add("viewer-open");
@@ -2602,7 +2747,7 @@
       let isHorizontalDrag = false;
       let suppressFrameClick = false;
 
-      if (!slides.length || !dots.length || !counter || !previous || !next || !frame || !track) {
+      if (!slides.length || !frame || !track) {
         return;
       }
 
@@ -2626,12 +2771,14 @@
           dot.classList.toggle("active", dotIndex === current);
           dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
         });
-        counter.textContent = `${current + 1} / ${slides.length}`;
+        if (counter) {
+          counter.textContent = `${current + 1} / ${slides.length}`;
+        }
         moveTrack(0, animate);
       };
 
-      previous.addEventListener("click", () => showSlide(current - 1));
-      next.addEventListener("click", () => showSlide(current + 1));
+      previous?.addEventListener("click", () => showSlide(current - 1));
+      next?.addEventListener("click", () => showSlide(current + 1));
       dots.forEach((dot, dotIndex) => {
         dot.addEventListener("click", () => showSlide(dotIndex));
       });

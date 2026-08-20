@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Last Seed Survivor Unity systems case study: modular projectile combat, ScriptableObject rewards, pooling, segmented enemies, mobile UI, and deterministic balance simulations.">
+  <link rel="canonical" href="https://tokarevdev.github.io/projects/last-seed.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Last Seed Survivor | Unity Gameplay Systems Case Study">
+  <meta property="og:description" content="Modular Unity survival systems with projectile combat, ScriptableObject rewards, object pooling, segmented enemies, and deterministic balance tooling.">
+  <meta property="og:url" content="https://tokarevdev.github.io/projects/last-seed.html">
+  <meta property="og:image" content="https://tokarevdev.github.io/assets/last-seed/screenshot-gameplay-worm.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Last Seed Survivor | Unity Gameplay Systems Case Study">
+  <meta name="twitter:description" content="Projectile combat, ScriptableObject rewards, pooling, segmented enemies, mobile UI, and 4,000 deterministic simulations per balance cycle.">
+  <meta name="twitter:image" content="https://tokarevdev.github.io/assets/last-seed/screenshot-gameplay-worm.png">
+  <title>Last Seed Survivor | Unity Gameplay Systems Case Study</title>
+  <link rel="stylesheet" href="../assets/case-study.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Last Seed Survivor",
+    "url": "https://tokarevdev.github.io/projects/last-seed.html",
+    "image": "https://tokarevdev.github.io/assets/last-seed/screenshot-gameplay-worm.png",
+    "description": "A Unity mobile survival project with modular projectile combat, ScriptableObject rewards, object pooling, segmented enemy systems, and deterministic balance simulation.",
+    "gamePlatform": "Android",
+    "author": {"@type": "Person", "name": "Oleksandr Tokarev", "url": "https://tokarevdev.github.io/"}
+  }
+  </script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="../index.html">Oleksandr Tokarev</a>
+      <div class="top-actions">
+        <div class="language-toggle" aria-label="Language selection">
+          <button class="language-button active" type="button" data-language="en" aria-pressed="true">EN</button>
+          <button class="language-button" type="button" data-language="ru" aria-pressed="false">RU</button>
+          <button class="language-button" type="button" data-language="uk" aria-pressed="false">UA</button>
+        </div>
+        <a class="back-link" href="../index.html#projects" data-i18n="nav.back">Back to portfolio</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Gameplay systems case study · Unity 6 · Mobile</p>
+          <h1>Last Seed Survivor</h1>
+          <p class="lead" data-i18n="hero.lead">A mobile 2D auto-shooter/survival project focused on scalable gameplay systems: projectile combat, data-driven rewards, runtime modifiers, object pooling, segmented enemies, responsive portrait UI, and deterministic balance tooling.</p>
+          <ul class="tag-list">
+            <li class="accent" data-i18n="tag.tested">Closed testing completed</li>
+            <li class="accent" data-i18n="tag.release">Android release preparation</li>
+            <li>Unity 6</li><li>C#</li><li>ScriptableObjects</li><li>Physics2D</li><li>Object Pooling</li><li>Balance Tools</li>
+          </ul>
+          <div class="button-row">
+            <a class="button primary" href="https://github.com/TokarevDev/Force_of_Nature_Last_Seed" target="_blank" rel="noopener" data-i18n="button.source">View source</a>
+            <a class="button secondary" href="https://youtube.com/shorts/HiQBlYjienI?feature=share" target="_blank" rel="noopener" data-i18n="button.gameplay">Watch gameplay</a>
+          </div>
+        </div>
+
+        <div class="gallery" data-gallery>
+          <div class="gallery-frame portrait" data-gallery-frame role="button" tabindex="0" aria-label="Open Last Seed Survivor screenshots">
+            <div class="gallery-track" data-gallery-track>
+              <img class="gallery-image" data-gallery-slide src="../assets/last-seed/screenshot-gameplay-worm.png" alt="Last Seed Survivor segmented worm enemy gameplay">
+              <img class="gallery-image" data-gallery-slide src="../assets/last-seed/screenshot-gameplay-early.png" alt="Last Seed Survivor early gameplay">
+              <img class="gallery-image" data-gallery-slide src="../assets/last-seed/screenshot-upgrade-common.png" alt="Last Seed Survivor reward selection with rarity">
+              <img class="gallery-image" data-gallery-slide src="../assets/last-seed/screenshot-upgrade-rare.png" alt="Last Seed Survivor Acacia Thorn reward">
+              <img class="gallery-image" data-gallery-slide src="../assets/last-seed/screenshot-loading-screen.png" alt="Last Seed Survivor loading screen">
+            </div>
+          </div>
+          <div class="gallery-controls">
+            <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous screenshot">&lsaquo;</button>
+            <span class="gallery-counter" data-gallery-counter>1 / 5</span>
+            <button class="gallery-button" type="button" data-gallery-next aria-label="Next screenshot">&rsaquo;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Project evidence">
+        <div class="proof"><b>4K</b><span data-i18n="proof.simulations">deterministic battles executed per balance-test cycle</span></div>
+        <div class="proof"><b>4</b><span data-i18n="proof.scenarios">player-behavior scenarios with 1,000 battles each</span></div>
+        <div class="proof"><b>0</b><span data-i18n="proof.failures">combat-logic failures detected in repeated runs</span></div>
+        <div class="proof"><b>1-click</b><span data-i18n="proof.tooling">repeatable balance validation from editor tooling</span></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div><p class="eyebrow" data-i18n="case.eyebrow">Systems engineering case</p><h2 data-i18n="case.title">Scalable gameplay instead of prototype coupling</h2></div>
+          <p class="section-note" data-i18n="case.note">The project separates data, runtime systems, presentation, bootstrap, pooling, enemy behavior, and balance validation so each can evolve without turning the scene into a dependency hub.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card"><p class="mini-title" data-i18n="challenge.label">Challenge</p><h3 data-i18n="challenge.title">Expandable mobile survival combat</h3><p data-i18n="challenge.text">Combat, rewards, player scaling, enemy pressure, UI, and balance had to support iteration without accumulating one-off scene logic or repeated runtime lookup.</p></article>
+          <article class="case-card"><p class="mini-title" data-i18n="architecture.label">Architecture</p><h3 data-i18n="architecture.title">Data, runtime, and views separated</h3><p data-i18n="architecture.text">ScriptableObject definitions drive rewards and configuration. Runtime services own selection and application, while UI binds to results instead of containing gameplay decisions.</p></article>
+          <article class="case-card"><p class="mini-title" data-i18n="performance.label">Performance</p><h3 data-i18n="performance.title">Pool frequent runtime entities</h3><p data-i18n="performance.text">Projectiles and segmented enemy elements use pooling and cached references to reduce instantiation churn, repeated component access, and avoidable garbage collection pressure.</p></article>
+          <article class="case-card"><p class="mini-title" data-i18n="validation.label">Validation</p><h3 data-i18n="validation.title">Deterministic balance tooling</h3><p data-i18n="validation.text">A one-click test executes 4,000 battles across four player-behavior scenarios. Repeated runs detected zero combat-logic failures and provide reproducible balance evidence.</p></article>
+        </div>
+        <div class="architecture-flow" aria-label="Architecture layers">
+          <span data-i18n-html="flow.data">Data<br>ScriptableObjects · balance</span>
+          <span data-i18n-html="flow.runtime">Runtime<br>Combat · modifiers · rewards</span>
+          <span data-i18n-html="flow.presentation">Presentation<br>UGUI · feedback · binding</span>
+          <span data-i18n-html="flow.tools">Tools<br>Simulation · validation</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><p class="eyebrow" data-i18n="built.eyebrow">Implementation evidence</p><h2 data-i18n="built.title">Systems delivered</h2></div></div>
+        <div class="case-grid">
+          <article class="case-card"><h3 data-i18n="built.gameplay.title">Gameplay systems</h3><ul class="content-list"><li data-i18n="built.gameplay.one">Projectile combat, Acacia Thorn weapon, runtime stat modifiers, and upgrade flow.</li><li data-i18n="built.gameplay.two">Segmented enemy behavior, health scaling, movement pressure, damage states, and pooled lifecycle.</li><li data-i18n="built.gameplay.three">Portrait mobile gameplay, Input System flow, reward selection, rarity, and player feedback.</li></ul></article>
+          <article class="case-card"><h3 data-i18n="built.production.title">Architecture and tooling</h3><ul class="content-list"><li data-i18n="built.production.one">ScriptableObject-driven reward definitions with services for selection and application.</li><li data-i18n="built.production.two">Bootstrap-owned dependencies, cached references, pooling, and UI binding with clear responsibility boundaries.</li><li data-i18n="built.production.three">Deterministic simulation tooling for repeatable DPS-aware balance validation.</li></ul></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><p class="eyebrow" data-i18n="next.eyebrow">More selected work</p><h2 data-i18n="next.title">Continue with another case study</h2></div></div>
+        <div class="next-projects">
+          <a class="next-project" href="asteroids.html"><strong>2D Asteroids Survival</strong><span data-i18n="next.asteroids">Custom physics, clean architecture, pooling, desktop/mobile input, and playable PC/Android builds.</span></a>
+          <a class="next-project" href="emoji-battle.html"><strong>Emoji Battle</strong><span data-i18n="next.emoji">Shipped Google Play game with AI strategies, persistence, UGUI, ads, optimization, and release ownership.</span></a>
+        </div>
+      </section>
+    </main>
+    <footer>Oleksandr Tokarev · Unity Developer · C# Gameplay Programmer</footer>
+  </div>
+
+  <div class="viewer" data-viewer role="dialog" aria-label="Screenshot viewer" aria-hidden="true">
+    <button class="viewer-close" type="button" data-viewer-close aria-label="Close screenshot viewer">&times;</button>
+    <div class="viewer-frame"><div class="viewer-track" data-viewer-track></div></div>
+    <div class="viewer-footer"><button class="viewer-button" type="button" data-viewer-prev aria-label="Previous screenshot">&lsaquo;</button><span class="viewer-counter" data-viewer-counter>1 / 5</span><button class="viewer-button" type="button" data-viewer-next aria-label="Next screenshot">&rsaquo;</button></div>
+  </div>
+
+  <script>
+    window.caseStudyTranslations = {
+      ru: {
+        "nav.back":"Вернуться в портфолио","hero.eyebrow":"Кейс gameplay-систем · Unity 6 · Mobile","hero.lead":"Мобильный 2D auto-shooter/survival проект со scalable gameplay-системами: бой на снарядах, data-driven награды, runtime-модификаторы, object pooling, сегментированные враги, адаптивный portrait UI и детерминированные инструменты баланса.","tag.tested":"Закрытое тестирование завершено","tag.release":"Подготовка Android-релиза","button.source":"Открыть исходный код","button.gameplay":"Смотреть геймплей",
+        "proof.simulations":"детерминированных боёв за один цикл balance-теста","proof.scenarios":"сценария поведения игрока по 1 000 боёв каждый","proof.failures":"ошибок боевой логики в повторных прогонах","proof.tooling":"повторяемая проверка баланса из editor tooling",
+        "case.eyebrow":"Кейс системной разработки","case.title":"Масштабируемый gameplay вместо связанного прототипа","case.note":"Проект разделяет данные, runtime-системы, presentation, bootstrap, pooling, поведение врагов и проверку баланса, чтобы сцена не превращалась в dependency hub.",
+        "challenge.label":"Задача","challenge.title":"Расширяемый мобильный survival-бой","challenge.text":"Бой, награды, развитие игрока, давление врагов, UI и баланс должны поддерживать итерации без одноразовой scene-логики и повторного runtime-поиска.",
+        "architecture.label":"Архитектура","architecture.title":"Данные, runtime и views разделены","architecture.text":"ScriptableObject definitions управляют наградами и конфигурацией. Runtime services отвечают за выбор и применение, а UI связывается с результатами вместо хранения gameplay-решений.",
+        "performance.label":"Производительность","performance.title":"Pooling частых runtime-сущностей","performance.text":"Снаряды и элементы сегментированного врага используют pooling и кешированные ссылки, снижая instantiation churn, повторный component access и давление на GC.",
+        "validation.label":"Проверка","validation.title":"Детерминированные инструменты баланса","validation.text":"One-click тест выполняет 4 000 боёв в четырёх сценариях поведения. Повторные прогоны не выявили ошибок боевой логики и дают воспроизводимые данные баланса.",
+        "flow.data":"Data<br>ScriptableObjects · баланс","flow.runtime":"Runtime<br>Бой · модификаторы · награды","flow.presentation":"Presentation<br>UGUI · feedback · binding","flow.tools":"Tools<br>Симуляция · проверка",
+        "built.eyebrow":"Доказательства реализации","built.title":"Реализованные системы","built.gameplay.title":"Gameplay-системы","built.gameplay.one":"Бой на снарядах, оружие Acacia Thorn, runtime-модификаторы характеристик и поток улучшений.","built.gameplay.two":"Поведение сегментированного врага, масштабирование здоровья, движение, состояния урона и pooled lifecycle.","built.gameplay.three":"Portrait mobile gameplay, Input System flow, выбор наград, редкость и player feedback.",
+        "built.production.title":"Архитектура и tooling","built.production.one":"ScriptableObject-driven определения наград и сервисы их выбора и применения.","built.production.two":"Bootstrap-owned зависимости, кешированные ссылки, pooling и UI binding с ясными границами ответственности.","built.production.three":"Детерминированные симуляции для повторяемой DPS-aware проверки баланса.",
+        "next.eyebrow":"Другие выбранные работы","next.title":"Следующий технический кейс","next.asteroids":"Собственная физика, чистая архитектура, pooling, desktop/mobile ввод и рабочие PC/Android-билды.","next.emoji":"Выпущенная Google Play игра со стратегиями ИИ, сохранениями, UGUI, рекламой, оптимизацией и полным циклом релиза."
+      },
+      uk: {
+        "nav.back":"Повернутися до портфоліо","hero.eyebrow":"Кейс gameplay-систем · Unity 6 · Mobile","hero.lead":"Мобільний 2D auto-shooter/survival проєкт зі scalable gameplay-системами: бій на снарядах, data-driven нагороди, runtime-модифікатори, object pooling, сегментовані вороги, адаптивний portrait UI і детерміновані інструменти балансу.","tag.tested":"Закрите тестування завершено","tag.release":"Підготовка Android-релізу","button.source":"Відкрити вихідний код","button.gameplay":"Дивитися геймплей",
+        "proof.simulations":"детермінованих боїв за один цикл balance-тесту","proof.scenarios":"сценарії поведінки гравця по 1 000 боїв кожен","proof.failures":"помилок бойової логіки в повторних прогонах","proof.tooling":"повторювана перевірка балансу з editor tooling",
+        "case.eyebrow":"Кейс системної розробки","case.title":"Масштабований gameplay замість зв'язаного прототипу","case.note":"Проєкт розділяє дані, runtime-системи, presentation, bootstrap, pooling, поведінку ворогів і перевірку балансу, щоб сцена не перетворювалася на dependency hub.",
+        "challenge.label":"Завдання","challenge.title":"Розширюваний мобільний survival-бій","challenge.text":"Бій, нагороди, розвиток гравця, тиск ворогів, UI і баланс мають підтримувати ітерації без одноразової scene-логіки та повторного runtime-пошуку.",
+        "architecture.label":"Архітектура","architecture.title":"Дані, runtime і views розділені","architecture.text":"ScriptableObject definitions керують нагородами й конфігурацією. Runtime services відповідають за вибір і застосування, а UI зв'язується з результатами замість зберігання gameplay-рішень.",
+        "performance.label":"Продуктивність","performance.title":"Pooling частих runtime-сутностей","performance.text":"Снаряди та елементи сегментованого ворога використовують pooling і кешовані посилання, знижуючи instantiation churn, повторний component access і тиск на GC.",
+        "validation.label":"Перевірка","validation.title":"Детерміновані інструменти балансу","validation.text":"One-click тест виконує 4 000 боїв у чотирьох сценаріях поведінки. Повторні прогони не виявили помилок бойової логіки та дають відтворювані дані балансу.",
+        "flow.data":"Data<br>ScriptableObjects · баланс","flow.runtime":"Runtime<br>Бій · модифікатори · нагороди","flow.presentation":"Presentation<br>UGUI · feedback · binding","flow.tools":"Tools<br>Симуляція · перевірка",
+        "built.eyebrow":"Докази реалізації","built.title":"Реалізовані системи","built.gameplay.title":"Gameplay-системи","built.gameplay.one":"Бій на снарядах, зброя Acacia Thorn, runtime-модифікатори характеристик і потік покращень.","built.gameplay.two":"Поведінка сегментованого ворога, масштабування здоров'я, рух, стани пошкодження та pooled lifecycle.","built.gameplay.three":"Portrait mobile gameplay, Input System flow, вибір нагород, рідкість і player feedback.",
+        "built.production.title":"Архітектура й tooling","built.production.one":"ScriptableObject-driven визначення нагород і сервіси їх вибору та застосування.","built.production.two":"Bootstrap-owned залежності, кешовані посилання, pooling і UI binding із чіткими межами відповідальності.","built.production.three":"Детерміновані симуляції для повторюваної DPS-aware перевірки балансу.",
+        "next.eyebrow":"Інші вибрані роботи","next.title":"Наступний технічний кейс","next.asteroids":"Власна фізика, чиста архітектура, pooling, desktop/mobile введення та робочі PC/Android-білди.","next.emoji":"Випущена Google Play гра зі стратегіями ШІ, збереженнями, UGUI, рекламою, оптимізацією та повним циклом релізу."
+      }
+    };
+  </script>
+  <script src="../assets/case-study.js"></script>
+</body>
+</html>

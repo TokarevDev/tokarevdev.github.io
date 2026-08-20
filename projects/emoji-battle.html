@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emoji Battle Unity case study: shipped Google Play game with turn-based combat, AI strategies, progression, persistence, UGUI flow, ads, mobile optimization, and Android release ownership.">
+  <link rel="canonical" href="https://tokarevdev.github.io/projects/emoji-battle.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Emoji Battle | Shipped Unity Mobile Game Case Study">
+  <meta property="og:description" content="From prototype to Google Play: gameplay, AI, persistence, UGUI, ads, performance tuning, publishing, and post-release support.">
+  <meta property="og:url" content="https://tokarevdev.github.io/projects/emoji-battle.html">
+  <meta property="og:image" content="https://tokarevdev.github.io/assets/emoji-battle/screenshot-match-board.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Emoji Battle | Shipped Unity Mobile Game Case Study">
+  <meta name="twitter:description" content="A complete Android game shipped to Google Play with owned gameplay, UI, persistence, ads, optimization, and release flow.">
+  <meta name="twitter:image" content="https://tokarevdev.github.io/assets/emoji-battle/screenshot-match-board.png">
+  <title>Emoji Battle | Shipped Unity Mobile Game Case Study</title>
+  <link rel="stylesheet" href="../assets/case-study.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Emoji Battle",
+    "url": "https://tokarevdev.github.io/projects/emoji-battle.html",
+    "image": "https://tokarevdev.github.io/assets/emoji-battle/screenshot-match-board.png",
+    "description": "A Unity Android game shipped to Google Play with turn-based gameplay, AI strategies, progression, persistence, UGUI, ads, optimization, and release ownership.",
+    "gamePlatform": "Android",
+    "author": {"@type": "Person", "name": "Oleksandr Tokarev", "url": "https://tokarevdev.github.io/"}
+  }
+  </script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="../index.html">Oleksandr Tokarev</a>
+      <div class="top-actions">
+        <div class="language-toggle" aria-label="Language selection">
+          <button class="language-button active" type="button" data-language="en" aria-pressed="true">EN</button>
+          <button class="language-button" type="button" data-language="ru" aria-pressed="false">RU</button>
+          <button class="language-button" type="button" data-language="uk" aria-pressed="false">UA</button>
+        </div>
+        <a class="back-link" href="../index.html#projects" data-i18n="nav.back">Back to portfolio</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Released product case study · Unity 6 · Android</p>
+          <h1>Emoji Battle</h1>
+          <p class="lead" data-i18n="hero.lead">A public Google Play game taken from prototype to release with full-cycle ownership across turn-based gameplay, AI strategies, progression, persistence, UGUI states, ads, Android build preparation, publishing, optimization, and post-release support.</p>
+          <ul class="tag-list">
+            <li class="accent" data-i18n="tag.shipped">Shipped on Google Play</li>
+            <li class="accent" data-i18n="tag.cycle">Full-cycle ownership</li>
+            <li>Unity 6</li><li>C#</li><li>Android</li><li>UGUI</li><li>Unity Ads</li><li>Strategy Pattern</li>
+          </ul>
+          <div class="button-row">
+            <a class="button primary" href="https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle" target="_blank" rel="noopener">Google Play</a>
+            <a class="button secondary" href="https://youtube.com/shorts/k98hLS689PY?feature=share" target="_blank" rel="noopener" data-i18n="button.gameplay">Watch gameplay</a>
+            <a class="button" href="https://github.com/TokarevDev/Emoji_Battle" target="_blank" rel="noopener" data-i18n="button.source">View source</a>
+          </div>
+        </div>
+
+        <div class="gallery" data-gallery>
+          <div class="gallery-frame portrait" data-gallery-frame role="button" tabindex="0" aria-label="Open Emoji Battle screenshots">
+            <div class="gallery-track" data-gallery-track>
+              <img class="gallery-image" data-gallery-slide src="../assets/emoji-battle/screenshot-match-board.png" alt="Emoji Battle player versus AI match board">
+              <img class="gallery-image" data-gallery-slide src="../assets/emoji-battle/screenshot-character-select-green.png" alt="Emoji Battle green character selection">
+              <img class="gallery-image" data-gallery-slide src="../assets/emoji-battle/screenshot-character-select-red.png" alt="Emoji Battle difficulty and red character selection">
+              <img class="gallery-image" data-gallery-slide src="../assets/emoji-battle/screenshot-unlock-popup.png" alt="Emoji Battle unlock reward popup">
+            </div>
+          </div>
+          <div class="gallery-controls">
+            <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous screenshot">&lsaquo;</button>
+            <span class="gallery-counter" data-gallery-counter>1 / 4</span>
+            <button class="gallery-button" type="button" data-gallery-next aria-label="Next screenshot">&rsaquo;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Project evidence">
+        <div class="proof"><b>1</b><span data-i18n="proof.release">complete Android game released on Google Play</span></div>
+        <div class="proof"><b>3</b><span data-i18n="proof.ai">AI difficulty strategies separated from board rendering</span></div>
+        <div class="proof"><b>60</b><span data-i18n="proof.fps">stable FPS on older devices after UI/runtime optimization</span></div>
+        <div class="proof"><b>90/120</b><span data-i18n="proof.adaptive">adaptive FPS targets validated on supported devices</span></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div><p class="eyebrow" data-i18n="case.eyebrow">Product delivery case</p><h2 data-i18n="case.title">Turning a prototype into a maintainable release</h2></div>
+          <p class="section-note" data-i18n="case.note">The project demonstrates responsibility beyond gameplay code: player flow, persistence, monetization, mobile performance, store preparation, release, and post-release tuning.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card"><p class="mini-title" data-i18n="challenge.label">Challenge</p><h3 data-i18n="challenge.title">Complete the entire player journey</h3><p data-i18n="challenge.text">A small combat prototype needed menu flow, character selection, difficulty, results, progression, settings, saving, rewards, ads, and store-ready Android delivery.</p></article>
+          <article class="case-card"><p class="mini-title" data-i18n="architecture.label">Architecture</p><h3 data-i18n="architecture.title">Gameplay separated from presentation</h3><p data-i18n="architecture.text">Domain, Infrastructure, Presentation, and Services boundaries isolate board state, AI decisions, persistence, popups, ads, and view rendering. Strategy Pattern supports three AI modes.</p></article>
+          <article class="case-card"><p class="mini-title" data-i18n="performance.label">Performance</p><h3 data-i18n="performance.title">Measured mobile optimization</h3><p data-i18n="performance.text">Reduced UI draw calls and separated gameplay state changes from presentation updates, improving older-device performance from about 30 FPS to a stable 60 FPS.</p></article>
+          <article class="case-card"><p class="mini-title" data-i18n="delivery.label">Release</p><h3 data-i18n="delivery.title">Owned through Google Play</h3><p data-i18n="delivery.text">Prepared Android builds, store materials, ads integration, runtime checks, publishing steps, and post-release performance tuning for a complete public release.</p></article>
+        </div>
+        <div class="architecture-flow" aria-label="Architecture layers">
+          <span data-i18n-html="flow.domain">Domain<br>Board · combat · AI contracts</span>
+          <span data-i18n-html="flow.infrastructure">Infrastructure<br>Save data · configuration</span>
+          <span data-i18n-html="flow.presentation">Presentation<br>UGUI · popups · feedback</span>
+          <span data-i18n-html="flow.services">Services<br>Ads · platform · release</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><p class="eyebrow" data-i18n="built.eyebrow">Implementation evidence</p><h2 data-i18n="built.title">Systems delivered</h2></div></div>
+        <div class="case-grid">
+          <article class="case-card"><h3 data-i18n="built.player.title">Player-facing systems</h3><ul class="content-list"><li data-i18n="built.player.one">Turn-based combat loop, board-state rules, three AI difficulty strategies, and result handling.</li><li data-i18n="built.player.two">Character selection, avatar unlocks, rewards, progression, settings, and save data.</li><li data-i18n="built.player.three">Menu, gameplay, result, unlock, popup, and feedback states implemented with UGUI.</li></ul></article>
+          <article class="case-card"><h3 data-i18n="built.release.title">Mobile production</h3><ul class="content-list"><li data-i18n="built.release.one">Unity Ads service with rewarded flow, load timeout, online/offline checks, and safe return to gameplay.</li><li data-i18n="built.release.two">Android build configuration, Google Play publishing workflow, and post-release support.</li><li data-i18n="built.release.three">Profiler-led UI/runtime optimization and adaptive frame-rate validation.</li></ul></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><p class="eyebrow" data-i18n="next.eyebrow">More selected work</p><h2 data-i18n="next.title">Continue with another case study</h2></div></div>
+        <div class="next-projects">
+          <a class="next-project" href="asteroids.html"><strong>2D Asteroids Survival</strong><span data-i18n="next.asteroids">Custom physics, clean architecture, pooling, desktop/mobile input, and playable PC/Android builds.</span></a>
+          <a class="next-project" href="last-seed.html"><strong>Last Seed Survivor</strong><span data-i18n="next.seed">Modular survival systems, ScriptableObject rewards, pooling, segmented enemies, and balance tooling.</span></a>
+        </div>
+      </section>
+    </main>
+    <footer>Oleksandr Tokarev · Unity Developer · C# Gameplay Programmer</footer>
+  </div>
+
+  <div class="viewer" data-viewer role="dialog" aria-label="Screenshot viewer" aria-hidden="true">
+    <button class="viewer-close" type="button" data-viewer-close aria-label="Close screenshot viewer">&times;</button>
+    <div class="viewer-frame"><div class="viewer-track" data-viewer-track></div></div>
+    <div class="viewer-footer"><button class="viewer-button" type="button" data-viewer-prev aria-label="Previous screenshot">&lsaquo;</button><span class="viewer-counter" data-viewer-counter>1 / 4</span><button class="viewer-button" type="button" data-viewer-next aria-label="Next screenshot">&rsaquo;</button></div>
+  </div>
+
+  <script>
+    window.caseStudyTranslations = {
+      ru: {
+        "nav.back":"Вернуться в портфолио","hero.eyebrow":"Кейс выпущенного продукта · Unity 6 · Android","hero.lead":"Публичная игра в Google Play, доведённая от прототипа до релиза с ответственностью за полный цикл: пошаговый gameplay, стратегии ИИ, прогрессию, сохранения, UGUI-состояния, рекламу, подготовку Android-билда, публикацию, оптимизацию и post-release поддержку.","tag.shipped":"Выпущено в Google Play","tag.cycle":"Ответственность за полный цикл","button.gameplay":"Смотреть геймплей","button.source":"Открыть исходный код",
+        "proof.release":"завершённая Android-игра, выпущенная в Google Play","proof.ai":"стратегии сложности ИИ, отделённые от rendering доски","proof.fps":"стабильных FPS на старых устройствах после UI/runtime оптимизации","proof.adaptive":"адаптивные FPS-цели, проверенные на поддерживаемых устройствах",
+        "case.eyebrow":"Кейс доставки продукта","case.title":"От прототипа к поддерживаемому релизу","case.note":"Проект демонстрирует ответственность шире gameplay-кода: player flow, сохранения, монетизацию, мобильную производительность, подготовку магазина, релиз и post-release настройку.",
+        "challenge.label":"Задача","challenge.title":"Завершить весь путь игрока","challenge.text":"Небольшому боевому прототипу требовались меню, выбор персонажа, сложность, результаты, прогрессия, настройки, сохранения, награды, реклама и готовая к магазину Android-доставка.",
+        "architecture.label":"Архитектура","architecture.title":"Gameplay отделён от presentation","architecture.text":"Границы Domain, Infrastructure, Presentation и Services изолируют состояние доски, решения ИИ, сохранения, popup flow, рекламу и rendering views. Strategy Pattern поддерживает три режима ИИ.",
+        "performance.label":"Производительность","performance.title":"Измеримая мобильная оптимизация","performance.text":"Сократил UI draw calls и отделил изменения gameplay-состояния от presentation updates, повысив производительность старых устройств примерно с 30 до стабильных 60 FPS.",
+        "delivery.label":"Релиз","delivery.title":"Полный цикл Google Play","delivery.text":"Подготовил Android-билды, материалы магазина, интеграцию рекламы, runtime-проверки, этапы публикации и post-release настройку производительности.",
+        "flow.domain":"Domain<br>Доска · бой · контракты ИИ","flow.infrastructure":"Infrastructure<br>Сохранения · конфигурация","flow.presentation":"Presentation<br>UGUI · popups · feedback","flow.services":"Services<br>Реклама · платформа · релиз",
+        "built.eyebrow":"Доказательства реализации","built.title":"Реализованные системы","built.player.title":"Игровые системы","built.player.one":"Пошаговый бой, правила состояния доски, три стратегии сложности ИИ и обработка результата.","built.player.two":"Выбор персонажа, разблокировка аватаров, награды, прогрессия, настройки и сохранения.","built.player.three":"Меню, gameplay, результат, unlock, popup и feedback-состояния на UGUI.",
+        "built.release.title":"Mobile production","built.release.one":"Unity Ads service с rewarded flow, таймаутом загрузки, online/offline проверками и безопасным возвратом в gameplay.","built.release.two":"Android build configuration, workflow публикации Google Play и post-release поддержка.","built.release.three":"Profiler-led оптимизация UI/runtime и проверка адаптивного frame rate.",
+        "next.eyebrow":"Другие выбранные работы","next.title":"Следующий технический кейс","next.asteroids":"Собственная физика, чистая архитектура, pooling, desktop/mobile ввод и рабочие PC/Android-билды.","next.seed":"Модульные survival-системы, ScriptableObject-награды, pooling, сегментированные враги и инструменты баланса."
+      },
+      uk: {
+        "nav.back":"Повернутися до портфоліо","hero.eyebrow":"Кейс випущеного продукту · Unity 6 · Android","hero.lead":"Публічна гра в Google Play, доведена від прототипу до релізу з відповідальністю за повний цикл: покроковий gameplay, стратегії ШІ, прогресію, збереження, UGUI-стани, рекламу, підготовку Android-білда, публікацію, оптимізацію та post-release підтримку.","tag.shipped":"Випущено в Google Play","tag.cycle":"Відповідальність за повний цикл","button.gameplay":"Дивитися геймплей","button.source":"Відкрити вихідний код",
+        "proof.release":"завершена Android-гра, випущена в Google Play","proof.ai":"стратегії складності ШІ, відокремлені від rendering дошки","proof.fps":"стабільних FPS на старих пристроях після UI/runtime оптимізації","proof.adaptive":"адаптивні FPS-цілі, перевірені на підтримуваних пристроях",
+        "case.eyebrow":"Кейс доставки продукту","case.title":"Від прототипу до підтримуваного релізу","case.note":"Проєкт демонструє відповідальність ширше gameplay-коду: player flow, збереження, монетизацію, мобільну продуктивність, підготовку магазину, реліз і post-release налаштування.",
+        "challenge.label":"Завдання","challenge.title":"Завершити весь шлях гравця","challenge.text":"Невеликому бойовому прототипу були потрібні меню, вибір персонажа, складність, результати, прогресія, налаштування, збереження, нагороди, реклама та готова до магазину Android-доставка.",
+        "architecture.label":"Архітектура","architecture.title":"Gameplay відокремлений від presentation","architecture.text":"Межі Domain, Infrastructure, Presentation і Services ізолюють стан дошки, рішення ШІ, збереження, popup flow, рекламу та rendering views. Strategy Pattern підтримує три режими ШІ.",
+        "performance.label":"Продуктивність","performance.title":"Вимірювана мобільна оптимізація","performance.text":"Скоротив UI draw calls і відокремив зміни gameplay-стану від presentation updates, підвищивши продуктивність старих пристроїв приблизно з 30 до стабільних 60 FPS.",
+        "delivery.label":"Реліз","delivery.title":"Повний цикл Google Play","delivery.text":"Підготував Android-білди, матеріали магазину, інтеграцію реклами, runtime-перевірки, етапи публікації та post-release налаштування продуктивності.",
+        "flow.domain":"Domain<br>Дошка · бій · контракти ШІ","flow.infrastructure":"Infrastructure<br>Збереження · конфігурація","flow.presentation":"Presentation<br>UGUI · popups · feedback","flow.services":"Services<br>Реклама · платформа · реліз",
+        "built.eyebrow":"Докази реалізації","built.title":"Реалізовані системи","built.player.title":"Ігрові системи","built.player.one":"Покроковий бій, правила стану дошки, три стратегії складності ШІ та обробка результату.","built.player.two":"Вибір персонажа, розблокування аватарів, нагороди, прогресія, налаштування та збереження.","built.player.three":"Меню, gameplay, результат, unlock, popup і feedback-стани на UGUI.",
+        "built.release.title":"Mobile production","built.release.one":"Unity Ads service з rewarded flow, таймаутом завантаження, online/offline перевірками та безпечним поверненням у gameplay.","built.release.two":"Android build configuration, workflow публікації Google Play і post-release підтримка.","built.release.three":"Profiler-led оптимізація UI/runtime і перевірка адаптивного frame rate.",
+        "next.eyebrow":"Інші вибрані роботи","next.title":"Наступний технічний кейс","next.asteroids":"Власна фізика, чиста архітектура, pooling, desktop/mobile введення та робочі PC/Android-білди.","next.seed":"Модульні survival-системи, ScriptableObject-нагороди, pooling, сегментовані вороги й інструменти балансу."
+      }
+    };
+  </script>
+  <script src="../assets/case-study.js"></script>
+</body>
+</html>

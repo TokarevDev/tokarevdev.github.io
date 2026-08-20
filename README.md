@@ -10,6 +10,7 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 
 - Unity Developer / C# Gameplay Programmer positioning backed by more than 5 years of commercial development experience
 - 2D Asteroids Survival as the first architecture-focused portfolio proof, with public source, gameplay video, and downloadable PC/Android builds
+- compact landing page with separate localized Asteroids, Emoji Battle, and Last Seed Survivor engineering case studies
 - Shipped Android game on Google Play as delivery and release proof
 - End-to-end solo ownership across architecture, implementation, profiling, debugging, build preparation, release, and post-release support
 - Gameplay systems, UI/UGUI flow, save/load, progression, rewards, ads, and build preparation
@@ -19,7 +20,7 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 - Production architecture toolkit: SOLID/SRP, MVVM, Assembly Definitions, composition roots, Zenject/DI, ScriptableObjects, UniTask, async/await, cancellation, and lifecycle-safe cleanup
 - Git/GitHub, ClickUp, task tracking, collaborative planning, and reviewable public source code
 - Fully remote employment or B2B availability from Finland
-- Recruiter-first information hierarchy: strengths and production practices before the three featured case studies
+- Fast-scan information hierarchy: strengths and production practices before the three featured case studies
 - Secondary multiplayer/WebGL/PC prototypes moved into a collapsed archive after the contact section
 
 ## Featured Projects
