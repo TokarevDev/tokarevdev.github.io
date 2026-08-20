@@ -397,12 +397,16 @@
       order: 0;
     }
 
-    #projects .released-case {
+    #projects .featured-case {
       order: 1;
     }
 
-    #projects .systems-case {
+    #projects .released-case {
       order: 2;
+    }
+
+    #projects .systems-case {
+      order: 3;
     }
 
     .section-head {
@@ -483,6 +487,15 @@
       border-radius: 8px;
       background: rgba(24, 29, 27, 0.92);
       box-shadow: var(--shadow);
+    }
+
+    .project.featured-case {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .project.featured-case .project-media .project-gallery {
+      grid-template-columns: minmax(0, 2fr) minmax(240px, 0.72fr);
+      gap: 22px;
     }
 
     .project.compact {
@@ -1200,6 +1213,10 @@
         grid-template-columns: 1fr;
       }
 
+      .project.featured-case .project-media .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
       .hero {
         min-height: 0;
       }
@@ -1439,7 +1456,7 @@
           </p>
         </div>
 
-        <article class="project systems-case">
+        <article class="project featured-case">
           <figure class="project-media" aria-label="2D Asteroids Survival gameplay preview">
             <div class="project-gallery">
               <div class="gallery-frame landscape">
@@ -1468,6 +1485,7 @@
               A feature-complete 2D survival game independently designed and developed from scratch, inspired by classic Asteroids and built around custom physics, explicit assembly boundaries, JSON-driven balance, pooled runtime entities, and separate desktop/mobile input strategies.
             </p>
             <ul class="tag-list">
+              <li class="green" data-i18n="asteroids.badge.featured">Lead portfolio project</li>
               <li class="green" data-i18n="asteroids.badge.built">Built from scratch</li>
               <li class="green" data-i18n="asteroids.badge.builds">Playable PC &amp; Android builds</li>
               <li>Unity 2022 LTS</li>
@@ -1965,6 +1983,7 @@
         "project.impact": `Влияние`,
         "asteroids.kicker": `Независимый архитектурный Unity-проект`,
         "asteroids.summary": `Завершённая 2D survival-игра, самостоятельно спроектированная и разработанная с нуля по мотивам классической Asteroids. Проект построен на собственной физике, явных границах сборок, JSON-настройке баланса, пулах runtime-сущностей и отдельных стратегиях ввода для desktop/mobile.`,
+        "asteroids.badge.featured": `Ведущий проект портфолио`,
         "asteroids.badge.built": `Разработано с нуля`,
         "asteroids.badge.builds": `Рабочие PC и Android-билды`,
         "asteroids.gallery.title": `Полный survival-цикл`,
@@ -2137,6 +2156,7 @@
         "project.impact": `Вплив`,
         "asteroids.kicker": `Незалежний архітектурний Unity-проєкт`,
         "asteroids.summary": `Завершена 2D survival-гра, самостійно спроєктована й розроблена з нуля за мотивами класичної Asteroids. Проєкт побудований на власній фізиці, явних межах збірок, JSON-налаштуванні балансу, пулах runtime-сутностей і окремих стратегіях введення для desktop/mobile.`,
+        "asteroids.badge.featured": `Провідний проєкт портфоліо`,
         "asteroids.badge.built": `Розроблено з нуля`,
         "asteroids.badge.builds": `Робочі PC та Android-білди`,
         "asteroids.gallery.title": `Повний survival-цикл`,
