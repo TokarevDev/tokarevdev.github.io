@@ -698,8 +698,8 @@
 
     .gallery-frame.landscape {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      cursor: default;
+      aspect-ratio: 2553 / 1138;
+      cursor: zoom-in;
     }
 
     .project-media .gallery-frame.landscape {
@@ -707,7 +707,7 @@
     }
 
     .gallery-frame.landscape .gallery-image {
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .gallery-frame.dragging {
@@ -1166,7 +1166,7 @@
     .viewer-frame {
       align-self: center;
       justify-self: center;
-      width: min(100%, 430px);
+      width: min(100%, 1440px);
       height: calc(100vh - 118px);
       height: calc(100dvh - 118px);
       overflow: hidden;
@@ -1496,6 +1496,10 @@
       .gallery-frame {
         max-width: 310px;
         margin: 0 auto;
+      }
+
+      .gallery-frame.landscape {
+        max-width: none;
       }
 
       .back-to-top {
@@ -2546,7 +2550,6 @@
       }
     });
 
-    const isMobileGalleryViewport = () => window.matchMedia("(max-width: 680px)").matches;
     const screenshotViewer = document.querySelector("[data-screenshot-viewer]");
     const viewerClose = document.querySelector("[data-viewer-close]");
     const viewerFrame = document.querySelector("[data-viewer-frame]");
@@ -2597,7 +2600,7 @@
     };
 
     const openScreenshotViewer = (slides, index) => {
-      if (!screenshotViewer || !viewerTrack || !isMobileGalleryViewport()) {
+      if (!screenshotViewer || !viewerTrack) {
         return;
       }
 
@@ -2751,6 +2754,10 @@
         return;
       }
 
+      frame.setAttribute("role", "button");
+      frame.setAttribute("tabindex", "0");
+      frame.setAttribute("aria-label", slides.length > 1 ? "Open screenshot gallery" : "Open screenshot");
+
       const moveTrack = (offsetX = 0, animate = true) => {
         track.style.transition = animate ? "" : "none";
         track.style.transform = `translate3d(calc(${-current * 100}% + ${offsetX}px), 0, 0)`;
@@ -2880,10 +2887,19 @@
       }
 
       frame.addEventListener("click", () => {
-        if (suppressFrameClick || !isMobileGalleryViewport()) {
+        if (suppressFrameClick) {
           return;
         }
 
+        openScreenshotViewer(slides, current);
+      });
+
+      frame.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+          return;
+        }
+
+        event.preventDefault();
         openScreenshotViewer(slides, current);
       });
 
