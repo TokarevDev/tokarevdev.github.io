@@ -27,7 +27,7 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 
 ### 2D Asteroids Survival
 
-Feature-complete Unity 2022 LTS survival project designed and developed from scratch. Across 144 custom C# files it demonstrates a fixed-step custom 2D physics stack, Assembly Definition boundaries, Zenject and SignalBus, JSON-driven validated configuration, pooled enemies/projectiles/VFX, separate desktop/mobile input strategies, UniTask navigation, MVVM-style UI, Firebase Analytics, and isolated Google Mobile Ads integration. Playable Windows and Android builds are available directly from the portfolio.
+Feature-complete Unity 2022 LTS survival project designed and developed from scratch. Across 162 custom C# files it demonstrates a fixed-step custom 2D physics stack, Assembly Definition boundaries, Zenject and SignalBus, JSON-driven validated configuration, pooled enemies/projectiles/VFX, separate desktop/mobile input strategies, UniTask navigation, MVVM-style UI, Firebase Analytics, and isolated Google Mobile Ads integration. Playable Windows and Android builds are available directly from the portfolio.
 
 Gameplay: https://youtu.be/MV7N_iHXxiU
 Source code: https://github.com/TokarevDev/2D_Asteroids_Survival
