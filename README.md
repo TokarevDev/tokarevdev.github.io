@@ -8,7 +8,7 @@ The site presents my Unity Developer / C# Gameplay Programmer portfolio, current
 
 ## Focus
 
-- Unity Developer / C# Gameplay Programmer positioning backed by more than 5 years of commercial development experience
+- Unity Developer / C# Gameplay Programmer positioning backed by 3+ years of independent development experience
 - 2D Asteroids Survival as the first architecture-focused portfolio proof, with public source, gameplay video, and downloadable PC/Android builds
 - compact landing page with separate localized Asteroids, Emoji Battle, and Last Seed Survivor engineering case studies
 - Shipped Android game on Google Play as delivery and release proof
