@@ -10,6 +10,8 @@ The site is intentionally limited to two deep engineering case studies:
 ## Site principles
 
 - English is the default language, with complete Russian and Ukrainian localization.
+- Project media supports keyboard/touch carousels, click-to-zoom viewing, and a persistent back-to-top control.
+- Responsive breakpoints keep navigation, case-study grids, media, controls, and typography usable on mobile screens.
 - Architectural claims are connected to public source, playable builds, gameplay media, or measurable system evidence.
 - Technology terms are presented in context: Unity, C#, gameplay programming, SOLID, dependency injection, object pooling, ScriptableObjects, Unity Profiler, Android, Windows, UGUI, and async lifecycle management.
 - CV links remain disabled until the revised CV is ready.

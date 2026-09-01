@@ -336,6 +336,153 @@ h1 {
 
 .project-media.portrait img { min-height: 304px; }
 
+.media-gallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  overflow: hidden;
+}
+
+.gallery-frame {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  overflow: hidden;
+  cursor: zoom-in;
+  touch-action: pan-y;
+}
+
+.gallery-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  transition: transform .42s cubic-bezier(.22,.72,.2,1);
+}
+
+.gallery-slide {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: contain;
+  background: #020605;
+  user-select: none;
+}
+
+.gallery-frame.landscape .gallery-slide { object-fit: cover; }
+
+.gallery-controls {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.gallery-button,
+.viewer-nav,
+.viewer-close,
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(5, 13, 11, .82);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+}
+
+.gallery-button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 25px;
+  pointer-events: auto;
+}
+
+.gallery-counter {
+  padding: 7px 11px;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  background: rgba(5,13,11,.78);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.gallery-dots {
+  position: absolute;
+  bottom: 78px;
+  left: 50%;
+  z-index: 5;
+  display: flex;
+  gap: 6px;
+  transform: translateX(-50%);
+}
+
+.gallery-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.36);
+  cursor: pointer;
+}
+
+.gallery-dot.active { background: var(--accent); box-shadow: 0 0 12px rgba(97,231,173,.65); }
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  background: rgba(0, 5, 4, .94);
+  backdrop-filter: blur(14px);
+}
+
+.image-viewer.open { display: flex; }
+.viewer-open { overflow: hidden; }
+.viewer-dialog { position: relative; width: min(1320px, 100%); height: min(88vh, 880px); }
+.viewer-viewport { width: 100%; height: 100%; overflow: hidden; }
+.viewer-track { display: flex; width: 100%; height: 100%; transition: transform .35s ease; }
+.viewer-image { min-width: 100%; width: 100%; height: 100%; object-fit: contain; user-select: none; }
+.viewer-close { position: absolute; top: -4px; right: -4px; z-index: 3; width: 48px; height: 48px; border-radius: 50%; font-size: 30px; }
+.viewer-nav { position: absolute; top: 50%; z-index: 3; width: 52px; height: 72px; border-radius: 14px; font-size: 38px; transform: translateY(-50%); }
+.viewer-prev { left: 12px; }
+.viewer-next { right: 12px; }
+.viewer-counter { position: absolute; right: 50%; bottom: 8px; padding: 7px 12px; border-radius: 999px; background: rgba(5,13,11,.8); font-size: 12px; font-weight: 800; transform: translateX(50%); }
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 45;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 22px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity .2s ease, transform .2s ease, border-color .2s ease;
+}
+
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-to-top:hover, .gallery-button:hover, .viewer-nav:hover, .viewer-close:hover { border-color: var(--accent); color: var(--accent); }
+
 .project-content { padding: clamp(30px, 5vw, 58px); }
 .project h3 {
   margin-bottom: 18px;
@@ -556,6 +703,16 @@ h1 {
   .stack, .contact { padding: 28px 22px; }
   .case-hero { padding-top: 64px; }
   .case-visual { min-height: 350px; }
+  .gallery-controls { right: 10px; bottom: 10px; left: 10px; }
+  .gallery-button { width: 38px; height: 38px; }
+  .gallery-dots { bottom: 64px; }
+  .image-viewer { padding: 8px; }
+  .viewer-dialog { height: 92vh; }
+  .viewer-nav { width: 42px; height: 58px; }
+  .viewer-prev { left: 4px; }
+  .viewer-next { right: 4px; }
+  .viewer-close { top: 4px; right: 4px; }
+  .back-to-top { right: 14px; bottom: 14px; width: 44px; height: 44px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
