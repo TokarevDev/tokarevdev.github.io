@@ -1,222 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="2D Asteroids Survival Unity case study: custom fixed-step physics, clean assembly boundaries, dependency injection, pooling, desktop/mobile input, and playable Windows and Android builds.">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2D Asteroids Survival Unity architecture case study: custom fixed-step physics, explicit assembly boundaries, Zenject composition roots, pooling, validated configuration, mobile input, and PC/Android builds.">
   <link rel="canonical" href="https://tokarevdev.github.io/projects/asteroids.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="2D Asteroids Survival | Unity Architecture Case Study">
-  <meta property="og:description" content="A complete Unity survival game built from scratch with custom physics, explicit architecture, object pooling, and PC/Android delivery.">
-  <meta property="og:url" content="https://tokarevdev.github.io/projects/asteroids.html">
-  <meta property="og:image" content="https://tokarevdev.github.io/assets/asteroids/gameplay.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="2D Asteroids Survival | Unity Architecture Case Study">
-  <meta name="twitter:description" content="Custom physics, clean assembly boundaries, pooling, multi-platform input, and playable PC/Android builds.">
-  <meta name="twitter:image" content="https://tokarevdev.github.io/assets/asteroids/gameplay.png">
-  <title>2D Asteroids Survival | Unity Architecture Case Study</title>
-  <link rel="stylesheet" href="../assets/case-study.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "2D Asteroids Survival",
-    "url": "https://tokarevdev.github.io/projects/asteroids.html",
-    "image": "https://tokarevdev.github.io/assets/asteroids/gameplay.png",
-    "description": "A complete Unity 2D survival game built from scratch with custom physics, explicit assembly boundaries, dependency injection, object pooling, and desktop/mobile input.",
-    "gamePlatform": ["Windows", "Android"],
-    "author": {
-      "@type": "Person",
-      "name": "Oleksandr Tokarev",
-      "url": "https://tokarevdev.github.io/",
-      "sameAs": ["https://github.com/TokarevDev", "https://www.linkedin.com/in/oleksandr-tokarev/"]
-    }
-  }
-  </script>
+  <meta property="og:type" content="article"><meta property="og:url" content="https://tokarevdev.github.io/projects/asteroids.html"><meta property="og:title" content="2D Asteroids Survival | Unity Architecture Case Study"><meta property="og:description" content="A playable Unity system built around custom physics, explicit dependencies, pooled lifecycles, and platform delivery."><meta property="og:image" content="https://tokarevdev.github.io/assets/asteroids/gameplay.png">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="2D Asteroids Survival | Unity Architecture Case Study"><meta name="twitter:description" content="Custom physics, clean architecture, pooled runtime entities, and playable Windows/Android delivery."><meta name="twitter:image" content="https://tokarevdev.github.io/assets/asteroids/gameplay.png">
+  <title>2D Asteroids Survival | Unity Architecture Case Study</title><link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <a class="brand" href="../index.html">Oleksandr Tokarev</a>
-      <div class="top-actions">
-        <div class="language-toggle" aria-label="Language selection">
-          <button class="language-button active" type="button" data-language="en" aria-pressed="true">EN</button>
-          <button class="language-button" type="button" data-language="ru" aria-pressed="false">RU</button>
-          <button class="language-button" type="button" data-language="uk" aria-pressed="false">UA</button>
-        </div>
-        <a class="back-link" href="../index.html#projects" data-i18n="nav.back">Back to portfolio</a>
-      </div>
-    </header>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header"><div class="shell nav"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span>Oleksandr Tokarev</span></a><a class="back-link" href="../index.html#work" data-i18n="nav.back">← Back to selected work</a><div class="locale-switcher" aria-label="Language"><button class="locale-button" type="button" data-locale="en" aria-pressed="true">EN</button><button class="locale-button" type="button" data-locale="ru" aria-pressed="false">RU</button><button class="locale-button" type="button" data-locale="uk" aria-pressed="false">UA</button></div></div></header>
+  <main id="main">
+    <section class="shell case-hero">
+      <div><p class="eyebrow" data-i18n="hero.eyebrow">Lead engineering case · Unity 2022 LTS</p><h1>2D Asteroids Survival</h1><p class="hero-lead" data-i18n="hero.lead">A complete playable survival game designed as a compact production system: custom deterministic-style simulation, explicit dependency direction, transactional pooling, validated balance data, lifecycle-safe platform services, and separate desktop/mobile input.</p><div class="hero-actions"><a class="button primary" href="https://youtu.be/MV7N_iHXxiU" target="_blank" rel="noopener" data-i18n="button.gameplay">Watch gameplay</a><a class="button" href="https://github.com/TokarevDev/2D_Asteroids_Survival" target="_blank" rel="noopener" data-i18n="button.source">Review source</a><a class="button" href="../assets/builds/asteroids/2D_Asteroids_Survival_PC_Build.zip" download data-i18n="button.pc">Windows build</a><a class="button" href="../assets/builds/asteroids/2D_Asteroids_Survival.apk" download data-i18n="button.android">Android APK</a></div></div>
+      <figure class="case-visual"><img src="../assets/asteroids/gameplay.png" alt="2D Asteroids Survival gameplay arena"></figure>
+    </section>
 
-    <main>
-      <section class="case-hero">
-        <div>
-          <p class="eyebrow" data-i18n="hero.eyebrow">Lead portfolio case study · Unity 2022 LTS</p>
-          <h1>2D Asteroids Survival</h1>
-          <p class="lead" data-i18n="hero.lead">A complete 2D survival game independently designed and developed from scratch. The project demonstrates custom fixed-step physics, explicit dependency boundaries, pooled runtime entities, validated configuration, and separate desktop/mobile input strategies.</p>
-          <ul class="tag-list">
-            <li class="accent" data-i18n="tag.complete">Complete playable game</li>
-            <li class="accent">Windows + Android</li>
-            <li>Unity 2022 LTS</li>
-            <li>C#</li>
-            <li>Zenject</li>
-            <li>UniTask</li>
-            <li>Object Pooling</li>
-          </ul>
-          <div class="button-row">
-            <a class="button primary" href="https://youtu.be/MV7N_iHXxiU" target="_blank" rel="noopener" data-i18n="button.gameplay">Watch gameplay</a>
-            <a class="button" href="https://github.com/TokarevDev/2D_Asteroids_Survival" target="_blank" rel="noopener" data-i18n="button.source">View source</a>
-            <a class="button secondary" href="../assets/builds/asteroids/2D_Asteroids_Survival_PC_Build.zip" download data-i18n="button.pc">Download PC build</a>
-            <a class="button secondary" href="../assets/builds/asteroids/2D_Asteroids_Survival.apk" download data-i18n="button.android">Download Android APK</a>
-          </div>
-        </div>
+    <section class="shell proof-grid wide-proof" aria-label="Case study evidence"><div class="proof"><b>4</b><span data-i18n="proof.assemblies">assemblies with explicit dependency direction</span></div><div class="proof"><b>2</b><span data-i18n="proof.platforms">playable delivery targets</span></div><div class="proof"><b>0</b><span data-i18n="proof.lookup">runtime scene searches in gameplay</span></div><div class="proof"><b>1×</b><span data-i18n="proof.input">physical input polling per frame</span></div></section>
 
-        <div class="gallery" data-gallery>
-          <div class="gallery-frame" data-gallery-frame role="button" tabindex="0" aria-label="Open 2D Asteroids Survival screenshot">
-            <div class="gallery-track" data-gallery-track>
-              <img class="gallery-image" data-gallery-slide src="../assets/asteroids/gameplay.png" alt="2D Asteroids Survival arena with ship, projectiles, asteroids, score and three lives">
-            </div>
-          </div>
-        </div>
-      </section>
+    <section class="section compact"><div class="shell"><div class="section-head"><div><p class="eyebrow" data-i18n="case.eyebrow">Architecture intent</p><h2 data-i18n="case.title">Keep simulation, orchestration, views, and platform code independently replaceable.</h2></div><p class="section-note" data-i18n="case.note">The gameplay loop stays simple to play, but its boundaries are intentionally explicit. High-level systems depend on stable contracts; Unity views and platform adapters remain at the edge.</p></div>
+      <div class="architecture-flow"><span data-i18n-html="flow.core"><b>Core simulation</b><br>Coordinates · shapes · collision math</span><span data-i18n-html="flow.app"><b>Application</b><br>Factories · registries · game rules</span><span data-i18n-html="flow.presentation"><b>Presentation</b><br>Unity views · HUD · MVVM</span><span data-i18n-html="flow.platform"><b>Platform</b><br>Input · analytics · ads</span></div>
+    </div></section>
 
-      <section class="proof-strip" aria-label="Project evidence">
-        <div class="proof"><b>2</b><span data-i18n="proof.platforms">playable target platforms: Windows and Android</span></div>
-        <div class="proof"><b>4</b><span data-i18n="proof.assemblies">project assemblies with explicit dependency direction</span></div>
-        <div class="proof"><b>0</b><span data-i18n="proof.hotpath">LINQ and repeated component lookup in centralized hot loops</span></div>
-        <div class="proof"><b>100%</b><span data-i18n="proof.ownership">independent full-cycle ownership from architecture to builds</span></div>
-      </section>
+    <section class="section compact"><div class="shell"><div class="section-head"><div><p class="eyebrow" data-i18n="decisions.eyebrow">Key engineering decisions</p><h2 data-i18n="decisions.title">The codebase makes its operating model visible.</h2></div></div><div class="decision-grid">
+      <article class="decision"><h3 data-i18n="decision.loop.title">Named fixed-step loop</h3><p data-i18n="decision.loop.text">One GameplayFixedLoop coordinates input, simulation, collision resolution, cleanup, and view synchronization in an explicit sequence instead of relying on magic execution-order numbers.</p></article>
+      <article class="decision"><h3 data-i18n="decision.input.title">Single input snapshot</h3><p data-i18n="decision.input.text">Physical controls are polled once per frame and distributed as immutable state. Desktop and mobile strategies change at the platform boundary without branching throughout gameplay.</p></article>
+      <article class="decision"><h3 data-i18n="decision.pool.title">Transactional pooled lifecycle</h3><p data-i18n="decision.pool.text">The shared flow is rent → initialize → bind → activate. Partial registration failures roll back in reverse order and return ownership to the pool before propagating the error.</p></article>
+      <article class="decision"><h3 data-i18n="decision.registry.title">Identity registries</h3><p data-i18n="decision.registry.text">Dictionary-backed maps connect logical entities, views, damage contracts, and lifecycle owners. Consumers do not scan subtype pools or use repeated List.Contains membership checks.</p></article>
+      <article class="decision"><h3 data-i18n="decision.config.title">Validated configuration</h3><p data-i18n="decision.config.text">JSON is converted into stable keys and typed runtime parameters at the loading boundary. Nulls, duplicates, unknown keys, and missing required entries fail before the game loop starts.</p></article>
+      <article class="decision"><h3 data-i18n="decision.integration.title">Optional integrations stay optional</h3><p data-i18n="decision.integration.text">Firebase Analytics and AdMob sit behind explicit adapters. Missing optional configuration uses a diagnosed disabled path instead of breaking core bootstrap.</p></article>
+    </div></div></section>
 
-      <section class="section">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow" data-i18n="case.eyebrow">Engineering case</p>
-            <h2 data-i18n="case.title">A maintainable game, not a monolithic prototype</h2>
-          </div>
-          <p class="section-note" data-i18n="case.note">The design keeps simulation, Unity views, UI, configuration, and platform integrations independently maintainable while preserving a simple gameplay flow.</p>
-        </div>
-        <div class="case-grid">
-          <article class="case-card">
-            <p class="mini-title" data-i18n="challenge.label">Challenge</p>
-            <h3 data-i18n="challenge.title">Responsive toroidal survival gameplay</h3>
-            <p data-i18n="challenge.text">Acceleration, inertia, world wrapping, bullets, a rechargeable multi-target laser, asteroid fragmentation, pursuing UFOs, scoring, and a three-life loop needed to share one predictable simulation.</p>
-          </article>
-          <article class="case-card">
-            <p class="mini-title" data-i18n="architecture.label">Architecture</p>
-            <h3 data-i18n="architecture.title">Explicit dependency direction</h3>
-            <p data-i18n="architecture.text">Custom physics and gameplay models stay outside MonoBehaviour logic. Domain-focused Zenject installers and one named GameplayFixedLoop make dependency direction and update order explicit.</p>
-          </article>
-          <article class="case-card">
-            <p class="mini-title" data-i18n="performance.label">Performance</p>
-            <h3 data-i18n="performance.title">Stable runtime behavior</h3>
-            <p data-i18n="performance.text">Asteroids, fragments, UFOs, projectiles, logical entities, and collision VFX are pooled. Centralized queries avoid temporary collections, LINQ, and repeated component lookup in hot loops.</p>
-          </article>
-          <article class="case-card">
-            <p class="mini-title" data-i18n="delivery.label">Delivery</p>
-            <h3 data-i18n="delivery.title">Playable and reviewable</h3>
-            <p data-i18n="delivery.text">The result is a complete Windows/Android game with public source, gameplay video, validated JSON balance, responsive UI, Firebase events, and lifecycle-owned platform integrations.</p>
-          </article>
-        </div>
-        <div class="architecture-flow" aria-label="Architecture layers">
-          <span data-i18n-html="flow.core">Core simulation<br>Physics · collisions · coordinates</span>
-          <span data-i18n-html="flow.application">Application<br>Factories · registries · use cases</span>
-          <span data-i18n-html="flow.presentation">Presentation<br>Unity views · HUD · MVVM</span>
-          <span data-i18n-html="flow.platform">Platform services<br>Input · analytics · ads</span>
-        </div>
-      </section>
+    <section class="section compact"><div class="shell"><div class="section-head"><div><p class="eyebrow" data-i18n="runtime.eyebrow">Runtime and memory</p><h2 data-i18n="runtime.title">Frequent work is bounded, cached, and owned.</h2></div><p class="section-note" data-i18n="runtime.note">The hot path avoids runtime scene searches, repeated GetComponent calls, LINQ queries, temporary collections, and per-frame string work.</p></div><div class="case-grid">
+      <article class="case-card"><h3 data-i18n="runtime.pool.title">Pooled entities</h3><p data-i18n="runtime.pool.text">Asteroids, fragments, UFOs, projectiles, logical models, and collision VFX are reused. Reset and unregister paths are centralized before pool return.</p></article>
+      <article class="case-card"><h3 data-i18n="runtime.physics.title">Custom physics boundary</h3><p data-i18n="runtime.physics.text">Fixed-step integration, circle and segment tests, elastic response, toroidal coordinates, and view synchronization live outside MonoBehaviour orchestration.</p></article>
+      <article class="case-card"><h3 data-i18n="runtime.async.title">Lifecycle-safe async flow</h3><p data-i18n="runtime.async.text">UniTask scene transitions prevent duplicate actions, expose failures, and keep navigation ownership separate from menu and game-over views.</p></article>
+    </div></div></section>
 
-      <section class="section">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow" data-i18n="built.eyebrow">Implementation evidence</p>
-            <h2 data-i18n="built.title">What I built</h2>
-          </div>
-        </div>
-        <div class="case-grid">
-          <article class="case-card">
-            <h3 data-i18n="built.gameplay.title">Gameplay and simulation</h3>
-            <ul class="content-list">
-              <li data-i18n="built.gameplay.one">Custom fixed-step integration, circle/segment intersection, elastic collision response, invulnerability, and logical/view synchronization.</li>
-              <li data-i18n="built.gameplay.two">Ship acceleration, braking, inertia, rotation, world wrap, projectiles, multi-target laser, asteroid fragmentation, and UFO pursuit.</li>
-              <li data-i18n="built.gameplay.three">Scoring, recharge state, three-life survival, responsive HUD, and platform-specific controls.</li>
-            </ul>
-          </article>
-          <article class="case-card">
-            <h3 data-i18n="built.production.title">Production engineering</h3>
-            <ul class="content-list">
-              <li data-i18n="built.production.one">Validated JSON configuration and balance loading with clear failure handling.</li>
-              <li data-i18n="built.production.two">One immutable input snapshot per frame and a unified pooled-enemy lifecycle with rollback after failed registration.</li>
-              <li data-i18n="built.production.three">Desktop and mobile Strategy-based input, Firebase game events, AdMob banner lifecycle, Windows build, and Android APK.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+    <section class="section compact"><div class="shell stack"><div><p class="eyebrow" data-i18n="delivery.eyebrow">Delivery evidence</p><h3 data-i18n="delivery.title">The architecture is executable, not theoretical.</h3><p data-i18n="delivery.text">The public repository includes code maps and build instructions. Gameplay can be reviewed through source, video, Windows build, or Android APK.</p></div><div class="stack-groups"><div class="stack-group"><h4 data-i18n="delivery.gameplay">Gameplay scope</h4><p data-i18n="delivery.gameplay.text">Acceleration, inertia, world wrap, bullets, rechargeable multi-target laser, fragmentation, UFO pursuit, score, lives, and responsive HUD.</p></div><div class="stack-group"><h4 data-i18n="delivery.stack">Technology</h4><p>Unity 2022 LTS, C#, Zenject, SignalBus, UniTask, Newtonsoft.Json, UGUI, TextMeshPro, Firebase Analytics, AdMob, Assembly Definitions</p></div></div></div></section>
 
-      <section class="section">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow" data-i18n="next.eyebrow">More selected work</p>
-            <h2 data-i18n="next.title">Continue with another case study</h2>
-          </div>
-        </div>
-        <div class="next-projects">
-          <a class="next-project" href="emoji-battle.html"><strong>Emoji Battle</strong><span data-i18n="next.emoji">Shipped Google Play game: AI strategies, progression, UI flow, ads, optimization, and release ownership.</span></a>
-          <a class="next-project" href="last-seed.html"><strong>Last Seed Survivor</strong><span data-i18n="next.seed">Modular survival systems, ScriptableObject rewards, pooling, segmented enemies, and deterministic balance tooling.</span></a>
-        </div>
-      </section>
-    </main>
-
-    <footer>Oleksandr Tokarev · Unity Developer · C# Gameplay Programmer</footer>
-  </div>
-
-  <div class="viewer" data-viewer role="dialog" aria-label="Screenshot viewer" aria-hidden="true">
-    <button class="viewer-close" type="button" data-viewer-close aria-label="Close screenshot viewer">&times;</button>
-    <div class="viewer-frame"><div class="viewer-track" data-viewer-track></div></div>
-    <div class="viewer-footer">
-      <button class="viewer-button" type="button" data-viewer-prev aria-label="Previous screenshot">&lsaquo;</button>
-      <span class="viewer-counter" data-viewer-counter>1 / 1</span>
-      <button class="viewer-button" type="button" data-viewer-next aria-label="Next screenshot">&rsaquo;</button>
-    </div>
-  </div>
-
+    <section class="section"><div class="shell contact"><p class="eyebrow" data-i18n="next.eyebrow">Next case study</p><h2>Last Seed Survivor</h2><p data-i18n="next.text">Continue with a mobile gameplay system focused on modular weapons, rewards, segmented enemies, pooling, and deterministic balance validation.</p><a class="button primary" href="last-seed.html" data-i18n="next.button">Open Last Seed case →</a></div></section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-row"><span>© 2026 Oleksandr Tokarev</span><a href="mailto:otokarevdev@gmail.com">otokarevdev@gmail.com</a></div></footer>
   <script>
-    window.caseStudyTranslations = {
-      ru: {
-        "nav.back": "Вернуться в портфолио",
-        "hero.eyebrow": "Ведущий кейс портфолио · Unity 2022 LTS",
-        "hero.lead": "Завершённая 2D survival-игра, самостоятельно спроектированная и разработанная с нуля. Проект демонстрирует собственную fixed-step физику, явные границы зависимостей, пулы runtime-сущностей, проверяемую конфигурацию и отдельные стратегии ввода для desktop/mobile.",
-        "tag.complete": "Завершённая играбельная игра",
-        "button.gameplay": "Смотреть геймплей", "button.source": "Открыть исходный код", "button.pc": "Скачать PC-билд", "button.android": "Скачать Android APK",
-        "proof.platforms": "играбельные целевые платформы: Windows и Android", "proof.assemblies": "проектные сборки с явным направлением зависимостей", "proof.hotpath": "LINQ и повторных поисков компонентов в централизованных горячих циклах", "proof.ownership": "самостоятельная ответственность за полный цикл — от архитектуры до билдов",
-        "case.eyebrow": "Инженерный кейс", "case.title": "Поддерживаемая игра, а не монолитный прототип", "case.note": "Архитектура сохраняет независимо поддерживаемыми симуляцию, Unity views, UI, конфигурацию и платформенные интеграции, не усложняя gameplay flow.",
-        "challenge.label": "Задача", "challenge.title": "Отзывчивый survival-геймплей в тороидальном мире", "challenge.text": "Ускорение, инерция, world wrap, пули, перезаряжаемый multi-target лазер, фрагментация астероидов, UFO-преследователи, счёт и цикл с тремя жизнями должны были работать в одной предсказуемой симуляции.",
-        "architecture.label": "Архитектура", "architecture.title": "Явное направление зависимостей", "architecture.text": "Собственная физика и gameplay-модели находятся вне MonoBehaviour-логики. Доменные Zenject installers и единый именованный GameplayFixedLoop явно задают направление зависимостей и порядок обновления.",
-        "performance.label": "Производительность", "performance.title": "Стабильное runtime-поведение", "performance.text": "Астероиды, фрагменты, UFO, снаряды, логические сущности и collision VFX используют pooling. Централизованные запросы обходятся без временных коллекций, LINQ и повторного поиска компонентов в горячих циклах.",
-        "delivery.label": "Доставка", "delivery.title": "Можно запустить и проверить", "delivery.text": "Результат — завершённая игра для Windows/Android с публичным кодом, gameplay-видео, проверяемым JSON-балансом, адаптивным UI, Firebase events и платформенными интеграциями с контролируемым lifecycle.",
-        "flow.core": "Core simulation<br>Физика · коллизии · координаты", "flow.application": "Application<br>Фабрики · реестры · use cases", "flow.presentation": "Presentation<br>Unity views · HUD · MVVM", "flow.platform": "Platform services<br>Ввод · аналитика · реклама",
-        "built.eyebrow": "Доказательства реализации", "built.title": "Что я разработал", "built.gameplay.title": "Gameplay и симуляция", "built.gameplay.one": "Собственная fixed-step интеграция, circle/segment intersection, упругий collision response, неуязвимость и синхронизация логики с views.", "built.gameplay.two": "Ускорение, торможение, инерция, вращение, world wrap, снаряды, multi-target лазер, фрагментация астероидов и преследование UFO.", "built.gameplay.three": "Счёт, перезарядка, три жизни, адаптивный HUD и управление под разные платформы.",
-        "built.production.title": "Production engineering", "built.production.one": "Проверяемая JSON-конфигурация и загрузка баланса с понятной обработкой ошибок.", "built.production.two": "Один immutable input snapshot на кадр и единый lifecycle pooled-врагов с rollback после ошибки регистрации.", "built.production.three": "Strategy-ввод для desktop/mobile, Firebase game events, lifecycle баннера AdMob, Windows-билд и Android APK.",
-        "next.eyebrow": "Другие выбранные работы", "next.title": "Следующий технический кейс", "next.emoji": "Выпущенная Google Play игра: стратегии ИИ, прогрессия, UI flow, реклама, оптимизация и полный цикл релиза.", "next.seed": "Модульные survival-системы, ScriptableObject-награды, pooling, сегментированные враги и детерминированные инструменты баланса."
-      },
-      uk: {
-        "nav.back": "Повернутися до портфоліо",
-        "hero.eyebrow": "Провідний кейс портфоліо · Unity 2022 LTS",
-        "hero.lead": "Завершена 2D survival-гра, самостійно спроєктована й розроблена з нуля. Проєкт демонструє власну fixed-step фізику, явні межі залежностей, пули runtime-сутностей, перевірювану конфігурацію та окремі стратегії введення для desktop/mobile.",
-        "tag.complete": "Завершена іграбельна гра",
-        "button.gameplay": "Дивитися геймплей", "button.source": "Відкрити вихідний код", "button.pc": "Завантажити PC-білд", "button.android": "Завантажити Android APK",
-        "proof.platforms": "іграбельні цільові платформи: Windows та Android", "proof.assemblies": "проєктні збірки з явним напрямком залежностей", "proof.hotpath": "LINQ і повторних пошуків компонентів у централізованих гарячих циклах", "proof.ownership": "самостійна відповідальність за повний цикл — від архітектури до білдів",
-        "case.eyebrow": "Інженерний кейс", "case.title": "Підтримувана гра, а не монолітний прототип", "case.note": "Архітектура зберігає незалежно підтримуваними симуляцію, Unity views, UI, конфігурацію та платформні інтеграції, не ускладнюючи gameplay flow.",
-        "challenge.label": "Завдання", "challenge.title": "Чуйний survival-геймплей у тороїдальному світі", "challenge.text": "Прискорення, інерція, world wrap, кулі, перезаряджуваний multi-target лазер, фрагментація астероїдів, UFO-переслідувачі, рахунок і цикл із трьома життями мали працювати в одній передбачуваній симуляції.",
-        "architecture.label": "Архітектура", "architecture.title": "Явний напрямок залежностей", "architecture.text": "Власна фізика та gameplay-моделі знаходяться поза MonoBehaviour-логікою. Доменні Zenject installers і єдиний іменований GameplayFixedLoop явно задають напрямок залежностей та порядок оновлення.",
-        "performance.label": "Продуктивність", "performance.title": "Стабільна runtime-поведінка", "performance.text": "Астероїди, фрагменти, UFO, снаряди, логічні сутності та collision VFX використовують pooling. Централізовані запити обходяться без тимчасових колекцій, LINQ і повторного пошуку компонентів у гарячих циклах.",
-        "delivery.label": "Доставка", "delivery.title": "Можна запустити й перевірити", "delivery.text": "Результат — завершена гра для Windows/Android із публічним кодом, gameplay-відео, перевірюваним JSON-балансом, адаптивним UI, Firebase events і платформними інтеграціями з керованим lifecycle.",
-        "flow.core": "Core simulation<br>Фізика · колізії · координати", "flow.application": "Application<br>Фабрики · реєстри · use cases", "flow.presentation": "Presentation<br>Unity views · HUD · MVVM", "flow.platform": "Platform services<br>Введення · аналітика · реклама",
-        "built.eyebrow": "Докази реалізації", "built.title": "Що я розробив", "built.gameplay.title": "Gameplay і симуляція", "built.gameplay.one": "Власна fixed-step інтеграція, circle/segment intersection, пружний collision response, невразливість і синхронізація логіки з views.", "built.gameplay.two": "Прискорення, гальмування, інерція, обертання, world wrap, снаряди, multi-target лазер, фрагментація астероїдів і переслідування UFO.", "built.gameplay.three": "Рахунок, перезарядка, три життя, адаптивний HUD та керування під різні платформи.",
-        "built.production.title": "Production engineering", "built.production.one": "Перевірювана JSON-конфігурація та завантаження балансу зі зрозумілою обробкою помилок.", "built.production.two": "Один immutable input snapshot на кадр і єдиний lifecycle pooled-ворогів із rollback після помилки реєстрації.", "built.production.three": "Strategy-введення для desktop/mobile, Firebase game events, lifecycle банера AdMob, Windows-білд та Android APK.",
-        "next.eyebrow": "Інші вибрані роботи", "next.title": "Наступний технічний кейс", "next.emoji": "Випущена Google Play гра: стратегії ШІ, прогресія, UI flow, реклама, оптимізація та повний цикл релізу.", "next.seed": "Модульні survival-системи, ScriptableObject-нагороди, pooling, сегментовані вороги й детерміновані інструменти балансу."
-      }
-    };
-  </script>
-  <script src="../assets/case-study.js"></script>
-</body>
-</html>
+  window.PORTFOLIO_TRANSLATIONS={
+    ru:{"skip":"Перейти к содержимому","nav.back":"← К избранным проектам","hero.eyebrow":"Главный инженерный кейс · Unity 2022 LTS","hero.lead":"Завершённая survival-игра, спроектированная как компактная production-система: собственная deterministic-style симуляция, явное направление зависимостей, транзакционный pooling, валидируемые данные баланса, lifecycle-safe платформенные сервисы и отдельный desktop/mobile input.","button.gameplay":"Смотреть геймплей","button.source":"Открыть код","button.pc":"Windows-сборка","button.android":"Android APK","proof.assemblies":"assemblies с явным направлением зависимостей","proof.platforms":"играбельные delivery targets","proof.lookup":"runtime-поисков по сцене в gameplay","proof.input":"physical input polling за кадр","case.eyebrow":"Архитектурное намерение","case.title":"Симуляция, orchestration, views и platform-код можно заменять независимо.","case.note":"Gameplay loop остаётся простым для игрока, но его границы намеренно явные. Высокоуровневые системы зависят от стабильных контрактов; Unity views и platform adapters остаются на краю.","flow.core":"<b>Core simulation</b><br>Координаты · shapes · collision math","flow.app":"<b>Application</b><br>Factories · registries · game rules","flow.presentation":"<b>Presentation</b><br>Unity views · HUD · MVVM","flow.platform":"<b>Platform</b><br>Input · analytics · ads","decisions.eyebrow":"Ключевые инженерные решения","decisions.title":"Кодовая база явно показывает свою операционную модель.","decision.loop.title":"Именованный fixed-step loop","decision.loop.text":"Один GameplayFixedLoop координирует input, simulation, collision resolution, cleanup и синхронизацию views в явной последовательности без магических execution-order чисел.","decision.input.title":"Единый input snapshot","decision.input.text":"Физический input опрашивается один раз за кадр и передаётся как immutable state. Desktop и mobile стратегии меняются на platform boundary без ветвлений по всему gameplay.","decision.pool.title":"Транзакционный pooled lifecycle","decision.pool.text":"Общий flow: rent → initialize → bind → activate. Частичный сбой регистрации откатывается в обратном порядке и возвращает ownership пулу до передачи ошибки.","decision.registry.title":"Identity registries","decision.registry.text":"Dictionary-backed maps связывают logical entities, views, damage-контракты и lifecycle owners. Потребители не перебирают subtype pools и не используют повторные List.Contains проверки.","decision.config.title":"Валидируемая конфигурация","decision.config.text":"JSON преобразуется в стабильные ключи и типизированные runtime-параметры на границе загрузки. Null, дубликаты, неизвестные и отсутствующие обязательные ключи выявляются до старта game loop.","decision.integration.title":"Опциональные интеграции остаются опциональными","decision.integration.text":"Firebase Analytics и AdMob находятся за явными adapters. Отсутствующая конфигурация использует диагностируемый disabled path и не ломает core bootstrap.","runtime.eyebrow":"Runtime и память","runtime.title":"Частая работа ограничена, кеширована и имеет владельца.","runtime.note":"Hot path не использует runtime scene search, повторный GetComponent, LINQ, временные коллекции и строки на каждый кадр.","runtime.pool.title":"Pooled entities","runtime.pool.text":"Астероиды, фрагменты, UFO, снаряды, logical models и collision VFX переиспользуются. Reset и unregister централизованы до возврата в pool.","runtime.physics.title":"Граница собственной физики","runtime.physics.text":"Fixed-step integration, circle/segment tests, elastic response, toroidal coordinates и синхронизация views находятся вне MonoBehaviour orchestration.","runtime.async.title":"Lifecycle-safe async flow","runtime.async.text":"UniTask scene transitions блокируют дублирующие действия, показывают ошибки и отделяют ownership навигации от menu и game-over views.","delivery.eyebrow":"Доказательства delivery","delivery.title":"Архитектуру можно запустить, это не теория.","delivery.text":"Публичный репозиторий содержит code maps и инструкции запуска. Gameplay доступен через исходный код, видео, Windows-сборку и Android APK.","delivery.gameplay":"Gameplay scope","delivery.gameplay.text":"Ускорение, инерция, world wrap, bullets, rechargeable multi-target laser, fragmentation, UFO pursuit, score, lives и адаптивный HUD.","delivery.stack":"Технологии","next.eyebrow":"Следующий кейс","next.text":"Мобильная gameplay-система с модульным оружием, наградами, сегментированными врагами, pooling и детерминированной проверкой баланса.","next.button":"Открыть кейс Last Seed →"},
+    uk:{"skip":"Перейти до вмісту","nav.back":"← До обраних проєктів","hero.eyebrow":"Головний інженерний кейс · Unity 2022 LTS","hero.lead":"Завершена survival-гра, спроєктована як компактна production-система: власна deterministic-style симуляція, явний напрямок залежностей, транзакційний pooling, валідовані дані балансу, lifecycle-safe платформні сервіси та окремий desktop/mobile input.","button.gameplay":"Дивитися геймплей","button.source":"Відкрити код","button.pc":"Windows-збірка","button.android":"Android APK","proof.assemblies":"assemblies з явним напрямком залежностей","proof.platforms":"іграбельні delivery targets","proof.lookup":"runtime-пошуків по сцені в gameplay","proof.input":"physical input polling за кадр","case.eyebrow":"Архітектурний намір","case.title":"Симуляцію, orchestration, views і platform-код можна замінювати незалежно.","case.note":"Gameplay loop залишається простим для гравця, але його межі навмисно явні. Високорівневі системи залежать від стабільних контрактів; Unity views і platform adapters залишаються на краю.","flow.core":"<b>Core simulation</b><br>Координати · shapes · collision math","flow.app":"<b>Application</b><br>Factories · registries · game rules","flow.presentation":"<b>Presentation</b><br>Unity views · HUD · MVVM","flow.platform":"<b>Platform</b><br>Input · analytics · ads","decisions.eyebrow":"Ключові інженерні рішення","decisions.title":"Кодова база явно показує свою операційну модель.","decision.loop.title":"Іменований fixed-step loop","decision.loop.text":"Один GameplayFixedLoop координує input, simulation, collision resolution, cleanup і синхронізацію views у явній послідовності без магічних execution-order чисел.","decision.input.title":"Єдиний input snapshot","decision.input.text":"Фізичний input опитується один раз за кадр і передається як immutable state. Desktop і mobile стратегії змінюються на platform boundary без розгалужень у всьому gameplay.","decision.pool.title":"Транзакційний pooled lifecycle","decision.pool.text":"Спільний flow: rent → initialize → bind → activate. Частковий збій реєстрації відкочується у зворотному порядку та повертає ownership пулу до передачі помилки.","decision.registry.title":"Identity registries","decision.registry.text":"Dictionary-backed maps пов’язують logical entities, views, damage-контракти й lifecycle owners. Споживачі не перебирають subtype pools і не використовують повторні List.Contains перевірки.","decision.config.title":"Валідована конфігурація","decision.config.text":"JSON перетворюється на стабільні ключі й типізовані runtime-параметри на межі завантаження. Null, дублікати, невідомі та відсутні обов’язкові ключі виявляються до старту game loop.","decision.integration.title":"Опціональні інтеграції залишаються опціональними","decision.integration.text":"Firebase Analytics і AdMob розташовані за явними adapters. Відсутня конфігурація використовує діагностований disabled path і не ламає core bootstrap.","runtime.eyebrow":"Runtime і пам’ять","runtime.title":"Часта робота обмежена, кешована й має власника.","runtime.note":"Hot path не використовує runtime scene search, повторний GetComponent, LINQ, тимчасові колекції та рядки на кожен кадр.","runtime.pool.title":"Pooled entities","runtime.pool.text":"Астероїди, фрагменти, UFO, снаряди, logical models і collision VFX перевикористовуються. Reset і unregister централізовані до повернення в pool.","runtime.physics.title":"Межа власної фізики","runtime.physics.text":"Fixed-step integration, circle/segment tests, elastic response, toroidal coordinates і синхронізація views знаходяться поза MonoBehaviour orchestration.","runtime.async.title":"Lifecycle-safe async flow","runtime.async.text":"UniTask scene transitions блокують повторні дії, показують помилки й відокремлюють ownership навігації від menu та game-over views.","delivery.eyebrow":"Докази delivery","delivery.title":"Архітектуру можна запустити, це не теорія.","delivery.text":"Публічний репозиторій містить code maps та інструкції запуску. Gameplay доступний через вихідний код, відео, Windows-збірку та Android APK.","delivery.gameplay":"Gameplay scope","delivery.gameplay.text":"Прискорення, інерція, world wrap, bullets, rechargeable multi-target laser, fragmentation, UFO pursuit, score, lives і адаптивний HUD.","delivery.stack":"Технології","next.eyebrow":"Наступний кейс","next.text":"Мобільна gameplay-система з модульною зброєю, нагородами, сегментованими ворогами, pooling і детермінованою перевіркою балансу.","next.button":"Відкрити кейс Last Seed →"}
+  };
+  </script><script src="../assets/site.js" defer></script>
+</body></html>

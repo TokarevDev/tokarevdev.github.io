@@ -1,60 +1,26 @@
-# Oleksandr Tokarev Portfolio
+# Oleksandr Tokarev — Unity Portfolio
 
-Source for my Unity Developer / C# Gameplay Programmer portfolio:
+Source for [tokarevdev.github.io](https://tokarevdev.github.io/), a focused Unity Developer and C# Gameplay Programmer portfolio.
 
-https://tokarevdev.github.io/
+The site is intentionally limited to two deep engineering case studies:
 
-The site presents my Unity Developer / C# Gameplay Programmer portfolio, current CV, gameplay media, public GitHub repositories, Google Play release, WebGL prototypes, and downloadable PC builds.
+1. **2D Asteroids Survival** — the lead case: custom fixed-step physics, explicit dependency boundaries, Zenject composition roots, validated JSON configuration, transactional object pooling, desktop/mobile input strategies, and playable Windows/Android builds.
+2. **Last Seed Survivor** — modular Unity 6 mobile combat, ScriptableObject-driven rewards, segmented enemy lifecycle, pooled runtime entities, responsive portrait UI, and deterministic Editor balance validation.
 
-## Focus
+## Site principles
 
-- Unity Developer / C# Gameplay Programmer positioning backed by 3+ years of independent development experience
-- 2D Asteroids Survival as the first architecture-focused portfolio proof, with public source, gameplay video, and downloadable PC/Android builds
-- compact landing page with separate localized Asteroids, Emoji Battle, and Last Seed Survivor engineering case studies
-- Shipped Android game on Google Play as delivery and release proof
-- End-to-end solo ownership across architecture, implementation, profiling, debugging, build preparation, release, and post-release support
-- Gameplay systems, UI/UGUI flow, save/load, progression, rewards, ads, and build preparation
-- Android, PC, and WebGL projects with source, gameplay media, and playable/downloadable builds
-- Measured mobile optimization: approximately 30 FPS to stable 60 FPS on older hardware, with adaptive 90/120 FPS validated on supported devices
-- Deterministic balance validation: 4,000 battles per cycle across four behavior scenarios, with zero detected combat-logic failures in repeated runs
-- Production architecture toolkit: SOLID/SRP, MVVM, Assembly Definitions, composition roots, Zenject/DI, ScriptableObjects, UniTask, async/await, cancellation, and lifecycle-safe cleanup
-- Git/GitHub, ClickUp, task tracking, collaborative planning, and reviewable public source code
-- Fully remote employment or B2B availability from Finland
-- Fast-scan information hierarchy: strengths and production practices before the three featured case studies
-- Secondary multiplayer/WebGL/PC prototypes moved into a collapsed archive after the contact section
+- English is the default language, with complete Russian and Ukrainian localization.
+- Architectural claims are connected to public source, playable builds, gameplay media, or measurable system evidence.
+- Technology terms are presented in context: Unity, C#, gameplay programming, SOLID, dependency injection, object pooling, ScriptableObjects, Unity Profiler, Android, Windows, UGUI, and async lifecycle management.
+- CV links remain disabled until the revised CV is ready.
+- GitHub Pages publishes only the public `main` branch.
 
-## Featured Projects
+## Local validation
 
-### 2D Asteroids Survival
+The site is static and has no build step.
 
-Feature-complete Unity 2022 LTS survival project designed and developed from scratch. Across 162 custom C# files it demonstrates a fixed-step custom 2D physics stack, Assembly Definition boundaries, Zenject and SignalBus, JSON-driven validated configuration, pooled enemies/projectiles/VFX, separate desktop/mobile input strategies, UniTask navigation, MVVM-style UI, Firebase Analytics, and isolated Google Mobile Ads integration. Playable Windows and Android builds are available directly from the portfolio.
+```bash
+node scripts/validate-site.mjs
+```
 
-Gameplay: https://youtu.be/MV7N_iHXxiU
-Source code: https://github.com/TokarevDev/2D_Asteroids_Survival
-
-### Emoji Battle
-
-Released Android game on Google Play. Built in Unity 6 and C# during a 3-month independent development cycle, with full player-loop ownership, three Strategy Pattern AI modes, progression, persistence, UGUI, Unity Ads, Android publishing, and optimization from about 30 FPS to stable 60 FPS on older devices.
-
-Google Play: https://play.google.com/store/apps/details?id=com.sd7gamestudio.emojibattle
-Source code: https://github.com/TokarevDev/Emoji_Battle
-
-### Last Seed Survivor
-
-Current Unity 6 2D mobile auto-shooter/survival project focused on modular combat, ScriptableObject-driven rewards, pooled projectiles and enemy segments, runtime stat modifiers, and a deterministic one-click test that runs 4,000 battles per cycle.
-
-Source code: https://github.com/TokarevDev/Force_of_Nature_Last_Seed
-
-## Public Code Samples
-
-- 2D Asteroids Survival - feature-complete architecture sample with custom physics, validated JSON configuration, pooling, platform input strategies, analytics, and lifecycle-owned services
-- Emoji Battle - shipped Google Play game and complete mobile player loop
-- Last Seed Survivor - modular combat, pooling, reward systems, segmented enemies, and deterministic balance validation
-
-## Build Downloads
-
-Large PC build archives are stored as static split parts under `assets/builds/` and reconstructed by `download-build.html` in the browser. This avoids GitHub's per-file size limits while keeping downloads available from the public portfolio.
-
-## Repository Notes
-
-This is a static GitHub Pages site. There is no build step. Open `index.html` directly or serve the folder with any local static server.
+The validator checks local references, inline script syntax, localization completeness, removed-project references, and prohibited tenure wording.
