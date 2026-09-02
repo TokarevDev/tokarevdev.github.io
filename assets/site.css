@@ -446,7 +446,11 @@ h1 {
   user-select: none;
 }
 
-.mobile-gallery .gallery-slide { object-fit: contain; }
+.project-grid .mobile-gallery .gallery-slide,
+.case-visual .mobile-gallery .gallery-slide {
+  object-fit: contain;
+  object-position: center;
+}
 
 .gallery-frame.landscape .gallery-slide { object-fit: cover; }
 
@@ -682,7 +686,7 @@ h1 {
 
 .contact { text-align: center; }
 .contact h2 { max-width: 980px; margin: 0 auto 16px; }
-.contact p { max-width: 760px; margin-inline: auto; color: var(--muted); }
+.contact p { max-width: none; margin-inline: auto; color: var(--muted); }
 .contact-actions { justify-content: center; margin-top: 22px; }
 
 .engineering-details {
