@@ -759,6 +759,8 @@ h1 {
   min-height: 100px;
   padding: 20px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   color: var(--muted);
   border: 1px solid var(--line);
@@ -766,6 +768,7 @@ h1 {
   background: rgba(255,255,255,.018);
   font-size: 13px;
 }
+.architecture-flow span b { margin-bottom: 6px; color: var(--text); }
 .architecture-flow span:not(:last-child)::after {
   position: absolute;
   right: -11px;

@@ -13,7 +13,7 @@ The site is intentionally limited to two source-backed engineering case studies:
 - Project media supports keyboard/touch carousels, click-to-zoom viewing, and a persistent back-to-top control.
 - Responsive breakpoints keep navigation, case-study grids, media, controls, and typography usable on mobile screens.
 - Architectural claims are connected to public source, playable builds, gameplay media, or measurable validation evidence.
-- Technology terms are presented in context: Unity, C#, gameplay programming, SOLID/SRP, dependency injection, Zenject, SignalBus, object pooling, ScriptableObjects, Unity Test Framework, Unity Profiler, Android, Windows, UGUI, and async lifecycle management.
+- Technology terms are presented in context: Unity, C#, gameplay programming, SOLID/SRP, dependency injection, Zenject, SignalBus, custom fixed-step physics, validated JSON, ScriptableObjects, object pooling, Unity Test Framework, Unity Profiler, Android, Windows, UGUI, and async lifecycle management.
 - Hardware performance and release-readiness claims remain separate from Editor regression baselines.
 - CV links remain disabled until the revised CV is ready.
 - GitHub Pages publishes only the public `main` branch.
