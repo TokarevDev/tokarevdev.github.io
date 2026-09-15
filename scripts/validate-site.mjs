@@ -4,6 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const pages = ["index.html", "projects/asteroids.html", "projects/last-seed.html"];
 const removedProjectNames = ["Emoji Battle", "Tanks Multiplayer", "Galaxy Strike", "Sharp Shooter"];
+const prohibitedRoleTitles = /C#\s+(?:Gameplay\s+)?Programmer|Gameplay\s+Programmer/i;
 let failed = false;
 
 const fail = (message) => {
@@ -18,6 +19,7 @@ for (const page of pages) {
 
   if (/\bATS\b|applicant tracking/i.test(html)) fail(`${page} contains internal recruitment-filter terminology`);
   if (/\bexperience\b|\byears?\b|\bопыт\b|\bдосвід\b|3\s*\+/i.test(html)) fail(`${page} contains prohibited tenure wording`);
+  if (prohibitedRoleTitles.test(html)) fail(`${page} contains a prohibited personal role title`);
   for (const name of removedProjectNames) {
     if (html.includes(name)) fail(`${page} still references removed project ${name}`);
   }

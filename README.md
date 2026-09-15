@@ -1,6 +1,6 @@
 # Oleksandr Tokarev — Unity Portfolio
 
-Source for [tokarevdev.github.io](https://tokarevdev.github.io/), a focused Unity Developer and C# Gameplay Programmer portfolio.
+Source for [tokarevdev.github.io](https://tokarevdev.github.io/), a focused Unity Developer portfolio grounded in public C# gameplay systems and project case studies.
 
 The site is intentionally limited to two source-backed engineering case studies:
 
