@@ -4,7 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const pages = ["index.html", "projects/asteroids.html", "projects/last-seed.html"];
 const removedProjectNames = ["Emoji Battle", "Tanks Multiplayer", "Galaxy Strike", "Sharp Shooter"];
-const prohibitedRoleTitles = /C#\s+(?:Gameplay\s+)?Programmer|Gameplay\s+Programmer/i;
+const prohibitedRoleTitles = /(?:Senior|Middle|Junior|C#|Gameplay)\s+(?:Developer|Programmer)/i;
 let failed = false;
 
 const fail = (message) => {
@@ -18,8 +18,10 @@ for (const page of pages) {
   const pageDirectory = path.dirname(absolutePage);
 
   if (/\bATS\b|applicant tracking/i.test(html)) fail(`${page} contains internal recruitment-filter terminology`);
-  if (/\bexperience\b|\byears?\b|\bопыт\b|\bдосвід\b|3\s*\+/i.test(html)) fail(`${page} contains prohibited tenure wording`);
   if (prohibitedRoleTitles.test(html)) fail(`${page} contains a prohibited personal role title`);
+  if (page === "index.html" && !html.includes("Unity Developer | 6+ years")) {
+    fail(`${page} is missing the approved profile title`);
+  }
   for (const name of removedProjectNames) {
     if (html.includes(name)) fail(`${page} still references removed project ${name}`);
   }
