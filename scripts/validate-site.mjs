@@ -4,6 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const pages = ["index.html", "projects/asteroids.html", "projects/last-seed.html"];
 const removedProjectNames = ["Emoji Battle", "Tanks Multiplayer", "Galaxy Strike", "Sharp Shooter"];
+const privateExperienceNames = ["OpenMyGame", "AmayaSoft", "Urmobi", "No Way To Die", "Blooming Flowers", "Educational Games for Kids"];
 const prohibitedRoleTitles = /(?:Senior|Middle|Junior|C#|Gameplay)\s+(?:Developer|Programmer)/i;
 let failed = false;
 
@@ -25,6 +26,17 @@ for (const page of pages) {
   for (const name of removedProjectNames) {
     if (html.includes(name)) fail(`${page} still references removed project ${name}`);
   }
+  for (const name of privateExperienceNames) {
+    if (html.includes(name)) fail(`${page} exposes private work-history name ${name}`);
+  }
+
+  if (page === "index.html") {
+    if (!html.includes("English — B2")) fail(`${page} is missing the current English level`);
+    if (!html.includes("broader toolkit records additional technologies")) {
+      fail(`${page} is missing the public-evidence boundary for the broader toolkit`);
+    }
+  }
+  if (!html.includes("mailto:otokarevdev@gmail.com")) fail(`${page} is missing the current contact email`);
 
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const reference = match[1];

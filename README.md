@@ -1,6 +1,6 @@
 # Alexander Tokarev — Unity Developer Portfolio
 
-Source for [tokarevdev.github.io](https://tokarevdev.github.io/), a focused Unity Developer portfolio for Alexander Tokarev, with 6+ years of experience and public C# gameplay case studies.
+Source for [tokarevdev.github.io](https://tokarevdev.github.io/), a focused Unity Developer portfolio for Alexander Tokarev, with 6+ years of experience, public C# gameplay case studies, and a concise skills and education profile.
 
 The site is intentionally limited to two source-backed engineering case studies:
 
@@ -14,6 +14,8 @@ The site is intentionally limited to two source-backed engineering case studies:
 - Responsive breakpoints keep navigation, case-study grids, media, controls, and typography usable on mobile screens.
 - Architectural claims are connected to public source, playable builds, gameplay media, or measurable validation evidence.
 - Technology terms are presented in context: Unity, C#, gameplay programming, SOLID/SRP, dependency injection, Zenject, SignalBus, custom fixed-step physics, validated JSON, ScriptableObjects, object pooling, Unity Test Framework, Unity Profiler, Android, Windows, UGUI, and async lifecycle management.
+- Broader CV-backed tooling is labeled separately from capabilities demonstrated in the two public repositories.
+- Employer names, commercial titles, and private work-history details are intentionally excluded.
 - Hardware performance and release-readiness claims remain separate from Editor regression baselines.
 - GitHub Pages publishes only the public `main` branch.
 
@@ -25,4 +27,4 @@ The site is static and has no build step.
 node scripts/validate-site.mjs
 ```
 
-The validator checks local references, inline script syntax, localization completeness, removed-project references, and profile-title consistency.
+The validator checks local references, inline script syntax, localization completeness, removed-project and private-work references, current profile details, and profile-title consistency.

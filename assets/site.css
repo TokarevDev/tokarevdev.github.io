@@ -644,6 +644,8 @@ h1 {
   gap: 16px;
 }
 
+.profile-grid { grid-template-columns: repeat(2, 1fr); }
+
 .capability,
 .case-card {
   padding: 22px;
